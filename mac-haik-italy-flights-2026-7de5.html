@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mac Haik Italy 2026 — Updated Flight Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --aqua-pale: #C4E4E1;
+  --aqua-mist: #EAF3F2;
+  --aqua: #75AFB1;
+  --aqua-dark: #4F8A8C;
+  --sand: #ECE7DC;
+  --sand-light: #F4F1E9;
+  --gold-whisper: #D6C8A8;
+  --white: #FFFFFF;
+  --paper: #FBFDFD;
+  --ink: #2B2420;
+  --ink-soft: #6B6359;
+  --line: #E5E9E8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 16px;
+}
+
+.container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+/* ============ HERO ============ */
+.hero {
+  background: var(--aqua-mist);
+  padding: 56px 20px 48px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+.hero-kicker {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--aqua-dark);
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+.hero-dates {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.hero-divider {
+  width: 56px; height: 1px;
+  background: var(--gold-whisper);
+  margin: 18px auto;
+}
+.hero-prepared {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink-soft);
+}
+
+/* ============ DATE SHIFT CALLOUT ============ */
+.date-callout {
+  background: var(--white);
+  border: 1px solid var(--gold-whisper);
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin: 32px 0;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.date-callout .icon {
+  flex-shrink: 0;
+  color: var(--aqua-dark);
+  margin-top: 2px;
+}
+.date-callout-text {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.55;
+}
+.date-callout-text strong {
+  font-weight: 600;
+  color: var(--aqua-dark);
+}
+
+/* ============ INTRO ============ */
+.intro {
+  margin: 36px 0 28px;
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.65;
+}
+.intro p { margin-bottom: 14px; }
+
+/* ============ OVERVIEW STRIP ============ */
+.overview {
+  background: var(--aqua-mist);
+  border-radius: 6px;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 28px 0 40px;
+}
+.overview-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+.overview-item .icon { color: var(--aqua-dark); }
+.overview-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.overview-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  color: var(--ink);
+  font-weight: 500;
+}
+@media (max-width: 640px) {
+  .overview { grid-template-columns: repeat(2, 1fr); gap: 22px; padding: 20px; }
+}
+
+/* ============ SECTION HEADING ============ */
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 48px 0 8px;
+}
+.section-heading .flank {
+  color: var(--aqua-dark);
+  opacity: 0.65;
+}
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 32px;
+  text-align: center;
+  color: var(--ink);
+}
+.section-subheading {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-bottom: 32px;
+}
+.section-divider {
+  width: 56px; height: 1px;
+  background: var(--gold-whisper);
+  margin: 14px auto 0;
+}
+
+/* ============ FLIGHT CARDS ============ */
+.flight-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
+  margin-bottom: 22px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.flight-card:has(input[type="radio"]:checked) {
+  border-color: var(--aqua-dark);
+  box-shadow: 0 4px 18px rgba(79, 138, 140, 0.12);
+}
+
+/* ============ SOFT HEADER IMAGE ============ */
+.flight-header-image {
+  display: block;
+  width: calc(100% + 56px);
+  margin: -28px -28px 22px -28px;
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px 8px 0 0;
+  filter: saturate(0.9) brightness(0.97);
+}
+.flight-header-placeholder {
+  background-image: linear-gradient(135deg, var(--aqua-mist) 0%, var(--sand-light) 100%);
+  filter: none;
+}
+.flight-card[data-status="soldout"] .flight-header-image {
+  filter: saturate(0.5) brightness(0.95);
+}
+
+.flight-kicker {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--aqua-dark);
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+.flight-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 26px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.flight-card .summary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin-bottom: 22px;
+}
+.flight-card .summary strong { color: var(--ink); font-weight: 500; }
+
+/* ============ DIRECTION BLOCK (outbound/return) ============ */
+.direction {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.direction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.direction-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--aqua-dark);
+}
+.direction-meta {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* leg row */
+.leg {
+  display: grid;
+  grid-template-columns: minmax(140px, auto) 1fr auto;
+  gap: 14px 18px;
+  align-items: center;
+  padding: 10px 0;
+}
+.leg-time {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.leg-time .arrow { color: var(--ink-soft); margin: 0 4px; font-weight: 400; }
+.leg-time .next-day {
+  font-size: 11px;
+  color: var(--aqua-dark);
+  font-weight: 500;
+  vertical-align: super;
+  margin-left: 2px;
+}
+.leg-detail {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.leg-detail .route { color: var(--ink); font-weight: 500; }
+.leg-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+/* layover row */
+.layover {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0 8px 14px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  font-style: italic;
+  border-left: 2px solid var(--aqua-pale);
+  margin-left: 6px;
+}
+
+@media (max-width: 720px) {
+  .leg {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .leg:last-child { border-bottom: none; }
+  .leg-tags { justify-content: flex-start; margin-top: 4px; }
+}
+
+/* ============ TAGS ============ */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+.tag svg { width: 13px; height: 13px; }
+.tag-layflat {
+  background: var(--aqua-pale);
+  color: var(--aqua-dark);
+}
+.tag-business {
+  background: var(--sand-light);
+  color: var(--ink-soft);
+  border: 1px solid var(--sand);
+}
+.tag-early {
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid var(--gold-whisper);
+}
+.tag-limited {
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid var(--gold-whisper);
+}
+
+/* ============ CONSIDERATIONS BOX ============ */
+.considerations {
+  background: var(--sand-light);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.55;
+}
+.considerations strong { color: var(--aqua-dark); font-weight: 600; }
+.considerations ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.considerations li {
+  padding: 5px 0 5px 16px;
+  position: relative;
+}
+.considerations li::before {
+  content: "·";
+  position: absolute;
+  left: 4px;
+  color: var(--aqua-dark);
+  font-weight: bold;
+}
+
+/* ============ SET SELECTION ============ */
+.set-select {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+  align-items: center;
+}
+.set-select-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 6px;
+}
+.set-pill {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+.set-pill input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.set-pill .pill-body {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  min-height: 48px;
+  background: var(--white);
+  border: 1.5px solid var(--aqua-dark);
+  color: var(--aqua-dark);
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.15s;
+}
+.set-pill input[type="radio"]:checked + .pill-body {
+  background: var(--aqua-dark);
+  color: var(--white);
+}
+.set-pill .pill-body:hover {
+  background: var(--aqua-mist);
+}
+.set-pill input[type="radio"]:checked + .pill-body:hover {
+  background: var(--aqua-dark);
+}
+.set-pill .pill-check {
+  display: none;
+  width: 14px; height: 14px;
+}
+.set-pill input[type="radio"]:checked + .pill-body .pill-check { display: inline-block; }
+
+/* ============ SOLD-OUT STATE ============ */
+/* To mark an option no longer available: add data-status="soldout" to the .flight-card */
+.flight-card[data-status="soldout"] {
+  opacity: 0.55;
+  position: relative;
+}
+.flight-card[data-status="soldout"] .set-pill {
+  pointer-events: none;
+}
+.flight-card[data-status="soldout"] .set-pill .pill-body {
+  background: var(--sand-light) !important;
+  color: var(--ink-soft) !important;
+  border-color: var(--line) !important;
+  cursor: not-allowed;
+}
+.soldout-badge {
+  display: none;
+  background: var(--sand);
+  border: 1px solid var(--gold-whisper);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.soldout-badge svg { width: 14px; height: 14px; }
+.flight-card[data-status="soldout"] .soldout-badge {
+  display: inline-flex;
+}
+
+/* ============ NOTES ============ */
+.notes-section { margin: 40px 0 28px; }
+.notes-section label {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.notes-section textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 14px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  resize: vertical;
+}
+.notes-section textarea:focus {
+  outline: none;
+  border-color: var(--aqua-dark);
+}
+
+/* ============ STATUS BAR ============ */
+.status-bar {
+  background: var(--aqua-pale);
+  border-radius: 6px;
+  padding: 16px 22px;
+  margin: 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.status-bar .label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--aqua-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+.status-bar .selections {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 500;
+  line-height: 1.6;
+}
+.status-bar .selections .pending { color: var(--ink-soft); font-style: italic; font-weight: 400; }
+.status-bar-note {
+  font-size: 13px;
+  color: var(--aqua-dark);
+  font-style: italic;
+  max-width: 280px;
+  text-align: right;
+}
+
+/* ============ VALIDATION BANNER ============ */
+.validation-banner {
+  display: none;
+  background: var(--white);
+  border: 1px solid var(--gold-whisper);
+  border-radius: 6px;
+  padding: 14px 20px;
+  margin: 16px 0;
+  font-size: 14px;
+  color: var(--ink);
+}
+.validation-banner.show { display: block; }
+.validation-banner strong { color: var(--aqua-dark); }
+
+/* ============ SUBMIT FORM ============ */
+.submit-section {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 32px;
+  margin-top: 16px;
+}
+.submit-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.submit-section .subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.form-field { display: flex; flex-direction: column; }
+.form-field.full { grid-column: 1 / -1; }
+.form-field label {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+.form-field input {
+  padding: 12px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  min-height: 48px;
+}
+.form-field input:focus {
+  outline: none;
+  border-color: var(--aqua-dark);
+}
+.form-field .field-helper {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.form-subsection {
+  grid-column: 1 / -1;
+  margin-top: 14px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.form-subsection h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 4px 0;
+}
+.form-subsection .helper {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .submit-section { padding: 24px 20px; }
+  .status-bar { flex-direction: column; align-items: flex-start; }
+  .status-bar-note { text-align: left; max-width: 100%; }
+}
+
+.submit-btn {
+  margin-top: 22px;
+  width: 100%;
+  padding: 16px 28px;
+  background: var(--aqua-dark);
+  color: var(--white);
+  border: none;
+  border-radius: 999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  min-height: 56px;
+  transition: background 0.15s, opacity 0.15s;
+}
+.submit-btn:hover { background: var(--ink); }
+.submit-btn:disabled {
+  background: var(--ink-soft);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#thanksMsg {
+  display: none;
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--aqua-mist);
+  border-radius: 8px;
+}
+#thanksMsg.show { display: block; }
+#thanksMsg h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+#thanksMsg p {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--sand-light);
+  padding: 40px 20px 48px;
+  margin-top: 56px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+.footer h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+.footer-contact {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+.footer-contact a {
+  color: var(--aqua-dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer-contact a:hover { text-decoration: underline; }
+.footer-divider {
+  width: 56px; height: 1px;
+  background: var(--gold-whisper);
+  margin: 22px auto;
+}
+.footer-fineprint {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* ============ HERO MOBILE ============ */
+@media (max-width: 640px) {
+  .hero { padding: 40px 20px 36px; }
+  .hero h1 { font-size: 32px; }
+  .hero-dates { font-size: 16px; }
+  .section-heading h2 { font-size: 26px; }
+  .flight-card { padding: 22px 18px; }
+  .flight-header-image {
+    width: calc(100% + 36px);
+    margin: -22px -18px 18px -18px;
+    height: 110px;
+  }
+  .flight-card h3 { font-size: 22px; }
+  .direction { padding: 16px 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="hero-kicker">Mac Haik · Italy Incentive 2026</div>
+  <h1>Updated Flight Options</h1>
+  <div class="hero-dates">Wednesday, September 16 → Friday, September 25, 2026</div>
+  <div class="hero-divider"></div>
+  <div class="hero-prepared">prepared for the Mac Haik group · 16 travelers · selecting two at a time</div>
+</div>
+
+<div class="container">
+
+  <!-- ============ DATE SHIFT CALLOUT ============ -->
+  <div class="date-callout">
+    <div class="icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="5" width="18" height="16" rx="2"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+        <line x1="8" y1="3" x2="8" y2="7"/>
+        <line x1="16" y1="3" x2="16" y2="7"/>
+      </svg>
+    </div>
+    <div class="date-callout-text">
+      <strong>Heads up — outbound date has shifted.</strong> The original air inventory was released by the airline due to capacity changes. The three options below depart <strong>Wednesday, September 16</strong> (one day earlier than the original Sept 17). The Naples return on Friday, September 25 is unchanged. Trip extends from 8 to 9 nights.
+    </div>
+  </div>
+
+  <!-- ============ INTRO ============ -->
+  <div class="intro">
+    <p>We hand-sorted every available option after the original air inventory was released, comparing aircraft, schedules, and cabin seating with close attention to lay-flat seating across the Atlantic. Three options below — all in business class, all routed to keep the long transatlantic legs in lay-flat hardware where possible.</p>
+    <p>Review the three options below, then <strong>select the routing you'd like for you and your travel partner</strong>. Two travelers per submission. Andrea will track availability across the group as pairs lock in — if your top choice is no longer open by the time your turn comes, she'll be in touch directly.</p>
+  </div>
+
+  <!-- ============ OVERVIEW STRIP ============ -->
+  <div class="overview">
+    <div class="overview-item">
+      <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="7" r="3"/>
+        <path d="M3 21 c0-3 3-5 6-5 s6 2 6 5"/>
+        <circle cx="17" cy="9" r="2.5"/>
+        <path d="M14 21 c0-2.5 1.5-4 3-4 s3 1.5 3 4"/>
+      </svg>
+      <div class="overview-label">Travelers</div>
+      <div class="overview-value">16 total · 2 per submission</div>
+    </div>
+    <div class="overview-item">
+      <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 12 L22 12"/>
+        <path d="M16 6 L22 12 L16 18"/>
+      </svg>
+      <div class="overview-label">Outbound</div>
+      <div class="overview-value">IAH → FCO</div>
+    </div>
+    <div class="overview-item">
+      <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 12 L2 12"/>
+        <path d="M8 6 L2 12 L8 18"/>
+      </svg>
+      <div class="overview-label">Return</div>
+      <div class="overview-value">NAP → IAH</div>
+    </div>
+    <div class="overview-item">
+      <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 7 v5 l3 3"/>
+      </svg>
+      <div class="overview-label">Trip length</div>
+      <div class="overview-value">9 nights</div>
+    </div>
+  </div>
+
+  <!-- ============ FLIGHT OPTIONS HEADING ============ -->
+  <div class="section-heading">
+    <svg class="flank" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12 l-6 -6 v4 l-9 -2 v-3 l-2 1 v9 l2 1 v-3 l9 -2 v4 z"/>
+    </svg>
+    <h2>Three flight options</h2>
+    <svg class="flank" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="transform: scaleX(-1);">
+      <path d="M21 12 l-6 -6 v4 l-9 -2 v-3 l-2 1 v9 l2 1 v-3 l9 -2 v4 z"/>
+    </svg>
+  </div>
+  <div class="section-subheading">All business class · sorted by overall comfort</div>
+  <div class="section-divider"></div>
+  <div style="height: 32px;"></div>
+
+  <!-- ============ OPTION 1 · BRITISH AIRWAYS ============ -->
+  <div class="flight-card" data-status="available">
+    <div class="flight-header-image" style="background-image: url('https://i0.wp.com/londonairtravel.com/wp-content/uploads/2024/03/British-Airways-Airbus-A320neo-Aircraft-G-TTND.jpg?ssl=1');"></div>
+    <span class="soldout-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>No longer available</span>
+    <div class="flight-kicker">Option 1 · 1 stop each way · via London Heathrow</div>
+    <h3>British Airways</h3>
+    <div class="summary"><strong>IAH ⇄ LHR ⇄ FCO/NAP</strong> · long-haul lay-flat both ways · Italy hops in business seated</div>
+
+    <!-- OUTBOUND -->
+    <div class="direction">
+      <div class="direction-header">
+        <span class="direction-label">Outbound · Wed Sep 16</span>
+        <span class="direction-meta">Total 15h 50m · 1 stop</span>
+      </div>
+      <div class="leg">
+        <div class="leg-time">3:30p <span class="arrow">→</span> 6:40a<span class="next-day">+1</span></div>
+        <div class="leg-detail"><span class="route">IAH → LHR</span> · BA 194 · Boeing 777-200 · 9h 10m</div>
+        <div class="leg-tags">
+          <span class="tag tag-layflat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="14" x2="21" y2="14"/><circle cx="6" cy="10" r="2"/><line x1="3" y1="18" x2="3" y2="20"/><line x1="21" y1="18" x2="21" y2="20"/></svg>
+            Lay-flat business
+          </span>
+        </div>
+      </div>
+      <div class="layover">4h layover at London Heathrow · UK ETA required for transit</div>
+      <div class="leg">
+        <div class="leg-time">10:40a <span class="arrow">→</span> 2:20p</div>
+        <div class="leg-detail"><span class="route">LHR → FCO</span> · BA 550 · Airbus A320 · 2h 40m</div>
+        <div class="leg-tags">
+          <span class="tag tag-business">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="3" height="11" rx="1"/><path d="M6 15 h12 v3"/><line x1="9" y1="18" x2="9" y2="20"/><line x1="18" y1="18" x2="18" y2="20"/></svg>
+            Business · seated
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RETURN -->
+    <div class="direction">
+      <div class="direction-header">
+        <span class="direction-label">Return · Fri Sep 25</span>
+        <span class="direction-meta">Total 18h 35m · 1 stop</span>
+      </div>
+      <div class="leg">
+        <div class="leg-time">7:40a <span class="arrow">→</span> 9:45a</div>
+        <div class="leg-detail"><span class="route">NAP → LHR</span> · BA 531 · Airbus A320 · 3h 05m</div>
+        <div class="leg-tags">
+          <span class="tag tag-business">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="3" height="11" rx="1"/><path d="M6 15 h12 v3"/><line x1="9" y1="18" x2="9" y2="20"/><line x1="18" y1="18" x2="18" y2="20"/></svg>
+            Business · seated
+          </span>
+          <span class="tag tag-limited">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 L21 19 H3 z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17" r="0.4" fill="currentColor"/></svg>
+            Only 6 business seats
+          </span>
+        </div>
+      </div>
+      <div class="layover">5h layover at London Heathrow · long connection</div>
+      <div class="leg">
+        <div class="leg-time">2:45p <span class="arrow">→</span> 7:15p</div>
+        <div class="leg-detail"><span class="route">LHR → IAH</span> · BA 197 · Boeing 777-300ER · 10h 30m</div>
+        <div class="leg-tags">
+          <span class="tag tag-layflat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="14" x2="21" y2="14"/><circle cx="6" cy="10" r="2"/><line x1="3" y1="18" x2="3" y2="20"/><line x1="21" y1="18" x2="21" y2="20"/></svg>
+            Lay-flat business
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="considerations">
+      <strong>Worth knowing</strong>
+      <ul>
+        <li><strong>UK ETA required</strong> — every traveler must obtain a UK Electronic Travel Authorization before departure, even for transit. Without it, boarding will be denied.</li>
+        <li><strong>NAP → LHR has only 6 business seats available</strong> — meaning only 3 pairs can take this routing before business is full on that single leg. Andrea will track this as pairs select; if you're past the cap, she'll let you know before you commit.</li>
+        <li>Long Atlantic legs are both lay-flat (777-200 out, 777-300ER home). Italy hops are standard intra-Europe business — same row as economy with the middle seat blocked.</li>
+      </ul>
+    </div>
+
+    <div class="set-select">
+      <span class="set-select-label">Select this routing for your pair:</span>
+      <label class="set-pill">
+        <input type="radio" name="routing" value="Option A · British Airways via LHR" data-key="A">
+        <span class="pill-body">
+          Select British Airways
+          <svg class="pill-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <!-- ============ OPTION 2 · ITA AIRWAYS ============ -->
+  <div class="flight-card" data-status="available">
+    <div class="flight-header-image" style="background-image: url('https://www.iata.org/contentassets/cd231d9bbc5b47c5bfd9d7707c1fb9c9/imagekv99.png');"></div>
+    <span class="soldout-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>No longer available</span>
+    <div class="flight-kicker">Option 2 · Nonstop outbound · 1 stop return · via Rome</div>
+    <h3>ITA Airways</h3>
+    <div class="summary"><strong>IAH ⇄ FCO ⇄ NAP</strong> · lay-flat both Atlantic crossings · the most direct option · early Naples wake-up on return</div>
+
+    <!-- OUTBOUND -->
+    <div class="direction">
+      <div class="direction-header">
+        <span class="direction-label">Outbound · Wed Sep 16</span>
+        <span class="direction-meta">Total 10h 40m · nonstop</span>
+      </div>
+      <div class="leg">
+        <div class="leg-time">6:10p <span class="arrow">→</span> 11:50a<span class="next-day">+1</span></div>
+        <div class="leg-detail"><span class="route">IAH → FCO</span> · ITA 637 · Airbus A330-900neo · 10h 40m · nonstop</div>
+        <div class="leg-tags">
+          <span class="tag tag-layflat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="14" x2="21" y2="14"/><circle cx="6" cy="10" r="2"/><line x1="3" y1="18" x2="3" y2="20"/><line x1="21" y1="18" x2="21" y2="20"/></svg>
+            Lay-flat business
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RETURN -->
+    <div class="direction">
+      <div class="direction-header">
+        <span class="direction-label">Return · Fri Sep 25</span>
+        <span class="direction-meta">Total 16h 05m · 1 stop</span>
+      </div>
+      <div class="leg">
+        <div class="leg-time">6:35a <span class="arrow">→</span> 7:25a</div>
+        <div class="leg-detail"><span class="route">NAP → FCO</span> · ITA 1268 · Airbus A220-300 · 50m</div>
+        <div class="leg-tags">
+          <span class="tag tag-early">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18 h14"/><path d="M7 14 a5 5 0 0 1 10 0"/><line x1="12" y1="6" x2="12" y2="3"/><line x1="6" y1="9" x2="4" y2="7"/><line x1="18" y1="9" x2="20" y2="7"/></svg>
+            Early 6:35a departure
+          </span>
+          <span class="tag tag-business">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="3" height="11" rx="1"/><path d="M6 15 h12 v3"/><line x1="9" y1="18" x2="9" y2="20"/><line x1="18" y1="18" x2="18" y2="20"/></svg>
+            Business · seated
+          </span>
+        </div>
+      </div>
+      <div class="layover">2h 55m layover at Rome Fiumicino</div>
+      <div class="leg">
+        <div class="leg-time">10:20a <span class="arrow">→</span> 3:40p</div>
+        <div class="leg-detail"><span class="route">FCO → IAH</span> · ITA 636 · Airbus A330-900neo · 12h 20m</div>
+        <div class="leg-tags">
+          <span class="tag tag-layflat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="14" x2="21" y2="14"/><circle cx="6" cy="10" r="2"/><line x1="3" y1="18" x2="3" y2="20"/><line x1="21" y1="18" x2="21" y2="20"/></svg>
+            Lay-flat business
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="considerations">
+      <strong>Worth knowing</strong>
+      <ul>
+        <li><strong>Nonstop outbound</strong> — only option that skips a connection going over. Lay-flat A330-900neo straight to Rome, then group transfer down to Naples or your accommodation.</li>
+        <li><strong>Early 6:35a Naples departure on return</strong> — that's roughly a 4:30a hotel pickup. Not for the faint of heart, but the trade is a clean stateside arrival at 3:40p Houston time the same day.</li>
+        <li>No EU visa or transit authorization required for U.S. passport holders on this routing.</li>
+      </ul>
+    </div>
+
+    <div class="set-select">
+      <span class="set-select-label">Select this routing for your pair:</span>
+      <label class="set-pill">
+        <input type="radio" name="routing" value="Option B · ITA Airways via Rome" data-key="B">
+        <span class="pill-body">
+          Select ITA Airways
+          <svg class="pill-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <!-- ============ OPTION 3 · UNITED POLARIS ============ -->
+  <div class="flight-card" data-status="available">
+    <div class="flight-header-image" style="background-image: url('https://ik.imgkit.net/3vlqs5axxjf/TW/uploadedImages/Art/2021/1011/T1011UNITED_C_HR.jpg?tr=w-1200%2Cfo-auto');"></div>
+    <span class="soldout-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>No longer available</span>
+    <div class="flight-kicker">Option 3 · 1 stop each way · via Munich and Frankfurt</div>
+    <h3>United Polaris</h3>
+    <div class="summary"><strong>IAH ⇄ MUC/FRA ⇄ FCO/NAP</strong> · lay-flat Polaris on both Atlantic crossings · German connections operated by Lufthansa</div>
+
+    <!-- OUTBOUND -->
+    <div class="direction">
+      <div class="direction-header">
+        <span class="direction-label">Outbound · Wed Sep 16</span>
+        <span class="direction-meta">Total 15h 25m · 1 stop</span>
+      </div>
+      <div class="leg">
+        <div class="leg-time">4:40p <span class="arrow">→</span> 9:45a<span class="next-day">+1</span></div>
+        <div class="leg-detail"><span class="route">IAH → MUC</span> · UA 102 · Boeing 777 · 10h 05m</div>
+        <div class="leg-tags">
+          <span class="tag tag-layflat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="14" x2="21" y2="14"/><circle cx="6" cy="10" r="2"/><line x1="3" y1="18" x2="3" y2="20"/><line x1="21" y1="18" x2="21" y2="20"/></svg>
+            Lay-flat Polaris
+          </span>
+        </div>
+      </div>
+      <div class="layover">3h 45m layover at Munich</div>
+      <div class="leg">
+        <div class="leg-time">1:30p <span class="arrow">→</span> 3:05p</div>
+        <div class="leg-detail"><span class="route">MUC → FCO</span> · UA 9212 · Airbus A320 · 1h 35m · operated by Lufthansa</div>
+        <div class="leg-tags">
+          <span class="tag tag-business">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="3" height="11" rx="1"/><path d="M6 15 h12 v3"/><line x1="9" y1="18" x2="9" y2="20"/><line x1="18" y1="18" x2="18" y2="20"/></svg>
+            Business · seated
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RETURN -->
+    <div class="direction">
+      <div class="direction-header">
+        <span class="direction-label">Return · Fri Sep 25</span>
+        <span class="direction-meta">Total 14h 35m · 1 stop · shortest return</span>
+      </div>
+      <div class="leg">
+        <div class="leg-time">6:00a <span class="arrow">→</span> 8:05a</div>
+        <div class="leg-detail"><span class="route">NAP → FRA</span> · UA 9141 · Airbus A320neo · 2h 05m · operated by Lufthansa</div>
+        <div class="leg-tags">
+          <span class="tag tag-early">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18 h14"/><path d="M7 14 a5 5 0 0 1 10 0"/><line x1="12" y1="6" x2="12" y2="3"/><line x1="6" y1="9" x2="4" y2="7"/><line x1="18" y1="9" x2="20" y2="7"/></svg>
+            Early 6:00a departure
+          </span>
+          <span class="tag tag-business">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="3" height="11" rx="1"/><path d="M6 15 h12 v3"/><line x1="9" y1="18" x2="9" y2="20"/><line x1="18" y1="18" x2="18" y2="20"/></svg>
+            Business · seated
+          </span>
+        </div>
+      </div>
+      <div class="layover">1h 55m layover at Frankfurt · tightest connection of the three options</div>
+      <div class="leg">
+        <div class="leg-time">10:00a <span class="arrow">→</span> 1:35p</div>
+        <div class="leg-detail"><span class="route">FRA → IAH</span> · UA 8866 · Boeing 747-400 · 10h 35m · operated by Lufthansa</div>
+        <div class="leg-tags">
+          <span class="tag tag-layflat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="14" x2="21" y2="14"/><circle cx="6" cy="10" r="2"/><line x1="3" y1="18" x2="3" y2="20"/><line x1="21" y1="18" x2="21" y2="20"/></svg>
+            Lay-flat business
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="considerations">
+      <strong>Worth knowing</strong>
+      <ul>
+        <li><strong>Earliest Naples departure of all three options at 6:00a</strong> — roughly a 4:00a hotel pickup. Trade-off is the shortest total return time (14h 35m) and earliest Houston arrival (1:35p).</li>
+        <li><strong>1h 55m connection at Frankfurt is the tightest of the three options</strong> — workable on a UA-LH partner ticket with bags checked through, but no buffer if NAP-FRA runs late.</li>
+        <li>UA-issued ticket but the Italy and Germany hops are flown by Lufthansa — same Star Alliance product, identical baggage handling. No EU visa required for U.S. passport holders.</li>
+        <li>Returning home on a Boeing 747-400 — one of the last carriers still flying the queen of the skies on this route.</li>
+      </ul>
+    </div>
+
+    <div class="set-select">
+      <span class="set-select-label">Select this routing for your pair:</span>
+      <label class="set-pill">
+        <input type="radio" name="routing" value="Option C · United Polaris via MUC/FRA" data-key="C">
+        <span class="pill-body">
+          Select United Polaris
+          <svg class="pill-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <!-- ============ NOTES ============ -->
+  <div class="notes-section">
+    <label for="notes">Notes, preferences, or questions</label>
+    <textarea id="notes" placeholder="Anything we should know — seat preferences, dietary needs, schedule conflicts, questions about a specific option..."></textarea>
+  </div>
+
+  <!-- ============ STATUS BAR ============ -->
+  <div class="status-bar">
+    <div>
+      <div class="label">Your selection</div>
+      <div class="selections">
+        <span id="routingDisplay" class="pending">Routing — not yet selected</span>
+      </div>
+    </div>
+    <div class="status-bar-note">
+      Pricing being finalized · Andrea will lock rates within one business day of submission.
+    </div>
+  </div>
+
+  <!-- ============ VALIDATION BANNER ============ -->
+  <div class="validation-banner" id="validationBanner">
+    <strong>Almost there.</strong> <span id="validationMsg">Please select a routing above before submitting.</span>
+  </div>
+
+  <!-- ============ SUBMIT FORM ============ -->
+  <div class="submit-section">
+    <h3>Submit your selection</h3>
+    <p class="subtitle">One submission per pair. Andrea will confirm your seats and follow up directly.</p>
+
+    <form id="tripForm">
+      <input type="hidden" name="access_key" value="7b40d437-1004-48e2-9031-171a8b0ef4f1">
+      <input type="hidden" name="subject" id="subject_field" value="Mac Haik Italy — Pair Routing Selection [FOR ANDREA]">
+      <input type="hidden" name="from_name" value="Mac Haik Italy — PMTP Pair Selection (Andrea Gunter)">
+      <input type="hidden" name="cc" value="andrea@pointmetoparadise.com">
+      <input type="hidden" name="redirect" value="false">
+      <input type="hidden" name="Agent_Of_Record" value="Andrea Gunter | andrea@pointmetoparadise.com | (409) 789-3579">
+
+      <input type="hidden" name="Routing_Selection" id="hidden_routing">
+      <input type="hidden" name="Trip_Notes" id="hidden_notes">
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="traveler_1">Traveler 1 — full name</label>
+          <input type="text" id="traveler_1" name="Traveler_1" required>
+        </div>
+        <div class="form-field">
+          <label for="traveler_2">Traveler 2 — full name</label>
+          <input type="text" id="traveler_2" name="Traveler_2" required>
+        </div>
+        <div class="form-field">
+          <label for="contact_email">Contact email</label>
+          <input type="email" id="contact_email" name="Email" required>
+        </div>
+        <div class="form-field">
+          <label for="contact_phone">Contact phone</label>
+          <input type="tel" id="contact_phone" name="Phone" required>
+        </div>
+        <div class="form-field full">
+          <label for="dealership">Dealership / Division</label>
+          <input type="text" id="dealership" name="Dealership" placeholder="Which Mac Haik dealership or division?">
+        </div>
+
+        <div class="form-subsection">
+          <h4>Trusted traveler &amp; loyalty numbers</h4>
+          <p class="helper">Optional — add what you have and we'll attach it to your booking before ticketing.</p>
+        </div>
+
+        <div class="form-field">
+          <label for="t1_ktn">Traveler 1 — KTN</label>
+          <input type="text" id="t1_ktn" name="T1_Known_Traveler_Number" autocomplete="off" inputmode="numeric">
+          <div class="field-helper">Global Entry or TSA PreCheck number</div>
+        </div>
+        <div class="form-field">
+          <label for="t2_ktn">Traveler 2 — KTN</label>
+          <input type="text" id="t2_ktn" name="T2_Known_Traveler_Number" autocomplete="off" inputmode="numeric">
+          <div class="field-helper">Global Entry or TSA PreCheck number</div>
+        </div>
+
+        <div class="form-field">
+          <label for="t1_clear">Traveler 1 — CLEAR member ID</label>
+          <input type="text" id="t1_clear" name="T1_CLEAR_ID" autocomplete="off">
+        </div>
+        <div class="form-field">
+          <label for="t2_clear">Traveler 2 — CLEAR member ID</label>
+          <input type="text" id="t2_clear" name="T2_CLEAR_ID" autocomplete="off">
+        </div>
+
+        <div class="form-field">
+          <label for="t1_ff">Traveler 1 — Frequent flyer number(s)</label>
+          <input type="text" id="t1_ff" name="T1_Frequent_Flyer" placeholder="e.g. UA #ABC12345" autocomplete="off">
+          <div class="field-helper">Airline + number — list all relevant programs</div>
+        </div>
+        <div class="form-field">
+          <label for="t2_ff">Traveler 2 — Frequent flyer number(s)</label>
+          <input type="text" id="t2_ff" name="T2_Frequent_Flyer" placeholder="e.g. AA #XYZ98765" autocomplete="off">
+          <div class="field-helper">Airline + number — list all relevant programs</div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn" disabled>Submit our pair's selection</button>
+    </form>
+  </div>
+
+  <!-- THANK YOU -->
+  <div id="thanksMsg">
+    <h3>Got it — thank you.</h3>
+    <p>Andrea will confirm your seats and follow up directly within one business day.</p>
+  </div>
+
+</div>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+  <h4>Andrea Gunter</h4>
+  <div class="footer-tagline">Travel Advisor · Point Me to Paradise Travel</div>
+  <div class="footer-contact">
+    <a id="emailLink"></a><br>
+    <a href="tel:+14097893579">(409) 789-3579</a>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-fineprint">
+    Individual hotels, transfers, and tours in your quote are priced at publicly available rates — and in many cases lower than what you'd find on your own. You don't have to worry about overpaying for a piece of your trip. What you're paying for is the rest: the right rooms at the right property, operators we've used for years, the trip app, and a human who answers when something doesn't go to plan.
+  </div>
+</div>
+
+<script>
+// ============ EMAIL ASSEMBLY (Cloudflare safe) ============
+(function() {
+  var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+  var link = document.getElementById('emailLink');
+  link.href = 'mailto:' + addr;
+  link.textContent = addr;
+})();
+
+// ============ SELECTION TRACKING & VALIDATION ============
+var routingDisplay = document.getElementById('routingDisplay');
+var hiddenRouting = document.getElementById('hidden_routing');
+var hiddenNotes = document.getElementById('hidden_notes');
+var notesField = document.getElementById('notes');
+var submitBtn = document.getElementById('submitBtn');
+var validationBanner = document.getElementById('validationBanner');
+var validationMsg = document.getElementById('validationMsg');
+var subjectField = document.getElementById('subject_field');
+var traveler1Field = document.getElementById('traveler_1');
+var traveler2Field = document.getElementById('traveler_2');
+
+function getSelectedRouting() {
+  var radios = document.querySelectorAll('input[name="routing"]:checked');
+  return radios.length > 0 ? radios[0].value : null;
+}
+
+function updateSelections() {
+  var routing = getSelectedRouting();
+
+  if (routing) {
+    routingDisplay.textContent = routing;
+    routingDisplay.classList.remove('pending');
+    hiddenRouting.value = routing;
+    submitBtn.disabled = false;
+    validationBanner.classList.remove('show');
+  } else {
+    routingDisplay.textContent = 'Routing — not yet selected';
+    routingDisplay.classList.add('pending');
+    hiddenRouting.value = '';
+    submitBtn.disabled = true;
+  }
+}
+
+// Wire up routing radios
+var routingRadios = document.querySelectorAll('input[name="routing"]');
+for (var i = 0; i < routingRadios.length; i++) {
+  routingRadios[i].addEventListener('change', function() { setTimeout(updateSelections, 0); });
+}
+
+// ============ FORM SUBMIT ============
+document.getElementById('tripForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  var routing = getSelectedRouting();
+  if (!routing) {
+    validationMsg.textContent = 'Please select a routing above before submitting.';
+    validationBanner.classList.add('show');
+    validationBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  // Stamp subject line with traveler names so Andrea can see at a glance
+  var t1 = (traveler1Field.value || '').trim();
+  var t2 = (traveler2Field.value || '').trim();
+  if (t1 && t2) {
+    subjectField.value = 'Mac Haik Italy — Pair: ' + t1 + ' + ' + t2 + ' [FOR ANDREA]';
+  }
+
+  hiddenNotes.value = notesField.value;
+  var form = e.target;
+  var data = new FormData(form);
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: data
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(json) {
+    if (json.success) {
+      form.parentElement.style.display = 'none';
+      document.getElementById('thanksMsg').classList.add('show');
+      window.scrollTo({ top: document.getElementById('thanksMsg').offsetTop - 80, behavior: 'smooth' });
+    } else {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit our pair's selection";
+      alert('Something went wrong. Please email Andrea directly or call (409) 789-3579.');
+    }
+  })
+  .catch(function() {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit our pair's selection";
+    alert('Something went wrong. Please email Andrea directly or call (409) 789-3579.');
+  });
+});
+</script>
+
+</body>
+</html>
