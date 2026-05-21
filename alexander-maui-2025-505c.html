@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maui Coffee Experiences — Alexander Family | July 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #75AFB1;
+    --teal-dark: #4F8A8C;
+    --pale-teal: #C4E4E1;
+    --gold: #DAC396;
+    --gold-dark: #B89E6A;
+    --cream: #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper: #FBF9F4;
+    --paper-pure: #FFFFFF;
+    --text-primary: #3D3D3D;
+    --text-secondary: #606060;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--teal-dark);
+    color: var(--cream-light);
+    padding: 56px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 40px,
+      rgba(255,255,255,0.025) 40px, rgba(255,255,255,0.025) 41px
+    );
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 6vw, 46px);
+    font-weight: 600;
+    color: var(--paper-pure);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: var(--pale-teal);
+    font-weight: 300;
+    max-width: 520px;
+    margin: 0 auto 20px;
+  }
+  .hero-details {
+    display: inline-flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-top: 4px;
+  }
+  .hero-detail::before { content: '◆'; font-size: 8px; color: var(--gold); margin-right: 6px; }
+
+  /* INTRO STRIP */
+  .intro-strip {
+    background: var(--cream-light);
+    border-bottom: 1px solid var(--cream);
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .intro-strip p {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+  .intro-strip strong { color: var(--teal-dark); font-weight: 600; }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 6px;
+  }
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 20px;
+  }
+
+  /* DECISION GUIDE */
+  .guide-section {
+    padding: 48px 24px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .guide-card {
+    background: var(--paper-pure);
+    border: 1px solid var(--pale-teal);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .guide-card-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .guide-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* TOUR CARDS */
+  .tours-section {
+    background: var(--cream-light);
+    padding: 48px 24px;
+  }
+  .tours-inner { max-width: 800px; margin: 0 auto; }
+
+  .tour-card {
+    background: var(--paper-pure);
+    border: 1px solid #ddd7c8;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .tour-card:last-child { margin-bottom: 0; }
+
+  /* HERO IMAGE */
+  .tour-hero-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+  }
+  .tour-img-wrap { position: relative; }
+
+  .tour-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+  .tour-badge.gold { background: var(--gold-dark); }
+  .tour-badge.hold { background: #8a8278; }
+
+  /* PHOTO STRIP */
+  .photo-strip {
+    display: grid;
+    gap: 3px;
+    background: var(--paper-pure);
+  }
+  .photo-strip.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .photo-strip.cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+  .photo-strip img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s;
+  }
+  .photo-strip img:hover { opacity: 0.9; }
+
+  /* STRIP DIVIDER */
+  .strip-divider {
+    height: 3px;
+    background: var(--cream-light);
+  }
+
+  /* TOUR BODY */
+  .tour-body { padding: 24px 24px 20px; }
+
+  .tour-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .tour-tag {
+    background: var(--cream-light);
+    border: 1px solid var(--cream);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+  .tour-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+  .tour-location {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--gold-dark);
+    margin-bottom: 14px;
+  }
+  .tour-desc {
+    font-size: 15px;
+    color: var(--text-primary);
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+
+  /* HIGHLIGHTS */
+  .highlights {
+    background: var(--cream-light);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+  }
+  .highlights-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 10px;
+  }
+  .highlights ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .highlights li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .highlights li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-size: 12px;
+    top: 1px;
+  }
+
+  /* FIT PILLS */
+  .fit-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .fit-pill {
+    background: var(--pale-teal);
+    color: var(--teal-dark);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .fit-pill.warm { background: #F0E6CA; color: var(--gold-dark); }
+
+  /* PRICING */
+  .pricing-bar {
+    border-top: 1px solid var(--cream);
+    padding-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .pricing-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--teal-dark);
+  }
+  .pricing-note { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+  .pricing-breakdown { font-size: 12px; color: var(--text-secondary); text-align: right; }
+
+  .book-link {
+    display: inline-block;
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+  .book-link.secondary {
+    background: transparent;
+    color: var(--teal-dark);
+    border: 1.5px solid var(--teal-dark);
+  }
+
+  /* HOLD NOTE */
+  .hold-note {
+    background: #f6f2ea;
+    border: 1px dashed var(--gold-dark);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+  .hold-note strong { color: var(--gold-dark); }
+
+  /* COMPARE TABLE */
+  .compare-section { padding: 48px 24px; max-width: 800px; margin: 0 auto; }
+  .compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .compare-table th {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    font-weight: 600;
+    padding: 12px 14px;
+    text-align: left;
+  }
+  .compare-table th:first-child { border-radius: 8px 0 0 0; }
+  .compare-table th:last-child { border-radius: 0 8px 0 0; }
+  .compare-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--cream);
+    vertical-align: top;
+    color: var(--text-secondary);
+  }
+  .compare-table tr:nth-child(even) td { background: var(--cream-light); }
+  .compare-table td:first-child { font-weight: 600; color: var(--text-primary); }
+  .check { color: var(--teal-dark); font-weight: 700; }
+  .dash { color: #bbb; }
+
+  /* FOOTER */
+  footer {
+    background: var(--teal-dark);
+    color: var(--pale-teal);
+    padding: 36px 24px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--gold);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+  }
+  .footer-agent {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--paper-pure);
+    margin-bottom: 8px;
+  }
+  .footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+  .footer-contact a { color: var(--pale-teal); text-decoration: none; font-size: 14px; font-weight: 500; }
+  .footer-legal {
+    font-size: 12px;
+    color: rgba(196,228,225,0.65);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 540px) {
+    .hero { padding: 40px 16px 36px; }
+    .guide-grid { grid-template-columns: 1fr; }
+    .pricing-bar { flex-direction: column; align-items: flex-start; }
+    .pricing-breakdown { text-align: left; }
+    .tour-body { padding: 18px 16px 16px; }
+    .compare-section, .guide-section, .tours-section { padding: 36px 16px; }
+    .book-link { width: 100%; text-align: center; }
+    .hero-details { flex-direction: column; gap: 8px; }
+    .photo-strip img { height: 90px; }
+    .tour-hero-img { height: 190px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">A curated experience guide for</div>
+  <h1>The Alexander Family</h1>
+  <p class="hero-sub">Maui's Upcountry coffee farms — four experiences, one family, a trip worth remembering.</p>
+  <div class="hero-details">
+    <span class="hero-detail">Maui, Hawaiʻi</span>
+    <span class="hero-detail">July 15–22, 2025</span>
+    <span class="hero-detail">Party of 6</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="intro-strip">
+  <p>Maui's Upcountry grows some of the most interesting coffee in the Pacific — <strong>not because the marketing says so, but because the elevation, volcanic soil, and trade winds actually produce something distinct.</strong> The four options below range from a morning brunch on a working farm to a private two-hour deep-dive into chocolate and coffee science. Read through what each offers and think about what a "great experience" looks like for your family — then let Andrea know which direction feels right.</p>
+</div>
+
+<!-- DECISION GUIDE -->
+<div class="guide-section">
+  <div class="section-label">Before you decide</div>
+  <div class="section-heading">What kind of experience are you after?</div>
+  <div class="guide-grid">
+    <div class="guide-card">
+      <div class="guide-card-label">If you want a meal included</div>
+      <p>O'o Farm is the move — the farm-to-table brunch or lunch is the centerpiece, coffee is the lens. You're eating well while learning.</p>
+    </div>
+    <div class="guide-card">
+      <div class="guide-card-label">If you want pure coffee focus</div>
+      <p>Shim Farm (when available) is the most hands-on, unscripted coffee experience. Seed to roasted bean, no tourists, no agenda.</p>
+    </div>
+    <div class="guide-card">
+      <div class="guide-card-label">If you want chocolate too</div>
+      <p>Maui Chocolate &amp; Coffee Tours combines both — great for families with varying interests. Rare chocolates from 10+ countries plus 100% Maui coffee.</p>
+    </div>
+    <div class="guide-card">
+      <div class="guide-card-label">If you want a longer morning</div>
+      <p>O'o Farm runs 3 hours with a full sit-down meal. Maui Chocolate &amp; Coffee is 2 hours. Shim Farm is relaxed and self-paced.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TOURS -->
+<div class="tours-section">
+  <div class="tours-inner">
+    <div class="section-label" style="margin-bottom:6px;">The options</div>
+    <div class="section-heading">Four ways to spend a morning in Upcountry Maui</div>
+
+    <!-- ========== OPTION 1: O'o Farm Coffee & Brunch ========== -->
+    <div class="tour-card">
+      <div class="tour-img-wrap">
+        <img class="tour-hero-img"
+          src="https://images.squarespace-cdn.com/content/v1/639bac947c4ecd102b647456/b43cd648-5947-41e1-9dd0-0c63e3bb3e29/O%27O+Farms-+RR+ArcherShoots-77.jpg"
+          alt="O'o Farm coffee orchard tour Upcountry Maui">
+        <span class="tour-badge">Option 1</span>
+      </div>
+
+      <div class="strip-divider"></div>
+      <div class="photo-strip cols-3">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/639bac947c4ecd102b647456/a73699af-b8be-4154-ac04-c53a791ef91a/O%27O+Farms-+RR+ArcherShoots-61.jpg"
+          alt="O'o Farm landscape Haleakala slopes">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/639bac947c4ecd102b647456/b7daeb5c-3f00-4b04-a516-ce643874fd82/oo+csa+box-4.jpeg"
+          alt="O'o Farm harvest produce box">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/639bac947c4ecd102b647456/ee0c1915-b143-4c45-ac56-ec29b944898f/oo+square+for+web-34.JPG"
+          alt="O'o Farm coffee and garden">
+      </div>
+
+      <div class="tour-body">
+        <div class="tour-meta">
+          <span class="tour-tag">3 hours</span>
+          <span class="tour-tag">Mon–Fri · 8:30 am</span>
+          <span class="tour-tag">Brunch included</span>
+          <span class="tour-tag">Upcountry Kula</span>
+        </div>
+        <div class="tour-name">O'o Farm — Seed-to-Cup Coffee &amp; Brunch</div>
+        <div class="tour-location">651 Waipoli Road, Kula · Slopes of Haleakalā</div>
+        <p class="tour-desc">
+          The tour starts before the farm walk — with French press coffees and house-made coffee-cherry chocolate truffles while a guide explains the history of the farm and how coffee moves from cherry to cup. Then a walk through lush coffee orchards before the main event: a family-style farm-to-table brunch from ingredients harvested that morning. The menu rotates weekly but typically includes a seasonal pastry, garden frittata with Maui Nui venison, roasted vegetables, and finishes with a pour-over coffee and native māmaki tisane. Vegetarian, vegan, and gluten-free accommodated with advance notice.
+        </p>
+        <div class="highlights">
+          <div class="highlights-label">What you'll actually do</div>
+          <ul>
+            <li>French press tasting + coffee-cherry chocolate truffles on arrival</li>
+            <li>Guided walk through coffee orchards — cherry to cup explained</li>
+            <li>Roaster tour (shown, not always running daily)</li>
+            <li>Family-style farm-to-table brunch with pour-over coffee pairing</li>
+            <li>Native māmaki tisane to close</li>
+          </ul>
+        </div>
+        <div class="fit-row">
+          <span class="fit-pill">Great for food lovers</span>
+          <span class="fit-pill">All ages comfortable</span>
+          <span class="fit-pill warm">Vegetarian / GF friendly</span>
+          <span class="fit-pill">Small group feel</span>
+        </div>
+        <div class="pricing-bar">
+          <div>
+            <div class="pricing-main">~$834 total</div>
+            <div class="pricing-note">Approx. $139/adult × 6 · confirmed at booking</div>
+          </div>
+          <div class="pricing-breakdown">
+            Children 5–12 are $69.50<br>
+            Infants free · BYOB welcome
+          </div>
+          <a href="https://bookeo.com/oofarm?type=41571REYEJM178C780353C" target="_blank" class="book-link">View &amp; Book →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== OPTION 2: O'o Farm Gourmet Lunch ========== -->
+    <div class="tour-card">
+      <div class="tour-img-wrap">
+        <img class="tour-hero-img"
+          src="https://images.squarespace-cdn.com/content/v1/639bac947c4ecd102b647456/6128c657-0bff-4013-811f-f70a2fc87341/O%27oFarm_070623-05.jpg"
+          alt="O'o Farm farm-to-table lunch Maui">
+        <span class="tour-badge gold">Option 2</span>
+      </div>
+
+      <div class="strip-divider"></div>
+      <div class="photo-strip cols-3">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/639bac947c4ecd102b647456/4e25e8e0-7278-49ac-876d-a1a1534da068/guests+dining.jpg"
+          alt="Guests dining at O'o Farm">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/639bac947c4ecd102b647456/b7cf5243-c258-47e7-bdc1-68135acf3e3e/oo+web+curved+field+view.JPG"
+          alt="O'o Farm curved field panoramic view">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/639bac947c4ecd102b647456/d9d959cb-0612-4fc0-8339-192d589197a2/oo+web+upper+field.JPG"
+          alt="O'o Farm upper field Upcountry Maui">
+      </div>
+
+      <div class="tour-body">
+        <div class="tour-meta">
+          <span class="tour-tag">3 hours</span>
+          <span class="tour-tag">Mon–Fri · 10:30 am</span>
+          <span class="tour-tag">4-course lunch</span>
+          <span class="tour-tag">Upcountry Kula</span>
+        </div>
+        <div class="tour-name">O'o Farm — Gourmet Farm-to-Table Lunch</div>
+        <div class="tour-location">651 Waipoli Road, Kula · Slopes of Haleakalā</div>
+        <p class="tour-desc">
+          A longer, more elaborate version of the O'o Farm experience that swaps the morning coffee focus for a four-course family-style lunch. The walk covers vegetable fields, edible flowers, and fruit orchards with a regenerative farming lens before the meal — sourdough focaccia and salad, fresh fish with roasted vegetables, seasoned chicken with seasonal rice, and dessert with coffee. The menu changes weekly based on what's in season. If your family is more interested in a farm-to-table lunch experience and less fixated on the coffee-specific education, this is the better fit.
+        </p>
+        <div class="highlights">
+          <div class="highlights-label">What you'll actually do</div>
+          <ul>
+            <li>Guided walk through vegetable fields, edible flowers, and fruit orchards</li>
+            <li>Learn about regenerative farming and composting practices</li>
+            <li>Panoramic island views during the walk</li>
+            <li>Four-course family-style lunch with sustainably sourced proteins</li>
+            <li>Coffee served at the close of the meal</li>
+          </ul>
+        </div>
+        <div class="fit-row">
+          <span class="fit-pill">Best for food-first families</span>
+          <span class="fit-pill">Afternoon schedule</span>
+          <span class="fit-pill warm">Vegetarian / GF friendly</span>
+          <span class="fit-pill">Less coffee-focused</span>
+        </div>
+        <div class="pricing-bar">
+          <div>
+            <div class="pricing-main">~$930 total</div>
+            <div class="pricing-note">Approx. $155/adult × 6 · confirmed at booking</div>
+          </div>
+          <div class="pricing-breakdown">
+            Children 5–12 are $77.50<br>
+            Infants free · BYOB welcome
+          </div>
+          <a href="https://bookeo.com/oofarm?type=41571UNLTTT17286717998" target="_blank" class="book-link">View &amp; Book →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== OPTION 3: Maui Chocolate & Coffee ========== -->
+    <div class="tour-card">
+      <div class="tour-img-wrap">
+        <img class="tour-hero-img"
+          src="https://mauichocolatecoffeetours.com/wp-content/uploads/sites/8155/2025/12/MCP_9253.jpg"
+          alt="Maui Chocolate and Coffee Tours cacao tasting">
+        <span class="tour-badge">Option 3</span>
+      </div>
+
+      <div class="strip-divider"></div>
+      <div class="photo-strip cols-3">
+        <img
+          src="https://mauichocolatecoffeetours.com/wp-content/uploads/sites/8155/2025/12/MCP_9282.jpg"
+          alt="Coffee beans on branch Kupa'a Farm Maui">
+        <img
+          src="https://mauichocolatecoffeetours.com/wp-content/uploads/sites/8155/2025/12/MCP_9847.jpg"
+          alt="Pouring ceremonial cacao drink Maui Chocolate Tours">
+        <img
+          src="https://mauichocolatecoffeetours.com/wp-content/uploads/sites/8155/2025/12/MCP_9693.jpg"
+          alt="Tasting cacao pod seeds Maui farm tour">
+      </div>
+
+      <div class="tour-body">
+        <div class="tour-meta">
+          <span class="tour-tag">2 hours</span>
+          <span class="tour-tag">Private group</span>
+          <span class="tour-tag">Chocolate + Coffee</span>
+          <span class="tour-tag">Kula · Kupa'a Farm</span>
+        </div>
+        <div class="tour-name">Maui Chocolate &amp; Coffee Tours — Chocolate and Coffee Adventure</div>
+        <div class="tour-location">1886 Na'alae Road, Kula · Kupa'a Organic Farm</div>
+        <p class="tour-desc">
+          This one is entirely private — just the Alexander family, your guide, and an organic cacao and coffee orchard on the slopes of Haleakalā. The experience draws a direct parallel between cacao and coffee: how both begin as fruit, both require a lengthy transformation, and both produce something the rest of the world is obsessed with. You'll taste cacao pulp straight from the pod, move through dried beans and roasted nibs, sample 6–7 chocolates from different growing regions around the world, and sip 100% Maui-grown coffee. There's also a hands-on ceremonial cacao drink component and — bonus — farm animals (goats, sheep, a deer, and birds) roaming the property. Bi-coastal views of Maui from the hilltop.
+        </p>
+        <div class="highlights">
+          <div class="highlights-label">What you'll actually do</div>
+          <ul>
+            <li>Private guided walk through cacao grove and coffee orchard (just your party)</li>
+            <li>Cacao tasting: fresh pulp → dried beans → roasted nibs</li>
+            <li>Global chocolate tasting — 6–7 varieties including Hawaiian chocolate</li>
+            <li>Hand-craft a traditional ceremonial cacao drink</li>
+            <li>Coffee tasting — 100% Maui-grown, low acid with tropical fruit notes</li>
+            <li>Meet the farm animals · bi-coastal views of Maui</li>
+          </ul>
+        </div>
+        <div class="fit-row">
+          <span class="fit-pill">Chocolate + coffee fans</span>
+          <span class="fit-pill">Fully private — your group only</span>
+          <span class="fit-pill warm">Fun for all ages</span>
+          <span class="fit-pill">Hands-on activities</span>
+        </div>
+        <div class="pricing-bar">
+          <div>
+            <div class="pricing-main">~$750 total</div>
+            <div class="pricing-note">$125/person × 6 · confirmed at booking</div>
+          </div>
+          <div class="pricing-breakdown">
+            Groups of 4–12 at $125/person<br>
+            Most affordable per-head option
+          </div>
+          <a href="https://fareharbor.com/embeds/book/mauichocolatecoffeetours/items/calendar/?ref=https%3A%2F%2Fmauichocolatecoffeetours.com" target="_blank" class="book-link">View &amp; Book →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== OPTION 4: Shim Farm (On Hold) ========== -->
+    <div class="tour-card">
+      <div class="tour-img-wrap">
+        <img class="tour-hero-img"
+          src="http://www.shimfarmtour.com/uploads/6/0/6/4/6064846/a2c56935-7dbb-4fa4-8144-fb8dc17acac6_orig.jpg"
+          alt="Shim Farm Kula Maui upcountry view"
+          style="filter: grayscale(20%);"
+          onerror="this.style.background='#E9DEC0';this.style.minHeight='180px';this.style.display='block';">
+        <span class="tour-badge hold">Option 4 · Pending Confirmation</span>
+      </div>
+
+      <div class="strip-divider"></div>
+      <div class="photo-strip cols-2">
+        <img
+          src="http://www.shimfarmtour.com/uploads/6/0/6/4/6064846/published/img-1305.jpg"
+          alt="Horses and pasture at Shim Farm Kula Maui"
+          style="filter: grayscale(15%);"
+          onerror="this.style.display='none';">
+        <img
+          src="http://www.shimfarmtour.com/uploads/6/0/6/4/6064846/published/img-6842.jpg"
+          alt="Coffee processing equipment Shim Farm Maui"
+          style="filter: grayscale(15%);"
+          onerror="this.style.display='none';">
+      </div>
+
+      <div class="tour-body">
+        <div class="tour-meta">
+          <span class="tour-tag">Self-paced</span>
+          <span class="tour-tag">By appointment</span>
+          <span class="tour-tag">One-man farm</span>
+          <span class="tour-tag">Kula · 3,300 ft</span>
+        </div>
+        <div class="tour-name">Shim Farm — Coffee Farm Tour with Casey Shim</div>
+        <div class="tour-location">Kula's Upcountry Chinatown · 3,300–3,500 ft above sea level</div>
+
+        <div class="hold-note">
+          <strong>Note from Andrea:</strong> This is one of Maui's most personal farm experiences and the guest reviews are exceptional — multiple visitors called it the highlight of their trip. The season runs February through August, so July falls right in range. I'm confirming current availability before recommending it as bookable. If it's open, it's worth serious consideration.
+        </div>
+
+        <p class="tour-desc">
+          Casey Shim is the third generation of his family to work this land — his grandparents were Chinese immigrants who settled in Kula's Chinatown area decades ago. He runs the entire farm solo: growing coffee, protea flowers, and dozens of botanical plants on a property perched with a million-dollar view of the island. There's no script here. Casey walks guests through the complete coffee process — picking, pulping, fermenting, rinsing, drying, and roasting — with as much time as the conversation needs. The farm also has horses in the pasture, the original family home still standing, and a section of Hawaiian plants.
+        </p>
+        <div class="highlights">
+          <div class="highlights-label">What you'll actually do</div>
+          <ul>
+            <li>Full coffee process: cherry → pulping → fermenting → drying → roasting</li>
+            <li>See the pulper, huller, drying trays, and roaster up close</li>
+            <li>Learn the farm's family history spanning three generations</li>
+            <li>Aromatherapy garden, Hawaiian plants section, fruit trees</li>
+            <li>Meet the horses · see the original family farmhouse</li>
+            <li>No rush, no schedule — deeply personal and unscripted</li>
+          </ul>
+        </div>
+        <div class="fit-row">
+          <span class="fit-pill">Deepest coffee knowledge</span>
+          <span class="fit-pill">Intimate and personal</span>
+          <span class="fit-pill warm">Best views on the island</span>
+          <span class="fit-pill">History + storytelling</span>
+        </div>
+        <div class="pricing-bar">
+          <div>
+            <div class="pricing-main">Pricing TBC</div>
+            <div class="pricing-note">By appointment · availability pending confirmation</div>
+          </div>
+          <a href="http://www.shimfarmtour.com" target="_blank" class="book-link secondary">Visit Shim Farm →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<div class="compare-section">
+  <div class="section-label">Side by side</div>
+  <div class="section-heading">Quick comparison</div>
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Experience</th>
+          <th>Duration</th>
+          <th>Meal?</th>
+          <th>Private?</th>
+          <th>Est. Total (6)</th>
+          <th>Coffee Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>O'o Farm — Coffee &amp; Brunch</td>
+          <td>3 hrs</td>
+          <td><span class="check">✓ Brunch</span></td>
+          <td><span class="dash">— Small group</span></td>
+          <td>~$834</td>
+          <td>Seed-to-cup + tasting</td>
+        </tr>
+        <tr>
+          <td>O'o Farm — Gourmet Lunch</td>
+          <td>3 hrs</td>
+          <td><span class="check">✓ 4-Course</span></td>
+          <td><span class="dash">— Small group</span></td>
+          <td>~$930</td>
+          <td>Less coffee-focused</td>
+        </tr>
+        <tr>
+          <td>Maui Chocolate &amp; Coffee</td>
+          <td>2 hrs</td>
+          <td><span class="dash">— Tastings only</span></td>
+          <td><span class="check">✓ 100% private</span></td>
+          <td>~$750</td>
+          <td>Coffee + chocolate</td>
+        </tr>
+        <tr>
+          <td>Shim Farm *(pending)</td>
+          <td>Self-paced</td>
+          <td><span class="dash">—</span></td>
+          <td><span class="check">✓ By appt only</span></td>
+          <td>TBC</td>
+          <td>Deepest coffee dive</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12px; color:var(--text-secondary); margin-top:10px;">* All pricing is approximate and subject to confirmation. Shim Farm availability to be verified before booking.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Point Me to Paradise Travel</div>
+  <div class="footer-agent">Andrea Gunter</div>
+  <div class="footer-contact">
+    <a href="tel:4097893579">(409) 789-3579</a>
+    <a id="emailLink" href="#">Loading…</a>
+  </div>
+  <div class="footer-legal">
+    Prices and availability are subject to change until time of booking. Individual tours in your quote are priced at publicly available rates. This guide is for informational purposes to help the Alexander family select the experience that best fits — Andrea will confirm availability and finalize details before any booking is made.
+  </div>
+</footer>
+
+<script>
+  (function() {
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var el = document.getElementById('emailLink');
+    if (el) { el.href = 'mailto:' + addr; el.textContent = addr; }
+  })();
+</script>
+
+</body>
+</html>
