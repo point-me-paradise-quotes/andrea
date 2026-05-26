@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aarin & Addison Wentzel — NYC 2026 | Point Me to Paradise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #75AFB1;
+    --teal-dark: #4F8A8C;
+    --pale-teal: #C4E4E1;
+    --gold: #DAC396;
+    --gold-dark: #B89E6A;
+    --cream: #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper: #FBF9F4;
+    --paper-pure: #FFFFFF;
+    --text-primary: #3D3D3D;
+    --text-secondary: #606060;
+    --font-head: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-italic: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--text-primary);
+    background: var(--paper);
+    line-height: 1.65;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem 2rem 2.5rem;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.62) 100%),
+      url('https://ik.imgkit.net/3vlqs5axxjf/external/http://images.ntmllc.com/v4/hotel/U59/U59933/U59933_EXT_Z3A7D3.jpg?tr=w-1200%2Cfo-auto') center/cover no-repeat;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pale-teal);
+    margin-bottom: 0.6rem;
+  }
+  .hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .hero-sub {
+    font-family: var(--font-italic);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--cream);
+    margin-bottom: 1.25rem;
+  }
+  .hero-dates {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    letter-spacing: 0.05em;
+  }
+  .pmtp-logo-bar {
+    position: absolute;
+    top: 1.25rem;
+    left: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pmtp-wordmark {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.04em;
+    opacity: 0.92;
+  }
+
+  /* COMMITMENT STRIP */
+  .commitment-strip {
+    background: var(--teal-dark);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-size: 0.93rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .commitment-strip strong { font-weight: 600; }
+
+  /* MAIN LAYOUT */
+  .main-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.25rem 4rem;
+  }
+
+  /* SECTION HEADERS */
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: var(--font-head);
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 600;
+    color: var(--teal-dark);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0.75rem 0 1.5rem;
+  }
+
+  /* TRIP OVERVIEW */
+  .overview-section {
+    background: var(--paper-pure);
+    border-radius: 12px;
+    border: 1px solid var(--pale-teal);
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .overview-item {
+    text-align: center;
+    padding: 1rem;
+    background: var(--cream-light);
+    border-radius: 8px;
+  }
+  .overview-item .oi-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 0.35rem;
+  }
+  .overview-item .oi-value {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+  }
+
+  /* DESTINATION INTRO */
+  .destination-section {
+    padding: 2.5rem 0 1rem;
+  }
+  .destination-body {
+    font-size: 0.97rem;
+    color: var(--text-primary);
+    line-height: 1.75;
+    max-width: 720px;
+  }
+  .destination-body p + p { margin-top: 1rem; }
+
+  /* HOTEL OPTION CARD */
+  .hotel-section {
+    padding: 2rem 0;
+  }
+  .hotel-card {
+    background: var(--paper-pure);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--pale-teal);
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 12px rgba(79,138,140,0.07);
+  }
+  .hotel-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+  }
+  .hotel-body {
+    padding: 1.75rem;
+  }
+  .hotel-name {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 0.25rem;
+  }
+  .hotel-location {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.25rem;
+  }
+  .hotel-description {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+  .hotel-description p + p { margin-top: 0.85rem; }
+
+  /* ROOM OPTION */
+  .room-option {
+    background: var(--cream-light);
+    border-radius: 10px;
+    border: 2px solid var(--pale-teal);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .room-option:has(input:checked) {
+    border-color: var(--teal-dark);
+    background: #EEF7F7;
+  }
+  .room-option-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+  .room-option-top input[type="radio"] {
+    margin-top: 3px;
+    accent-color: var(--teal-dark);
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  .room-option-info { flex: 1; }
+  .room-option-name {
+    font-family: var(--font-head);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 0.25rem;
+  }
+  .room-option-detail {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .room-option-price {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .room-option-price .price-main {
+    font-family: var(--font-head);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--teal-dark);
+    display: block;
+  }
+  .room-option-price .price-per {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+  }
+  .room-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.85rem;
+    margin-left: 1.6rem;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 0.73rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 2rem;
+    letter-spacing: 0.03em;
+  }
+  .badge-teal { background: var(--pale-teal); color: #2B6062; }
+  .badge-gold { background: var(--cream); color: #7A6030; }
+
+  /* PAYMENT SCHEDULE */
+  .payment-schedule {
+    background: var(--paper-pure);
+    border-radius: 10px;
+    border: 1px solid var(--cream);
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .payment-schedule h4 {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 0.75rem;
+  }
+  .pay-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--cream);
+  }
+  .pay-row:last-child { border-bottom: none; }
+  .pay-row .pay-label { color: var(--text-secondary); }
+  .pay-row .pay-amount { font-weight: 600; color: var(--text-primary); }
+
+  /* TRANSFERS */
+  .transfers-section {
+    padding: 2rem 0 1rem;
+  }
+  .transfers-card {
+    background: var(--paper-pure);
+    border-radius: 10px;
+    border: 1px solid var(--pale-teal);
+    padding: 1.5rem;
+  }
+  .transfers-card p {
+    font-size: 0.93rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+  }
+  .transfers-card p + p { margin-top: 0.75rem; }
+
+  /* NEIGHBORHOOD */
+  .neighborhood-section {
+    padding: 2rem 0;
+  }
+  .neighborhood-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+  .nb-item {
+    background: var(--paper-pure);
+    border: 1px solid var(--cream);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+  .nb-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .nb-text { font-size: 0.875rem; color: var(--text-primary); line-height: 1.45; }
+  .nb-dist { display: block; font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.15rem; }
+
+  /* STICKY TOTAL */
+  .sticky-total {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--teal-dark);
+    color: #fff;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.12);
+  }
+  .sticky-total-label { font-size: 0.85rem; font-weight: 500; opacity: 0.85; }
+  .sticky-total-amount {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .sticky-total-note { font-size: 0.72rem; opacity: 0.7; margin-top: 0.1rem; }
+  .sticky-right { text-align: right; }
+
+  /* PRICING PROMISE */
+  .pricing-promise {
+    background: var(--cream-light);
+    border-left: 3px solid var(--gold-dark);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+  .pricing-disclaimer {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+
+  /* WHAT COMES NEXT */
+  .next-section {
+    background: var(--teal-dark);
+    color: #FFFFFF;
+    border-radius: 14px;
+    padding: 2rem 2rem 1.75rem;
+    margin: 3rem 0 2rem;
+  }
+  .next-section p {
+    font-size: 0.97rem;
+    line-height: 1.7;
+    opacity: 0.92;
+  }
+  .next-section .next-title {
+    font-family: var(--font-head);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--pale-teal);
+    margin-bottom: 0.75rem;
+  }
+
+  /* FORM */
+  .form-section {
+    background: var(--paper-pure);
+    border-radius: 14px;
+    border: 1px solid var(--pale-teal);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .form-section h3 {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 0.35rem;
+  }
+  .form-section .form-sub {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+  .form-row { margin-bottom: 1rem; }
+  .form-row label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+  }
+  .form-row input,
+  .form-row textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1.5px solid var(--pale-teal);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--text-primary);
+    background: var(--paper);
+    transition: border-color 0.2s;
+  }
+  .form-row input:focus,
+  .form-row textarea:focus {
+    outline: none;
+    border-color: var(--teal-dark);
+    background: #fff;
+  }
+  .form-row textarea { resize: vertical; min-height: 100px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: var(--teal-dark);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    min-height: 52px;
+    letter-spacing: 0.04em;
+    margin-top: 1.25rem;
+  }
+  .submit-btn:hover { background: var(--teal); }
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    color: var(--teal-dark);
+    font-family: var(--font-head);
+    font-size: 1.25rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--teal-dark);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .footer-agent {
+    font-family: var(--font-head);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  .footer-agency {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-bottom: 0.85rem;
+  }
+  .footer-contact {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+  }
+  .footer-contact a {
+    color: var(--pale-teal);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .footer-contact a:hover { text-decoration: underline; }
+  .footer-disclaimer {
+    font-size: 0.72rem;
+    opacity: 0.6;
+    margin-top: 1.25rem;
+    line-height: 1.6;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 540px) {
+    .hero { min-height: 380px; padding: 1.5rem 1.25rem 2rem; }
+    .hero h1 { font-size: 1.8rem; }
+    .form-grid { grid-template-columns: 1fr; }
+    .overview-grid { grid-template-columns: 1fr 1fr; }
+    .neighborhood-grid { grid-template-columns: 1fr; }
+    .room-option-top { flex-direction: column; gap: 0.5rem; }
+    .room-option-price { text-align: left; }
+    .sticky-total { padding: 0.75rem 1rem; }
+    .sticky-total-amount { font-size: 1.25rem; }
+    .main-wrap { padding: 0 1rem 4rem; }
+    .hotel-body { padding: 1.25rem; }
+    .form-section { padding: 1.25rem; }
+    .overview-section { padding: 1.25rem; }
+    .next-section { padding: 1.5rem 1.25rem; }
+  }
+  @media (max-width: 375px) {
+    .overview-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="pmtp-logo-bar">
+    <span class="pmtp-wordmark">Point Me to Paradise Travel</span>
+    <span class="hero-dates">July 8–12, 2026 · 4 Nights</span>
+  </div>
+  <p class="hero-eyebrow">A Mother &amp; Daughter Celebration</p>
+  <h1>Aarin &amp; Addison<br>in New York City</h1>
+  <p class="hero-sub">Four days in one of the world's great walkable cities — shopping, dining, Broadway, and the best of Midtown Manhattan.</p>
+</div>
+
+<!-- COMMITMENT STRIP -->
+<div class="commitment-strip">
+  <strong>We don't book hotels. We build trips.</strong> Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+</div>
+
+<div class="main-wrap">
+
+  <!-- TRIP OVERVIEW -->
+  <div class="overview-section">
+    <p class="section-label">Your Trip at a Glance</p>
+    <div class="overview-grid">
+      <div class="overview-item">
+        <div class="oi-label">Travelers</div>
+        <div class="oi-value">2 Adults</div>
+      </div>
+      <div class="overview-item">
+        <div class="oi-label">Dates</div>
+        <div class="oi-value">Jul 8–12, 2026</div>
+      </div>
+      <div class="overview-item">
+        <div class="oi-label">Nights</div>
+        <div class="oi-value">4 Nights</div>
+      </div>
+      <div class="overview-item">
+        <div class="oi-label">Occasion</div>
+        <div class="oi-value">Grad Trip</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESTINATION INTRO -->
+  <div class="destination-section">
+    <p class="section-label">The Destination</p>
+    <h2 class="section-title">New York City, New York</h2>
+    <div class="divider"></div>
+    <div class="destination-body">
+      <p>Midtown South is the version of Manhattan that rewards the walker. You're in the geography where 5th Avenue, the Empire State Building, Bryant Park, and the single best block of Korean BBQ in the country all exist within a 15-minute radius of each other. The big tourist machinery of Times Square is close enough to visit, far enough to avoid.</p>
+      <p>For a mother-daughter celebration built around shopping and dining, the Bryant Park neighborhood is about as well-positioned as Manhattan gets. Macy's Herald Square is a 5-minute walk. The 5th Avenue corridor — Saks, Bergdorf, the flagships — is a 3-minute walk from the hotel door. Grand Central's dining concourse is 12 minutes on foot. And when you're ready to explore beyond walking distance, the Midtown subway grid is as efficient as New York gets.</p>
+      <p>One specific note worth flagging: the hotel sits at the edge of Koreatown on 32nd Street, which means after an evening of shopping you're steps from some of the city's best late-night Korean BBQ, tteokbokki, and dessert cafés. It's a neighborhood that earns repeat visits.</p>
+    </div>
+    <div style="margin-top: 1.75rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--pale-teal);">
+      <img
+        src="https://ik.imgkit.net/3vlqs5axxjf/external/http://images.ntmllc.com/v4/hotel/U59/U59933/U59933_EXT_Z3A7D3.jpg?tr=w-1200%2Cfo-auto"
+        alt="Executive Hotel Le Soleil New York exterior"
+        style="width: 100%; height: 340px; object-fit: cover; display: block;"
+        loading="lazy"
+      >
+      <div style="padding: 0.65rem 1rem; background: var(--cream-light); font-size: 0.78rem; color: var(--text-secondary); font-style: italic;">
+        Executive Hotel Le Soleil New York — Midtown South, Bryant Park Area
+      </div>
+    </div>
+  </div>
+
+  <!-- NEIGHBORHOOD AT A GLANCE -->
+  <div class="neighborhood-section">
+    <p class="section-label">What's Within Reach on Foot</p>
+    <div class="neighborhood-grid">
+      <div class="nb-item">
+        <div class="nb-dot"></div>
+        <div class="nb-text">5th Avenue Shopping<span class="nb-dist">~3 min walk</span></div>
+      </div>
+      <div class="nb-item">
+        <div class="nb-dot"></div>
+        <div class="nb-text">Macy's Herald Square<span class="nb-dist">~5 min walk</span></div>
+      </div>
+      <div class="nb-item">
+        <div class="nb-dot"></div>
+        <div class="nb-text">Bryant Park<span class="nb-dist">~5 min walk</span></div>
+      </div>
+      <div class="nb-item">
+        <div class="nb-dot"></div>
+        <div class="nb-text">Empire State Building<span class="nb-dist">~5 min walk</span></div>
+      </div>
+      <div class="nb-item">
+        <div class="nb-dot"></div>
+        <div class="nb-text">Koreatown (32nd St.)<span class="nb-dist">~3 min walk</span></div>
+      </div>
+      <div class="nb-item">
+        <div class="nb-dot"></div>
+        <div class="nb-text">Times Square<span class="nb-dist">~12–15 min walk</span></div>
+      </div>
+      <div class="nb-item">
+        <div class="nb-dot"></div>
+        <div class="nb-text">Grand Central Terminal<span class="nb-dist">~12 min walk</span></div>
+      </div>
+      <div class="nb-item">
+        <div class="nb-dot"></div>
+        <div class="nb-text">Rockefeller Center<span class="nb-dist">~15 min walk</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOTEL OPTION -->
+  <div class="hotel-section">
+    <p class="section-label">Your Hotel</p>
+    <h2 class="section-title">Select Your Room</h2>
+    <div class="divider"></div>
+
+    <div class="hotel-card">
+      <img
+        class="hotel-img"
+        src="https://www.lesoleilhotels.com/wp-content/uploads/2023/04/gallery44_f.jpg"
+        alt="Executive Suite interior — Executive Hotel Le Soleil New York"
+        loading="lazy"
+      >
+      <div class="hotel-body">
+        <h3 class="hotel-name">Executive Hotel Le Soleil New York</h3>
+        <div class="hotel-location">Midtown South · Bryant Park Area · New York City</div>
+
+        <div class="hotel-description">
+          <p>Le Soleil sits in one of the quieter pockets of Midtown Manhattan — the streets south of Bryant Park that feel a little less frantic than the blocks closer to Times Square. The property reads boutique rather than convention-block: the rooms are thoughtfully outfitted, the service is attentive without being intrusive, and the soundproofing is serious enough to matter on a Manhattan block.</p>
+          <p>The hotel's location earns its keep specifically for a trip like this one. You're shopping, you're dining, you're probably doing a Broadway show at least one evening — and for all of that, the Bryant Park–Midtown South quadrant is among the most efficient bases in the city. No transfers, no subway calculations for a shopping day. You walk out the door and everything is right there.</p>
+          <p>What is included in the rate: room, free WiFi, complimentary bottled water, coffee and tea setup, and access to the hotel's amenities. Dining and incidental charges are not included — plan on covering meals, tips, and room service separately. The hotel does not have a pool or spa on property.</p>
+        </div>
+
+        <!-- ROOM SELECTION -->
+        <div id="roomOptions">
+          <div class="room-option" onclick="selectRoom(this)">
+            <div class="room-option-top">
+              <input type="radio" name="room" id="room1" value="Executive Suite – 1 Queen Bed with Sofa Bed" data-price="1529.83">
+              <div class="room-option-info">
+                <div class="room-option-name">Executive Suite — Queen Bed + Sofa Bed</div>
+                <div class="room-option-detail">
+                  33 sq m · Sleeps up to 4 · Separate sitting area · Premium blackout drapes · Soundproofed · 43" flat-screen TV<br>
+                  Includes: free WiFi, bottled water, coffee/tea, bathrobes, slippers, designer toiletries, champagne service on request<br>
+                  <em>Room basis: Room only (meals not included)</em>
+                </div>
+              </div>
+              <div class="room-option-price">
+                <span class="price-main">$1,529.83</span>
+                <span class="price-per">4-night total</span>
+              </div>
+            </div>
+            <div class="room-badges">
+              <span class="badge badge-teal">Free WiFi</span>
+              <span class="badge badge-teal">Soundproofed</span>
+              <span class="badge badge-teal">Separate Sitting Area</span>
+              <span class="badge badge-gold">Rated 8.8 / 10 · Excellent</span>
+              <span class="badge badge-gold">132 Guest Reviews</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRICING PROMISE -->
+        <div class="pricing-promise">
+          We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+        </div>
+        <div class="pricing-disclaimer">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+
+        <!-- PAYMENT SCHEDULE -->
+        <div class="payment-schedule">
+          <h4>Payment Schedule</h4>
+          <div class="pay-row">
+            <span class="pay-label">Due by June 29, 2026</span>
+            <span class="pay-amount">$1,425.31</span>
+          </div>
+          <div class="pay-row">
+            <span class="pay-label">Due at Property</span>
+            <span class="pay-amount">$104.52</span>
+          </div>
+          <div class="pay-row" style="border-top: 1.5px solid var(--pale-teal); margin-top: 0.25rem; padding-top: 0.75rem;">
+            <span class="pay-label" style="font-weight: 600; color: var(--text-primary);">4-Night Total</span>
+            <span class="pay-amount" style="color: var(--teal-dark);">$1,529.83</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- TRANSFERS -->
+  <div class="transfers-section">
+    <p class="section-label">Airport Transfers</p>
+    <h2 class="section-title">Getting to the Hotel</h2>
+    <div class="divider"></div>
+    <div class="transfers-card">
+      <p><strong>Recommended airport: LaGuardia (LGA)</strong> — approximately 8 miles from the hotel, with an estimated transfer time of 25–35 minutes depending on traffic.</p>
+      <p>Private car transfers can be arranged and pre-confirmed before you travel — ask about pricing when you connect with Andrea. Taxis and rideshares (Uber/Lyft) are also readily available at LaGuardia arrivals. For a first trip to New York, a pre-booked private transfer is the lower-stress option: a driver holding a sign, a fixed price, no metered guessing. For the return, Uber or a taxi from the hotel door is straightforward.</p>
+    </div>
+  </div>
+
+  <!-- RUNNING TOTAL -->
+  <div style="background: var(--paper-pure); border-radius: 10px; border: 1px solid var(--pale-teal); padding: 1.5rem; margin: 2rem 0;">
+    <p class="section-label" style="margin-bottom: 0.5rem;">Running Total</p>
+    <div style="display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap;">
+      <span style="font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--teal-dark);" id="totalDisplay">Est. $0</span>
+      <span style="font-size: 0.85rem; color: var(--text-secondary);">4 nights · 2 adults</span>
+    </div>
+    <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.5rem; font-style: italic;">
+      Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.
+    </p>
+  </div>
+
+  <!-- WHAT COMES NEXT -->
+  <div class="next-section">
+    <p class="next-title">What comes after this quote</p>
+    <p>A destination guide built for your specific trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="form-section">
+    <h3>Ready to Move Forward?</h3>
+    <p class="form-sub">Fill out the form below and Andrea will follow up to confirm your selection and next steps.</p>
+
+    <div id="formWrap">
+      <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+        <input type="hidden" name="subject" value="Quote Request — Aarin & Addison Wentzel · NYC 2026">
+        <input type="hidden" name="from_name" value="PMTP Quote Form">
+        <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="selected_room" id="hiddenRoom" value="">
+        <input type="hidden" name="estimated_total" id="hiddenTotal" value="">
+
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="clientName">Your Name</label>
+            <input type="text" id="clientName" name="name" placeholder="Aarin or Addison" required>
+          </div>
+          <div class="form-row">
+            <label for="clientEmail">Email Address</label>
+            <input type="email" id="clientEmail" name="email" placeholder="you@email.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="clientPhone">Phone Number</label>
+          <input type="tel" id="clientPhone" name="phone" placeholder="(XXX) XXX-XXXX">
+        </div>
+        <div class="form-row">
+          <label for="questions">Questions or Notes for Andrea</label>
+          <textarea id="questions" name="message" placeholder="Anything you'd like to ask or confirm before booking..."></textarea>
+        </div>
+
+        <div style="font-size: 0.82rem; color: var(--text-secondary); background: var(--cream-light); border-radius: 6px; padding: 0.75rem 1rem; margin-bottom: 0.5rem;">
+          <strong>Your selection summary will be included automatically</strong> — no need to re-type your room choice.
+        </div>
+
+        <button type="submit" class="submit-btn">Send My Selection to Andrea →</button>
+      </form>
+    </div>
+    <div class="form-success" id="formSuccess">
+      ✓ Your request has been sent! Andrea will be in touch shortly.
+    </div>
+  </div>
+
+</div><!-- end main-wrap -->
+
+<!-- STICKY TOTAL -->
+<div class="sticky-total" id="stickyTotal" style="display:none;">
+  <div>
+    <div class="sticky-total-label">Your Estimate</div>
+    <div class="sticky-total-note">Confirmed by advisor before booking</div>
+  </div>
+  <div class="sticky-right">
+    <div class="sticky-total-amount" id="stickyAmount">Est. $0</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-agent">Andrea Gunter</div>
+  <div class="footer-agency">Point Me to Paradise Travel</div>
+  <div class="footer-contact">
+    <a id="emailLink" href="#">Loading...</a>
+    <a href="tel:4097893579">(409) 789-3579</a>
+  </div>
+  <div class="footer-disclaimer">
+    Prices and availability are subject to change until time of booking.<br>
+    Individual hotels, transfers, and tours in your quote are priced at publicly available rates — and in many cases lower than what you'd find on your own. You don't have to worry about overpaying for a piece of your trip. What you're paying for is the rest: the right rooms at the right property, operators we've used for years, the trip app, and a human who answers when something doesn't go to plan.<br><br>
+    This quote was prepared exclusively for Aarin &amp; Addison Wentzel by Point Me to Paradise Travel.
+  </div>
+</footer>
+
+<script>
+  // Email assembly (Cloudflare-safe)
+  (function() {
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var el = document.getElementById('emailLink');
+    el.href = 'mailto:' + addr;
+    el.textContent = addr;
+  })();
+
+  // Room selection
+  function selectRoom(optionEl) {
+    var radio = optionEl.querySelector('input[type="radio"]');
+    radio.checked = true;
+    updateTotal();
+  }
+
+  function updateTotal() {
+    var selected = document.querySelector('input[name="room"]:checked');
+    var totalEl = document.getElementById('totalDisplay');
+    var stickyEl = document.getElementById('stickyTotal');
+    var stickyAmt = document.getElementById('stickyAmount');
+    var hiddenRoom = document.getElementById('hiddenRoom');
+    var hiddenTotal = document.getElementById('hiddenTotal');
+
+    if (selected) {
+      var price = parseFloat(selected.dataset.price);
+      var label = 'Est. $' + price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      totalEl.textContent = label;
+      stickyAmt.textContent = label;
+      stickyEl.style.display = 'flex';
+      hiddenRoom.value = selected.value;
+      hiddenTotal.value = label;
+    } else {
+      totalEl.textContent = 'Est. $0';
+      stickyEl.style.display = 'none';
+      hiddenRoom.value = '';
+      hiddenTotal.value = '';
+    }
+  }
+
+  // Pre-select the single room option on load
+  window.addEventListener('DOMContentLoaded', function() {
+    var radio = document.querySelector('input[name="room"]');
+    if (radio) {
+      radio.checked = true;
+      updateTotal();
+    }
+  });
+
+  // Form submission
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = this;
+    var btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    var data = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(json) {
+      if (json.success) {
+        document.getElementById('formWrap').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'Send My Selection to Andrea →';
+        btn.disabled = false;
+        alert('Something went wrong. Please email Andrea directly.');
+      }
+    })
+    .catch(function() {
+      btn.textContent = 'Send My Selection to Andrea →';
+      btn.disabled = false;
+      alert('Network error. Please email Andrea directly.');
+    });
+  });
+</script>
+</body>
+</html>
