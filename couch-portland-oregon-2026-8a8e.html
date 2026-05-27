@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portland, Oregon — Lindley Couch | Point Me to Paradise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #75AFB1;
+    --teal-dark: #4F8A8C;
+    --pale-teal: #C4E4E1;
+    --gold: #DAC396;
+    --gold-dark: #B89E6A;
+    --cream: #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper: #FBF9F4;
+    --paper-pure: #FFFFFF;
+    --text-primary: #3D3D3D;
+    --text-secondary: #606060;
+    --radius: 10px;
+    --radius-lg: 16px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--text-primary);
+    line-height: 1.65;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-image:
+      linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(40,70,60,0.72) 100%),
+      url('https://res.cloudinary.com/dragonspell/images/w_1440,h_864,c_fill,dpr_auto,fl_progressive:steep,f_auto/w_1440,h_864/v1708458875/www.travelportland.com/mktg-su-20181027-giantpumpkin-halloweentown-12/mktg-su-20181027-giantpumpkin-halloweentown-12.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 2rem 2.5rem;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; width: 100%; }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pale-teal);
+    margin-bottom: 0.75rem;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+  .hero-dates {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--pale-teal);
+    margin-bottom: 1.25rem;
+  }
+  .hero-tagline {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: var(--radius);
+    padding: 0.7rem 1.1rem;
+    color: #fff;
+    font-size: 0.925rem;
+    font-weight: 400;
+    max-width: 560px;
+    line-height: 1.5;
+    backdrop-filter: blur(4px);
+  }
+  .hero-tagline strong { font-weight: 600; }
+
+  /* LAYOUT */
+  .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 1rem; }
+
+  /* PRICING BAR */
+  .pricing-bar {
+    background: var(--teal-dark);
+    color: #fff;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .pricing-bar-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 2rem;
+  }
+  .total-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pale-teal);
+  }
+  .total-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .deposit-note {
+    font-size: 0.85rem;
+    color: var(--pale-teal);
+    font-weight: 400;
+  }
+  .pricing-commitment {
+    flex: 1;
+    min-width: 200px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+    border-left: 1px solid rgba(255,255,255,0.2);
+    padding-left: 1.25rem;
+  }
+
+  /* SECTION STYLES */
+  .section { padding: 2.5rem 0 1rem; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-badge {
+    background: var(--teal);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+  }
+  .day-header {
+    background: var(--cream);
+    border-left: 4px solid var(--teal);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 2rem 0 1.25rem;
+  }
+  .day-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+  }
+  .day-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  /* COMPONENT CARD */
+  .component-card {
+    background: var(--paper-pure);
+    border: 1px solid #ddd;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  .component-header {
+    background: var(--cream-light);
+    padding: 1rem 1.25rem 0.75rem;
+    border-bottom: 1px solid #e8e2d4;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .component-type-pill {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    background: var(--teal);
+    color: #fff;
+    padding: 0.15rem 0.55rem;
+    border-radius: 50px;
+  }
+  .component-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+  }
+  .component-body { padding: 1.25rem; }
+
+  /* OPTIONS (radio) */
+  .option-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 1.1rem;
+    border: 1.5px solid #e0d8c8;
+    border-radius: var(--radius);
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    transition: border-color 0.18s, background 0.18s;
+    background: var(--paper);
+  }
+  .option-label:hover { border-color: var(--teal); background: rgba(117,175,177,0.06); }
+  .option-label input[type="radio"] {
+    margin-top: 3px;
+    flex-shrink: 0;
+    accent-color: var(--teal-dark);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+  .option-label.selected { border-color: var(--teal-dark); background: rgba(79,138,140,0.07); }
+  .option-content { flex: 1; }
+  .option-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+  }
+  .option-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .option-price-tag {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--teal-dark);
+    white-space: nowrap;
+    padding-top: 2px;
+    min-width: 60px;
+    text-align: right;
+  }
+  .diff-pos { color: #b85c00; }
+  .diff-neg { color: #2e7b4e; }
+  .diff-zero { color: var(--teal-dark); }
+
+  /* IMAGE GALLERY */
+  .hotel-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1.1rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .hotel-gallery img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+  }
+  @media (max-width: 540px) {
+    .hotel-gallery { grid-template-columns: 1fr; }
+    .hotel-gallery img { height: 200px; }
+  }
+
+  /* HOTEL DESCRIPTION */
+  .hotel-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .hotel-detail-list {
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+  .hotel-detail-list li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding: 0.2rem 0;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .hotel-detail-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-size: 0.8rem;
+  }
+  .room-section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin: 1rem 0 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--cream);
+  }
+
+  /* FLIGHT DETAILS */
+  .flight-route {
+    background: var(--cream-light);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .flight-leg {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed #d6ccb4;
+  }
+  .flight-leg:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .flight-leg-header {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 0.4rem;
+  }
+  .flight-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.25rem;
+  }
+  .flight-time { font-weight: 700; font-size: 1.05rem; color: var(--text-primary); }
+  .flight-code { font-size: 0.8rem; color: var(--text-secondary); }
+  .flight-arrow { color: var(--teal); font-size: 1.1rem; }
+  .flight-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.2rem;
+  }
+  .flight-meta span { margin-right: 0.75rem; }
+
+  /* CAR RENTAL */
+  .car-detail {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .car-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem 1rem;
+    margin: 0.75rem 0;
+  }
+  @media (max-width: 480px) { .car-detail-grid { grid-template-columns: 1fr; } }
+  .car-detail-item { font-size: 0.85rem; color: var(--text-secondary); }
+  .car-detail-item strong { color: var(--text-primary); font-weight: 600; }
+
+  /* CALLOUT BLOCKS */
+  .callout {
+    background: linear-gradient(135deg, var(--pale-teal) 0%, var(--cream-light) 100%);
+    border-left: 3px solid var(--teal-dark);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.1rem 1.4rem;
+    margin: 2rem 0;
+  }
+  .callout p {
+    font-size: 0.93rem;
+    color: var(--text-primary);
+    line-height: 1.65;
+  }
+  .callout p + p { margin-top: 0.5rem; }
+
+  /* PRICING DISCLAIMER */
+  .pricing-disclaimer {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+
+  /* BOTTOM CALLOUT */
+  .bottom-callout {
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+    text-align: center;
+  }
+  .bottom-callout p {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  /* CONTACT FORM */
+  .form-section {
+    background: var(--paper-pure);
+    border: 1px solid #ddd;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin: 2rem 0 3rem;
+  }
+  .form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 0.4rem;
+  }
+  .form-subtitle {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  @media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label {
+    display: block;
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.35rem;
+    letter-spacing: 0.02em;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1.5px solid #ddd;
+    border-radius: var(--radius);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: var(--text-primary);
+    background: var(--paper);
+    transition: border-color 0.18s;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--teal); background: #fff; }
+  .form-group textarea { min-height: 110px; resize: vertical; }
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234F8A8C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    padding-right: 2.2rem;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 0.95rem;
+    background: var(--teal-dark);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.1s;
+    min-height: 48px;
+    letter-spacing: 0.02em;
+  }
+  .submit-btn:hover { background: var(--teal); }
+  .submit-btn:active { transform: scale(0.99); }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .form-error {
+    display: none;
+    background: #fff0f0;
+    border: 1px solid #f5c6c6;
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    color: #a33;
+    font-size: 0.88rem;
+    margin-top: 0.75rem;
+  }
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 2.5rem 1rem;
+  }
+  .form-success h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--teal-dark);
+    margin-bottom: 0.5rem;
+  }
+  .form-success p { font-size: 0.93rem; color: var(--text-secondary); }
+
+  /* FOOTER */
+  footer {
+    background: var(--teal-dark);
+    color: rgba(255,255,255,0.9);
+    padding: 2rem;
+    text-align: center;
+  }
+  .footer-inner { max-width: 860px; margin: 0 auto; }
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.25rem;
+  }
+  .footer-agency {
+    font-size: 0.8rem;
+    color: var(--pale-teal);
+    margin-bottom: 0.75rem;
+  }
+  .footer-contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .footer-contact a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .footer-contact a:hover { color: #fff; }
+  .footer-legal {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 540px) {
+    .hero { min-height: 380px; padding: 2rem 1rem 2rem; }
+    .pricing-bar { padding: 0.85rem 1rem; }
+    .total-amount { font-size: 1.65rem; }
+    .pricing-commitment { border-left: none; padding-left: 0; }
+    .page-wrap { padding: 0 0.85rem; }
+    .section { padding: 1.75rem 0 0.75rem; }
+    .form-section { padding: 1.25rem; }
+    .bottom-callout { padding: 1.25rem 1rem; }
+    .component-body { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Point Me to Paradise Travel — Custom Quote</p>
+    <h1 class="hero-title">Portland, Oregon</h1>
+    <p class="hero-dates">Lindley Couch &nbsp;·&nbsp; October 9–13, 2026</p>
+    <div class="hero-tagline">
+      <strong>We don't book hotels. We build trips.</strong> Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+    </div>
+  </div>
+</section>
+
+<!-- TOP PRICING BAR -->
+<div class="pricing-bar" id="pricingBarTop">
+  <div class="pricing-bar-inner">
+    <div>
+      <div class="total-label">Estimated Total</div>
+      <div class="total-amount" id="totalDisplay">Est. $1,656</div>
+      <div class="deposit-note">Airfare paid in full at booking · hotel balance due closer to travel</div>
+    </div>
+    <div class="pricing-commitment">
+      We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- FLIGHT SECTION -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-badge">Flights</span>
+      <h2 class="section-title">Houston to Portland</h2>
+    </div>
+
+    <div class="component-card">
+      <div class="component-header">
+        <span class="component-type-pill">Flight</span>
+        <span class="component-name">Southwest Airlines — HOU ⇄ PDX</span>
+      </div>
+      <div class="component-body">
+
+        <!-- Flight Route Info -->
+        <div class="flight-route">
+          <div class="flight-leg">
+            <div class="flight-leg-header">Outbound — Friday, October 9, 2026</div>
+            <div class="flight-row">
+              <span class="flight-time">8:00 AM</span>
+              <span class="flight-code">HOU</span>
+              <span class="flight-arrow">→</span>
+              <span class="flight-time">1:05 PM</span>
+              <span class="flight-code">PDX</span>
+            </div>
+            <div class="flight-meta">
+              <span>7h 5m total</span>
+              <span>1 stop — Long Beach (LGB)</span>
+              <span>1h 10m layover</span>
+            </div>
+          </div>
+          <div class="flight-leg">
+            <div class="flight-leg-header">Return — Tuesday, October 13, 2026</div>
+            <div class="flight-row">
+              <span class="flight-time">1:05 PM</span>
+              <span class="flight-code">PDX</span>
+              <span class="flight-arrow">→</span>
+              <span class="flight-time">10:30 PM</span>
+              <span class="flight-code">HOU</span>
+            </div>
+            <div class="flight-meta">
+              <span>7h 25m total</span>
+              <span>1 stop — Las Vegas (LAS)</span>
+              <span>2h 15m layover</span>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:1rem;">Select your fare — prices shown per person for 2 travelers. <strong>Airfare is paid in full at time of booking.</strong> Flights and pricing are subject to change until ticketed.</p>
+
+        <!-- Fare Options -->
+        <label class="option-label selected" id="lbl-flight-1">
+          <input type="radio" name="flight_option" value="0" data-price="888" checked onchange="selectOption(this)">
+          <div class="option-content">
+            <div class="option-name">Southwest Basic — $444 / person</div>
+            <div class="option-desc">1 free carry-on bag · Seat selection available for fee · Extra legroom available for fee · Priority boarding for fee · No ticket changes · Checked bag for additional cost</div>
+          </div>
+          <div class="option-price-tag diff-zero">Included</div>
+        </label>
+
+        <label class="option-label" id="lbl-flight-2">
+          <input type="radio" name="flight_option" value="90" data-price="1068" onchange="selectOption(this)">
+          <div class="option-content">
+            <div class="option-name">Southwest Choice — $534 / person</div>
+            <div class="option-desc">Free standard seat selection · 1 free carry-on bag · Free flight changes (fare diff may apply) · Extra legroom available for fee · Priority boarding for fee · Checked bag for additional cost</div>
+          </div>
+          <div class="option-price-tag diff-pos">+$90</div>
+        </label>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <hr style="border:none;border-top:1px solid #e4dece;margin:0.5rem 0;">
+
+  <!-- DAY-BY-DAY -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-badge">Itinerary</span>
+      <h2 class="section-title">Day by Day</h2>
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="day-header">
+      <div class="day-label">Day 1</div>
+      <div class="day-date">Friday, October 9, 2026 — Arrival Day</div>
+    </div>
+
+    <!-- HOTEL COMPONENT -->
+    <div class="component-card">
+      <div class="component-header">
+        <span class="component-type-pill">Hotel</span>
+        <span class="component-name">Canopy by Hilton Portland Pearl District</span>
+      </div>
+      <div class="component-body">
+
+        <div class="hotel-gallery">
+          <img src="https://www.hilton.com/im/en/PDXPEPY/6772613/canopy-portland-pearl-pdxpe-exterior.jpg?impolicy=crop&cw=4500&ch=3000&gravity=NorthWest&xposition=0&yposition=0&rw=640&rh=427" alt="Canopy by Hilton Portland Pearl District exterior" loading="lazy" onerror="this.style.display='none'">
+          <img src="https://www.hilton.com/im/en/PDXPEPY/8431632/2q-deluxe.jpg?impolicy=crop&cw=3970&ch=2647&gravity=NorthWest&xposition=514&yposition=0&rw=640&rh=427" alt="Canopy Portland 2 Queen Deluxe room" loading="lazy" onerror="this.style.display='none'">
+        </div>
+
+        <p class="hotel-desc">
+          The Pearl District is Portland's converted-warehouse arts neighborhood — design studios, independent coffee roasters, and around sixty breweries within walking distance. The Canopy sits in the middle of it. The building is newer, the rooms are clean and quiet, and the location puts you within ten minutes of Powell's City of Books on foot, the weekend Saturday Market along the waterfront, and easy access to streetcar lines heading downtown or toward the east side.
+        </p>
+        <p class="hotel-desc">
+          The hotel is also about 45 minutes from St. Helens — the town that becomes Halloweentown each October, with street vendors, costumed characters, and the filming locations from the 1998 movie. A midsize SUV and a Saturday morning drive is all it takes.
+        </p>
+
+        <ul class="hotel-detail-list">
+          <li>4-night stay · October 9–13, 2026</li>
+          <li>Check-in: Friday, October 9 · Check-out: Tuesday, October 13</li>
+          <li>~12 miles from PDX · 20–25 min drive depending on traffic</li>
+          <li>~38 miles to St. Helens (Halloweentown) · ~45–55 min drive</li>
+          <li>Book now, pay later available · Final payment due September 27, 2026</li>
+        </ul>
+
+        <div class="room-section-label">Select your room type</div>
+
+        <label class="option-label selected" id="lbl-room-1">
+          <input type="radio" name="room_option" value="0" data-price="918.67" checked onchange="selectOption(this)">
+          <div class="option-content">
+            <div class="option-name">Room with 2 Queen Beds</div>
+            <div class="option-desc">Two queen beds · comfortable for 2 travelers · ideal configuration for this trip</div>
+          </div>
+          <div class="option-price-tag diff-zero">Included</div>
+        </label>
+
+      </div>
+    </div>
+
+    <!-- CAR RENTAL COMPONENT -->
+    <div class="component-card">
+      <div class="component-header">
+        <span class="component-type-pill">Transportation</span>
+        <span class="component-name">Alamo Rent A Car — Midsize SUV</span>
+      </div>
+      <div class="component-body">
+
+        <div class="car-detail">
+          <p style="margin-bottom:0.75rem;">A midsize SUV gives you flexibility — easy highway miles to St. Helens, enough room for bags after four days, and the option to take whatever detour the Pacific Northwest decides to throw at you. Alamo picks up and drops off directly at the PDX terminal, so you're on the road by the time your flight clears.</p>
+
+          <div class="car-detail-grid">
+            <div class="car-detail-item"><strong>Vehicle:</strong> Nissan Rogue or similar</div>
+            <div class="car-detail-item"><strong>Transmission:</strong> Automatic</div>
+            <div class="car-detail-item"><strong>Pick-up:</strong> Fri, Oct 9 at 1:30 PM</div>
+            <div class="car-detail-item"><strong>Drop-off:</strong> Tue, Oct 13 at 11:00 AM</div>
+            <div class="car-detail-item"><strong>Location:</strong> PDX Airport Terminal</div>
+            <div class="car-detail-item"><strong>Mileage:</strong> Unlimited</div>
+            <div class="car-detail-item"><strong>Fuel policy:</strong> Full to Full</div>
+            <div class="car-detail-item"><strong>Reservation:</strong> Reserve now, pay at pick-up</div>
+          </div>
+          <p style="font-size:0.8rem;color:var(--text-secondary);">Valid driver's license and credit card required at pick-up. Optional extras available at counter: infant/toddler seat ($18/day), navigation system ($20/day). Drivers under 25 may have additional fees.</p>
+        </div>
+
+        <div style="margin-top:1rem;">
+          <label class="option-label selected" id="lbl-car-1">
+            <input type="radio" name="car_option" value="0" data-price="293" checked onchange="selectOption(this)">
+            <div class="option-content">
+              <div class="option-name">Midsize SUV — Nissan Rogue or Similar</div>
+              <div class="option-desc">Taxes and fees included · free cancellation prior to pick-up</div>
+            </div>
+            <div class="option-price-tag diff-zero">Included</div>
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-header">
+      <div class="day-label">Day 2</div>
+      <div class="day-date">Saturday, October 10, 2026 — Portland & St. Helens</div>
+    </div>
+    <div style="padding: 0.5rem 1.25rem 1.5rem; color: var(--text-secondary); font-size: 0.9rem; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem;">
+      No pre-booked components today — this day is yours. Saturday is Portland Saturday Market day at Waterfront Park, and also the best day for the St. Helens drive: Halloweentown events run all weekend and the town is fully in character by late morning.
+    </div>
+
+  </section>
+
+  <!-- BOTTOM PRICING BAR (static, for reference) -->
+  <div style="background:var(--cream); border-radius:var(--radius-lg); padding:1.25rem 1.5rem; margin:1.5rem 0; display:flex; flex-wrap:wrap; gap:0.5rem 2rem; align-items:center;">
+    <div>
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:0.2rem;">Running Total</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:600;color:var(--teal-dark);" id="totalDisplay2">Est. $1,656</div>
+      <div style="font-size:0.82rem;color:var(--text-secondary);">Airfare paid in full at booking · hotel balance due closer to travel</div>
+    </div>
+    <div style="flex:1;min-width:200px;font-size:0.82rem;color:var(--text-secondary);line-height:1.55;">
+      Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.
+    </div>
+  </div>
+
+  <!-- PRICING COMMITMENT CALLOUT -->
+  <div class="callout">
+    <p>Individual hotels, transfers, and tours in your quote are priced at publicly available rates — and in many cases lower than what you'd find on your own. You don't have to worry about overpaying for a piece of your trip. What you're paying for is the rest: the right rooms at the right property, operators we've used for years, the trip app, and a human who answers when something doesn't go to plan.</p>
+  </div>
+
+  <!-- BOTTOM CALLOUT -->
+  <div class="bottom-callout">
+    <p>What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="form-section">
+    <div id="formContainer">
+      <h2 class="form-title">Ready to move forward?</h2>
+      <p class="form-subtitle">Send your questions or selections and Andrea will be in touch within one business day.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="clientName">Your Name <span style="color:#a33;">*</span></label>
+          <input type="text" id="clientName" name="name" required placeholder="Lindley Couch">
+        </div>
+        <div class="form-group">
+          <label for="clientEmail">Email Address <span style="color:#a33;">*</span></label>
+          <input type="email" id="clientEmail" name="email" required placeholder="your@email.com">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="clientPhone">Phone (optional)</label>
+          <input type="tel" id="clientPhone" name="phone" placeholder="(000) 000-0000">
+        </div>
+        <div class="form-group">
+          <label for="insuranceSelect">Travel Insurance</label>
+          <select id="insuranceSelect" name="travel_insurance">
+            <option value="">Select an option…</option>
+            <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+            <option value="No — not interested">No — not interested</option>
+            <option value="Already have coverage">Already have coverage</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="clientMessage">Questions or notes (optional)</label>
+        <textarea id="clientMessage" name="message" placeholder="Any questions about the options, dates, or anything else…"></textarea>
+      </div>
+
+      <!-- Hidden fields -->
+      <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+      <input type="hidden" name="subject" value="Quote Response — Lindley Couch | Portland, Oregon">
+      <input type="hidden" name="from_name" value="Lindley Couch Quote — Point Me to Paradise">
+      <input type="hidden" name="redirect" value="false">
+      <input type="hidden" id="hiddenFlightOption" name="flight_selection" value="Southwest Basic — $444/person (Included)">
+      <input type="hidden" id="hiddenRoomOption" name="room_selection" value="2 Queen Beds (Included)">
+      <input type="hidden" id="hiddenCarOption" name="car_selection" value="Midsize SUV — Nissan Rogue (Included)">
+      <input type="hidden" id="hiddenTotal" name="estimated_total" value="Est. $1,656">
+
+      <button type="button" class="submit-btn" id="submitBtn" onclick="submitForm()">Send My Selections →</button>
+      <div class="form-error" id="formError">Something went wrong — please try again or email Andrea directly.</div>
+    </div>
+
+    <div class="form-success" id="formSuccess">
+      <h3>You're all set, Lindley!</h3>
+      <p>Andrea will follow up within one business day to confirm your selections and next steps.</p>
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Andrea Gunter</div>
+    <div class="footer-agency">Point Me to Paradise Travel</div>
+    <div class="footer-contact">
+      <a href="tel:4097893579">(409) 789-3579</a>
+      <a id="emailLink" href="#">Loading…</a>
+    </div>
+    <div class="footer-legal">
+      Prices and availability are subject to change until time of booking.<br>
+      Individual components are priced at publicly available rates. Final pricing confirmed by your advisor before booking.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Email assembly — Cloudflare-safe
+  (function() {
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var el = document.getElementById('emailLink');
+    el.href = 'mailto:' + addr;
+    el.textContent = addr;
+  })();
+
+  // BASELINE & PRICING
+  var BASELINE = 1655.67;
+
+  // Track current selections
+  var selections = {
+    flight: { diff: 0, label: 'Southwest Basic — $444/person (Included)' },
+    room:   { diff: 0, label: '2 Queen Beds (Included)' },
+    car:    { diff: 0, label: 'Midsize SUV — Nissan Rogue (Included)' }
+  };
+
+  function updateTotal() {
+    var total = BASELINE + selections.flight.diff + selections.room.diff + selections.car.diff;
+    var formatted = 'Est. $' + Math.round(total).toLocaleString('en-US');
+    document.getElementById('totalDisplay').textContent = formatted;
+    document.getElementById('totalDisplay2').textContent = formatted;
+    // Update hidden fields
+    document.getElementById('hiddenFlightOption').value = selections.flight.label;
+    document.getElementById('hiddenRoomOption').value = selections.room.label;
+    document.getElementById('hiddenCarOption').value = selections.car.label;
+    document.getElementById('hiddenTotal').value = formatted;
+  }
+
+  function selectOption(radio) {
+    var name = radio.name;
+    var diff = parseFloat(radio.value) || 0;
+    var labelEl = radio.closest('.option-label');
+    var optName = labelEl.querySelector('.option-name').textContent;
+
+    // Remove selected from siblings
+    var group = document.querySelectorAll('input[name="' + name + '"]');
+    group.forEach(function(r) {
+      r.closest('.option-label').classList.remove('selected');
+    });
+    labelEl.classList.add('selected');
+
+    // Map to selection key
+    if (name === 'flight_option') {
+      selections.flight.diff = diff;
+      selections.flight.label = optName + ' — selected';
+    } else if (name === 'room_option') {
+      selections.room.diff = diff;
+      selections.room.label = optName + ' — selected';
+    } else if (name === 'car_option') {
+      selections.car.diff = diff;
+      selections.car.label = optName + ' — selected';
+    }
+
+    updateTotal();
+  }
+
+  // FORM SUBMISSION
+  function submitForm() {
+    var name = document.getElementById('clientName').value.trim();
+    var email = document.getElementById('clientEmail').value.trim();
+    var errEl = document.getElementById('formError');
+    errEl.style.display = 'none';
+
+    if (!name || !email) {
+      errEl.textContent = 'Please fill in your name and email address.';
+      errEl.style.display = 'block';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errEl.textContent = 'Please enter a valid email address.';
+      errEl.style.display = 'block';
+      return;
+    }
+
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    var data = {
+      access_key: '74894b5d-f463-481b-b081-b874086b15fc',
+      subject: 'Quote Response — Lindley Couch | Portland, Oregon',
+      from_name: 'Lindley Couch Quote — Point Me to Paradise',
+      redirect: 'false',
+      name: name,
+      email: email,
+      phone: document.getElementById('clientPhone').value,
+      travel_insurance: document.getElementById('insuranceSelect').value,
+      message: document.getElementById('clientMessage').value,
+      flight_selection: selections.flight.label,
+      room_selection: selections.room.label,
+      car_selection: selections.car.label,
+      estimated_total: document.getElementById('hiddenTotal').value
+    };
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(json) {
+      if (json.success) {
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        errEl.textContent = 'Something went wrong. Please try again or contact Andrea directly.';
+        errEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Send My Selections →';
+      }
+    })
+    .catch(function() {
+      errEl.textContent = 'Network error — please try again or email Andrea directly.';
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send My Selections →';
+    });
+  }
+
+  // Init
+  updateTotal();
+</script>
+</body>
+</html>
