@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Costa Rica 2026 — Rebecca Alworth | Point Me to Paradise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #75AFB1;
+    --teal-dark: #4F8A8C;
+    --pale-teal: #C4E4E1;
+    --gold: #DAC396;
+    --gold-dark: #B89E6A;
+    --cream: #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper: #FBF9F4;
+    --paper-pure: #FFFFFF;
+    --text-primary: #3D3D3D;
+    --text-secondary: #606060;
+    --font-head: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    background: var(--paper);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 56px;
+    background-image: url('https://images.entercostarica.com/uploads/items/13897/item_13897_westin_playa_conchal_b596aee5f5.webp');
+    background-size: cover;
+    background-position: center 30%;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.25) 0%,
+      rgba(0,0,0,0.15) 30%,
+      rgba(0,0,0,0.55) 75%,
+      rgba(0,0,0,0.75) 100%
+    );
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-accent);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .hero-meta {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    letter-spacing: 0.02em;
+  }
+  .hero-meta span {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .hero-meta span::before {
+    content: '—  ';
+    color: var(--gold);
+  }
+
+  /* COMMITMENT STRIP */
+  .commitment-strip {
+    background: var(--teal-dark);
+    color: #FFFFFF;
+    padding: 18px 24px;
+    text-align: center;
+  }
+  .commitment-strip p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.5;
+    color: #FFFFFF;
+  }
+
+  /* MAIN LAYOUT */
+  .main-wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* SECTION HEADINGS */
+  .section-label {
+    font-family: var(--font-accent);
+    font-style: italic;
+    color: var(--teal-dark);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: var(--font-head);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 8px;
+  }
+  .section-intro {
+    color: var(--text-secondary);
+    font-size: 0.97rem;
+    margin-bottom: 36px;
+    max-width: 680px;
+  }
+
+
+
+  /* RESORT PANELS */
+  .resort-panel { display: block; }
+
+  /* RESORT CARD */
+  .resort-card {
+    background: var(--paper-pure);
+    border: 1px solid var(--pale-teal);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+  .resort-card-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+  }
+  .resort-card-body {
+    padding: 28px 28px 24px;
+  }
+  .resort-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .resort-card-name {
+    font-family: var(--font-head);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    line-height: 1.25;
+  }
+  .resort-card-location {
+    font-size: 0.87rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .resort-badge {
+    display: inline-block;
+    background: var(--cream-light);
+    border: 1px solid var(--cream);
+    color: var(--gold-dark);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+  }
+  .resort-desc {
+    font-size: 0.97rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .resort-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .detail-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+  .detail-value {
+    font-size: 0.93rem;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  /* ROOM CATEGORIES */
+  .room-section-title {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin: 0 0 14px;
+  }
+  .room-option {
+    border: 2px solid var(--pale-teal);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: border-color 0.18s, background 0.18s;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .room-option:hover { border-color: var(--teal); background: var(--cream-light); }
+  .room-option.selected { border-color: var(--teal-dark); background: #EBF5F5; }
+  .room-option input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid var(--teal);
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 2px;
+    position: relative;
+    background: #fff;
+    transition: border-color 0.15s;
+    font-size: 16px;
+  }
+  .room-option input[type="radio"]:checked {
+    border-color: var(--teal-dark);
+    background: var(--teal-dark);
+    box-shadow: inset 0 0 0 4px #fff;
+  }
+  .room-option-body { flex: 1; }
+  .room-option-name {
+    font-weight: 600;
+    font-size: 0.97rem;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .room-option-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+  .room-option-price {
+    font-family: var(--font-head);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--teal-dark);
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .room-option-price-note {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+  .room-img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  /* INCLUDED FEATURES LIST */
+  .included-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 6px 20px;
+    margin: 0 0 20px;
+    padding: 0;
+  }
+  .included-list li {
+    font-size: 0.87rem;
+    color: var(--text-primary);
+    padding-left: 18px;
+    position: relative;
+  }
+  .included-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  /* RESORT SELECT RADIO (top-level) */
+  .resort-select-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: var(--cream-light);
+    border-top: 1px solid var(--cream);
+    cursor: pointer;
+  }
+  .resort-select-row input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid var(--teal);
+    border-radius: 50%;
+    cursor: pointer;
+    background: #fff;
+    transition: border-color 0.15s;
+    font-size: 16px;
+  }
+  .resort-select-row input[type="radio"]:checked {
+    border-color: var(--teal-dark);
+    background: var(--teal-dark);
+    box-shadow: inset 0 0 0 4px #fff;
+  }
+  .resort-select-label {
+    font-size: 0.93rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+  }
+
+  /* STICKY TOTAL */
+  .sticky-total {
+    position: sticky;
+    bottom: 0;
+    background: var(--teal-dark);
+    color: #fff;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  .sticky-total-label {
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.85;
+  }
+  .sticky-total-amount {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .sticky-total-note {
+    font-size: 0.78rem;
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+  .sticky-total-cta {
+    background: var(--gold);
+    color: var(--teal-dark);
+    border: none;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.93rem;
+    padding: 11px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    min-height: 44px;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+  .sticky-total-cta:hover { background: var(--gold-dark); color: #fff; }
+
+  /* PRICING NOTE */
+  .pricing-note {
+    background: var(--cream-light);
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 32px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+
+  /* TRANSFER */
+  .transfer-section {
+    background: var(--paper-pure);
+    border: 1px solid var(--pale-teal);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 28px;
+  }
+  .transfer-title {
+    font-family: var(--font-head);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 10px;
+  }
+  .transfer-desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* WHAT'S NEXT */
+  .whats-next {
+    background: var(--pale-teal);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 40px;
+  }
+  .whats-next-title {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 8px;
+  }
+  .whats-next p {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+  }
+
+  /* FORM */
+  .form-section {
+    background: var(--paper-pure);
+    border: 1px solid var(--pale-teal);
+    border-radius: 12px;
+    padding: 32px 28px;
+    margin-bottom: 32px;
+  }
+  .form-title {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 6px;
+  }
+  .form-subtitle {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .form-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .form-input {
+    font-family: var(--font-body);
+    font-size: 16px;
+    padding: 11px 14px;
+    border: 1.5px solid var(--pale-teal);
+    border-radius: 7px;
+    background: var(--paper);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.15s;
+    width: 100%;
+    min-height: 44px;
+  }
+  .form-input:focus { border-color: var(--teal); }
+  select.form-input { cursor: pointer; }
+  textarea.form-input { resize: vertical; min-height: 90px; }
+
+  .form-submit {
+    background: var(--teal-dark);
+    color: #fff;
+    border: none;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 14px 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    min-height: 48px;
+    transition: background 0.15s;
+    margin-top: 8px;
+  }
+  .form-submit:hover { background: var(--teal); }
+
+  .form-error {
+    display: none;
+    background: #FDF0F0;
+    border: 1px solid #E8B4B4;
+    color: #9B3939;
+    padding: 12px 16px;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    margin-top: 12px;
+  }
+  .thank-you {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .thank-you-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--pale-teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 1.6rem;
+  }
+  .thank-you-title {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 8px;
+  }
+  .thank-you p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--teal-dark);
+    color: rgba(255,255,255,0.9);
+    padding: 36px 24px;
+  }
+  .footer-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-brand {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .footer-tagline {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .footer-contact {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+  }
+  .footer-contact a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .footer-disclaimer {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    max-width: 400px;
+    line-height: 1.6;
+    padding-top: 4px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--pale-teal);
+    margin: 40px 0;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero { min-height: 420px; padding-bottom: 40px; }
+    .hero h1 { font-size: 1.8rem; }
+    .main-wrap { padding: 32px 16px 60px; }
+    .resort-card-img { height: 200px; }
+    .resort-card-body { padding: 20px 16px; }
+    .form-section { padding: 24px 16px; }
+    .form-row { grid-template-columns: 1fr; }
+    .resort-details-grid { grid-template-columns: 1fr 1fr; }
+    .room-img { display: none; }
+    .sticky-total { padding: 12px 16px; }
+    .sticky-total-amount { font-size: 1.25rem; }
+    .footer-inner { flex-direction: column; }
+    .resort-tab { padding: 10px 14px; font-size: 0.82rem; }
+    .whats-next { padding: 20px; }
+  }
+  @media (max-width: 400px) {
+    .resort-details-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-eyebrow">Point Me to Paradise Travel · Private Quote</span>
+    <h1>Costa Rica, 2026<br>For Rebecca Alworth</h1>
+    <p class="hero-meta">
+      <span>3 Adults</span>
+      <span>July 19–22, 2026</span>
+      <span>3 Nights · All-Inclusive Options</span>
+    </p>
+  </div>
+</section>
+
+<!-- COMMITMENT STRIP -->
+<div class="commitment-strip">
+  <p>We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.</p>
+</div>
+
+<!-- MAIN -->
+<main class="main-wrap">
+
+  <!-- INTRO -->
+  <div style="margin-bottom:40px;">
+    <span class="section-label">Your Options</span>
+    <h2 class="section-title">Four resorts. One right answer for your group.</h2>
+    <p class="section-intro">Below are four properties across Guanacaste — from full all-inclusive to boutique room-only luxury. Each one suits a different kind of trip. Read through the descriptions and pick the vibe that feels right, then select your room category. We'll take it from there.</p>
+  </div>
+
+  <!-- JUMP NAV -->
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;">
+    <a href="#resort-1" style="display:inline-block;padding:8px 16px;background:var(--paper-pure);border:1.5px solid var(--pale-teal);border-radius:6px;font-size:0.85rem;font-weight:600;color:var(--teal-dark);text-decoration:none;white-space:nowrap;">① Westin Conchal</a>
+    <a href="#resort-2" style="display:inline-block;padding:8px 16px;background:var(--paper-pure);border:1.5px solid var(--pale-teal);border-radius:6px;font-size:0.85rem;font-weight:600;color:var(--teal-dark);text-decoration:none;white-space:nowrap;">② Secrets Papagayo</a>
+    <a href="#resort-3" style="display:inline-block;padding:8px 16px;background:var(--paper-pure);border:1.5px solid var(--pale-teal);border-radius:6px;font-size:0.85rem;font-weight:600;color:var(--teal-dark);text-decoration:none;white-space:nowrap;">③ El Mangroove</a>
+    <a href="#resort-4" style="display:inline-block;padding:8px 16px;background:var(--paper-pure);border:1.5px solid var(--pale-teal);border-radius:6px;font-size:0.85rem;font-weight:600;color:var(--teal-dark);text-decoration:none;white-space:nowrap;">④ Andaz Papagayo</a>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- RESORT 1: WESTIN CONCHAL -->
+  <!-- ============================================================ -->
+  <div class="resort-panel" id="resort-1">
+    <div class="resort-card">
+      <img class="resort-card-img" src="https://img.cdnpth.com/media/107289/rooms/783a7d2b-7deb-4e5b-9090-b76be0e99c6e.jpg" alt="Westin Reserva Conchal room" loading="lazy">
+      <div class="resort-card-body">
+        <div class="resort-card-header">
+          <div>
+            <div style="font-size:0.75rem;font-weight:700;color:var(--teal);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Option 1</div><div class="resort-card-name">The Westin Reserva Conchal</div>
+            <div class="resort-card-location">An All-Inclusive Golf Resort &amp; Spa · Playa Conchal, Guanacaste</div>
+          </div>
+          <div>
+            <span class="resort-badge">All-Inclusive</span>
+            <br><span class="resort-badge" style="margin-top:6px;display:inline-block;">Adults Only Club</span>
+          </div>
+        </div>
+        <p class="resort-desc">
+          If you want the most complete all-inclusive beach experience Costa Rica has to offer, this is the one. The Westin sits on Playa Conchal — named for its crushed-shell sand, which gives the water a clearer, blue-green color you don't find on most Costa Rica beaches. It's a bigger resort, with multiple pools and dining options, golf, and a full program of non-motorized water sports. The Westin Club category bumps you into a quieter adults-only section with its own lounge and pool, dedicated concierge, and private check-in. Liberia airport is about an hour away. For a ladies' trip where ease and beach quality are the priority, this one delivers.
+        </p>
+        <div class="resort-details-grid">
+          <div class="detail-item"><span class="detail-label">Check-In</span><span class="detail-value">Sun, July 19 · 3:00 PM</span></div>
+          <div class="detail-item"><span class="detail-label">Check-Out</span><span class="detail-value">Wed, July 22 · 12:00 PM</span></div>
+          <div class="detail-item"><span class="detail-label">Airport Transfer</span><span class="detail-value">~1 hr 15 min from LIR</span></div>
+          <div class="detail-item"><span class="detail-label">Included</span><span class="detail-value">Meals, drinks, activities, gratuities</span></div>
+        </div>
+
+        <h3 class="room-section-title">Room Category</h3>
+        <div class="room-option selected" onclick="selectRoom(this, 'resort1_room', 'Westin Club Room (2 Double Beds, Adults Only)', 3257)">
+          <input type="radio" name="resort1_room" value="Westin Club Room" checked onchange="updateTotal()">
+          <img src="https://img.cdnpth.com/media/107289/rooms/783a7d2b-7deb-4e5b-9090-b76be0e99c6e.jpg" alt="Westin Club Room" class="room-img">
+          <div class="room-option-body">
+            <div class="room-option-name">Westin Club Room · 2 Double Beds (Adults Only)</div>
+            <div class="room-option-desc">474 sq ft. Private balcony with garden or pool view, soaking tub, sofa, daily minibar, 24-hr room service. Westin Club access: private lounge with all-day snacks and beverages, exclusive pool, dedicated concierge, private check-in. Accommodates up to 4 adults comfortably.</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="room-option-price">$3,257</div>
+            <div class="room-option-price-note">total · taxes incl.</div>
+          </div>
+        </div>
+
+        <!-- Resort selection radio -->
+        <label class="resort-select-row" onclick="selectResort(this, 0, 'Westin Reserva Conchal (Westin Club Room, 2 Dbl Beds)', 3257)">
+          <input type="radio" name="resort_choice" value="Westin Reserva Conchal" onchange="updateTotal()">
+          <span class="resort-select-label">Select The Westin Reserva Conchal for my quote</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- RESORT 2: SECRETS PAPAGAYO -->
+  <!-- ============================================================ -->
+  <div class="resort-panel" id="resort-2">
+    <div class="resort-card">
+      <img class="resort-card-img" src="https://images.entercostarica.com/uploads/items/12277/item_12277_hilton_papagayo_resort_0251e325cc.webp" alt="Secrets Papagayo Costa Rica resort pool" loading="lazy">
+      <div class="resort-card-body">
+        <div class="resort-card-header">
+          <div>
+            <div style="font-size:0.75rem;font-weight:700;color:var(--teal);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Option 2</div><div class="resort-card-name">Secrets Papagayo Costa Rica</div>
+            <div class="resort-card-location">Adults Only · All-Inclusive · Playa Arenilla, Gulf of Papagayo</div>
+          </div>
+          <div>
+            <span class="resort-badge">All-Inclusive</span>
+            <br><span class="resort-badge" style="margin-top:6px;display:inline-block;">Adults Only</span>
+          </div>
+        </div>
+        <p class="resort-desc">
+          Secrets Papagayo is a smaller, more intimate all-inclusive built into a hillside overlooking the Gulf of Papagayo. The scale here is different — fewer rooms, a boutique feel, great ocean views from almost everywhere on the property. The beach at Playa Arenilla sits in a protected cove: the water is calm, good for paddleboarding and kayaking, and the sunsets from that bay are genuinely worth the trip. What it trades for beach quality (it's not Conchal-level sand) it earns back in atmosphere and proximity to the airport — about 20–30 minutes from Liberia. Dining rotates through seafood, Italian, Asian, and a buffet, no reservations required. One of the stronger romance-and-relaxation all-inclusive options in Guanacaste. Note: the pricing below reflects a 2-adult rate; final pricing for 3 adults will be confirmed.
+        </p>
+        <div class="resort-details-grid">
+          <div class="detail-item"><span class="detail-label">Check-In</span><span class="detail-value">Sun, July 19 · 3:00 PM</span></div>
+          <div class="detail-item"><span class="detail-label">Check-Out</span><span class="detail-value">Wed, July 22 · 12:00 PM</span></div>
+          <div class="detail-item"><span class="detail-label">Airport Transfer</span><span class="detail-value">~20–30 min from LIR</span></div>
+          <div class="detail-item"><span class="detail-label">Included</span><span class="detail-value">Gourmet dining, premium drinks, activities</span></div>
+        </div>
+
+        <h3 class="room-section-title">Room Category</h3>
+        <div class="room-option selected" onclick="selectRoom(this, 'resort2_room', 'Bungalow Suite Double Tropical View', 3940)">
+          <input type="radio" name="resort2_room" value="Bungalow Suite Double Tropical View" checked onchange="updateTotal()">
+          <div class="room-option-body">
+            <div class="room-option-name">Bungalow Suite Double · Tropical View</div>
+            <div class="room-option-desc">Two double beds. Private furnished terrace or balcony with tropical garden views. Bungalow-style layout offers more privacy than a standard hotel building. Includes all-inclusive unlimited dining, premium spirits, 24-hr room service, and full resort access. Rate shown is for 2 adults — 3-adult pricing to be confirmed.</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="room-option-price">$3,940</div>
+            <div class="room-option-price-note">base rate · taxes incl.</div>
+          </div>
+        </div>
+
+        <label class="resort-select-row" onclick="selectResort(this, 1, 'Secrets Papagayo (Bungalow Suite, Tropical View)', 3940)">
+          <input type="radio" name="resort_choice" value="Secrets Papagayo" onchange="updateTotal()">
+          <span class="resort-select-label">Select Secrets Papagayo for my quote</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- RESORT 3: EL MANGROOVE -->
+  <!-- ============================================================ -->
+  <div class="resort-panel" id="resort-3">
+    <div class="resort-card">
+      <img class="resort-card-img" src="https://images.entercostarica.com/uploads/items/15002/item_15002_el_mangroove_1a1b267768.webp" alt="El Mangroove Papagayo Costa Rica" loading="lazy">
+      <div class="resort-card-body">
+        <div class="resort-card-header">
+          <div>
+            <div style="font-size:0.75rem;font-weight:700;color:var(--teal);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Option 3</div><div class="resort-card-name">El Mangroove Papagayo, Autograph Collection</div>
+            <div class="resort-card-location">Marriott Autograph Collection · Gulf of Papagayo, Guanacaste</div>
+          </div>
+          <div>
+            <span class="resort-badge">Room Only</span>
+            <br><span class="resort-badge" style="margin-top:6px;display:inline-block;">Boutique Luxury</span>
+          </div>
+        </div>
+        <p class="resort-desc">
+          El Mangroove is the independent spirit of this group — a boutique Marriott Autograph Collection property with a small number of suites, modern Costa Rican design, and some of the best food in the region. It sits on Playa Panama, one of the calmer swimmable beaches in Papagayo, with a large oceanfront pool and genuinely good daytime vibes. Because this is room-only (not all-inclusive), meals come à la carte — which means you're free to eat at the resort or explore local spots in Guanacaste. The airport is about 20 minutes away. This is the right pick if your group wants a luxury base that doesn't feel like a resort complex, with excellent food and fewer crowds. Budget separately for meals and activities.
+        </p>
+        <div class="resort-details-grid">
+          <div class="detail-item"><span class="detail-label">Check-In</span><span class="detail-value">Sun, July 19 · 3:00 PM</span></div>
+          <div class="detail-item"><span class="detail-label">Check-Out</span><span class="detail-value">Wed, July 22 · 11:00 AM</span></div>
+          <div class="detail-item"><span class="detail-label">Airport Transfer</span><span class="detail-value">~20 min from LIR</span></div>
+          <div class="detail-item"><span class="detail-label">Meals</span><span class="detail-value">Not included · À la carte</span></div>
+        </div>
+        <div style="background:var(--cream-light);border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:0.87rem;color:var(--gold-dark);font-weight:500;">
+          ⚠ Room Only — meals and beverages are not included. Factor dining costs into your total budget.
+        </div>
+
+        <h3 class="room-section-title">Room Category</h3>
+        <div class="room-option selected" onclick="selectRoom(this, 'resort3_room', 'Suite — 2 Queen Beds, Resort View', 1830)">
+          <input type="radio" name="resort3_room" value="Suite 2 Queen Beds Resort View" checked onchange="updateTotal()">
+          <div class="room-option-body">
+            <div class="room-option-name">Suite · 2 Queen Beds, Resort View</div>
+            <div class="room-option-desc">Two queen beds. Separate living area. Modern spa-inspired bathroom with contemporary Costa Rican design. Private furnished terrace or balcony. Spacious layout well-suited for 3 adults. Wi-Fi, fitness center, pools, and beach access included. Meals not included.</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="room-option-price">$1,830</div>
+            <div class="room-option-price-note">room only · taxes incl.</div>
+          </div>
+        </div>
+
+        <label class="resort-select-row" onclick="selectResort(this, 2, 'El Mangroove (Suite, 2 Queen Beds, Resort View)', 1830)">
+          <input type="radio" name="resort_choice" value="El Mangroove" onchange="updateTotal()">
+          <span class="resort-select-label">Select El Mangroove for my quote</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- RESORT 4: ANDAZ PAPAGAYO -->
+  <!-- ============================================================ -->
+  <div class="resort-panel" id="resort-4">
+    <div class="resort-card">
+      <img class="resort-card-img" src="https://img.cdnpth.com/media/XE8dgzqy8DzwlrGBc-qvL-UFDt8=/720x480/13/96/91/13969114.jpg" alt="Andaz Costa Rica Bay View Suite" loading="lazy">
+      <div class="resort-card-body">
+        <div class="resort-card-header">
+          <div>
+            <div style="font-size:0.75rem;font-weight:700;color:var(--teal);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Option 4</div><div class="resort-card-name">Andaz Costa Rica Resort at Peninsula Papagayo</div>
+            <div class="resort-card-location">By Hyatt · Peninsula Papagayo, Guanacaste</div>
+          </div>
+          <div>
+            <span class="resort-badge">Room Only</span>
+            <br><span class="resort-badge" style="margin-top:6px;display:inline-block;">Top Tier Luxury</span>
+          </div>
+        </div>
+        <p class="resort-desc">
+          The Andaz is in a different category. Set within the private Peninsula Papagayo community — a gated development with multiple resort brands, golf, and private beaches — it's the most luxurious option in this quote and arguably the most impressive property in Costa Rica. The room feels closer to a high-end Hawaiian retreat than a traditional resort: monkeys wander the grounds, the suite has real bay views, and the dining (Rio Bhongo, Ostra, Chao Pescao) is some of the strongest in the region. Three pools, including an adults-only infinity pool. About 35–40 minutes from Liberia. The $533 resort fee is paid directly at check-in. This is the right choice if your group wants the absolute best experience in Costa Rica — rooms, food, setting, service — and meals à la carte are comfortable for your budget.
+        </p>
+        <div class="resort-details-grid">
+          <div class="detail-item"><span class="detail-label">Check-In</span><span class="detail-value">Sun, July 19 · 3:00 PM</span></div>
+          <div class="detail-item"><span class="detail-label">Check-Out</span><span class="detail-value">Wed, July 22 · 12:00 PM</span></div>
+          <div class="detail-item"><span class="detail-label">Airport Transfer</span><span class="detail-value">~35–40 min from LIR</span></div>
+          <div class="detail-item"><span class="detail-label">Meals</span><span class="detail-value">Not included · À la carte</span></div>
+        </div>
+        <div style="background:var(--cream-light);border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:0.87rem;color:var(--gold-dark);font-weight:500;">
+          ⚠ Room Only — meals and beverages not included. A $533 resort fee is paid directly to the resort at check-in. Grand total with resort fee: <strong>$6,547</strong>.
+        </div>
+
+        <h3 class="room-section-title">Room Categories</h3>
+        <div class="room-option selected" onclick="selectRoom(this, 'resort4_room', 'Andaz Bay View Suite', 6014)">
+          <input type="radio" name="resort4_room" value="Andaz Bay View Suite" checked onchange="updateTotal()">
+          <img src="https://img.cdnpth.com/media/XE8dgzqy8DzwlrGBc-qvL-UFDt8=/720x480/13/96/91/13969114.jpg" alt="Andaz Bay View Suite" class="room-img">
+          <div class="room-option-body">
+            <div class="room-option-name">Andaz Bay View Suite</div>
+            <div class="room-option-desc">Spacious luxury suite. Separate living and sleeping areas. Private balcony with bay and ocean views. Spa-inspired bathroom. Contemporary Costa Rican design. Premium Hyatt amenities. Resort fee of $533 paid at check-in.</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="room-option-price">$6,014</div>
+            <div class="room-option-price-note">room only · taxes incl.</div>
+            <div class="room-option-price-note" style="color:var(--gold-dark);">+ $533 resort fee</div>
+          </div>
+        </div>
+
+        <label class="resort-select-row" onclick="selectResort(this, 3, 'Andaz Costa Rica (Bay View Suite)', 6014)">
+          <input type="radio" name="resort_choice" value="Andaz Costa Rica" onchange="updateTotal()">
+          <span class="resort-select-label">Select Andaz Costa Rica for my quote</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- AT A GLANCE COMPARISON -->
+  <div style="margin-bottom:40px;">
+    <span class="section-label">Side by Side</span>
+    <h2 class="section-title">How they compare</h2>
+    <p class="section-intro">Andrea's quick-reference breakdown — what each property is best at, and who it suits.</p>
+
+    <!-- COMPARISON CARDS -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px;">
+
+      <!-- Westin -->
+      <div style="background:var(--paper-pure);border:1px solid var(--pale-teal);border-radius:10px;padding:20px 18px;">
+        <div style="font-family:var(--font-head);font-size:0.95rem;font-weight:600;color:var(--teal-dark);margin-bottom:12px;line-height:1.3;">Westin Reserva Conchal</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);min-width:88px;">Beach</span>
+          <span style="font-size:0.9rem;">⭐⭐⭐⭐⭐</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);min-width:88px;">All-Inclusive</span>
+          <span style="font-size:0.82rem;font-weight:600;color:#3a7a3c;background:#eaf5eb;padding:2px 9px;border-radius:12px;">Yes</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);min-width:88px;">Adults Only</span>
+          <span style="font-size:0.82rem;font-weight:600;color:var(--text-secondary);background:var(--cream-light);padding:2px 9px;border-radius:12px;">No (Club is)</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:8px;border-top:1px solid var(--pale-teal);padding-top:10px;"><strong style="color:var(--text-primary);">Best for:</strong> Beach lovers, couples, golfers, first-time Costa Rica visitors</div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);"><strong style="color:var(--text-primary);">LIR transfer:</strong> ~1 hr 15 min</div>
+      </div>
+
+      <!-- Secrets -->
+      <div style="background:var(--paper-pure);border:1px solid var(--pale-teal);border-radius:10px;padding:20px 18px;">
+        <div style="font-family:var(--font-head);font-size:0.95rem;font-weight:600;color:var(--teal-dark);margin-bottom:12px;line-height:1.3;">Secrets Papagayo</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);min-width:88px;">Beach</span>
+          <span style="font-size:0.9rem;">⭐⭐⭐⭐</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);min-width:88px;">All-Inclusive</span>
+          <span style="font-size:0.82rem;font-weight:600;color:#3a7a3c;background:#eaf5eb;padding:2px 9px;border-radius:12px;">Yes</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);min-width:88px;">Adults Only</span>
+          <span style="font-size:0.82rem;font-weight:600;color:#3a7a3c;background:#eaf5eb;padding:2px 9px;border-radius:12px;">Yes</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:8px;border-top:1px solid var(--pale-teal);padding-top:10px;"><strong style="color:var(--text-primary);">Best for:</strong> Romance, relaxation, short airport transfer</div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);"><strong style="color:var(--text-primary);">LIR transfer:</strong> ~20–30 min</div>
+      </div>
+
+      <!-- El Mangroove -->
+      <div style="background:var(--paper-pure);border:1px solid var(--pale-teal);border-radius:10px;padding:20px 18px;">
+        <div style="font-family:var(--font-head);font-size:0.95rem;font-weight:600;color:var(--teal-dark);margin-bottom:12px;line-height:1.3;">El Mangroove</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);min-width:88px;">Beach</span>
+          <span style="font-size:0.9rem;">⭐⭐⭐⭐</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);min-width:88px;">All-Inclusive</span>
+          <span style="font-size:0.82rem;font-weight:600;color:var(--text-secondary);background:var(--cream-light);padding:2px 9px;border-radius:12px;">No</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);min-width:88px;">Adults Only</span>
+          <span style="font-size:0.82rem;font-weight:600;color:var(--text-secondary);background:var(--cream-light);padding:2px 9px;border-radius:12px;">No</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:8px;border-top:1px solid var(--pale-teal);padding-top:10px;"><strong style="color:var(--text-primary);">Best for:</strong> Food lovers, boutique luxury, authentic Costa Rica</div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);"><strong style="color:var(--text-primary);">LIR transfer:</strong> ~20 min</div>
+      </div>
+
+      <!-- Andaz -->
+      <div style="background:var(--paper-pure);border:1px solid var(--pale-teal);border-radius:10px;padding:20px 18px;">
+        <div style="font-family:var(--font-head);font-size:0.95rem;font-weight:600;color:var(--teal-dark);margin-bottom:12px;line-height:1.3;">Andaz Costa Rica</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);min-width:88px;">Beach</span>
+          <span style="font-size:0.9rem;">⭐⭐⭐⭐</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);min-width:88px;">All-Inclusive</span>
+          <span style="font-size:0.82rem;font-weight:600;color:var(--text-secondary);background:var(--cream-light);padding:2px 9px;border-radius:12px;">No</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);min-width:88px;">Adults Only</span>
+          <span style="font-size:0.82rem;font-weight:600;color:var(--text-secondary);background:var(--cream-light);padding:2px 9px;border-radius:12px;">No</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:8px;border-top:1px solid var(--pale-teal);padding-top:10px;"><strong style="color:var(--text-primary);">Best for:</strong> Luxury travelers, wellness, Peninsula Papagayo access</div>
+        <div style="font-size:0.8rem;color:var(--text-secondary);"><strong style="color:var(--text-primary);">LIR transfer:</strong> ~35–40 min</div>
+      </div>
+
+    </div>
+
+    <!-- ANDREA'S RANKINGS -->
+    <div style="background:var(--teal-dark);border-radius:10px;padding:24px 28px;">
+      <div style="font-family:var(--font-head);font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:16px;">Andrea's Rankings</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 24px;">
+        <div style="display:flex;gap:10px;align-items:baseline;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold);min-width:140px;line-height:1.4;">Best Beach</span>
+          <span style="font-size:0.88rem;color:#fff;">Westin Reserva Conchal</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:baseline;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold);min-width:140px;line-height:1.4;">Best Adults-Only</span>
+          <span style="font-size:0.88rem;color:#fff;">Secrets Papagayo</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:baseline;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold);min-width:140px;line-height:1.4;">Best Boutique Luxury</span>
+          <span style="font-size:0.88rem;color:#fff;">El Mangroove</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:baseline;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold);min-width:140px;line-height:1.4;">Most Luxurious Overall</span>
+          <span style="font-size:0.88rem;color:#fff;">Andaz Costa Rica</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:baseline;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold);min-width:140px;line-height:1.4;">Best Airport Convenience</span>
+          <span style="font-size:0.88rem;color:#fff;">El Mangroove &amp; Secrets</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:baseline;">
+          <span style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold);min-width:140px;line-height:1.4;">Best Overall Value</span>
+          <span style="font-size:0.88rem;color:#fff;">Westin Reserva Conchal</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING COMMITMENT -->
+  <div class="pricing-note">
+    <strong style="color:var(--teal-dark);">On pricing:</strong> We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+  </div>
+
+  <!-- TRANSFERS NOTE -->
+  <div class="transfer-section">
+    <div class="transfer-title">Airport Transfers · Liberia International (LIR)</div>
+    <p class="transfer-desc">All four resorts work from Liberia airport. Transfer times range from 20 minutes (Secrets, El Mangroove) to about 40 minutes (Andaz). Private roundtrip transfers can be arranged and added to your quote — let us know in your message below and we'll include pricing. Shared shuttle options are also available at lower cost.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WHAT'S NEXT -->
+  <div class="whats-next">
+    <div class="whats-next-title">What comes after this quote</div>
+    <p>A destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-section" id="form-section">
+    <div class="form-title">Tell us what you're thinking</div>
+    <p class="form-subtitle">Let us know your resort interest and any questions. We'll reach out to confirm details and get things moving.</p>
+
+    <div id="form-container">
+      <!-- Hidden fields -->
+      <input type="hidden" id="h_access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+      <input type="hidden" id="h_subject" value="Quote Response — Rebecca Alworth | Costa Rica 2026">
+      <input type="hidden" id="h_from_name" value="Rebecca Alworth Quote — Point Me to Paradise">
+      <input type="hidden" id="h_redirect" value="false">
+      <input type="hidden" id="h_selected_resort" value="">
+      <input type="hidden" id="h_selected_room" value="">
+      <input type="hidden" id="h_estimated_total" value="">
+
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label" for="f_name">Your Name *</label>
+          <input class="form-input" type="text" id="f_name" placeholder="Rebecca Alworth" required autocomplete="name">
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label" for="f_email">Email *</label>
+          <input class="form-input" type="email" id="f_email" placeholder="your@email.com" required autocomplete="email">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label" for="f_phone">Phone (optional)</label>
+          <input class="form-input" type="tel" id="f_phone" placeholder="(000) 000-0000" autocomplete="tel">
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label" for="f_resort_interest">Resort I'm Most Interested In</label>
+          <select class="form-input" id="f_resort_interest">
+            <option value="">— Select an option —</option>
+            <option value="Westin Reserva Conchal">Option 1 · Westin Reserva Conchal</option>
+            <option value="Secrets Papagayo">Option 2 · Secrets Papagayo</option>
+            <option value="El Mangroove">Option 3 · El Mangroove</option>
+            <option value="Andaz Costa Rica">Option 4 · Andaz Costa Rica</option>
+            <option value="Still deciding">Still deciding — want to talk it through</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f_insurance">Travel Insurance</label>
+        <select class="form-input" id="f_insurance">
+          <option value="">— Please select —</option>
+          <option value="Yes - would like a quote">Yes — I'd like a quote</option>
+          <option value="No - not interested">No — not interested</option>
+          <option value="Already have coverage">Already have coverage</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f_message">Questions or Notes (optional)</label>
+        <textarea class="form-input" id="f_message" placeholder="Any questions, preferences, or things you'd like us to know about your trip…"></textarea>
+      </div>
+
+      <button class="form-submit" onclick="submitForm()">Send My Interest →</button>
+      <div class="form-error" id="form-error">Something went wrong sending your message. Please email us directly or try again.</div>
+    </div>
+
+    <div class="thank-you" id="thank-you">
+      <div class="thank-you-icon">✓</div>
+      <div class="thank-you-title">We got it — thank you!</div>
+      <p>We'll be in touch soon to talk through your options and get everything confirmed. Enjoy the anticipation.</p>
+    </div>
+  </div>
+
+  <p style="font-size:0.8rem;color:var(--text-secondary);text-align:center;margin-top:8px;">Pricing and availability are subject to change until fully booked. Final pricing confirmed by your advisor. Individual hotels and components are priced at publicly available rates — and in many cases lower than what you'd find on your own. You don't have to worry about overpaying for a piece of your trip. What you're paying for is the rest: the right rooms at the right property, operators we've used for years, the trip app, and a human who answers when something doesn't go to plan. Deposit: $200–$500 low deposit, pay balance closer to travel date.</p>
+
+</main>
+
+<!-- STICKY TOTAL -->
+<div class="sticky-total" id="sticky-total" style="display:none;">
+  <div>
+    <div class="sticky-total-label">Estimated Total</div>
+    <div class="sticky-total-amount" id="total-display">Est. $0</div>
+    <div class="sticky-total-note">Final pricing confirmed by your advisor</div>
+  </div>
+  <button class="sticky-total-cta" onclick="scrollToForm()">Reserve My Spot →</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Point Me to Paradise Travel</div>
+      <div class="footer-tagline">Built for travelers who want it done right.</div>
+      <div class="footer-contact">
+        Andrea Gunter<br>
+        <a id="emailLink" href="#">Loading...</a><br>
+        <a href="tel:4097893579" style="color:rgba(255,255,255,0.8);text-decoration:none;">(409) 789-3579</a>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      Prices and availability are subject to change until time of booking. This quote is prepared exclusively for Rebecca Alworth and is not transferable. All rates shown are in USD and include taxes unless otherwise noted.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Email assembly — never hardcode
+  (function() {
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var el = document.getElementById('emailLink');
+    el.href = 'mailto:' + addr;
+    el.textContent = addr;
+  })();
+
+  // Resort state
+  var currentResort = -1;
+  var currentTotal = 0;
+
+
+
+  function selectRoom(el, groupName, label, price) {
+    var siblings = el.parentNode.querySelectorAll('.room-option');
+    siblings.forEach(function(s) { s.classList.remove('selected'); });
+    el.classList.add('selected');
+    var radio = el.querySelector('input[type="radio"]');
+    if (radio) { radio.checked = true; }
+    updateTotal();
+  }
+
+  function selectResort(labelEl, idx, label, price) {
+    currentResort = idx;
+    currentTotal = price;
+    document.getElementById('h_selected_resort').value = label;
+    document.getElementById('h_estimated_total').value = 'Est. $' + price.toLocaleString();
+    updateTotal();
+  }
+
+  function updateTotal() {
+    if (currentResort < 0) return;
+    var display = 'Est. $' + currentTotal.toLocaleString();
+    document.getElementById('total-display').textContent = display;
+    var sticky = document.getElementById('sticky-total');
+    sticky.style.display = 'flex';
+    document.getElementById('h_estimated_total').value = display;
+  }
+
+  function scrollToForm() {
+    document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function submitForm() {
+    var name = document.getElementById('f_name').value.trim();
+    var email = document.getElementById('f_email').value.trim();
+    var errEl = document.getElementById('form-error');
+    errEl.style.display = 'none';
+
+    if (!name || !email) {
+      errEl.textContent = 'Please fill in your name and email before submitting.';
+      errEl.style.display = 'block';
+      return;
+    }
+
+    var payload = {
+      access_key: document.getElementById('h_access_key').value,
+      subject: document.getElementById('h_subject').value,
+      from_name: document.getElementById('h_from_name').value,
+      redirect: 'false',
+      name: name,
+      email: email,
+      phone: document.getElementById('f_phone').value || 'Not provided',
+      resort_interest: document.getElementById('f_resort_interest').value || 'Not selected',
+      travel_insurance: document.getElementById('f_insurance').value || 'Not selected',
+      message: document.getElementById('f_message').value || '',
+      selected_resort: document.getElementById('h_selected_resort').value || 'Not selected via button',
+      estimated_total: document.getElementById('h_estimated_total').value || 'Not calculated'
+    };
+
+    var btn = document.querySelector('.form-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.success) {
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('thank-you').style.display = 'block';
+      } else {
+        errEl.textContent = 'Something went wrong. Please try again or email us directly.';
+        errEl.style.display = 'block';
+        btn.textContent = 'Send My Interest →';
+        btn.disabled = false;
+      }
+    })
+    .catch(function() {
+      errEl.textContent = 'Network error. Please check your connection and try again.';
+      errEl.style.display = 'block';
+      btn.textContent = 'Send My Interest →';
+      btn.disabled = false;
+    });
+  }
+</script>
+
+</body>
+</html>
