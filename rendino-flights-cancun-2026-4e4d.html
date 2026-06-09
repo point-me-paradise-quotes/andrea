@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marium Rendino — Houston to Cancún Flights | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #75AFB1;
+    --teal-dark: #4F8A8C;
+    --pale-teal: #C4E4E1;
+    --gold: #DAC396;
+    --gold-dark: #B89E6A;
+    --cream: #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper: #FBF9F4;
+    --paper-pure: #FFFFFF;
+    --text-primary: #3D3D3D;
+    --text-muted: #606060;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-italic: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    background: var(--paper);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: flex-end;
+    background-image:
+      linear-gradient(to bottom, rgba(79,138,140,0.55) 0%, rgba(30,70,72,0.80) 100%),
+      url('https://images.unsplash.com/photo-1602088113235-229c19758e9f?w=1600&q=80&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center 40%;
+    padding: 0 24px 40px;
+  }
+  .hero-inner {
+    max-width: 820px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pale-teal);
+    margin-bottom: 10px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 6vw, 52px);
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    color: rgba(255,255,255,0.88);
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+  .hero-meta .dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; }
+
+  /* ── COMMITMENT BANNER ── */
+  .commitment-banner {
+    background: var(--teal-dark);
+    color: #fff;
+    text-align: center;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+  .commitment-banner strong { font-weight: 600; }
+
+  /* ── STICKY PRICE BAR ── */
+  .price-bar {
+    background: var(--paper-pure);
+    border-bottom: 1px solid var(--pale-teal);
+    padding: 14px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(79,138,140,0.10);
+  }
+  .price-bar-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .price-bar-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+  .price-bar-label strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--teal-dark);
+    line-height: 1.1;
+  }
+  .price-bar-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    max-width: 300px;
+    text-align: right;
+    line-height: 1.4;
+  }
+  .price-check-note {
+    font-size: 13px;
+    color: var(--text-muted);
+    max-width: 440px;
+    font-style: italic;
+  }
+
+  /* ── MAIN CONTENT ── */
+  .main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 6px;
+  }
+  .section-intro {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    max-width: 580px;
+  }
+
+  /* ── FLIGHT OPTION CARDS ── */
+  .flight-cards { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
+
+  .flight-card {
+    background: var(--paper-pure);
+    border: 2px solid var(--pale-teal);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.18s, box-shadow 0.18s;
+    position: relative;
+  }
+  .flight-card:hover { border-color: var(--teal); box-shadow: 0 4px 18px rgba(117,175,177,0.18); }
+  .flight-card.selected { border-color: var(--teal-dark); box-shadow: 0 4px 24px rgba(79,138,140,0.22); }
+
+  .flight-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid var(--cream);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .card-header-left { display: flex; align-items: center; gap: 14px; }
+  .radio-indicator {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--pale-teal);
+    background: var(--paper-pure);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.15s;
+  }
+  .radio-indicator::after {
+    content: '';
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--teal-dark);
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  .flight-card.selected .radio-indicator { border-color: var(--teal-dark); }
+  .flight-card.selected .radio-indicator::after { opacity: 1; }
+
+  .airline-name {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--teal-dark);
+  }
+  .airline-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 1px;
+  }
+
+  .card-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+  .badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .badge-cabin { background: var(--cream-light); color: var(--teal-dark); }
+  .badge-stops-none { background: #e6f5f0; color: #2a7a5a; }
+  .badge-stops-some { background: #fef6e6; color: #8a6a1a; }
+  .badge-alt { background: var(--cream); color: var(--gold-dark); }
+
+  /* price badge in header */
+  .card-price-area { text-align: right; }
+  .price-range {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--teal-dark);
+    line-height: 1;
+  }
+  .price-range span { font-size: 13px; color: var(--text-muted); font-family: var(--font-body); font-weight: 400; }
+  .price-delta {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 4px;
+    text-align: right;
+  }
+  .delta-base { color: var(--teal-dark); }
+  .delta-more { color: #8a5a1a; }
+
+  /* flight legs */
+  .card-body { padding: 18px 20px; }
+
+  .legs { display: flex; flex-direction: column; gap: 16px; }
+
+  .leg-block {}
+  .leg-direction {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+
+  .segment { display: flex; align-items: flex-start; gap: 0; position: relative; }
+  .seg-times { flex: 0 0 auto; min-width: 90px; }
+  .seg-dep, .seg-arr { font-size: 18px; font-weight: 600; color: var(--text-primary); line-height: 1; }
+  .seg-airport { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-top: 2px; }
+  .seg-date { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  .seg-middle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 12px;
+    padding-top: 4px;
+  }
+  .seg-duration { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+  .seg-line {
+    width: 100%;
+    height: 1px;
+    background: var(--pale-teal);
+    position: relative;
+  }
+  .seg-line::before, .seg-line::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+  .seg-line::before { left: 0; }
+  .seg-line::after { right: 0; }
+  .seg-stop-label {
+    font-size: 11px;
+    color: var(--gold-dark);
+    font-weight: 500;
+    margin-top: 5px;
+  }
+
+  .leg-divider {
+    display: flex; align-items: center; gap: 8px;
+    margin: 10px 0;
+    color: var(--text-muted);
+    font-size: 12px;
+  }
+  .leg-divider::before, .leg-divider::after {
+    content: ''; flex: 1; height: 1px; background: var(--cream);
+  }
+
+  .layover-note {
+    background: var(--cream-light);
+    border-left: 3px solid var(--gold);
+    padding: 8px 12px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 8px 0;
+  }
+  .layover-note strong { color: var(--text-primary); }
+
+  .total-travel { font-size: 13px; color: var(--text-muted); margin-top: 10px; }
+  .total-travel strong { color: var(--text-primary); }
+
+  .leg-separator {
+    border: none;
+    border-top: 1px dashed var(--cream);
+    margin: 16px 0;
+  }
+
+  /* fare tiers */
+  .fare-tiers {
+    border-top: 1px solid var(--cream);
+    padding: 16px 20px;
+    background: var(--cream-light);
+  }
+  .fare-tiers-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .fare-tier-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .fare-tier {
+    background: var(--paper-pure);
+    border: 1px solid var(--pale-teal);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .fare-tier-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 6px;
+  }
+  .fare-tier-price {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .fare-tier-price small { font-family: var(--font-body); font-size: 12px; color: var(--text-muted); font-weight: 400; }
+  .fare-detail { font-size: 12px; color: var(--text-muted); display: flex; align-items: flex-start; gap: 5px; margin-bottom: 3px; }
+  .fare-detail .icon { flex-shrink: 0; width: 14px; text-align: center; }
+  .icon-yes { color: #2a7a5a; }
+  .icon-no { color: #c0392b; }
+  .icon-fee { color: var(--gold-dark); }
+
+  /* select buttons on fare tiers */
+  .tier-select-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px 0;
+    border-radius: 6px;
+    border: 1px solid var(--pale-teal);
+    background: var(--paper-pure);
+    color: var(--teal-dark);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .tier-select-btn:hover { background: var(--pale-teal); border-color: var(--teal); }
+  .tier-select-btn.active { background: var(--teal-dark); color: #fff; border-color: var(--teal-dark); }
+
+  /* alt-airport warning */
+  .alt-airport-note {
+    background: #fef6e6;
+    border: 1px solid #e6c97a;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #7a5a10;
+    margin: 0 20px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* ── BOTTOM PRICE BAR ── */
+  .price-bar-bottom {
+    background: var(--teal-dark);
+    color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+  }
+  .price-bar-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .pbb-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 2px;
+  }
+  .pbb-amount {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .pbb-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.70);
+    max-width: 280px;
+    line-height: 1.5;
+  }
+  .pbb-check-note {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    font-style: italic;
+    max-width: 320px;
+  }
+
+  /* ── BOTTOM COMMITMENT ── */
+  .commitment-box {
+    background: var(--cream-light);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 22px;
+    margin-bottom: 36px;
+    font-size: 15px;
+    color: var(--text-primary);
+    line-height: 1.65;
+  }
+
+  /* ── CONTACT FORM ── */
+  .form-section { margin-bottom: 40px; }
+  .form-card {
+    background: var(--paper-pure);
+    border: 1px solid var(--pale-teal);
+    border-radius: 12px;
+    padding: 28px;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .form-group { display: flex; flex-direction: column; gap: 5px; }
+  .form-group.full { grid-column: 1 / -1; }
+  label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+    font-family: var(--font-body);
+    font-size: 16px;
+    padding: 10px 13px;
+    border: 1.5px solid var(--pale-teal);
+    border-radius: 7px;
+    background: var(--paper);
+    color: var(--text-primary);
+    transition: border-color 0.15s;
+    -webkit-appearance: none;
+    outline: none;
+    width: 100%;
+  }
+  input:focus, textarea:focus, select:focus { border-color: var(--teal); background: var(--paper-pure); }
+  textarea { resize: vertical; min-height: 90px; }
+  .form-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    font-style: italic;
+  }
+
+  .submit-btn {
+    background: var(--teal-dark);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 32px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 48px;
+    transition: background 0.15s;
+    width: 100%;
+  }
+  .submit-btn:hover { background: var(--teal); }
+
+  .form-success {
+    display: none;
+    background: #e6f5f0;
+    border: 1px solid #2a7a5a;
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+    font-size: 15px;
+    color: #1a5a3a;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--teal-dark);
+    color: rgba(255,255,255,0.90);
+    padding: 32px 24px;
+    text-align: center;
+  }
+  footer .advisor-name {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  footer .advisor-contact {
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 16px;
+    margin-bottom: 14px;
+  }
+  footer .advisor-contact a { color: var(--pale-teal); text-decoration: none; }
+  footer .footer-legal {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 540px) {
+    .hero { min-height: 360px; padding: 0 16px 32px; }
+    .main { padding: 28px 16px 48px; }
+    .card-header { flex-direction: column; align-items: flex-start; }
+    .card-price-area { text-align: left; }
+    .price-delta { text-align: left; }
+    .fare-tier-row { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .price-bar-inner { flex-direction: column; align-items: flex-start; }
+    .price-bar-note { text-align: left; }
+    .price-bar-bottom-inner { flex-direction: column; }
+    .pbb-note { max-width: 100%; }
+    .segment { flex-wrap: wrap; }
+    .seg-middle { min-width: 80px; }
+    .form-card { padding: 20px 16px; }
+    .fare-tiers { padding: 14px 16px; }
+    .card-body { padding: 16px 16px; }
+  }
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 28px; }
+    .price-bar { padding: 12px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Point Me to Paradise Travel · Flight Comparison</p>
+    <h1>Marium Rendino<br>Houston → Cancún</h1>
+    <div class="hero-meta">
+      <span>July 2 – July 6, 2026</span>
+      <span class="dot"></span>
+      <span>2 Adults · 1 Teenager</span>
+      <span class="dot"></span>
+      <span>3 Options to Compare</span>
+    </div>
+  </div>
+</section>
+
+<!-- TOP COMMITMENT BANNER -->
+<div class="commitment-banner">
+  <strong>We don't book hotels. We build trips.</strong> Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+</div>
+
+<!-- TOP PRICE BAR (sticky) -->
+<div class="price-bar" id="topBar">
+  <div class="price-bar-inner">
+    <div class="price-bar-label">
+      <small>Selected option total</small>
+      <strong id="topTotal">Est. $1,896</strong>
+    </div>
+    <div class="price-bar-note">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- Section header -->
+  <div class="section-label">Your Flight Options</div>
+  <h2 class="section-title">Three ways to get to Cancún</h2>
+  <p class="section-intro">All three options fly nonstop or near-nonstop out of Houston. Here's the full picture — pick the one that fits how you travel.</p>
+
+  <!-- PRICE CHECK NOTE -->
+  <p style="font-size:13px;color:var(--text-muted);font-style:italic;margin-bottom:24px;">We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
+
+  <!-- ===== FLIGHT CARDS ===== -->
+  <div class="flight-cards" id="flightCards">
+
+    <!-- ── OPTION 1: Frontier / Volaris ── -->
+    <div class="flight-card selected" id="card-1" onclick="selectCard(1, 1896)">
+      <input type="radio" name="flightChoice" id="flight1" value="Frontier/Volaris – Nonstop – Basic Fare – $1,896 total" checked>
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="radio-indicator"></div>
+          <div>
+            <div class="airline-name">Frontier / Volaris</div>
+            <div class="airline-sub">IAH → CUN · Nonstop both ways</div>
+          </div>
+        </div>
+        <div class="card-badges">
+          <span class="badge badge-cabin">Economy</span>
+          <span class="badge badge-stops-none">Nonstop ↔</span>
+        </div>
+        <div class="card-price-area">
+          <div class="price-range" id="price1">$1,896 <span>total</span></div>
+          <div class="price-delta delta-base" id="delta1">✓ Lowest fare</div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="legs">
+          <div class="leg-block">
+            <div class="leg-direction">✈ Outbound · Wed, July 2</div>
+            <div class="segment">
+              <div class="seg-times">
+                <div class="seg-dep">11:52 AM</div>
+                <div class="seg-airport">IAH · Houston Intl</div>
+              </div>
+              <div class="seg-middle">
+                <div class="seg-duration">2h 33m</div>
+                <div class="seg-line"></div>
+              </div>
+              <div class="seg-times" style="text-align:right;">
+                <div class="seg-arr">2:25 PM</div>
+                <div class="seg-airport">CUN · Cancún</div>
+              </div>
+            </div>
+          </div>
+
+          <hr class="leg-separator">
+
+          <div class="leg-block">
+            <div class="leg-direction">✈ Return · Sun, July 6</div>
+            <div class="segment">
+              <div class="seg-times">
+                <div class="seg-dep">1:59 PM</div>
+                <div class="seg-airport">CUN · Cancún</div>
+              </div>
+              <div class="seg-middle">
+                <div class="seg-duration">2h 32m</div>
+                <div class="seg-line"></div>
+              </div>
+              <div class="seg-times" style="text-align:right;">
+                <div class="seg-arr">4:31 PM</div>
+                <div class="seg-airport">IAH · Houston Intl</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fare-tiers">
+        <div class="fare-tiers-label">Choose a fare tier</div>
+        <div class="fare-tier-row">
+          <div class="fare-tier">
+            <div class="fare-tier-name">Basic Fare</div>
+            <div class="fare-tier-price">$1,896 <small>total (3 pax)</small></div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Seat selection for a fee</div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Carry-on bag for a fee</div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Checked bag for a fee</div>
+            <div class="fare-detail"><span class="icon icon-no">✗</span> Non-refundable</div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Changes for a fee</div>
+            <button class="tier-select-btn active" onclick="event.stopPropagation(); selectTier(1, 1896, this, 'Frontier/Volaris – Basic Fare – $1,896 total')">Selected</button>
+          </div>
+          <div class="fare-tier">
+            <div class="fare-tier-name">Economy Bundle</div>
+            <div class="fare-tier-price">$2,111 <small>total (3 pax)</small></div>
+            <div class="fare-detail"><span class="icon icon-yes">✓</span> Free seat selection</div>
+            <div class="fare-detail"><span class="icon icon-yes">✓</span> 1 carry-on/person, free</div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Checked bag still extra</div>
+            <div class="fare-detail"><span class="icon icon-yes">✓</span> Free changes (fare diff may apply)</div>
+            <div class="fare-detail"><span class="icon icon-no">✗</span> Non-refundable</div>
+            <button class="tier-select-btn" onclick="event.stopPropagation(); selectTier(1, 2111, this, 'Frontier/Volaris – Economy Bundle – $2,111 total')">Select this tier</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /card-1 -->
+
+    <!-- ── OPTION 2: United Airlines ── -->
+    <div class="flight-card" id="card-2" onclick="selectCard(2, 2148)">
+      <input type="radio" name="flightChoice" id="flight2" value="United Airlines – Nonstop – Basic Economy – $2,148 total">
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="radio-indicator"></div>
+          <div>
+            <div class="airline-name">United Airlines</div>
+            <div class="airline-sub">IAH → CUN · Nonstop both ways</div>
+          </div>
+        </div>
+        <div class="card-badges">
+          <span class="badge badge-cabin">Economy</span>
+          <span class="badge badge-stops-none">Nonstop ↔</span>
+        </div>
+        <div class="card-price-area">
+          <div class="price-range" id="price2">$2,148 <span>total</span></div>
+          <div class="price-delta delta-more" id="delta2">+$252 vs. Option 1</div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="legs">
+          <div class="leg-block">
+            <div class="leg-direction">✈ Outbound · Wed, July 2</div>
+            <div class="segment">
+              <div class="seg-times">
+                <div class="seg-dep">10:10 AM</div>
+                <div class="seg-airport">IAH · Houston Intl</div>
+              </div>
+              <div class="seg-middle">
+                <div class="seg-duration">2h 23m</div>
+                <div class="seg-line"></div>
+              </div>
+              <div class="seg-times" style="text-align:right;">
+                <div class="seg-arr">12:33 PM</div>
+                <div class="seg-airport">CUN · Cancún</div>
+              </div>
+            </div>
+          </div>
+
+          <hr class="leg-separator">
+
+          <div class="leg-block">
+            <div class="leg-direction">✈ Return · Sun, July 6</div>
+            <div class="segment">
+              <div class="seg-times">
+                <div class="seg-dep">5:22 PM</div>
+                <div class="seg-airport">CUN · Cancún</div>
+              </div>
+              <div class="seg-middle">
+                <div class="seg-duration">2h 33m</div>
+                <div class="seg-line"></div>
+              </div>
+              <div class="seg-times" style="text-align:right;">
+                <div class="seg-arr">7:55 PM</div>
+                <div class="seg-airport">IAH · Houston Intl</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fare-tiers">
+        <div class="fare-tiers-label">Choose a fare tier</div>
+        <div class="fare-tier-row">
+          <div class="fare-tier">
+            <div class="fare-tier-name">Basic Economy</div>
+            <div class="fare-tier-price">$2,148 <small>total (3 pax)</small></div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Seat selection for a fee</div>
+            <div class="fare-detail"><span class="icon icon-no">✗</span> No carry-on included</div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Checked bag ~$100/person</div>
+            <div class="fare-detail"><span class="icon icon-no">✗</span> No priority boarding</div>
+            <div class="fare-detail"><span class="icon icon-no">✗</span> No refunds, no changes</div>
+            <button class="tier-select-btn active" onclick="event.stopPropagation(); selectTier(2, 2148, this, 'United Airlines – Basic Economy – $2,148 total')">Selected</button>
+          </div>
+          <div class="fare-tier">
+            <div class="fare-tier-name">Economy</div>
+            <div class="fare-tier-price">$2,508 <small>total (3 pax)</small></div>
+            <div class="fare-detail"><span class="icon icon-yes">✓</span> Free seat selection</div>
+            <div class="fare-detail"><span class="icon icon-yes">✓</span> 1 carry-on/person, free</div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Checked bag ~$100/person</div>
+            <div class="fare-detail"><span class="icon icon-yes">✓</span> Free changes (fare diff may apply)</div>
+            <div class="fare-detail"><span class="icon icon-no">✗</span> Non-refundable</div>
+            <button class="tier-select-btn" onclick="event.stopPropagation(); selectTier(2, 2508, this, 'United Airlines – Economy – $2,508 total')">Select this tier</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /card-2 -->
+
+    <!-- ── OPTION 3: Southwest ── -->
+    <div class="flight-card" id="card-3" onclick="selectCard(3, 2057)">
+      <input type="radio" name="flightChoice" id="flight3" value="Southwest Airlines – 1 Stop outbound – Basic Fare – $2,057 total">
+
+      <div class="alt-airport-note">
+        ⚠️ <span><strong>Departs from Houston Hobby (HOU)</strong>, not IAH. Allow extra time — Hobby is ~45 min from downtown Houston, depending on traffic.</span>
+      </div>
+
+      <div class="card-header">
+        <div class="card-header-left">
+          <div class="radio-indicator"></div>
+          <div>
+            <div class="airline-name">Southwest Airlines</div>
+            <div class="airline-sub">HOU → CUN · 1 Stop outbound / Nonstop return</div>
+          </div>
+        </div>
+        <div class="card-badges">
+          <span class="badge badge-cabin">Economy</span>
+          <span class="badge badge-stops-some">1 Stop outbound</span>
+          <span class="badge badge-alt">Alt. Airport</span>
+        </div>
+        <div class="card-price-area">
+          <div class="price-range" id="price3">$2,057 <span>total</span></div>
+          <div class="price-delta delta-more" id="delta3">+$161 vs. Option 1</div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="legs">
+          <div class="leg-block">
+            <div class="leg-direction">✈ Outbound · Wed, July 2 · 1 Stop (STL)</div>
+            <div class="segment">
+              <div class="seg-times">
+                <div class="seg-dep">7:20 AM</div>
+                <div class="seg-airport">HOU · Hobby</div>
+              </div>
+              <div class="seg-middle">
+                <div class="seg-duration">~2h 10m est.</div>
+                <div class="seg-line"></div>
+                <div class="seg-stop-label">→ STL</div>
+              </div>
+              <div class="seg-times" style="text-align:right;">
+                <div class="seg-arr">~9:30 AM est.</div>
+                <div class="seg-airport">STL · St. Louis</div>
+              </div>
+            </div>
+            <div class="layover-note">
+              <strong>1h 30m layover</strong> in St. Louis (STL)
+            </div>
+            <div class="segment" style="margin-top:8px;">
+              <div class="seg-times">
+                <div class="seg-dep">~11:00 AM est.</div>
+                <div class="seg-airport">STL · St. Louis</div>
+              </div>
+              <div class="seg-middle">
+                <div class="seg-duration">~3h est.</div>
+                <div class="seg-line"></div>
+              </div>
+              <div class="seg-times" style="text-align:right;">
+                <div class="seg-arr">2:00 PM</div>
+                <div class="seg-airport">CUN · Cancún</div>
+              </div>
+            </div>
+            <div class="total-travel" style="margin-top:10px;"><strong>Total outbound travel time: 6h 40m</strong></div>
+          </div>
+
+          <hr class="leg-separator">
+
+          <div class="leg-block">
+            <div class="leg-direction">✈ Return · Sun, July 6 · Nonstop</div>
+            <div class="segment">
+              <div class="seg-times">
+                <div class="seg-dep">5:15 PM</div>
+                <div class="seg-airport">CUN · Cancún</div>
+              </div>
+              <div class="seg-middle">
+                <div class="seg-duration">2h 15m</div>
+                <div class="seg-line"></div>
+              </div>
+              <div class="seg-times" style="text-align:right;">
+                <div class="seg-arr">7:30 PM</div>
+                <div class="seg-airport">HOU · Hobby</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fare-tiers">
+        <div class="fare-tiers-label">Choose a fare tier</div>
+        <div class="fare-tier-row">
+          <div class="fare-tier">
+            <div class="fare-tier-name">Basic Fare</div>
+            <div class="fare-tier-price">$2,057 <small>total (3 pax)</small></div>
+            <div class="fare-detail"><span class="icon icon-yes">✓</span> 1 carry-on/person, free</div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Seat selection for a fee</div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Extra legroom for a fee</div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Priority boarding for a fee</div>
+            <div class="fare-detail"><span class="icon icon-no">✗</span> No ticket changes</div>
+            <button class="tier-select-btn active" onclick="event.stopPropagation(); selectTier(3, 2057, this, 'Southwest – Basic Fare – $2,057 total')">Selected</button>
+          </div>
+          <div class="fare-tier">
+            <div class="fare-tier-name">Choice Fare</div>
+            <div class="fare-tier-price">$2,261 <small>total (3 pax)</small></div>
+            <div class="fare-detail"><span class="icon icon-yes">✓</span> Free seat selection</div>
+            <div class="fare-detail"><span class="icon icon-yes">✓</span> Free changes (fare diff may apply)</div>
+            <div class="fare-detail"><span class="icon icon-yes">✓</span> 1 carry-on/person, free</div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Extra legroom for a fee</div>
+            <div class="fare-detail"><span class="icon icon-fee">$</span> Priority boarding for a fee</div>
+            <button class="tier-select-btn" onclick="event.stopPropagation(); selectTier(3, 2261, this, 'Southwest – Choice Fare – $2,261 total')">Select this tier</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /card-3 -->
+
+  </div><!-- /flight-cards -->
+
+  <!-- BOTTOM PRICE BAR -->
+  <div class="price-bar-bottom">
+    <div class="price-bar-bottom-inner">
+      <div>
+        <div class="pbb-label">Your selected option</div>
+        <div class="pbb-amount" id="bottomTotal">Est. $1,896</div>
+        <div class="pbb-note" style="margin-top:6px;">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+      </div>
+      <div class="pbb-check-note">We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM COMMITMENT BOX -->
+  <div class="commitment-box">
+    <strong>What's coming after this quote:</strong> a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="form-section">
+    <div class="section-label">Ready to move forward?</div>
+    <h2 class="section-title">Tell us your pick</h2>
+    <p class="section-intro" style="margin-bottom:20px;">Fill this out and Andrea will confirm availability and lock in your flights.</p>
+
+    <div class="form-card">
+      <form id="quoteForm" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+        <input type="hidden" name="subject" value="Flight Quote Request — Marium Rendino — Cancún 2026">
+        <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="selected_flight" id="hiddenFlight" value="Frontier/Volaris – Basic Fare – $1,896 total">
+        <input type="hidden" name="quoted_total" id="hiddenTotal" value="$1,896">
+        <input type="hidden" name="trip_dates" value="July 2–6, 2026">
+        <input type="hidden" name="travelers" value="2 Adults, 1 Teenager">
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="clientName">Your name</label>
+            <input type="text" id="clientName" name="client_name" placeholder="Marium Rendino" required>
+          </div>
+          <div class="form-group">
+            <label for="clientPhone">Best phone</label>
+            <input type="tel" id="clientPhone" name="client_phone" placeholder="(xxx) xxx-xxxx">
+          </div>
+          <div class="form-group full">
+            <label for="clientEmail">Email address</label>
+            <input type="email" id="clientEmail" name="client_email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group full">
+            <label for="clientMessage">Anything else Andrea should know?</label>
+            <textarea id="clientMessage" name="message" placeholder="Seat preferences, baggage needs, questions, flexibility on dates..."></textarea>
+          </div>
+        </div>
+
+        <p class="form-note">Your selected flight option is automatically included with this message.</p>
+        <button type="submit" class="submit-btn" id="submitBtn">Send My Selection to Andrea</button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <strong>Got it!</strong> Andrea will be in touch shortly to confirm availability and next steps.
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="advisor-name">Andrea Gunter</div>
+  <div class="advisor-contact">
+    <span>Point Me to Paradise Travel</span>
+    <span><a href="tel:4097893579">(409) 789-3579</a></span>
+    <span><a href="#" id="emailLink"></a></span>
+  </div>
+  <div class="footer-legal">
+    Prices and availability are subject to change until time of booking.<br>
+    Individual flight components are priced at publicly available rates — and in many cases lower than what you'd find on your own. You don't have to worry about overpaying for a piece of your trip. What you're paying for is the rest: the right itinerary, operators we trust, the trip app, and a human who answers when something doesn't go to plan.
+  </div>
+</footer>
+
+<script>
+  // ── Email assembly (Cloudflare-safe) ──
+  (function() {
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var el = document.getElementById('emailLink');
+    el.href = 'mailto:' + addr;
+    el.textContent = addr;
+  })();
+
+  // ── State ──
+  var selectedCard = 1;
+  var selectedPrice = 1896;
+  var selectedLabel = 'Frontier/Volaris \u2013 Basic Fare \u2013 $1,896 total';
+  var basePrice = 1896; // option 1 basic fare — used for delta calcs
+
+  // Per-card default prices (Basic Fare tier)
+  var cardDefaults = { 1: 1896, 2: 2148, 3: 2057 };
+
+  function fmt(n) {
+    return 'Est. $' + n.toLocaleString('en-US');
+  }
+
+  function updateBars() {
+    var display = fmt(selectedPrice);
+    document.getElementById('topTotal').textContent = display;
+    document.getElementById('bottomTotal').textContent = display;
+    document.getElementById('hiddenTotal').value = '$' + selectedPrice.toLocaleString('en-US');
+    document.getElementById('hiddenFlight').value = selectedLabel;
+  }
+
+  function updateDeltas() {
+    // Collect current price per card
+    var prices = {
+      1: parseInt(document.getElementById('price1').getAttribute('data-price') || cardDefaults[1]),
+      2: parseInt(document.getElementById('price2').getAttribute('data-price') || cardDefaults[2]),
+      3: parseInt(document.getElementById('price3').getAttribute('data-price') || cardDefaults[3])
+    };
+    // The reference is always the current price of card 1
+    var ref = prices[1];
+    // Update delta labels
+    updateDeltaEl('delta1', prices[1], ref, 1);
+    updateDeltaEl('delta2', prices[2], ref, 2);
+    updateDeltaEl('delta3', prices[3], ref, 3);
+  }
+
+  function updateDeltaEl(id, price, ref, cardNum) {
+    var el = document.getElementById(id);
+    var diff = price - ref;
+    if (diff === 0) {
+      el.textContent = '\u2713 Lowest fare';
+      el.className = 'price-delta delta-base';
+    } else if (diff < 0) {
+      el.textContent = '\u2212$' + Math.abs(diff).toLocaleString('en-US') + ' savings';
+      el.className = 'price-delta delta-base';
+    } else {
+      el.textContent = '+$' + diff.toLocaleString('en-US') + ' vs. Option 1';
+      el.className = 'price-delta delta-more';
+    }
+  }
+
+  function selectCard(cardNum, price) {
+    selectedCard = cardNum;
+    // Reset all cards
+    [1,2,3].forEach(function(n) {
+      var card = document.getElementById('card-' + n);
+      card.classList.remove('selected');
+    });
+    var chosen = document.getElementById('card-' + cardNum);
+    chosen.classList.add('selected');
+    // Determine current active tier price for this card
+    var activeBtns = chosen.querySelectorAll('.tier-select-btn.active');
+    // Price is passed from tier click or card click (default tier)
+    selectedPrice = price;
+    updateBars();
+  }
+
+  function selectTier(cardNum, price, btn, label) {
+    // Select the card first
+    selectCard(cardNum, price);
+    selectedLabel = label;
+
+    // Update tier button states within this card
+    var card = document.getElementById('card-' + cardNum);
+    var allBtns = card.querySelectorAll('.tier-select-btn');
+    allBtns.forEach(function(b) {
+      b.classList.remove('active');
+      b.textContent = 'Select this tier';
+    });
+    btn.classList.add('active');
+    btn.textContent = 'Selected';
+
+    // Update displayed price in card header
+    var priceEl = document.getElementById('price' + cardNum);
+    priceEl.setAttribute('data-price', price);
+    priceEl.innerHTML = '$' + price.toLocaleString('en-US') + ' <span>total</span>';
+
+    // Update hidden radio value
+    document.getElementById('flight' + cardNum).value = label;
+
+    selectedPrice = price;
+    updateBars();
+    updateDeltas();
+  }
+
+  // ── Form submission ──
+  function handleSubmit(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    btn.textContent = 'Sending\u2026';
+    btn.disabled = true;
+
+    var form = document.getElementById('quoteForm');
+    var data = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(res) {
+      if (res.success) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'Send My Selection to Andrea';
+        btn.disabled = false;
+        alert('Something went wrong. Please email Andrea directly.');
+      }
+    })
+    .catch(function() {
+      btn.textContent = 'Send My Selection to Andrea';
+      btn.disabled = false;
+      alert('Could not connect. Please email Andrea directly.');
+    });
+  }
+
+  // Init data-price attributes
+  document.getElementById('price1').setAttribute('data-price', 1896);
+  document.getElementById('price2').setAttribute('data-price', 2148);
+  document.getElementById('price3').setAttribute('data-price', 2057);
+</script>
+</body>
+</html>
