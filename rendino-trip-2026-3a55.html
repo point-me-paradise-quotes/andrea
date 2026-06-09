@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cancún Trip — Miriam Rendino | Point Me to Paradise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #75AFB1;
+    --teal-dark: #4F8A8C;
+    --pale-teal: #C4E4E1;
+    --gold: #DAC396;
+    --gold-dark: #B89E6A;
+    --cream: #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper: #FBF9F4;
+    --paper-pure: #FFFFFF;
+    --text-primary: #3D3D3D;
+    --text-secondary: #606060;
+    --font-head: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-accent: 'Cormorant Garamond', serif;
+    --radius: 12px;
+    --shadow: 0 2px 16px rgba(79,138,140,0.10);
+    --shadow-card: 0 4px 24px rgba(79,138,140,0.13);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    background: var(--paper);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    background-image:
+      linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(30,70,72,0.72) 75%, rgba(30,70,72,0.85) 100%),
+      url('https://travel.usnews.com/dims4/USNEWS/64d131a/2147483647/resize/735x490%3E/quality/85/format/webp/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FGettyImages-585203859_Cmu15B1.jpg');
+    background-size: cover;
+    background-position: center 40%;
+    padding: 56px 32px 48px;
+  }
+  .hero-inner { max-width: 780px; }
+  .hero-eyebrow {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pale-teal);
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: var(--paper-pure);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .hero-sub {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--pale-teal);
+    margin-bottom: 20px;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hero-tag {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--paper-pure);
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── COMMITMENT BANNER ────────────────────────────── */
+  .commitment-banner {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    text-align: center;
+    padding: 18px 24px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+  }
+  .commitment-banner em {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--pale-teal);
+  }
+
+  /* ── LAYOUT ───────────────────────────────────────── */
+  .main-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  section { padding: 40px 0 32px; }
+  section + section { border-top: 1px solid var(--cream); }
+
+  /* ── SECTION LABELS ───────────────────────────────── */
+  .section-label {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    color: var(--teal-dark);
+    margin-bottom: 14px;
+  }
+  .section-intro {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 640px;
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+
+  /* ── RESORT TABS ──────────────────────────────────── */
+  .resort-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--cream);
+    margin-bottom: 32px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .resort-tab {
+    flex: 1;
+    min-width: 140px;
+    padding: 14px 16px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .resort-tab.active {
+    color: var(--teal-dark);
+    border-bottom-color: var(--teal-dark);
+  }
+  .resort-tab:hover:not(.active) { color: var(--teal); }
+
+  .resort-panel { display: none; }
+  .resort-panel.active { display: block; }
+
+  /* ── RESORT CARD ──────────────────────────────────── */
+  .resort-card {
+    background: var(--paper-pure);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .resort-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 24px 0;
+    flex-wrap: wrap;
+  }
+  .resort-badge {
+    background: var(--pale-teal);
+    color: var(--teal-dark);
+    border-radius: 100px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .resort-badge.gold-badge {
+    background: var(--cream);
+    color: var(--gold-dark);
+  }
+  .resort-header { padding: 16px 24px 20px; }
+  .resort-name {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--teal-dark);
+    margin-bottom: 4px;
+  }
+  .resort-location {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .resort-description {
+    padding: 0 24px 20px;
+    font-size: 0.93rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--cream-light);
+  }
+
+  /* ── INCLUDES LIST ────────────────────────────────── */
+  .includes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--cream-light);
+  }
+  .includes-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+  .includes-item::before {
+    content: '✓';
+    color: var(--teal);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── ROOM SELECTION ───────────────────────────────── */
+  .room-section { padding: 20px 24px; }
+  .room-section-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 14px;
+  }
+  .room-option {
+    border: 2px solid var(--cream);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    display: block;
+  }
+  .room-option:hover { border-color: var(--teal); }
+  .room-option.selected {
+    border-color: var(--teal-dark);
+    box-shadow: 0 0 0 3px rgba(79,138,140,0.12);
+  }
+  .room-photos {
+    display: block;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-bottom: 3px solid var(--cream-light);
+    font-size: 0;
+  }
+  .room-photos img {
+    display: inline-block;
+    width: 50%;
+    height: 220px;
+    object-fit: cover;
+    vertical-align: top;
+  }
+  .room-photos .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--cream-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 8px;
+  }
+  .room-info {
+    padding: 16px 16px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .room-info-left { flex: 1; }
+  .room-name {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--teal-dark);
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+  .room-desc {
+    font-size: 0.83rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+  .room-price-block {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .room-price {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--teal-dark);
+    display: block;
+  }
+  .room-price-note {
+    font-size: 10px;
+    color: var(--text-secondary);
+    display: block;
+    line-height: 1.3;
+  }
+  .room-select-row {
+    padding: 0 16px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .room-radio-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--cream);
+    background: var(--paper-pure);
+    flex-shrink: 0;
+    transition: border-color 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .room-option.selected .room-radio-circle {
+    border-color: var(--teal-dark);
+    background: var(--teal-dark);
+  }
+  .room-option.selected .room-radio-circle::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    display: block;
+  }
+  .room-select-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+  .room-option.selected .room-select-text {
+    color: var(--teal-dark);
+    font-weight: 600;
+  }
+
+  /* ── TRANSFER SECTION ─────────────────────────────── */
+  .transfer-section {
+    background: var(--cream-light);
+    border-radius: 0 0 10px 10px;
+    padding: 16px 24px;
+  }
+  .transfer-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 6px;
+  }
+  .transfer-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ── RESORT SELECTOR (radio, top-level) ───────────── */
+  .resort-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    background: var(--pale-teal);
+    cursor: pointer;
+  }
+  .resort-radio-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    background: var(--paper-pure);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .resort-selected-indicator {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--teal-dark);
+    flex: 1;
+  }
+  .resort-selected-price {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--teal-dark);
+  }
+
+  /* ── STICKY TOTAL BAR ─────────────────────────────── */
+  .sticky-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--teal-dark);
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  }
+  .sticky-bar-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .sticky-bar-total {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--pale-teal);
+  }
+  .sticky-bar-note {
+    font-size: 11px;
+    opacity: 0.7;
+    text-align: right;
+    line-height: 1.3;
+    max-width: 160px;
+  }
+
+  /* ── PRICING CALLOUT ──────────────────────────────── */
+  .pricing-callout {
+    background: var(--cream-light);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 20px 0 0;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .pricing-disclaimer {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  /* ── BOTTOM COMMITMENT BLOCK ──────────────────────── */
+  .bottom-commitment {
+    background: var(--teal);
+    border-radius: var(--radius);
+    padding: 28px 28px 24px;
+    margin: 0 0 36px;
+    color: var(--paper-pure);
+  }
+  .bottom-commitment p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    opacity: 0.95;
+  }
+  .bottom-commitment strong {
+    font-weight: 700;
+    color: white;
+  }
+
+  /* ── CONTACT FORM ─────────────────────────────────── */
+  .form-section { background: var(--cream-light); border-radius: var(--radius); padding: 32px 28px 28px; margin-bottom: 40px; }
+  .form-title {
+    font-family: var(--font-head);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 6px;
+  }
+  .form-subtitle {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .form-group { display: flex; flex-direction: column; gap: 5px; }
+  .form-group.full { grid-column: 1 / -1; }
+  label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+  }
+  input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--text-primary);
+    background: var(--paper-pure);
+    border: 1.5px solid var(--cream);
+    border-radius: 8px;
+    padding: 10px 14px;
+    width: 100%;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--teal);
+  }
+  textarea { resize: vertical; min-height: 90px; }
+  .form-submit {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: var(--teal-dark);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    margin-top: 20px;
+    min-height: 52px;
+    transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--teal); }
+  #form-success {
+    display: none;
+    background: var(--pale-teal);
+    border-radius: 8px;
+    padding: 18px 20px;
+    color: var(--teal-dark);
+    font-weight: 500;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  footer {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    padding: 32px 24px 24px;
+    text-align: center;
+  }
+  .footer-name {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--pale-teal);
+    margin-bottom: 6px;
+  }
+  .footer-agency {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 14px;
+  }
+  .footer-contact {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  .footer-contact a {
+    color: var(--pale-teal);
+    text-decoration: none;
+  }
+  .footer-disclaimer {
+    font-size: 11px;
+    opacity: 0.55;
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* ── RESPONSIVE ───────────────────────────────────── */
+  @media (max-width: 540px) {
+    .hero { padding: 40px 20px 36px; min-height: 380px; }
+    .includes-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .room-photos { height: 150px; }
+    .room-photos img { height: 150px; }
+    .resort-tabs { gap: 0; }
+    .resort-tab { min-width: 110px; padding: 12px 10px; font-size: 12px; }
+    .resort-card .resort-header,
+    .resort-card .resort-description,
+    .resort-card .includes-grid,
+    .room-section,
+    .transfer-section,
+    .resort-selector { padding-left: 16px; padding-right: 16px; }
+    .form-section { padding: 24px 18px 20px; }
+    .bottom-commitment { padding: 22px 20px 18px; }
+    .sticky-bar-note { display: none; }
+    .room-info { flex-direction: column; gap: 8px; }
+    .room-price-block { text-align: left; }
+  }
+  @media (max-width: 375px) {
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Point Me to Paradise Travel · Prepared for</div>
+    <h1>Miriam Rendino<br>Cancún, Riviera Maya</h1>
+    <p class="hero-sub">Four nights, three resorts, one right choice for your family.</p>
+    <div class="hero-meta">
+      <span class="hero-tag">July 2–6, 2026</span>
+      <span class="hero-tag">4 Nights</span>
+      <span class="hero-tag">2 Adults · 1 Child</span>
+      <span class="hero-tag">All-Inclusive</span>
+    </div>
+  </div>
+</div>
+
+<!-- TOP COMMITMENT BANNER -->
+<div class="commitment-banner">
+  <em>We don't book hotels. We build trips.</em>&nbsp; Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+</div>
+
+<!-- STICKY TOTAL BAR -->
+<div class="sticky-bar">
+  <div>
+    <div class="sticky-bar-label">Est. Total</div>
+    <div class="sticky-bar-total" id="totalDisplay">$—</div>
+  </div>
+  <div class="sticky-bar-note">Includes resort + transfer.<br>Final pricing confirmed by your advisor.</div>
+</div>
+
+<div class="main-wrap">
+
+  <!-- PRICING CALLOUT -->
+  <div class="pricing-callout" style="margin-top:28px;">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+  </div>
+  <div class="pricing-disclaimer">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+
+  <!-- RESORT OPTIONS -->
+  <section>
+    <div class="section-label">Step 1 — Choose Your Resort</div>
+    <h2 class="section-title">Three Resorts. Three Different Trips.</h2>
+    <p class="section-intro">Same dates, same coast — but these three properties feel nothing alike. The tabs below walk you through each one. Pick the resort that sounds like your family's July, then choose your room.</p>
+
+    <!-- TABS -->
+    <div class="resort-tabs" role="tablist">
+      <button class="resort-tab active" role="tab" aria-selected="true"
+        onclick="switchResort('xcaret', this)">Hotel Xcaret Mexico</button>
+      <button class="resort-tab" role="tab" aria-selected="false"
+        onclick="switchResort('moonpalace', this)">Moon Palace Cancún</button>
+      <button class="resort-tab" role="tab" aria-selected="false"
+        onclick="switchResort('hardrock', this)">Hard Rock Cancún</button>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- RESORT 1: HOTEL XCARET -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="resort-panel active" id="panel-xcaret">
+
+      <div class="resort-card">
+        <div class="resort-badge-row">
+          <span class="resort-badge">All-Fun Inclusive</span>
+          <span class="resort-badge gold-badge">Parks Included</span>
+          <span class="resort-badge gold-badge">Airport Transfer Included</span>
+        </div>
+        <div class="resort-header">
+          <div class="resort-name">Hotel Xcaret Mexico</div>
+          <div class="resort-location">📍 Playa del Carmen, Riviera Maya</div>
+        </div>
+        <div class="resort-description">
+          <p>Hotel Xcaret sits at the southern end of the Riviera Maya, about 45 minutes south of the Cancún airport along the 307. The property is built through and around a genuine piece of jungle: cenotes run beneath it, native birds move through the grounds, and the river pools that snake past the rooms are fed by actual underground freshwater. It doesn't feel like a resort in the conventional sense — it feels like someone dropped a very good hotel into a nature park, then added a taco bar.</p>
+          <p style="margin-top:10px;">The All-Fun Inclusive program is the headline here. The package covers roundtrip airport shuttles, all meals and drinks on-property, and daily bus transportation to the full Xcaret group of parks — Xcaret, Xel-Há, Xplor, Xplor Fuego, Xenses, Xoximilco, Xenotes, and more. For a family that wants to cover real ground without renting a car or buying excursion tickets, the math works out favorably. Best suited for families with kids who like getting wet, doing things, and seeing stuff that isn't a swim-up bar.</p>
+        </div>
+        <div class="includes-grid">
+          <div class="includes-item">All meals and beverages on-property</div>
+          <div class="includes-item">Roundtrip airport transfer (CUN)</div>
+          <div class="includes-item">Unlimited Xcaret parks access</div>
+          <div class="includes-item">Shuttle to Xel-Há, Xplor, Xenses, more</div>
+          <div class="includes-item">Freshwater river pools and cenotes</div>
+          <div class="includes-item">Kids programming and activities</div>
+          <div class="includes-item">Cultural shows and evening entertainment</div>
+          <div class="includes-item">No rental car needed</div>
+        </div>
+
+        <!-- ROOM SELECTION -->
+        <div class="room-section">
+          <div class="room-section-title">Choose Your Room</div>
+
+          <!-- Room 1 -->
+          <div class="room-option" id="room-xcaret-1" onclick="selectRoom('xcaret', 1, 4979.36, 0, 'Suite Garden — Hotel Xcaret Mexico')">
+            <div class="room-photos">
+              <img src="https://media-cdn.tripadvisor.com/media/photo-s/13/34/80/2e/suite-garden.jpg" alt="Suite Garden at Hotel Xcaret Mexico" loading="lazy" onerror="this.style.display='none'">
+              <img src="https://media-cdn.tripadvisor.com/media/photo-s/15/46/d8/7b/garden-view-suite.jpg" alt="Garden view Suite at Hotel Xcaret Mexico" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="room-info">
+              <div class="room-info-left">
+                <div class="room-name">Suite Garden</div>
+                <div class="room-desc">Spacious suite with king or two double beds, private balcony or terrace, sitting area, and floor-to-ceiling windows overlooking the property's tropical gardens. Spa-style bath with rain shower. Minibar stocked with water, drinks, beer, and snacks. Robes, slippers, in-room safe, and Wi-Fi included.</div>
+              </div>
+              <div class="room-price-block">
+                <span class="room-price">$4,979</span>
+                <span class="room-price-note">total · all taxes included<br>2 adults, 1 child · 4 nights</span>
+              </div>
+            </div>
+            <div class="room-select-row">
+              <div class="room-radio-circle" id="radio-circle-xcaret-1"></div>
+              <span class="room-select-text">Select this room</span>
+            </div>
+          </div>
+        </div><!-- /room-section -->
+
+        <div class="transfer-section">
+          <div class="transfer-title">Transfers</div>
+          <div class="transfer-text"><strong>Included at no extra cost.</strong> Roundtrip shuttle between Cancún International Airport (CUN) and the resort is built into the All-Fun Inclusive package. Proceed to the Hotel Xcaret welcome area in the arrivals hall — staff will direct you to the next shuttle. Park transportation also included throughout the stay.</div>
+        </div>
+
+      </div><!-- /resort-card -->
+    </div><!-- /panel-xcaret -->
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- RESORT 2: MOON PALACE CANCÚN -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="resort-panel" id="panel-moonpalace">
+
+      <div class="resort-card">
+        <div class="resort-badge-row">
+          <span class="resort-badge">All-Inclusive</span>
+          <span class="resort-badge gold-badge">FlowRider® On-Site</span>
+          <span class="resort-badge gold-badge">Kids &amp; Teens Free</span>
+        </div>
+        <div class="resort-header">
+          <div class="resort-name">Moon Palace Cancún</div>
+          <div class="resort-location">📍 Cancún Hotel Zone</div>
+        </div>
+        <div class="resort-description">
+          <p>Moon Palace Cancún sits at the southern end of the Hotel Zone, where the lagoon and the Caribbean side of the strip are both within easy walking distance. The property is large — genuinely large — with multiple pool areas, its own water park section, a FlowRider® surf simulator, a mini golf course, and enough dining variety that four nights won't exhaust the options. The size is part of the pitch: there's always something happening, which means kids with different interests can split off without anyone getting bored.</p>
+          <p style="margin-top:10px;">This is the most conventional resort of the three, in the best sense of that word. The rooms are comfortable and well-appointed, the all-inclusive covers alcohol and 24-hour room service, and the sheer volume of amenities means a family can spend four days on-property and not repeat themselves. Good option if you want a polished, predictable experience at a price point that leaves room in the travel budget.</p>
+        </div>
+        <div class="includes-grid">
+          <div class="includes-item">All meals at multiple restaurants</div>
+          <div class="includes-item">Unlimited drinks (alcoholic and non)</div>
+          <div class="includes-item">Water park and FlowRider® surf simulator</div>
+          <div class="includes-item">Kids Club and Teens activities</div>
+          <div class="includes-item">Mini golf and nightly entertainment</div>
+          <div class="includes-item">Fitness center</div>
+          <div class="includes-item">Non-motorized water sports</div>
+          <div class="includes-item">Taxes included</div>
+        </div>
+
+        <!-- ROOM SELECTION -->
+        <div class="room-section">
+          <div class="room-section-title">Choose Your Room</div>
+
+          <!-- Room 1 -->
+          <div class="room-option" id="room-moonpalace-1" onclick="selectRoom('moonpalace', 1, 2384, 150, 'Superior Deluxe Garden View — Moon Palace Cancún')">
+            <div class="room-photos">
+              <img src="https://media-cdn.tripadvisor.com/media/photo-s/06/ec/91/74/superior-deluxe-garden-view-king-.jpg" alt="Superior Deluxe Garden View at Moon Palace Cancún" loading="lazy">
+              <img src="https://media.moonpalacecancun.com/deluxe_garden_view_suite_moon_palace_cancun_a419e6c152_fb02265a2f.webp" alt="Superior Deluxe Garden View suite at Moon Palace Cancún" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <div class="room-info">
+              <div class="room-info-left">
+                <div class="room-name">Superior Deluxe Garden View</div>
+                <div class="room-desc">King or two double beds with furnished balcony overlooking the resort gardens. Bathroom with double whirlpool tub and separate shower. Stocked minibar, liquor dispenser, smart TV, coffee maker, Wi-Fi, and 24-hour room service. <em>Kids &amp; Teens Free promotion applied.</em></div>
+              </div>
+              <div class="room-price-block">
+                <span class="room-price">$2,384</span>
+                <span class="room-price-note">total · taxes included<br>2 adults, 1 child · 4 nights</span>
+              </div>
+            </div>
+            <div class="room-select-row">
+              <div class="room-radio-circle" id="radio-circle-moonpalace-1"></div>
+              <span class="room-select-text">Select this room</span>
+            </div>
+          </div>
+
+        </div><!-- /room-section -->
+
+        <div class="transfer-section">
+          <div class="transfer-title">Transfers — Add-On</div>
+          <div class="transfer-text">Private Nissan Urvan NV350 (or similar) roundtrip between CUN and the resort. <strong>Approx. $150 round trip</strong> for your party. Comfortable, air-conditioned, direct service — no shared van stops. This is added automatically when you select this resort option and reflected in your estimated total above.</div>
+        </div>
+
+      </div><!-- /resort-card -->
+    </div><!-- /panel-moonpalace -->
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- RESORT 3: HARD ROCK CANCÚN -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="resort-panel" id="panel-hardrock">
+
+      <div class="resort-card">
+        <div class="resort-badge-row">
+          <span class="resort-badge">All-Inclusive</span>
+          <span class="resort-badge gold-badge">Beachfront</span>
+          <span class="resort-badge gold-badge">Hotel Zone</span>
+        </div>
+        <div class="resort-header">
+          <div class="resort-name">Hard Rock Hotel Cancún</div>
+          <div class="resort-location">📍 Cancún Hotel Zone · Caribbean beachfront</div>
+        </div>
+        <div class="resort-description">
+          <p>Hard Rock Cancún is a beachfront property in the Hotel Zone, directly on the Caribbean. The beach here is real — white sand, turquoise water, the full visual — and the room we've quoted faces the ocean, so you get it from your balcony at no extra effort. The property has a few pools, multiple restaurants, a consistent evening entertainment program, and a Kids Club, but the energy skews more toward fun and lively than nature and exploration.</p>
+          <p style="margin-top:10px;">This is the best fit of the three if your family has older teens who want a social, energetic atmosphere and a genuinely good beach. It's also the lowest total price of the three options, which gives you budget flexibility for excursions, a day trip to Chichén Itzá ($90–$120/person from the hotel), or dinner off-property in Puerto Morelos. The Hotel Zone location also means you're a short cab ride from shopping, the ferry to Isla Mujeres, or whatever else comes up.</p>
+        </div>
+        <div class="includes-grid">
+          <div class="includes-item">All meals and snacks</div>
+          <div class="includes-item">Unlimited alcoholic and non-alcoholic drinks</div>
+          <div class="includes-item">24-hour room service</div>
+          <div class="includes-item">Multiple pools and beach access</div>
+          <div class="includes-item">Kids Club and Teen Activities</div>
+          <div class="includes-item">Nightly shows and live entertainment</div>
+          <div class="includes-item">Fitness center and Wi-Fi</div>
+          <div class="includes-item">Taxes included</div>
+        </div>
+
+        <!-- ROOM SELECTION -->
+        <div class="room-section">
+          <div class="room-section-title">Choose Your Room</div>
+
+          <!-- Room 1 -->
+          <div class="room-option" id="room-hardrock-1" onclick="selectRoom('hardrock', 1, 2862, 100, 'Deluxe Ocean View Double — Hard Rock Hotel Cancún')">
+            <div class="room-photos">
+              <img src="https://hotel.hardrock.com/cancun/files/6134/13820468_ImageLargeWidth.jpg" alt="Deluxe Ocean View Double at Hard Rock Cancún" loading="lazy">
+              <img src="https://hotel.hardrock.com/cancun/files/6134/27411150_ImageLargeWidth.jpg" alt="Hard Rock Cancún room view" loading="lazy">
+            </div>
+            <div class="room-info">
+              <div class="room-info-left">
+                <div class="room-name">Deluxe Ocean View Double</div>
+                <div class="room-desc">Two double beds, private furnished balcony with Caribbean views, in-room hydro spa tub, separate shower. Stocked minibar, liquor dispenser, flat-screen TV, coffee maker, Wi-Fi, and 24-hour room service. Décor inspired by Hard Rock&#39;s signature style — more personality than the average all-inclusive room.</div>
+              </div>
+              <div class="room-price-block">
+                <span class="room-price">$2,862</span>
+                <span class="room-price-note">total · taxes included<br>2 adults, 1 child · 4 nights</span>
+              </div>
+            </div>
+            <div class="room-select-row">
+              <div class="room-radio-circle" id="radio-circle-hardrock-1"></div>
+              <span class="room-select-text">Select this room</span>
+            </div>
+          </div>
+
+        </div><!-- /room-section -->
+
+        <div class="transfer-section">
+          <div class="transfer-title">Transfers — Add-On</div>
+          <div class="transfer-text">Private Nissan Urvan NV350 (or similar) roundtrip between CUN and the resort. <strong>Approx. $100 round trip</strong> for your party. Direct, private service — no shared stops. Reflected in your estimated total above when this resort is selected.</div>
+        </div>
+
+      </div><!-- /resort-card -->
+    </div><!-- /panel-hardrock -->
+
+  </section>
+
+  <!-- BOTTOM COMMITMENT BLOCK -->
+  <div class="bottom-commitment">
+    <p><strong>What's coming after this quote:</strong> a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="form-section">
+    <div class="form-title">Ready to Move Forward?</div>
+    <p class="form-subtitle">Tell us which option you're leaning toward, and Andrea will confirm pricing, hold availability, and walk you through next steps. $200–$500 low deposit to book, with balance due closer to travel.</p>
+
+    <form id="quoteForm" onsubmit="submitForm(event)">
+      <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+      <input type="hidden" name="subject" value="Quote Request — Miriam Rendino — Cancún July 2026">
+      <input type="hidden" name="from_name" value="PMTP Quote System">
+      <input type="hidden" id="hidden_resort" name="selected_resort" value="">
+      <input type="hidden" id="hidden_room" name="selected_room" value="">
+      <input type="hidden" id="hidden_total" name="estimated_total" value="">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="client_name">Your Name</label>
+          <input type="text" id="client_name" name="client_name" placeholder="Miriam Rendino" required>
+        </div>
+        <div class="form-group">
+          <label for="client_email">Email</label>
+          <input type="email" id="client_email" name="client_email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="client_phone">Phone (optional)</label>
+          <input type="tel" id="client_phone" name="client_phone" placeholder="(555) 555-5555">
+        </div>
+        <div class="form-group">
+          <label for="preferred_resort">Which resort interests you?</label>
+          <select id="preferred_resort" name="preferred_resort">
+            <option value="">— Select one —</option>
+            <option value="Hotel Xcaret Mexico">Hotel Xcaret Mexico ($4,979)</option>
+            <option value="Moon Palace Cancún">Moon Palace Cancún ($2,384 + transfer)</option>
+            <option value="Hard Rock Cancún">Hard Rock Cancún ($2,862 + transfer)</option>
+            <option value="Still deciding">Still deciding — let's talk</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group full">
+          <label for="client_message">Questions or notes for Andrea</label>
+          <textarea id="client_message" name="client_message" placeholder="e.g. flexibility on room, questions about parks, payment schedule, anything else..."></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="form-submit">Send to Andrea →</button>
+
+      <div id="form-success">
+        ✓ Got it, Miriam! Andrea will be in touch within one business day to confirm pricing and walk through next steps.
+      </div>
+    </form>
+  </div>
+
+</div><!-- /main-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Andrea Gunter</div>
+  <div class="footer-agency">Point Me to Paradise Travel</div>
+  <div class="footer-contact">
+    <a href="tel:4097893579">(409) 789-3579</a>
+    <a id="emailLink" href="#">Loading...</a>
+  </div>
+  <div class="footer-disclaimer">
+    Individual hotels, transfers, and tours in your quote are priced at publicly available rates — and in many cases lower than what you'd find on your own. You don't have to worry about overpaying for a piece of your trip. What you're paying for is the rest: the right rooms at the right property, operators we've used for years, the trip app, and a human who answers when something doesn't go to plan.<br><br>
+    Prices and availability are subject to change until time of booking.
+  </div>
+</footer>
+
+<script>
+  // ── Email assembly (Cloudflare-safe) ──────────────────
+  (function() {
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var el = document.getElementById('emailLink');
+    el.href = 'mailto:' + addr;
+    el.textContent = addr;
+  })();
+
+  // ── Resort/Room state ─────────────────────────────────
+  var state = {
+    resort: null,         // 'xcaret' | 'moonpalace' | 'hardrock'
+    roomPrice: 0,
+    transferPrice: 0,
+    roomLabel: ''
+  };
+
+  // Transfer prices per resort (per selection)
+  var transferDefaults = {
+    xcaret: 0,       // included
+    moonpalace: 150,
+    hardrock: 100
+  };
+
+  function selectRoom(resort, roomNum, roomPrice, transferPrice, roomLabel) {
+    state.resort = resort;
+    state.roomPrice = roomPrice;
+    state.transferPrice = transferPrice;
+    state.roomLabel = roomLabel;
+
+    // Clear all room selections in this resort panel
+    var allRooms = document.querySelectorAll('[id^="room-' + resort + '-"]');
+    allRooms.forEach(function(r) { r.classList.remove('selected'); });
+    var allCircles = document.querySelectorAll('[id^="radio-circle-' + resort + '-"]');
+    allCircles.forEach(function(c) {
+      c.innerHTML = '';
+    });
+
+    // Select chosen
+    var chosen = document.getElementById('room-' + resort + '-' + roomNum);
+    if (chosen) chosen.classList.add('selected');
+    var circle = document.getElementById('radio-circle-' + resort + '-' + roomNum);
+    if (circle) {
+      circle.innerHTML = '<div style="width:8px;height:8px;border-radius:50%;background:white;"></div>';
+    }
+
+    updateTotal();
+  }
+
+  function updateTotal() {
+    var total = state.roomPrice + state.transferPrice;
+    var display = document.getElementById('totalDisplay');
+    var hiddenResort = document.getElementById('hidden_resort');
+    var hiddenRoom = document.getElementById('hidden_room');
+    var hiddenTotal = document.getElementById('hidden_total');
+
+    if (total > 0) {
+      display.textContent = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0});
+      if (hiddenResort) hiddenResort.value = state.resort;
+      if (hiddenRoom) hiddenRoom.value = state.roomLabel;
+      if (hiddenTotal) hiddenTotal.value = 'Est. $' + total.toLocaleString('en-US') + (state.transferPrice > 0 ? ' (incl. $' + state.transferPrice + ' transfer)' : ' (transfer included)');
+    } else {
+      display.textContent = '$—';
+    }
+  }
+
+  // ── Resort tab switching ──────────────────────────────
+  function switchResort(resortId, btn) {
+    // Deactivate all tabs
+    var tabs = document.querySelectorAll('.resort-tab');
+    tabs.forEach(function(t) {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    // Deactivate all panels
+    var panels = document.querySelectorAll('.resort-panel');
+    panels.forEach(function(p) { p.classList.remove('active'); });
+
+    // Activate clicked
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    var panel = document.getElementById('panel-' + resortId);
+    if (panel) panel.classList.add('active');
+  }
+
+  // ── Form submission ───────────────────────────────────
+  function submitForm(e) {
+    e.preventDefault();
+    var btn = document.querySelector('.form-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    var form = document.getElementById('quoteForm');
+    var data = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(json) {
+      if (json.success) {
+        document.getElementById('form-success').style.display = 'block';
+        btn.style.display = 'none';
+        form.querySelectorAll('input:not([type=hidden]), textarea, select').forEach(function(el) { el.disabled = true; });
+      } else {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    })
+    .catch(function() {
+      btn.textContent = 'Connection error — please try again';
+      btn.disabled = false;
+    });
+  }
+</script>
+</body>
+</html>
