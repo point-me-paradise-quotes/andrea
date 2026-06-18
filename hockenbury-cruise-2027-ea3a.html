@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disney Cruise Quote — Misha Hockenbury | Point Me to Paradise</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #75AFB1;
+    --teal-dark: #4F8A8C;
+    --pale-teal: #C4E4E1;
+    --gold: #DAC396;
+    --gold-dark: #B89E6A;
+    --cream: #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper: #FBF9F4;
+    --paper-pure: #FFFFFF;
+    --text: #3D3D3D;
+    --text-muted: #606060;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-accent: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--paper);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    background-image: url('https://disneyparksblog.com/app/uploads/2025/11/Destiny-Cross-Section-scaled.jpg');
+    background-size: cover;
+    background-position: center 40%;
+    padding: 0;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(79,138,140,0.35) 0%, rgba(30,60,62,0.82) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 48px 40px 44px;
+    color: #fff;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pale-teal);
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .hero-subtitle {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: clamp(17px, 2.2vw, 21px);
+    color: var(--pale-teal);
+    margin-bottom: 18px;
+  }
+  .hero-meta {
+    font-size: 14px;
+    color: rgba(255,255,255,0.82);
+    font-weight: 400;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* COMMITMENT BAR */
+  .commitment-bar {
+    background: var(--teal-dark);
+    color: #fff;
+    text-align: center;
+    padding: 18px 24px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .commitment-bar strong {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 16px;
+  }
+
+  /* MAIN LAYOUT */
+  .main-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  /* STICKY TOTAL */
+  .sticky-total {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--paper-pure);
+    border-bottom: 2px solid var(--pale-teal);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .sticky-total-label {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+  .sticky-total-amount {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--teal-dark);
+  }
+  .sticky-total-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    flex-basis: 100%;
+    margin-top: -4px;
+  }
+  .sticky-price-note {
+    font-size: 13px;
+    color: var(--text-muted);
+    max-width: 400px;
+    line-height: 1.4;
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    padding: 40px 0 8px;
+    border-bottom: 1px solid var(--pale-teal);
+    margin-bottom: 28px;
+  }
+  .section-header h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 600;
+    color: var(--teal-dark);
+  }
+  .section-header p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    max-width: 680px;
+  }
+
+  /* SAILING CARDS */
+  .sailings-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 12px;
+  }
+
+  .sailing-card {
+    background: var(--paper-pure);
+    border: 2px solid var(--pale-teal);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .sailing-card.selected {
+    border-color: var(--teal-dark);
+    box-shadow: 0 4px 20px rgba(79,138,140,0.18);
+  }
+
+  .sailing-card-inner {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+  }
+
+  .sailing-image {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sailing-body {
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .sailing-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .sailing-label {
+    display: inline-block;
+    background: var(--pale-teal);
+    color: var(--teal-dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+
+  .sailing-ship {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 2px;
+  }
+
+  .sailing-dates {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .sailing-price-block {
+    text-align: right;
+  }
+  .sailing-price-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+  }
+  .sailing-price {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--teal-dark);
+  }
+  .sailing-price-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .sailing-itinerary {
+    font-size: 14px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .sailing-itinerary .port {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .sailing-itinerary .arrow {
+    color: var(--teal);
+    font-size: 12px;
+    margin: 0 2px;
+  }
+
+  .cabin-info {
+    background: var(--cream-light);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .cabin-info-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal-dark);
+    margin-bottom: 10px;
+  }
+  .cabin-price-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .cabin-price-item {
+    text-align: center;
+    padding: 8px 4px;
+    border-radius: 6px;
+    background: var(--paper-pure);
+    border: 1.5px solid var(--pale-teal);
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .cabin-price-item.featured {
+    border-color: var(--teal-dark);
+    background: rgba(196,228,225,0.35);
+  }
+  .cabin-price-item .cat-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 3px;
+  }
+  .cabin-price-item.featured .cat-name {
+    color: var(--teal-dark);
+  }
+  .cabin-price-item .cat-price {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .cabin-price-item.featured .cat-price {
+    color: var(--teal-dark);
+  }
+  .cabin-price-item .cat-note {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 1px;
+  }
+
+  .sailing-select-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 4px;
+    border-top: 1px solid var(--pale-teal);
+    flex-wrap: wrap;
+  }
+
+  .sailing-select-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    min-height: 44px;
+  }
+  .sailing-select-label input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--teal-dark);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .addon-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+  }
+  .addon-row label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    min-height: 44px;
+  }
+  .addon-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--teal-dark);
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .addon-price {
+    font-weight: 600;
+    color: var(--teal-dark);
+  }
+
+  /* COMPARISON TABLE */
+  .compare-section { margin-top: 48px; }
+  .compare-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .compare-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: var(--paper-pure);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  }
+  .compare-table thead th {
+    background: var(--teal-dark);
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 14px 16px;
+    text-align: left;
+    letter-spacing: 0.04em;
+  }
+  .compare-table thead th:first-child { width: 140px; }
+  .compare-table tbody tr:nth-child(even) td { background: var(--cream-light); }
+  .compare-table tbody td {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--pale-teal);
+    vertical-align: top;
+    color: var(--text);
+  }
+  .compare-table tbody td:first-child {
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .compare-table tbody tr:last-child td { border-bottom: none; }
+  .best-price-cell {
+    background: rgba(196,228,225,0.5) !important;
+    color: var(--teal-dark) !important;
+    font-weight: 700;
+  }
+
+  /* WHAT'S NEXT */
+  .whats-next {
+    background: var(--teal);
+    border-radius: 12px;
+    padding: 36px 36px 32px;
+    margin: 48px 0 32px;
+    color: #fff;
+  }
+  .whats-next h3 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .whats-next p {
+    font-size: 15px;
+    line-height: 1.65;
+    opacity: 0.95;
+    max-width: 680px;
+  }
+
+  /* CONTACT FORM */
+  .form-section {
+    background: var(--paper-pure);
+    border: 1.5px solid var(--pale-teal);
+    border-radius: 12px;
+    padding: 36px;
+    margin-top: 16px;
+  }
+  .form-section h3 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 6px;
+  }
+  .form-section .form-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--text);
+    background: var(--paper);
+    border: 1.5px solid var(--pale-teal);
+    border-radius: 7px;
+    padding: 11px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    min-height: 44px;
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--teal-dark);
+    background: var(--paper-pure);
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  .form-submit {
+    background: var(--teal-dark);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 32px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 50px;
+    transition: background 0.2s;
+    margin-top: 8px;
+  }
+  .form-submit:hover { background: var(--teal); }
+  .form-error {
+    display: none;
+    background: #fde8e8;
+    border: 1px solid #e57373;
+    color: #b71c1c;
+    border-radius: 7px;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .form-success {
+    display: none;
+    background: rgba(196,228,225,0.4);
+    border: 1.5px solid var(--teal);
+    border-radius: 10px;
+    padding: 32px;
+    text-align: center;
+  }
+  .form-success h4 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    color: var(--teal-dark);
+    margin-bottom: 8px;
+  }
+  .form-success p { font-size: 15px; color: var(--text-muted); }
+
+  /* FOOTER */
+  footer {
+    background: var(--teal-dark);
+    color: #fff;
+    padding: 36px 40px;
+    margin-top: 0;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .footer-brand {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .footer-agent {
+    font-size: 14px;
+    opacity: 0.88;
+    line-height: 1.6;
+  }
+  .footer-agent a {
+    color: var(--pale-teal);
+    text-decoration: none;
+  }
+  .footer-disclaimer {
+    font-size: 12px;
+    opacity: 0.72;
+    max-width: 460px;
+    line-height: 1.55;
+    margin-top: 6px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 800px) {
+    .sailing-card-inner { grid-template-columns: 1fr; }
+    .sailing-image { height: 220px; min-height: unset; }
+    .cabin-price-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-content { padding: 36px 20px 32px; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; gap: 16px; }
+    .whats-next { padding: 26px 20px; }
+    .form-section { padding: 24px 20px; }
+    .main-wrap { padding: 0 16px 48px; }
+    .sticky-total { padding: 10px 16px; }
+    .sticky-total-amount { font-size: 22px; }
+    .sticky-price-note { display: none; }
+  }
+
+  @media (max-width: 540px) {
+    .sailing-body { padding: 20px 16px 18px; }
+    .cabin-price-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero { min-height: 360px; }
+    .sailing-header { flex-direction: column; gap: 8px; }
+    .sailing-price-block { text-align: left; }
+    footer { padding: 28px 20px; }
+    .commitment-bar { font-size: 14px; padding: 14px 16px; }
+  }
+
+  /* DEPOSIT CALLOUT */
+  .deposit-callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--cream-light);
+    border: 1.5px solid var(--gold);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 28px 0 0;
+  }
+  .deposit-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .deposit-callout-body {}
+  .deposit-callout-title {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--gold-dark);
+    margin-bottom: 6px;
+  }
+  .deposit-callout-text {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .deposit-callout-text strong {
+    color: var(--teal-dark);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Point Me to Paradise Travel · Custom Quote</div>
+    <h1 class="hero-title">Disney Cruise Line<br>Sailing Comparison</h1>
+    <div class="hero-subtitle">For Misha Hockenbury &amp; Family</div>
+    <div class="hero-meta">
+      <span>✦ 2 Adults, 1 Child</span>
+      <span>✦ June &amp; July 2027</span>
+      <span>✦ 5 Sailings to Compare</span>
+      <span>✦ 4-Night Bahamas &amp; Private Island</span>
+    </div>
+  </div>
+</div>
+
+<!-- COMMITMENT BAR -->
+<div class="commitment-bar">
+  <strong>We don't book hotels. We build trips.</strong>
+  Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+</div>
+
+<!-- STICKY TOTAL -->
+<div class="sticky-total">
+  <div>
+    <div class="sticky-total-label">Your Estimated Total</div>
+    <div class="sticky-total-amount" id="runningTotal">Select a sailing</div>
+    <div class="sticky-total-note" id="totalNote" style="display:none;">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+  </div>
+  <div class="sticky-price-note">We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</div>
+</div>
+
+<div class="main-wrap">
+
+  <!-- DEPOSIT / PAYMENT TERMS -->
+  <div class="deposit-callout">
+    <div class="deposit-icon">💳</div>
+    <div class="deposit-callout-body">
+      <div class="deposit-callout-title">Booking & Payment Terms</div>
+      <div class="deposit-callout-text">
+        A deposit of approximately <strong>10% of your total</strong> is due at the time of booking to secure your stateroom and dates. 
+        Your <strong>final balance is due 90 days before sailing</strong> — so you have plenty of time between now and departure to pay it off at your own pace. 
+        Nothing gets charged automatically; your advisor walks you through every step before any payment is processed.
+      </div>
+    </div>
+  </div>
+
+  <!-- SAILINGS SECTION -->
+  <div class="section-header">
+    <h2>Your Five Sailings</h2>
+    <p>All sailings are 4 nights departing from Port Canaveral. Select the one that works best for your schedule — and let us know if you want to explore a different cabin category. Verandah pricing is highlighted below; all other category prices are listed for reference.</p>
+  </div>
+
+  <div class="sailings-grid">
+
+    <!-- SAILING A -->
+    <div class="sailing-card" id="card-a" onclick="selectSailing('a')">
+      <div class="sailing-card-inner">
+        <img class="sailing-image" src="https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1000/1000/75/dam/wdpro-assets/dcl/finder/staterooms/galleries/df/verandah/deluxe/G01-DDDF-deluxe-oceanview-verandah-stateroom-cat5ABCD-01.jpg?1774974522075" alt="Disney Fantasy Verandah Stateroom" loading="lazy">
+        <div class="sailing-body">
+          <div>
+            <div class="sailing-header">
+              <div>
+                <div class="sailing-label">Option A · Disney Fantasy</div>
+                <div class="sailing-ship">Disney Fantasy</div>
+                <div class="sailing-dates">June 23–27, 2027 &nbsp;·&nbsp; Wednesday–Sunday</div>
+              </div>
+              <div class="sailing-price-block">
+                <div class="sailing-price-label">Verandah (featured)</div>
+                <div class="sailing-price">$5,257</div>
+                <div class="sailing-price-sub">total · 2 adults, 1 child</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sailing-itinerary">
+            <span class="port">Port Canaveral</span>
+            <span class="arrow">→</span>
+            <span class="port">Nassau, Bahamas</span>
+            <span class="arrow">→</span>
+            <span class="port">Disney Lookout Cay</span>
+            <span class="arrow">→</span>
+            <span class="port">Port Canaveral</span>
+          </div>
+
+          <div class="cabin-info">
+            <div class="cabin-info-title">All Cabin Categories</div>
+            <div class="cabin-price-grid">
+              <div class="cabin-price-item"><div class="cat-name">Inside</div><div class="cat-price">$4,756</div></div>
+              <div class="cabin-price-item"><div class="cat-name">Oceanview</div><div class="cat-price">$4,924</div></div>
+              <div class="cabin-price-item featured"><div class="cat-name">Verandah ✦</div><div class="cat-price">$5,257</div><div class="cat-note">featured</div></div>
+              <div class="cabin-price-item"><div class="cat-name">Concierge</div><div class="cat-price">$8,986</div></div>
+            </div>
+          </div>
+
+          <div class="sailing-select-row">
+            <label class="sailing-select-label">
+              <input type="radio" name="sailing" value="a" onchange="selectSailing('a')"> Select this sailing
+            </label>
+            <div class="addon-row">
+              <label onclick="setTimeout(updateTotal,0)">
+                <input type="checkbox" id="addon-a-grat" value="192" onchange="updateTotal()">
+                Add gratuities <span class="addon-price">+$192</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAILING B -->
+    <div class="sailing-card" id="card-b" onclick="selectSailing('b')">
+      <div class="sailing-card-inner">
+        <img class="sailing-image" src="https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1000/1000/75/dam/wdpro-assets/dcl/finder/staterooms/galleries/df/verandah/deluxe/G01-DDDF-deluxe-oceanview-verandah-stateroom-cat5ABCD-01.jpg?1774974522075" alt="Disney Fantasy Verandah Stateroom" loading="lazy">
+        <div class="sailing-body">
+          <div>
+            <div class="sailing-header">
+              <div>
+                <div class="sailing-label">Option B · Disney Fantasy</div>
+                <div class="sailing-ship">Disney Fantasy</div>
+                <div class="sailing-dates">July 21–25, 2027 &nbsp;·&nbsp; Wednesday–Sunday</div>
+              </div>
+              <div class="sailing-price-block">
+                <div class="sailing-price-label">Verandah (featured)</div>
+                <div class="sailing-price">$5,138</div>
+                <div class="sailing-price-sub">total · 2 adults, 1 child</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sailing-itinerary">
+            <span class="port">Port Canaveral</span>
+            <span class="arrow">→</span>
+            <span class="port">Nassau, Bahamas</span>
+            <span class="arrow">→</span>
+            <span class="port">Disney Lookout Cay</span>
+            <span class="arrow">→</span>
+            <span class="port">Port Canaveral</span>
+          </div>
+
+          <div class="cabin-info">
+            <div class="cabin-info-title">All Cabin Categories</div>
+            <div class="cabin-price-grid">
+              <div class="cabin-price-item"><div class="cat-name">Inside</div><div class="cat-price">$4,648</div></div>
+              <div class="cabin-price-item"><div class="cat-name">Oceanview</div><div class="cat-price">$4,808</div></div>
+              <div class="cabin-price-item featured"><div class="cat-name">Verandah ✦</div><div class="cat-price">$5,138</div><div class="cat-note">featured</div></div>
+              <div class="cabin-price-item"><div class="cat-name">Concierge</div><div class="cat-price">$8,883</div></div>
+            </div>
+          </div>
+
+          <div class="sailing-select-row">
+            <label class="sailing-select-label">
+              <input type="radio" name="sailing" value="b" onchange="selectSailing('b')"> Select this sailing
+            </label>
+            <div class="addon-row">
+              <label onclick="setTimeout(updateTotal,0)">
+                <input type="checkbox" id="addon-b-grat" value="192" onchange="updateTotal()">
+                Add gratuities <span class="addon-price">+$192</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAILING C -->
+    <div class="sailing-card" id="card-c" onclick="selectSailing('c')">
+      <div class="sailing-card-inner">
+        <img class="sailing-image" src="https://disneycruiselineblog.com/wp-content/uploads/2012/05/wpid895-DCLBlog_DSC_1017.jpg" alt="Disney Dream Verandah Stateroom" loading="lazy">
+        <div class="sailing-body">
+          <div>
+            <div class="sailing-header">
+              <div>
+                <div class="sailing-label">Option C · Disney Dream</div>
+                <div class="sailing-ship">Disney Dream</div>
+                <div class="sailing-dates">June 14–18, 2027 &nbsp;·&nbsp; Monday–Friday</div>
+              </div>
+              <div class="sailing-price-block">
+                <div class="sailing-price-label">Verandah (featured)</div>
+                <div class="sailing-price">$5,275</div>
+                <div class="sailing-price-sub">total · 2 adults, 1 child</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sailing-itinerary">
+            <span class="port">Port Canaveral</span>
+            <span class="arrow">→</span>
+            <span class="port">Nassau, Bahamas</span>
+            <span class="arrow">→</span>
+            <span class="port">Disney Castaway Cay</span>
+            <span class="arrow">→</span>
+            <span class="port">Port Canaveral</span>
+          </div>
+
+          <div class="cabin-info">
+            <div class="cabin-info-title">All Cabin Categories</div>
+            <div class="cabin-price-grid">
+              <div class="cabin-price-item"><div class="cat-name">Inside</div><div class="cat-price">$4,842</div></div>
+              <div class="cabin-price-item"><div class="cat-name">Oceanview</div><div class="cat-price">$5,026</div></div>
+              <div class="cabin-price-item featured"><div class="cat-name">Verandah ✦</div><div class="cat-price">$5,275</div><div class="cat-note">featured</div></div>
+              <div class="cabin-price-item"><div class="cat-name">Concierge</div><div class="cat-price">$8,114</div></div>
+            </div>
+          </div>
+
+          <div class="sailing-select-row">
+            <label class="sailing-select-label">
+              <input type="radio" name="sailing" value="c" onchange="selectSailing('c')"> Select this sailing
+            </label>
+            <div class="addon-row">
+              <label onclick="setTimeout(updateTotal,0)">
+                <input type="checkbox" id="addon-c-grat" value="192" onchange="updateTotal()">
+                Add gratuities <span class="addon-price">+$192</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAILING D -->
+    <div class="sailing-card" id="card-d" onclick="selectSailing('d')">
+      <div class="sailing-card-inner">
+        <img class="sailing-image" src="https://disneycruiselineblog.com/wp-content/uploads/2012/05/wpid895-DCLBlog_DSC_1017.jpg" alt="Disney Dream Verandah Stateroom" loading="lazy">
+        <div class="sailing-body">
+          <div>
+            <div class="sailing-header">
+              <div>
+                <div class="sailing-label">Option D · Disney Dream</div>
+                <div class="sailing-ship">Disney Dream</div>
+                <div class="sailing-dates">June 21–25, 2027 &nbsp;·&nbsp; Monday–Friday</div>
+              </div>
+              <div class="sailing-price-block">
+                <div class="sailing-price-label">Verandah (featured)</div>
+                <div class="sailing-price">$5,804</div>
+                <div class="sailing-price-sub">total · 2 adults, 1 child</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sailing-itinerary">
+            <span class="port">Port Canaveral</span>
+            <span class="arrow">→</span>
+            <span class="port">Disney Lookout Cay</span>
+            <span class="arrow">→</span>
+            <span class="port">Disney Castaway Cay</span>
+            <span class="arrow">→</span>
+            <span class="port">Port Canaveral</span>
+          </div>
+
+          <div class="cabin-info">
+            <div class="cabin-info-title">All Cabin Categories</div>
+            <div class="cabin-price-grid">
+              <div class="cabin-price-item"><div class="cat-name">Inside</div><div class="cat-price">$5,338</div></div>
+              <div class="cabin-price-item"><div class="cat-name">Oceanview</div><div class="cat-price">$5,523</div></div>
+              <div class="cabin-price-item featured"><div class="cat-name">Verandah ✦</div><div class="cat-price">$5,804</div><div class="cat-note">featured</div></div>
+              <div class="cabin-price-item"><div class="cat-name">Concierge</div><div class="cat-price">$8,644</div></div>
+            </div>
+          </div>
+
+          <div class="sailing-select-row">
+            <label class="sailing-select-label">
+              <input type="radio" name="sailing" value="d" onchange="selectSailing('d')"> Select this sailing
+            </label>
+            <div class="addon-row">
+              <label onclick="setTimeout(updateTotal,0)">
+                <input type="checkbox" id="addon-d-grat" value="192" onchange="updateTotal()">
+                Add gratuities <span class="addon-price">+$192</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAILING E -->
+    <div class="sailing-card" id="card-e" onclick="selectSailing('e')">
+      <div class="sailing-card-inner">
+        <img class="sailing-image" src="https://disneycruiselineblog.com/wp-content/uploads/2012/05/wpid895-DCLBlog_DSC_1017.jpg" alt="Disney Dream Verandah Stateroom" loading="lazy">
+        <div class="sailing-body">
+          <div>
+            <div class="sailing-header">
+              <div>
+                <div class="sailing-label">Option E · Disney Dream</div>
+                <div class="sailing-ship">Disney Dream</div>
+                <div class="sailing-dates">July 19–23, 2027 &nbsp;·&nbsp; Monday–Friday</div>
+              </div>
+              <div class="sailing-price-block">
+                <div class="sailing-price-label">Verandah (featured)</div>
+                <div class="sailing-price">$5,665</div>
+                <div class="sailing-price-sub">total · 2 adults, 1 child</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sailing-itinerary">
+            <span class="port">Port Canaveral</span>
+            <span class="arrow">→</span>
+            <span class="port">Disney Lookout Cay</span>
+            <span class="arrow">→</span>
+            <span class="port">Disney Castaway Cay</span>
+            <span class="arrow">→</span>
+            <span class="port">Port Canaveral</span>
+          </div>
+
+          <div class="cabin-info">
+            <div class="cabin-info-title">All Cabin Categories</div>
+            <div class="cabin-price-grid">
+              <div class="cabin-price-item"><div class="cat-name">Inside</div><div class="cat-price">$5,216</div></div>
+              <div class="cabin-price-item"><div class="cat-name">Oceanview</div><div class="cat-price">$5,384</div></div>
+              <div class="cabin-price-item featured"><div class="cat-name">Verandah ✦</div><div class="cat-price">$5,665</div><div class="cat-note">featured</div></div>
+              <div class="cabin-price-item"><div class="cat-name">Concierge</div><div class="cat-price">$8,072</div></div>
+            </div>
+          </div>
+
+          <div class="sailing-select-row">
+            <label class="sailing-select-label">
+              <input type="radio" name="sailing" value="e" onchange="selectSailing('e')"> Select this sailing
+            </label>
+            <div class="addon-row">
+              <label onclick="setTimeout(updateTotal,0)">
+                <input type="checkbox" id="addon-e-grat" value="192" onchange="updateTotal()">
+                Add gratuities <span class="addon-price">+$192</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /sailings-grid -->
+
+  <!-- COMPARISON TABLE -->
+  <div class="compare-section">
+    <div class="section-header">
+      <h2>Side-by-Side Comparison</h2>
+      <p>All five sailings at a glance. Verandah pricing featured throughout — ask about Inside, Oceanview, or Concierge if you'd like to explore other categories.</p>
+    </div>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Detail</th>
+            <th>A · Fantasy</th>
+            <th>B · Fantasy</th>
+            <th>C · Dream</th>
+            <th>D · Dream</th>
+            <th>E · Dream</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dates</td>
+            <td>Jun 23–27</td>
+            <td>Jul 21–25</td>
+            <td>Jun 14–18</td>
+            <td>Jun 21–25</td>
+            <td>Jul 19–23</td>
+          </tr>
+          <tr>
+            <td>Days</td>
+            <td>Wed–Sun</td>
+            <td>Wed–Sun</td>
+            <td>Mon–Fri</td>
+            <td>Mon–Fri</td>
+            <td>Mon–Fri</td>
+          </tr>
+          <tr>
+            <td>Ship</td>
+            <td>Fantasy</td>
+            <td>Fantasy</td>
+            <td>Dream</td>
+            <td>Dream</td>
+            <td>Dream</td>
+          </tr>
+          <tr>
+            <td>Private Island</td>
+            <td>Lookout Cay</td>
+            <td>Lookout Cay</td>
+            <td>Castaway Cay</td>
+            <td>Both</td>
+            <td>Both</td>
+          </tr>
+          <tr>
+            <td>Nassau Stop</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Verandah</td>
+            <td>$5,257</td>
+            <td class="best-price-cell">$5,138 ✦</td>
+            <td>$5,275</td>
+            <td>$5,804</td>
+            <td>$5,665</td>
+          </tr>
+          <tr>
+            <td>Inside</td>
+            <td>$4,756</td>
+            <td class="best-price-cell">$4,648 ✦</td>
+            <td>$4,842</td>
+            <td>$5,338</td>
+            <td>$5,216</td>
+          </tr>
+          <tr>
+            <td>Oceanview</td>
+            <td>$4,924</td>
+            <td class="best-price-cell">$4,808 ✦</td>
+            <td>$5,026</td>
+            <td>$5,523</td>
+            <td>$5,384</td>
+          </tr>
+          <tr>
+            <td>Concierge</td>
+            <td>$8,986</td>
+            <td>$8,883</td>
+            <td class="best-price-cell">$8,114 ✦</td>
+            <td>$8,644</td>
+            <td class="best-price-cell">$8,072 ✦</td>
+          </tr>
+          <tr>
+            <td>Gratuities</td>
+            <td>+$192</td>
+            <td>+$192</td>
+            <td>+$192</td>
+            <td>+$192</td>
+            <td>+$192</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">✦ Best price in that category across all five sailings.</p>
+  </div>
+
+  <!-- WHAT'S NEXT -->
+  <div class="whats-next">
+    <h3>What's coming after this quote</h3>
+    <p>A destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="form-section" id="formContainer">
+    <h3>Tell Us What You're Thinking</h3>
+    <p class="form-sub">Select a sailing above, then reach out below — or just tell us what questions you have. We'll confirm exact pricing and availability before anything gets booked.</p>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="f-name">Name <span style="color:#c0392b">*</span></label>
+        <input type="text" id="f-name" placeholder="Misha Hockenbury" required>
+      </div>
+      <div class="form-group">
+        <label for="f-email">Email <span style="color:#c0392b">*</span></label>
+        <input type="email" id="f-email" placeholder="your@email.com" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="f-phone">Phone (optional)</label>
+        <input type="tel" id="f-phone" placeholder="(555) 555-5555">
+      </div>
+      <div class="form-group">
+        <label for="f-option">Sailing interest</label>
+        <select id="f-option">
+          <option value="">-- I'll select above --</option>
+          <option value="Option A — Disney Fantasy, Jun 23–27">Option A — Disney Fantasy, Jun 23–27</option>
+          <option value="Option B — Disney Fantasy, Jul 21–25">Option B — Disney Fantasy, Jul 21–25</option>
+          <option value="Option C — Disney Dream, Jun 14–18">Option C — Disney Dream, Jun 14–18</option>
+          <option value="Option D — Disney Dream, Jun 21–25">Option D — Disney Dream, Jun 21–25</option>
+          <option value="Option E — Disney Dream, Jul 19–23">Option E — Disney Dream, Jul 19–23</option>
+          <option value="Not sure yet — want to discuss">Not sure yet — want to discuss</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="f-insurance">Travel insurance?</label>
+        <select id="f-insurance">
+          <option value="">-- Please select --</option>
+          <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+          <option value="No — not interested">No — not interested</option>
+          <option value="Already have coverage">Already have coverage</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="f-cabin">Cabin category interest</label>
+        <select id="f-cabin">
+          <option value="">-- Verandah (featured) --</option>
+          <option value="Inside">Inside</option>
+          <option value="Oceanview">Oceanview</option>
+          <option value="Verandah">Verandah (featured)</option>
+          <option value="Concierge">Concierge</option>
+          <option value="Not sure — want guidance">Not sure — want guidance</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group full">
+        <label for="f-message">Anything else? (optional)</label>
+        <textarea id="f-message" placeholder="Questions, scheduling notes, dates that work best for a call..."></textarea>
+      </div>
+    </div>
+
+    <button class="form-submit" onclick="submitForm()">Send My Response →</button>
+    <div class="form-error" id="formError">Something went wrong — please try again or email us directly.</div>
+  </div>
+
+  <div class="form-success" id="formSuccess" style="display:none;">
+    <h4>We got it — thank you, Misha!</h4>
+    <p>Andrea will be in touch shortly to confirm your sailing and walk through next steps.</p>
+  </div>
+
+</div><!-- /main-wrap -->
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Point Me to Paradise Travel</div>
+      <div class="footer-agent">
+        Andrea Gunter<br>
+        <a href="#" id="emailLink"></a><br>
+        <a href="tel:4097893579" style="color:var(--pale-teal);text-decoration:none;">(409) 789-3579</a>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      Prices and availability are subject to change until time of booking. Individual components are priced at publicly available rates — and in many cases lower than what you'd find on your own. Final pricing confirmed by your advisor before booking.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Email assembly (Cloudflare-safe)
+  (function() {
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var el = document.getElementById('emailLink');
+    el.href = 'mailto:' + addr;
+    el.textContent = addr;
+  })();
+
+  // Sailing base prices (Verandah)
+  var sailingPrices = { a: 5257, b: 5138, c: 5275, d: 5804, e: 5665 };
+  var sailingLabels = {
+    a: 'Option A — Disney Fantasy, Jun 23–27',
+    b: 'Option B — Disney Fantasy, Jul 21–25',
+    c: 'Option C — Disney Dream, Jun 14–18',
+    d: 'Option D — Disney Dream, Jun 21–25',
+    e: 'Option E — Disney Dream, Jul 19–23'
+  };
+  var selectedSailing = null;
+
+  function selectSailing(letter) {
+    selectedSailing = letter;
+    // Update radio
+    var radios = document.querySelectorAll('input[name="sailing"]');
+    radios.forEach(function(r) { r.checked = (r.value === letter); });
+    // Update card highlight
+    ['a','b','c','d','e'].forEach(function(l) {
+      var card = document.getElementById('card-' + l);
+      if (l === letter) card.classList.add('selected');
+      else card.classList.remove('selected');
+    });
+    // Sync form select
+    var sel = document.getElementById('f-option');
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].value === sailingLabels[letter]) {
+        sel.selectedIndex = i; break;
+      }
+    }
+    updateTotal();
+  }
+
+  function updateTotal() {
+    if (!selectedSailing) return;
+    var base = sailingPrices[selectedSailing];
+    var addonEl = document.getElementById('addon-' + selectedSailing + '-grat');
+    var addon = (addonEl && addonEl.checked) ? parseInt(addonEl.value) : 0;
+    var total = base + addon;
+    var formatted = 'Est. $' + total.toLocaleString('en-US');
+    document.getElementById('runningTotal').textContent = formatted;
+    document.getElementById('totalNote').style.display = 'block';
+  }
+
+  // Prevent card click from toggling checkbox
+  document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(function(el) {
+    el.addEventListener('click', function(e) { e.stopPropagation(); });
+  });
+
+  // Web3Forms submission
+  function submitForm() {
+    var name = document.getElementById('f-name').value.trim();
+    var email = document.getElementById('f-email').value.trim();
+    if (!name || !email) {
+      showError('Please enter your name and email before submitting.');
+      return;
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      showError('Please enter a valid email address.');
+      return;
+    }
+
+    var sailingChoice = document.getElementById('f-option').value || (selectedSailing ? sailingLabels[selectedSailing] : 'Not specified');
+    var addonEl = selectedSailing ? document.getElementById('addon-' + selectedSailing + '-grat') : null;
+    var gratuitiesSelected = (addonEl && addonEl.checked) ? 'Yes' : 'No';
+    var insurance = document.getElementById('f-insurance').value || 'Not specified';
+    var cabin = document.getElementById('f-cabin').value || 'Verandah (featured)';
+    var message = document.getElementById('f-message').value.trim();
+
+    var totalDisplay = document.getElementById('runningTotal').textContent;
+
+    var payload = {
+      access_key: '74894b5d-f463-481b-b081-b874086b15fc',
+      subject: 'Quote Response \u2014 Misha Hockenbury | Disney Cruise 2027',
+      from_name: 'Misha Hockenbury Quote \u2014 Point Me to Paradise',
+      redirect: 'false',
+      name: name,
+      email: email,
+      phone: document.getElementById('f-phone').value.trim() || 'Not provided',
+      sailing_selection: sailingChoice,
+      cabin_category_interest: cabin,
+      gratuities_added: gratuitiesSelected,
+      estimated_total: totalDisplay,
+      travel_insurance: insurance,
+      message: message || 'No additional message.'
+    };
+
+    var btn = document.querySelector('.form-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    document.getElementById('formError').style.display = 'none';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.success) {
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        showError('Something went wrong — please try again or reach out directly.');
+        btn.textContent = 'Send My Response \u2192';
+        btn.disabled = false;
+      }
+    })
+    .catch(function() {
+      showError('Something went wrong — please try again or reach out directly.');
+      btn.textContent = 'Send My Response \u2192';
+      btn.disabled = false;
+    });
+  }
+
+  function showError(msg) {
+    var el = document.getElementById('formError');
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+</script>
+</body>
+</html>
