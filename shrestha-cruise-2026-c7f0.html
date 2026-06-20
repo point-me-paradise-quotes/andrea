@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Romi Shrestha — Cruise Quote | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #75AFB1;
+    --teal-dark: #4F8A8C;
+    --pale-teal: #C4E4E1;
+    --gold: #DAC396;
+    --gold-dark: #B89E6A;
+    --cream: #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper: #FBF9F4;
+    --paper-pure: #FFFFFF;
+    --text-primary: #3D3D3D;
+    --text-secondary: #606060;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--teal-dark);
+    line-height: 1.25;
+  }
+
+  em, .accent-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+
+  a { color: var(--teal-dark); }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    background-image: linear-gradient(rgba(40,60,60,0.55), rgba(40,60,60,0.65)), url('https://www.royalcaribbeanincentives.com/content/uploads/RCI_OY_Cyprus_050421_MVerdure_Aerials_250_RET.webp');
+    background-size: cover;
+    background-position: center;
+    color: var(--paper-pure);
+    padding: 70px 20px 50px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    color: var(--paper-pure);
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.15rem;
+    font-weight: 300;
+    margin-bottom: 18px;
+  }
+
+  .hero .trip-meta {
+    font-size: 0.98rem;
+    font-weight: 400;
+    opacity: 0.95;
+  }
+
+  .hero-alert {
+    margin-top: 22px;
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 0.92rem;
+    max-width: 640px;
+  }
+
+  /* COMMITMENT BANNER */
+  .commitment-banner {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    text-align: center;
+    padding: 18px 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 40px 20px;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    font-size: 0.98rem;
+  }
+
+  /* SOLD OUT / AVAILABILITY NOTICE */
+  .notice-box {
+    background: var(--cream-light);
+    border-left: 4px solid var(--gold-dark);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 0 auto 30px;
+    max-width: 900px;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+  }
+
+  .notice-box strong {
+    color: var(--teal-dark);
+  }
+
+  .notice-box.sold-out {
+    border-left-color: #C97B63;
+  }
+
+  /* SAILING CARDS */
+  .sailings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .sailing-card {
+    background: var(--paper-pure);
+    border: 2px solid var(--pale-teal);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .sailing-card.selected {
+    border-color: var(--teal-dark);
+    box-shadow: 0 4px 20px rgba(79,138,140,0.18);
+  }
+
+  .sailing-card-header {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    padding: 14px 18px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sailing-card-header .badge {
+    background: var(--gold);
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  .sailing-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sailing-card-body {
+    padding: 20px;
+  }
+
+  .sailing-card-body h3 {
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+  }
+
+  .sailing-card-body .ship-meta {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+  }
+
+  .itinerary-list {
+    list-style: none;
+    margin: 14px 0;
+    font-size: 0.88rem;
+  }
+
+  .itinerary-list li {
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--pale-teal);
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .itinerary-list li:last-child { border-bottom: none; }
+
+  .itinerary-list .day-label { color: var(--teal-dark); font-weight: 600; flex-shrink: 0; }
+  .itinerary-list .day-port { text-align: right; color: var(--text-secondary); }
+
+  .cabin-select-block {
+    background: var(--cream-light);
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 16px;
+  }
+
+  .cabin-option-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.15s;
+    min-height: 44px;
+  }
+
+  .cabin-option-row:hover {
+    background: var(--pale-teal);
+  }
+
+  .cabin-option-row input[type="radio"] {
+    margin-top: 4px;
+    width: 20px;
+    height: 20px;
+    accent-color: var(--teal-dark);
+    flex-shrink: 0;
+  }
+
+  .cabin-option-row .cabin-info {
+    flex: 1;
+  }
+
+  .cabin-option-row .cabin-name {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .cabin-option-row .cabin-price {
+    font-weight: 700;
+    color: var(--teal-dark);
+    font-size: 1.05rem;
+  }
+
+  .cabin-option-row .cabin-note {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+  }
+
+  .availability-flag {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #B05A3F;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .addon-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 4px;
+    border-top: 1px solid var(--pale-teal);
+    cursor: pointer;
+    min-height: 44px;
+  }
+
+  .addon-row input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--gold-dark);
+    flex-shrink: 0;
+  }
+
+  .addon-row .addon-label {
+    flex: 1;
+    font-size: 0.9rem;
+  }
+
+  .addon-row .addon-price {
+    font-weight: 600;
+    color: var(--teal-dark);
+  }
+
+  /* CATEGORY REFERENCE LIST */
+  .category-ref {
+    margin-top: 14px;
+    font-size: 0.85rem;
+  }
+
+  .category-ref summary {
+    cursor: pointer;
+    color: var(--teal-dark);
+    font-weight: 600;
+    padding: 8px 0;
+  }
+
+  .category-ref-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+
+  .category-ref-table td {
+    padding: 6px 4px;
+    border-bottom: 1px solid var(--pale-teal);
+  }
+
+  .category-ref-table td:last-child {
+    text-align: right;
+    font-weight: 600;
+  }
+
+  /* EDUCATIONAL / AUTISM ON THE SEAS SECTION */
+  .info-block {
+    background: var(--paper-pure);
+    border-radius: 12px;
+    padding: 28px;
+    max-width: 900px;
+    margin: 0 auto 24px;
+    border: 1px solid var(--pale-teal);
+  }
+
+  .info-block h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .info-block ul {
+    margin: 12px 0 0 20px;
+  }
+
+  .info-block li {
+    margin-bottom: 6px;
+  }
+
+  /* COMPARISON TABLE */
+  .compare-table-wrap {
+    overflow-x: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--paper-pure);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0.92rem;
+    min-width: 600px;
+  }
+
+  .compare-table th {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    padding: 12px 14px;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+  }
+
+  .compare-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--pale-teal);
+  }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+
+  .compare-table .best-price {
+    color: var(--teal-dark);
+    font-weight: 700;
+  }
+
+  /* PRICING NOTE */
+  .pricing-note-box {
+    background: var(--pale-teal);
+    border-radius: 10px;
+    padding: 18px 22px;
+    max-width: 900px;
+    margin: 0 auto 14px;
+    font-size: 0.92rem;
+    text-align: center;
+  }
+
+  .pricing-disclaimer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+
+  /* CLOSING CALLOUT */
+  .closing-callout {
+    background: var(--cream-light);
+    border-radius: 14px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto 36px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    border: 1px solid var(--gold);
+  }
+
+  /* FORM */
+  .form-section {
+    background: var(--cream-light);
+    padding: 50px 20px;
+  }
+
+  .form-wrap {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--paper-pure);
+    border-radius: 14px;
+    padding: 32px;
+  }
+
+  .form-wrap h2 {
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .form-wrap .form-sub {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    font-size: 0.92rem;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.92rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--pale-teal);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: var(--text-primary);
+    background: var(--paper);
+  }
+
+  .form-group textarea {
+    min-height: 90px;
+    resize: vertical;
+  }
+
+  .selected-summary {
+    background: var(--pale-teal);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+
+  .selected-summary strong { color: var(--teal-dark); }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    min-height: 44px;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover { background: var(--teal); }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 24px;
+    color: var(--teal-dark);
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    text-align: center;
+    padding: 32px 20px;
+    font-size: 0.88rem;
+  }
+
+  footer .agent-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  footer a {
+    color: var(--paper-pure);
+    text-decoration: underline;
+  }
+
+  footer .fine-print {
+    margin-top: 14px;
+    font-size: 0.78rem;
+    opacity: 0.85;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* MOBILE */
+  @media (max-width: 540px) {
+    .sailings-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.7rem; }
+    .hero .subtitle { font-size: 1rem; }
+    .section-title { font-size: 1.4rem; }
+    .form-wrap { padding: 22px; }
+    .info-block { padding: 20px; }
+    .commitment-banner { font-size: 0.92rem; }
+  }
+
+  @media (max-width: 768px) {
+    .compare-table { font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Romi Shrestha — Cruise Options</h1>
+  <p class="subtitle">Two Symphony of the Seas Autism on the Seas sailings, compared side by side</p>
+  <p class="trip-meta">2 Adults &middot; 1 Child &middot; Roundtrip from Galveston, Texas &middot; October 2026</p>
+  <div class="hero-alert">
+    <strong>A quick update:</strong> the Mariner of the Seas October Autism on the Seas sailing mentioned earlier is now sold out. The two sailings below are the current available options.
+  </div>
+</div>
+
+<!-- COMMITMENT BANNER -->
+<div class="commitment-banner">
+  We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+</div>
+
+<!-- INTRO / AVAILABILITY CONTEXT -->
+<div class="section">
+  <h2 class="section-title">Two Sailings, Two Very Different Cabins</h2>
+  <p class="section-subtitle">Both depart Galveston on Symphony of the Seas as Autism on the Seas staff-assisted sailings. Pick the dates and cabin style that fit.</p>
+
+  <div class="notice-box sold-out">
+    <strong>Mariner of the Seas — October Autism on the Seas sailing: SOLD OUT.</strong> This was mentioned as a possible option before availability changed. It's no longer bookable, which is why it isn't included in the comparison below.
+  </div>
+
+  <div class="notice-box">
+    <strong>Limited room inventory on both sailings below.</strong> Room categories are selling quickly on both October sailings. Sailing A in particular has already sold out of every category except the Grand Suite. If either date works for your family, it's worth locking in sooner rather than later.
+  </div>
+</div>
+
+<!-- SAILING CARDS -->
+<div class="section">
+  <div class="sailings-grid">
+
+    <!-- SAILING A -->
+    <div class="sailing-card" id="card-A">
+      <div class="sailing-card-header">
+        Sailing A <span class="badge">Autism on the Seas</span>
+      </div>
+      <img src="https://www.royalcaribbeanblog.com/sites/default/files/styles/wide_1200_/public/fb/RCI_LB_GrandSuiteCatGS.jpg.webp?itok=sRjD2WhC" alt="Grand Suite, Category GS">
+      <div class="sailing-card-body">
+        <h3>Symphony of the Seas</h3>
+        <p class="ship-meta">6-Night Western Caribbean &middot; Oct 4–10, 2026 &middot; Autism on the Seas staff-assisted sailing</p>
+
+        <ul class="itinerary-list">
+          <li><span class="day-label">Oct 4</span><span>Galveston, TX — depart 3:00 PM</span></li>
+          <li><span class="day-label">Oct 5</span><span class="day-port">Cruising</span></li>
+          <li><span class="day-label">Oct 6</span><span class="day-port">Cozumel, Mexico — 8a–6p</span></li>
+          <li><span class="day-label">Oct 7</span><span class="day-port">Roatan, Honduras — 8a–5p</span></li>
+          <li><span class="day-label">Oct 8</span><span class="day-port">Costa Maya, Mexico — 7a–2p</span></li>
+          <li><span class="day-label">Oct 9</span><span class="day-port">Cruising</span></li>
+          <li><span class="day-label">Oct 10</span><span>Galveston, TX — arrive 7:00 AM</span></li>
+        </ul>
+
+        <div class="cabin-select-block">
+          <label class="cabin-option-row" for="cabin-A1">
+            <input type="radio" name="sailing" id="cabin-A1" value="Sailing A — Grand Suite, GS ($5,236.53)" data-price="5236.53" data-sailing="A" onclick="updateTotal()">
+            <div class="cabin-info">
+              <div class="cabin-name">Grand Suite — Category GS</div>
+              <div class="cabin-price">$5,236.53</div>
+              <div class="cabin-note">Private balcony, separate sitting area, larger bathroom &amp; storage. Suite-level amenities and priority services included. Price includes all guests, taxes, fees, and port expenses.</div>
+              <span class="availability-flag">Only category left on this sailing</span>
+            </div>
+          </label>
+
+          <label class="addon-row" for="addon-A">
+            <input type="checkbox" id="addon-A" data-price="378.00" data-label="Sailing A Pre-Paid Gratuities ($378.00)" onclick="setTimeout(updateTotal,0)">
+            <span class="addon-label">Pre-paid gratuities — $126/person</span>
+            <span class="addon-price">$378.00</span>
+          </label>
+        </div>
+
+        <div class="notice-box" style="margin-top:14px; margin-bottom:0;">
+          <strong>Deposit:</strong> $750.00 due Jun 25, 2026 &middot; <strong>Final balance:</strong> $5,236.53 due Jul 6, 2026.
+        </div>
+
+        <details class="category-ref">
+          <summary>Why only one cabin category is shown</summary>
+          <p style="margin-top:6px; color: var(--text-secondary);">At the time this quote was prepared, the Grand Suite is the least expensive category remaining on this sailing. Interior, ocean view, and balcony staterooms have already sold out, leaving suites as the current entry point.</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- SAILING B -->
+    <div class="sailing-card" id="card-B">
+      <div class="sailing-card-header">
+        Sailing B <span class="badge">Autism on the Seas</span>
+      </div>
+      <img src="https://www.royalcaribbeanblog.com/sites/default/files/styles/wide_1200_/public/2023-10/RCI_GR_SupOceanView-LivingR.jpg.webp?itok=jtV-ShA3" alt="Ocean View Balcony stateroom">
+      <div class="sailing-card-body">
+        <h3>Symphony of the Seas</h3>
+        <p class="ship-meta">7-Night Western Caribbean &middot; Oct 18–25, 2026 &middot; Autism on the Seas staff-assisted sailing</p>
+
+        <ul class="itinerary-list">
+          <li><span class="day-label">Oct 18</span><span>Galveston, TX — depart 3:00 PM</span></li>
+          <li><span class="day-label">Oct 19</span><span class="day-port">Cruising</span></li>
+          <li><span class="day-label">Oct 20</span><span class="day-port">Cruising</span></li>
+          <li><span class="day-label">Oct 21</span><span class="day-port">Roatan, Honduras — 8a–5p</span></li>
+          <li><span class="day-label">Oct 22</span><span class="day-port">Costa Maya, Mexico — 8a–5p</span></li>
+          <li><span class="day-label">Oct 23</span><span class="day-port">Cozumel, Mexico — 7a–5p</span></li>
+          <li><span class="day-label">Oct 24</span><span class="day-port">Cruising</span></li>
+          <li><span class="day-label">Oct 25</span><span>Galveston, TX — arrive 7:00 AM</span></li>
+        </ul>
+
+        <div class="cabin-select-block">
+          <label class="cabin-option-row" for="cabin-B1">
+            <input type="radio" name="sailing" id="cabin-B1" value="Sailing B — Oceanview Balcony ($2,483.46)" data-price="2483.46" data-sailing="B" onclick="updateTotal()">
+            <div class="cabin-info">
+              <div class="cabin-name">Ocean View Balcony — Category 1D</div>
+              <div class="cabin-price">$2,483.46</div>
+              <div class="cabin-note">Private balcony, floor-to-ceiling glass door, two twin beds convert to Royal King, sofa seating, mini fridge &amp; in-room safe.</div>
+            </div>
+          </label>
+
+          <label class="cabin-option-row" for="cabin-B2">
+            <input type="radio" name="sailing" id="cabin-B2" value="Sailing B — Interior ($1,899.46)" data-price="1899.46" data-sailing="B" onclick="updateTotal()">
+            <div class="cabin-info">
+              <div class="cabin-name">Interior Stateroom</div>
+              <div class="cabin-price">$1,899.46</div>
+              <div class="cabin-note">Most budget-friendly option on this sailing — same access to the ship's pools, slides, dining, and entertainment.</div>
+            </div>
+          </label>
+
+          <label class="addon-row" for="addon-B">
+            <input type="checkbox" id="addon-B" data-price="388.50" data-label="Sailing B Pre-Paid Gratuities ($388.50)" onclick="setTimeout(updateTotal,0)">
+            <span class="addon-label">Optional pre-paid gratuities — $18.50/person/day &times; 7 nights &times; 3 guests</span>
+            <span class="addon-price">$388.50</span>
+          </label>
+        </div>
+
+        <div class="notice-box" style="margin-top:14px; margin-bottom:0;">
+          <strong>Deposit:</strong> $750 due Jun 25, 2026 &middot; <strong>Final balance:</strong> $2,483.46 due Jul 20, 2026 (Oceanview option; balance reflects fare for selected cabin).
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- WHY THIS SHIP / AUTISM ON THE SEAS EDUCATIONAL CONTENT -->
+<div class="section" style="background: var(--cream-light);">
+  <h2 class="section-title">What to Know Before You Choose</h2>
+
+  <div class="info-block">
+    <h3>Autism on the Seas — Both Sailings</h3>
+    <p>Sailing A and Sailing B are both staff-assisted group sailings through Autism on the Seas, which works alongside Royal Caribbean's own autism-friendly program to support families with autism, Down syndrome, and other developmental disabilities. Families on either sailing may have access to additional trained staff and support services beyond the standard onboard program.</p>
+    <p style="margin-top:10px;">Royal Caribbean's onboard autism-friendly offerings include:</p>
+    <ul>
+      <li>Expedited check-in, boarding, and departure</li>
+      <li>Autism awareness-trained youth staff</li>
+      <li>Flexible Adventure Ocean age-group placement based on ability, when appropriate</li>
+      <li>Special dietary accommodations</li>
+      <li>Autism-friendly toy lending program</li>
+      <li>Sensory-friendly movie showings</li>
+      <li>Social stories to help prepare guests before sailing</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <h3>Why Families Choose Symphony of the Seas</h3>
+    <p>Symphony of the Seas is one of the largest ships sailing today, with multiple pools, waterslides, the Ultimate Abyss dry slide, mini golf, laser tag, Broadway-style shows, ice skating, youth programs, and a long list of dining venues. Both sailings visit a similar run of Western Caribbean ports — Roatan, Costa Maya, and Cozumel — each offering its own mix of beach time, reef snorkeling, and shore excursions.</p>
+  </div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<div class="section">
+  <h2 class="section-title">Side-by-Side Comparison</h2>
+  <div class="compare-table-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Sailing</th>
+          <th>Nights</th>
+          <th>Dates</th>
+          <th>Cabin</th>
+          <th>Fare</th>
+          <th>Gratuities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A</td>
+          <td>6</td>
+          <td>Oct 4–10</td>
+          <td>Grand Suite, GS</td>
+          <td class="best-price">$5,236.53</td>
+          <td>$378.00</td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td>7</td>
+          <td>Oct 18–25</td>
+          <td>Oceanview Balcony</td>
+          <td class="best-price">$2,483.46</td>
+          <td>$388.50</td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td>7</td>
+          <td>Oct 18–25</td>
+          <td>Interior</td>
+          <td class="best-price">$1,899.46</td>
+          <td>$388.50</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PRICING NOTE -->
+<div class="section" style="padding-top: 0;">
+  <div class="pricing-note-box">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+  </div>
+  <p class="pricing-disclaimer">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
+</div>
+
+<!-- CLOSING CALLOUT -->
+<div class="section" style="padding-top: 0;">
+  <div class="closing-callout">
+    What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+</div>
+
+<!-- CONTACT FORM -->
+<div class="form-section">
+  <div class="form-wrap">
+    <h2>Let's Lock In Your Sailing</h2>
+    <p class="form-sub">Select your sailing and cabin above, then submit your details below.</p>
+
+    <div class="selected-summary" id="selectedSummary">
+      <strong>Selected:</strong> <span id="selectedText">No cabin selected yet</span><br>
+      <strong>Estimated Total:</strong> <span id="estTotalText">Est. $0</span>
+    </div>
+
+    <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+      <input type="hidden" name="subject" value="Cruise Quote Request — Romi Shrestha">
+      <input type="hidden" name="selected_cabin" id="hiddenCabin" value="">
+      <input type="hidden" name="selected_addons" id="hiddenAddons" value="">
+      <input type="hidden" name="estimated_total" id="hiddenTotal" value="">
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required value="Romi Shrestha">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Questions or Notes</label>
+        <textarea id="message" name="message" placeholder="Anything else we should know?"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit My Selection</button>
+    </form>
+
+    <div class="form-success" id="formSuccess">
+      Thanks, Romi! Your selection has been sent — Andrea will follow up shortly to confirm details and next steps.
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div>Point Me to Paradise Travel</div>
+  <div style="margin-top:8px;">
+    <a href="#" id="emailLink">andrea@pointmetoparadise.com</a> &middot; 409-789-3579
+  </div>
+  <div class="fine-print">
+    Prices and availability are subject to change until time of booking. Individual hotels, transfers, and tours in your quote are priced at publicly available rates — and in many cases lower than what you'd find on your own. You don't have to worry about overpaying for a piece of your trip. What you're paying for is the rest: the right rooms at the right property, operators we've used for years, the trip app, and a human who answers when something doesn't go to plan.
+  </div>
+</footer>
+
+<script>
+  // Assemble email via JS to avoid Cloudflare scrambling
+  (function() {
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var link = document.getElementById('emailLink');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+  })();
+
+  function updateTotal() {
+    var cabinRadios = document.getElementsByName('sailing');
+    var selectedCabin = null;
+    var cabinPrice = 0;
+
+    for (var i = 0; i < cabinRadios.length; i++) {
+      if (cabinRadios[i].checked) {
+        selectedCabin = cabinRadios[i];
+        cabinPrice = parseFloat(cabinRadios[i].getAttribute('data-price')) || 0;
+      }
+    }
+
+    // Highlight selected card
+    document.getElementById('card-A').classList.remove('selected');
+    document.getElementById('card-B').classList.remove('selected');
+    if (selectedCabin) {
+      var sailingId = selectedCabin.getAttribute('data-sailing');
+      document.getElementById('card-' + sailingId).classList.add('selected');
+    }
+
+    // Sum applicable add-ons (only count the addon matching the selected sailing)
+    var addonTotal = 0;
+    var addonLabels = [];
+    ['addon-A', 'addon-B'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.checked) {
+        var sailingLetter = id.split('-')[1];
+        if (selectedCabin && selectedCabin.getAttribute('data-sailing') === sailingLetter) {
+          addonTotal += parseFloat(el.getAttribute('data-price')) || 0;
+          addonLabels.push(el.getAttribute('data-label'));
+        }
+      }
+    });
+
+    var grandTotal = cabinPrice + addonTotal;
+
+    document.getElementById('selectedText').textContent = selectedCabin ? selectedCabin.value : 'No cabin selected yet';
+    document.getElementById('estTotalText').textContent = 'Est. $' + grandTotal.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+    document.getElementById('hiddenCabin').value = selectedCabin ? selectedCabin.value : '';
+    document.getElementById('hiddenAddons').value = addonLabels.join('; ');
+    document.getElementById('hiddenTotal').value = 'Est. $' + grandTotal.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  }
+
+  // Disable addons for non-selected sailing visually (optional UX touch)
+  document.addEventListener('DOMContentLoaded', function() {
+    updateTotal();
+  });
+
+  // Form submission handling
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = e.target;
+    var data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response) {
+      return response.json();
+    }).then(function(result) {
+      if (result.success) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        alert('There was an issue submitting your form. Please try again or contact Andrea directly.');
+      }
+    }).catch(function(error) {
+      alert('There was an issue submitting your form. Please try again or contact Andrea directly.');
+    });
+  });
+</script>
+
+</body>
+</html>
