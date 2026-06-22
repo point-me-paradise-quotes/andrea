@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lynette Hessler — Icon of the Seas, August 2027 | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #75AFB1;
+    --teal-dark: #4F8A8C;
+    --pale-teal: #C4E4E1;
+    --gold: #DAC396;
+    --gold-dark: #B89E6A;
+    --cream: #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper: #FBF9F4;
+    --paper-pure: #FFFFFF;
+    --text-body: #3D3D3D;
+    --text-muted: #606060;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--text-body);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--teal-dark);
+    line-height: 1.25;
+  }
+
+  .accent-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--teal-dark);
+  }
+
+  a { color: var(--teal-dark); }
+
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    background-image: linear-gradient(180deg, rgba(38,58,58,0.55) 0%, rgba(38,58,58,0.72) 60%, rgba(38,58,58,0.88) 100%), url('https://www.puertoplatadr.com/cruiseports/wp-content/uploads/2025/02/icon-of-the-seas.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--paper-pure);
+    padding: 64px 20px 48px;
+    text-align: center;
+  }
+
+  .hero .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    color: var(--paper-pure);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(18px, 3vw, 22px);
+    color: var(--cream-light);
+    margin-bottom: 18px;
+  }
+
+  .hero .trip-meta {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .hero .meta-pill {
+    background: rgba(251,249,244,0.16);
+    border: 1px solid rgba(251,249,244,0.35);
+    color: var(--paper-pure);
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* ---------- COMMITMENT CALLOUT (TOP) ---------- */
+  .callout-top {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    text-align: center;
+    padding: 18px 20px;
+    font-size: 15.5px;
+    font-weight: 500;
+  }
+
+  .callout-top .container { max-width: 760px; }
+
+  /* ---------- ITINERARY ---------- */
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-label {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .section h2 {
+    font-size: clamp(24px, 4vw, 32px);
+    margin-bottom: 6px;
+  }
+
+  .section-intro {
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    max-width: 680px;
+  }
+
+  .itinerary-note {
+    background: var(--cream-light);
+    border-left: 4px solid var(--gold-dark);
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin-bottom: 28px;
+    font-size: 15px;
+  }
+
+  .itinerary-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--paper-pure);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .itinerary-table th {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    text-align: left;
+    padding: 12px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .itinerary-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--pale-teal);
+    font-size: 14.5px;
+    vertical-align: top;
+  }
+
+  .itinerary-table tr:last-child td { border-bottom: none; }
+
+  .itinerary-table .day-num {
+    font-family: 'Playfair Display', serif;
+    color: var(--teal-dark);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .itinerary-table .port-cruise {
+    color: var(--text-muted);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .highlight-stop {
+    background: var(--cream-light);
+  }
+
+  @media (max-width: 600px) {
+    .itinerary-table { font-size: 13px; }
+    .itinerary-table th, .itinerary-table td { padding: 10px 8px; }
+  }
+
+  /* ---------- CABIN OPTIONS ---------- */
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  @media (max-width: 860px) {
+    .options-grid { grid-template-columns: 1fr; }
+  }
+
+  .option-card {
+    background: var(--paper-pure);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    border: 2px solid transparent;
+    transition: border-color 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .option-card.selected {
+    border-color: var(--gold-dark);
+    transform: translateY(-2px);
+  }
+
+  .option-card.recommended {
+    border-color: var(--teal);
+  }
+
+  .option-photo {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+    background: var(--pale-teal);
+  }
+
+  .option-body {
+    padding: 18px 18px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .option-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--teal-dark);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    width: fit-content;
+  }
+
+  .option-card h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+  }
+
+  .option-desc {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 14px;
+    flex: 1;
+  }
+
+  .option-pricing {
+    border-top: 1px solid var(--pale-teal);
+    padding-top: 12px;
+    margin-bottom: 14px;
+  }
+
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .price-row.grand {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--teal-dark);
+    margin-top: 6px;
+  }
+
+  .price-row .num { font-weight: 600; }
+
+  .obc-tag {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 12.5px;
+    color: var(--teal-dark);
+    background: var(--pale-teal);
+    padding: 3px 9px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  .select-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 12px 14px;
+    background: var(--cream-light);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    min-height: 44px;
+  }
+
+  .select-label input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--teal-dark);
+    cursor: pointer;
+  }
+
+  /* ---------- GUARANTEE NOTE ---------- */
+  .info-box {
+    background: var(--cream-light);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-top: 32px;
+  }
+
+  .info-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .info-box p {
+    font-size: 14.5px;
+    color: var(--text-body);
+    margin-bottom: 10px;
+  }
+
+  .info-box p:last-child { margin-bottom: 0; }
+
+  /* ---------- GRATUITIES + ADD-ONS ---------- */
+  .addon-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--paper-pure);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    min-height: 44px;
+  }
+
+  .addon-row label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .addon-row input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--teal-dark);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .addon-price {
+    font-weight: 700;
+    color: var(--teal-dark);
+    white-space: nowrap;
+  }
+
+  .addon-sub {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  /* ---------- VALUE CALLOUT (near pricing) ---------- */
+  .value-note {
+    background: var(--paper-pure);
+    border: 1px solid var(--pale-teal);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 14px;
+    color: var(--text-body);
+    margin-top: 18px;
+  }
+
+  /* ---------- STICKY TOTAL BAR ---------- */
+  .sticky-total {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    padding: 14px 20px;
+    z-index: 50;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.15);
+  }
+
+  .sticky-total .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .sticky-total .label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.85;
+  }
+
+  .sticky-total .amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .sticky-total .fine-print {
+    font-size: 11.5px;
+    opacity: 0.85;
+    width: 100%;
+  }
+
+  /* ---------- CONTACT FORM ---------- */
+  .contact-section {
+    background: var(--pale-teal);
+    padding: 52px 0 60px;
+  }
+
+  .contact-callout {
+    background: var(--paper-pure);
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin-bottom: 32px;
+    font-size: 15.5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  }
+
+  .contact-callout strong { color: var(--teal-dark); }
+
+  .form-card {
+    background: var(--paper-pure);
+    border-radius: 14px;
+    padding: 30px 28px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+  }
+
+  .form-card h2 { font-size: 24px; margin-bottom: 6px; }
+  .form-card .section-intro { margin-bottom: 24px; }
+
+  .form-row {
+    margin-bottom: 16px;
+  }
+
+  .form-row label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--teal-dark);
+    margin-bottom: 6px;
+  }
+
+  .form-row input,
+  .form-row textarea {
+    width: 100%;
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+    padding: 12px 14px;
+    border: 1.5px solid var(--pale-teal);
+    border-radius: 8px;
+    background: var(--paper);
+    color: var(--text-body);
+    min-height: 44px;
+  }
+
+  .form-row textarea {
+    min-height: 90px;
+    resize: vertical;
+  }
+
+  .form-row input:focus,
+  .form-row textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+  }
+
+  .form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 540px) {
+    .form-grid-2 { grid-template-columns: 1fr; }
+  }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    min-height: 48px;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover { background: #3d7173; }
+
+  .form-success {
+    display: none;
+    background: var(--cream-light);
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 16px;
+    color: var(--teal-dark);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    text-align: center;
+    padding: 36px 20px 28px;
+  }
+
+  footer .agent-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    margin-bottom: 4px;
+  }
+
+  footer .agency {
+    font-size: 13.5px;
+    color: var(--cream-light);
+    margin-bottom: 14px;
+  }
+
+  footer .contact-line {
+    font-size: 14.5px;
+    margin-bottom: 14px;
+  }
+
+  footer .contact-line a {
+    color: var(--paper-pure);
+    text-decoration: underline;
+  }
+
+  footer .fine-print {
+    font-size: 12px;
+    color: var(--pale-teal);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 600px) {
+    .section { padding: 36px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="eyebrow">Custom Quote Prepared For</div>
+  <h1>Lynette Hessler</h1>
+  <div class="subtitle">Icon of the Seas — 8 Nights, Western Caribbean &amp; Perfect Day at CocoCay</div>
+  <div class="trip-meta">
+    <span class="meta-pill">Aug 28 – Sep 5, 2027</span>
+    <span class="meta-pill">Roundtrip from Galveston</span>
+    <span class="meta-pill">3 Adults, 1 Child</span>
+  </div>
+</div>
+
+<!-- ================= TOP COMMITMENT CALLOUT ================= -->
+<div class="callout-top">
+  <div class="container">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+</div>
+
+<!-- ================= TRIP OVERVIEW / ITINERARY ================= -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">The Sailing</span>
+    <h2>Your Itinerary, Day by Day</h2>
+    <p class="section-intro">This is the first Icon of the Seas sailing out of Galveston to include a stop at Perfect Day at CocoCay — Royal Caribbean's private island in the Bahamas. Eight nights, five sea days mixed with three stops, roundtrip from your home port.</p>
+
+    <div class="itinerary-note">
+      <strong>Why this sailing stands out:</strong> Icon of the Seas is Royal Caribbean's newest and largest ship, and Galveston sailings on her are limited. Pairing that with a CocoCay stop — usually reserved for Florida departures — makes this routing the first of its kind from Texas.
+    </div>
+
+    <table class="itinerary-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Date</th>
+          <th>Port</th>
+          <th>Hours in Port</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="day-num">Day 1</td>
+          <td>Sat, Aug 28</td>
+          <td>Galveston, Texas</td>
+          <td>Depart 4:30 PM</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 2</td>
+          <td>Sun, Aug 29</td>
+          <td class="port-cruise">Cruising</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 3</td>
+          <td>Mon, Aug 30</td>
+          <td>Cozumel, Mexico</td>
+          <td>8:00 AM – 6:00 PM</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 4</td>
+          <td>Tue, Aug 31</td>
+          <td>Puerto Costa Maya, Mexico</td>
+          <td>7:00 AM – 3:00 PM</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 5</td>
+          <td>Wed, Sep 1</td>
+          <td class="port-cruise">Cruising</td>
+          <td>—</td>
+        </tr>
+        <tr class="highlight-stop">
+          <td class="day-num">Day 6</td>
+          <td>Thu, Sep 2</td>
+          <td>Perfect Day at CocoCay, Bahamas</td>
+          <td>8:30 AM – 5:00 PM</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 7</td>
+          <td>Fri, Sep 3</td>
+          <td class="port-cruise">Cruising</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 8</td>
+          <td>Sat, Sep 4</td>
+          <td class="port-cruise">Cruising</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 9</td>
+          <td>Sun, Sep 5</td>
+          <td>Galveston, Texas</td>
+          <td>Arrive 6:00 AM</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ================= CABIN OPTIONS ================= -->
+<div class="section" style="background: var(--cream-light);">
+  <div class="container">
+    <span class="section-label">Choose Your Stateroom</span>
+    <h2>Three Ways to Sail</h2>
+    <p class="section-intro">All pricing below is for 4 guests sharing one stateroom — these are guaranteed-category rates, Royal Caribbean's lowest price point for each room type. Select the option you'd like to move forward with.</p>
+
+    <div class="options-grid">
+
+      <!-- OPTION 1: INTERIOR -->
+      <div class="option-card" id="card-interior">
+        <img class="option-photo" src="https://d23n7ahjfnjotp.cloudfront.net/imgs/iphone/cabins/new/791/v4xl.jpg" alt="Interior stateroom on Icon of the Seas">
+        <div class="option-body">
+          <span class="option-badge">Best Value</span>
+          <h3>Interior Quad Guarantee</h3>
+          <p class="option-desc">No window, no balcony — just a comfortable room to sleep, shower, and reset between days spent everywhere else on the ship. With nine days of itinerary packed in, this is the room that costs the least and is used the least.</p>
+          <div class="option-pricing">
+            <div class="price-row"><span>Before gratuities</span><span class="num">$4,578.72</span></div>
+            <div class="price-row"><span>Prepaid gratuities</span><span class="num">$592.00</span></div>
+            <div class="price-row grand"><span>Grand Total</span><span class="num">$5,170.72</span></div>
+            <span class="obc-tag">+ $50 Onboard Credit</span>
+          </div>
+          <label class="select-label">
+            <input type="radio" name="cabinChoice" value="Interior Quad Guarantee" data-base="4578.72" data-grand="5170.72" onclick="setTimeout(updateTotal,0)">
+            Select this room
+          </label>
+        </div>
+      </div>
+
+      <!-- OPTION 2: OCEANVIEW -->
+      <div class="option-card recommended" id="card-oceanview">
+        <img class="option-photo" src="https://d23n7ahjfnjotp.cloudfront.net/imgs/iphone/cabins/new/791/n4xl.jpg" alt="Oceanview stateroom on Icon of the Seas">
+        <div class="option-body">
+          <span class="option-badge">Recommended</span>
+          <h3>Oceanview Guarantee</h3>
+          <p class="option-desc">Same footprint as the interior, with a window framing the water. For an extra $90 over the interior rate, you get a way to check the weather and the horizon without leaving the room — worth it on the sea days.</p>
+          <div class="option-pricing">
+            <div class="price-row"><span>Before gratuities</span><span class="num">$4,668.72</span></div>
+            <div class="price-row"><span>Prepaid gratuities</span><span class="num">$592.00</span></div>
+            <div class="price-row grand"><span>Grand Total</span><span class="num">$5,260.72</span></div>
+            <span class="obc-tag">+ $50 Onboard Credit</span>
+          </div>
+          <label class="select-label">
+            <input type="radio" name="cabinChoice" value="Oceanview Guarantee" data-base="4668.72" data-grand="5260.72" onclick="setTimeout(updateTotal,0)" checked>
+            Select this room
+          </label>
+        </div>
+      </div>
+
+      <!-- OPTION 3: OCEANVIEW BALCONY -->
+      <div class="option-card" id="card-balcony">
+        <img class="option-photo" src="https://assets.dm.rccl.com/is/image/RoyalCaribbeanCruises/royal/ships/utopia/utopia-oceeanview-balcony-cropped.jpg?$1200x900$" alt="Interior of an oceanview balcony stateroom showing the bed and balcony door">
+        <div class="option-body">
+          <span class="option-badge">Most Room</span>
+          <h3>Oceanview Balcony Guarantee</h3>
+          <p class="option-desc">Step outside without leaving your room. With four people sharing one stateroom for eight nights, the extra square footage and private outdoor space tend to matter more than the price difference once you're actually on board.</p>
+          <div class="option-pricing">
+            <div class="price-row"><span>Before gratuities</span><span class="num">$5,184.72</span></div>
+            <div class="price-row"><span>Prepaid gratuities</span><span class="num">$592.00</span></div>
+            <div class="price-row grand"><span>Grand Total</span><span class="num">$5,776.72</span></div>
+            <span class="obc-tag">+ $50 Onboard Credit</span>
+          </div>
+          <label class="select-label">
+            <input type="radio" name="cabinChoice" value="Oceanview Balcony Guarantee" data-base="5184.72" data-grand="5776.72" onclick="setTimeout(updateTotal,0)">
+            Select this room
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GUARANTEE EXPLAINER -->
+    <div class="info-box">
+      <h3>A Quick Note on Guaranteed Rooms</h3>
+      <p>The rates above are for guaranteed staterooms. That means Royal Caribbean assigns your exact cabin — deck, location, and number — sometime before sailing. You're locked into the room <em>category</em> you book, but not the specific spot on the ship.</p>
+      <p>Most families pick guaranteed cabins because they're consistently the lowest price within each category. If having a specific deck, being near an elevator, or booking connecting rooms matters more to you than the savings, we can price any of these three categories with an assigned cabin instead — just at a higher rate. Let me know which way you'd like to go.</p>
+    </div>
+
+    <div class="value-note">
+      We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+    </div>
+  </div>
+</div>
+
+<!-- ================= ADD-ONS / GRATUITIES ================= -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">Optional Add-On</span>
+    <h2>Prepaid Gratuities</h2>
+    <p class="section-intro">Gratuities are already built into the grand total shown above for the room you select. If you'd rather pay them onboard instead, uncheck the box below and we'll adjust your total — the per-day amount will be added to your onboard folio instead.</p>
+
+    <div class="addon-row">
+      <label>
+        <input type="checkbox" id="gratuitiesCheckbox" checked onclick="setTimeout(updateTotal,0)">
+        <span>
+          Prepay gratuities for all 4 guests
+          <span class="addon-sub">Covers housekeeping, dining, and beverage service gratuities for the full sailing</span>
+        </span>
+      </label>
+      <span class="addon-price">$592.00</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= STICKY TOTAL ================= -->
+<div class="sticky-total">
+  <div class="container">
+    <div>
+      <span class="label">Estimated Total</span><br>
+      <span class="amount" id="totalDisplay">Est. $5,260.72</span>
+    </div>
+    <div class="fine-print">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+  </div>
+</div>
+
+<!-- ================= CONTACT FORM ================= -->
+<div class="contact-section">
+  <div class="container">
+
+    <div class="contact-callout">
+      <strong>What's coming after this quote:</strong> a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+    </div>
+
+    <div class="form-card">
+      <h2>Ready to Book?</h2>
+      <p class="section-intro">Send this back to me with your selections and I'll get the deposit and paperwork moving.</p>
+
+      <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+        <input type="hidden" name="subject" value="Cruise Quote Response — Lynette Hessler (Icon of the Seas, Aug 2027)">
+        <input type="hidden" name="from_name" value="PMTP Quote Page — Hessler">
+
+        <input type="hidden" name="Selected Cabin" id="hiddenCabin" value="Oceanview Guarantee">
+        <input type="hidden" name="Grand Total" id="hiddenGrandTotal" value="$5,260.72">
+        <input type="hidden" name="Gratuities Prepaid" id="hiddenGratuities" value="Yes">
+
+        <div class="form-row">
+          <label for="clientName">Full Name</label>
+          <input type="text" id="clientName" name="Client Name" value="Lynette Hessler" required>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label for="clientEmail">Email</label>
+            <input type="email" id="clientEmail" name="Client Email" required>
+          </div>
+          <div class="form-row">
+            <label for="clientPhone">Phone</label>
+            <input type="tel" id="clientPhone" name="Client Phone" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="clientMessage">Questions or Notes</label>
+          <textarea id="clientMessage" name="Message" placeholder="Let me know if you have questions, want the assigned-cabin pricing, or are ready to move forward with a deposit."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send My Selections</button>
+        <div class="form-success" id="formSuccess">Thanks, Lynette! Your message is on its way — I'll be in touch shortly.</div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div class="agency">Point Me to Paradise Travel</div>
+  <div class="contact-line">
+    <a href="#" id="emailLink">Loading...</a> &nbsp;|&nbsp; 409-789-3579
+  </div>
+  <div class="fine-print">
+    Prices and availability are subject to change until time of booking.<br>
+    Individual hotels, transfers, and tours in your quote are priced at publicly available rates — and in many cases lower than what you'd find on your own. You don't have to worry about overpaying for a piece of your trip. What you're paying for is the rest: the right rooms at the right property, operators we've used for years, the trip app, and a human who answers when something doesn't go to plan.
+  </div>
+</footer>
+
+<script>
+  // Assemble email via JS to prevent Cloudflare scrambling
+  (function() {
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var link = document.getElementById('emailLink');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+  })();
+
+  function updateTotal() {
+    var radios = document.getElementsByName('cabinChoice');
+    var selected = null;
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) { selected = radios[i]; break; }
+    }
+    if (!selected) return;
+
+    var base = parseFloat(selected.getAttribute('data-base'));
+    var grandWithGrat = parseFloat(selected.getAttribute('data-grand'));
+    var gratAmount = grandWithGrat - base; // $592.00 flat add for the stateroom
+    var gratChecked = document.getElementById('gratuitiesCheckbox').checked;
+
+    var total = gratChecked ? (base + gratAmount) : base;
+
+    document.getElementById('totalDisplay').textContent =
+      'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+    document.getElementById('hiddenCabin').value = selected.value;
+    document.getElementById('hiddenGrandTotal').value =
+      '$' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    document.getElementById('hiddenGratuities').value = gratChecked ? 'Yes' : 'No';
+
+    // visual selected-state on cards
+    var cards = document.querySelectorAll('.option-card');
+    cards.forEach(function(c) { c.classList.remove('selected'); });
+    selected.closest('.option-card').classList.add('selected');
+  }
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = e.target;
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response) {
+      if (response.ok) {
+        document.getElementById('formSuccess').style.display = 'block';
+        form.reset();
+        document.getElementById('clientName').value = 'Lynette Hessler';
+        updateTotal();
+      } else {
+        alert('Something went wrong sending your message. Please try again or call (409) 789-3579.');
+      }
+    }).catch(function() {
+      alert('Something went wrong sending your message. Please try again or call (409) 789-3579.');
+    });
+  });
+
+  updateTotal();
+</script>
+
+</body>
+</html>
