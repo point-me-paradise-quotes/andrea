@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kristina Cummings — Western Caribbean Cruise Quote | Point Me to Paradise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text-body:#3D3D3D;
+    --text-muted:#606060;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--text-body);
+    line-height:1.6;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Playfair Display',serif;
+    color:var(--teal-dark);
+    line-height:1.25;
+  }
+
+  .accent{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--teal-dark);
+  }
+
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    background:
+      linear-gradient(135deg, rgba(79,138,140,0.88) 0%, rgba(117,175,177,0.82) 100%),
+      url('https://www.msccruisesusa.com/-/media/US/2022/Ships/MSC%20Seascape/New%20Ship%20page%20Images/seascape-landing-page-hero-desktop.jpg');
+    background-size:cover;
+    background-position:center;
+    color:var(--paper-pure);
+    padding:64px 20px 56px;
+    text-align:center;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-eyebrow{
+    font-family:'DM Sans',sans-serif;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:13px;
+    font-weight:600;
+    color:var(--cream-light);
+    opacity:0.9;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    color:var(--paper-pure);
+    font-size:clamp(28px,5vw,44px);
+    margin-bottom:10px;
+  }
+  .hero .ship-name{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(18px,3vw,24px);
+    color:var(--cream-light);
+    margin-bottom:18px;
+  }
+  .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:24px;
+    margin-top:20px;
+    font-size:15px;
+  }
+  .hero-meta div{
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:8px;
+    padding:10px 18px;
+  }
+  .hero-meta strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;opacity:0.85;margin-bottom:3px;}
+
+  /* COMMITMENT CALLOUT — top */
+  .commitment-top{
+    background:var(--cream-light);
+    border-left:4px solid var(--gold-dark);
+    padding:18px 22px;
+    margin:28px 0;
+    border-radius:6px;
+    font-size:15.5px;
+    color:var(--text-body);
+  }
+  .commitment-top strong{color:var(--teal-dark);}
+
+  /* SECTION HEADERS */
+  .section-title{
+    text-align:center;
+    margin:48px 0 8px;
+  }
+  .section-sub{
+    text-align:center;
+    color:var(--text-muted);
+    font-size:15px;
+    max-width:620px;
+    margin:0 auto 32px;
+  }
+
+  /* ITINERARY */
+  .itinerary{
+    background:var(--paper-pure);
+    border:1px solid var(--pale-teal);
+    border-radius:10px;
+    padding:28px;
+    margin:24px 0 40px;
+  }
+  .itinerary-intro{
+    font-size:15.5px;
+    color:var(--text-body);
+    margin-bottom:20px;
+  }
+  .day-row{
+    display:flex;
+    gap:16px;
+    padding:12px 0;
+    border-bottom:1px solid var(--cream);
+    align-items:baseline;
+  }
+  .day-row:last-child{border-bottom:none;}
+  .day-num{
+    font-family:'Playfair Display',serif;
+    color:var(--gold-dark);
+    font-weight:600;
+    font-size:14px;
+    min-width:46px;
+    flex-shrink:0;
+  }
+  .day-info{flex:1;}
+  .day-port{font-weight:600;color:var(--text-body);}
+  .day-time{color:var(--text-muted);font-size:14px;}
+
+  /* OPTION CARDS */
+  .options-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+    margin:24px 0 40px;
+  }
+  .option-card{
+    background:var(--paper-pure);
+    border:2px solid var(--pale-teal);
+    border-radius:14px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:border-color 0.2s, box-shadow 0.2s;
+  }
+  .option-card.selected{
+    border-color:var(--gold-dark);
+    box-shadow:0 4px 18px rgba(184,158,106,0.25);
+  }
+  .option-photos{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px;
+  }
+  .option-photos img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+  }
+  .option-body{
+    padding:22px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+  .option-cat{
+    font-family:'DM Sans',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-size:12px;
+    font-weight:700;
+    color:var(--gold-dark);
+    margin-bottom:6px;
+  }
+  .option-body h3{
+    font-size:21px;
+    margin-bottom:10px;
+  }
+  .option-price{
+    font-family:'Playfair Display',serif;
+    font-size:26px;
+    color:var(--teal-dark);
+    font-weight:700;
+    margin-bottom:4px;
+  }
+  .option-price-sub{
+    font-size:13px;
+    color:var(--text-muted);
+    margin-bottom:16px;
+  }
+  .option-desc{
+    font-size:14.5px;
+    color:var(--text-body);
+    margin-bottom:16px;
+  }
+  .option-features{
+    list-style:none;
+    font-size:14px;
+    color:var(--text-body);
+    margin-bottom:16px;
+  }
+  .option-features li{
+    padding-left:18px;
+    position:relative;
+    margin-bottom:7px;
+  }
+  .option-features li::before{
+    content:"—";
+    position:absolute;
+    left:0;
+    color:var(--teal);
+  }
+  .option-perks-toggle{
+    background:none;
+    border:none;
+    color:var(--teal-dark);
+    font-family:'DM Sans',sans-serif;
+    font-size:13.5px;
+    font-weight:600;
+    text-decoration:underline;
+    cursor:pointer;
+    padding:0;
+    margin-bottom:14px;
+    text-align:left;
+    min-height:44px;
+    display:flex;
+    align-items:center;
+  }
+  .option-perks{
+    display:none;
+    background:var(--cream-light);
+    border-radius:8px;
+    padding:14px 16px;
+    margin-bottom:16px;
+    font-size:13.5px;
+  }
+  .option-perks.show{display:block;}
+  .option-perks ul{list-style:none;}
+  .option-perks li{padding-left:16px;position:relative;margin-bottom:6px;}
+  .option-perks li::before{content:"✓";position:absolute;left:0;color:var(--teal-dark);font-weight:700;}
+
+  .option-select-row{
+    margin-top:auto;
+    border-top:1px solid var(--cream);
+    padding-top:16px;
+  }
+  .radio-label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    font-weight:600;
+    font-size:15px;
+    min-height:44px;
+  }
+  .radio-label input[type="radio"]{
+    width:20px;
+    height:20px;
+    accent-color:var(--teal-dark);
+    cursor:pointer;
+  }
+
+  .addon-row{
+    margin-top:12px;
+    font-size:13.5px;
+    color:var(--text-muted);
+    background:var(--pale-teal);
+    border-radius:6px;
+    padding:10px 12px;
+  }
+
+  /* GRATUITY NOTE */
+  .gratuity-note{
+    background:var(--cream-light);
+    border-radius:8px;
+    padding:14px 16px;
+    margin-top:14px;
+    font-size:13.5px;
+    color:var(--text-body);
+  }
+  .gratuity-note strong{color:var(--teal-dark);}
+
+  /* PRICING SECTION */
+  .pricing-block{
+    background:var(--pale-teal);
+    border-radius:12px;
+    padding:24px 28px;
+    margin:32px 0;
+  }
+  .pricing-copy{
+    font-size:15px;
+    color:var(--text-body);
+    margin-bottom:18px;
+  }
+  .sticky-total{
+    position:sticky;
+    bottom:0;
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:16px 20px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.15);
+    z-index:10;
+  }
+  .sticky-total .label{font-size:14px;opacity:0.9;}
+  .sticky-total .amount{
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+    font-weight:700;
+  }
+  .pricing-disclaimer{
+    font-size:12.5px;
+    color:var(--text-muted);
+    margin-top:14px;
+    text-align:center;
+  }
+
+  /* COMMITMENT CALLOUT — bottom */
+  .commitment-bottom{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    border-radius:12px;
+    padding:30px 28px;
+    margin:48px 0 32px;
+    text-align:center;
+  }
+  .commitment-bottom h3{color:var(--paper-pure);margin-bottom:12px;}
+  .commitment-bottom p{font-size:15.5px;max-width:680px;margin:0 auto;color:var(--cream-light);}
+
+  /* FORM */
+  .form-section{
+    background:var(--paper-pure);
+    border:1px solid var(--pale-teal);
+    border-radius:14px;
+    padding:32px;
+    margin-bottom:48px;
+  }
+  .form-section h2{text-align:center;margin-bottom:8px;}
+  .form-section .section-sub{margin-bottom:28px;}
+  label.field-label{
+    display:block;
+    font-weight:600;
+    font-size:14px;
+    margin-bottom:6px;
+    color:var(--text-body);
+  }
+  .field{margin-bottom:18px;}
+  input[type="text"],input[type="email"],input[type="tel"],select,textarea{
+    width:100%;
+    font-size:16px;
+    font-family:'DM Sans',sans-serif;
+    padding:12px 14px;
+    border:1.5px solid var(--pale-teal);
+    border-radius:8px;
+    background:var(--paper);
+    color:var(--text-body);
+    min-height:44px;
+  }
+  textarea{min-height:100px;resize:vertical;}
+  input:focus,select:focus,textarea:focus{
+    outline:none;
+    border-color:var(--teal-dark);
+  }
+  .submit-btn{
+    width:100%;
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    border:none;
+    border-radius:8px;
+    padding:16px;
+    font-size:16px;
+    font-weight:700;
+    font-family:'DM Sans',sans-serif;
+    cursor:pointer;
+    min-height:48px;
+    margin-top:8px;
+  }
+  .submit-btn:hover{background:var(--teal);}
+  .submit-btn:disabled{opacity:0.6;cursor:not-allowed;}
+
+  .form-error{
+    display:none;
+    background:#FBE9E7;
+    border:1px solid #D88A7A;
+    color:#8A3B2A;
+    border-radius:8px;
+    padding:12px 14px;
+    margin-bottom:16px;
+    font-size:14px;
+  }
+  .form-error.show{display:block;}
+
+  .thank-you{
+    display:none;
+    text-align:center;
+    padding:30px 10px;
+  }
+  .thank-you.show{display:block;}
+  .thank-you h3{margin-bottom:10px;}
+  .thank-you p{color:var(--text-muted);font-size:15px;}
+
+  /* FOOTER */
+  footer{
+    background:var(--teal-dark);
+    color:var(--cream-light);
+    text-align:center;
+    padding:34px 20px;
+    font-size:14px;
+  }
+  footer .agent-name{
+    font-family:'Playfair Display',serif;
+    font-size:19px;
+    color:var(--paper-pure);
+    margin-bottom:6px;
+  }
+  footer a{color:var(--cream-light);text-decoration:underline;}
+  footer .disclaimer{
+    margin-top:18px;
+    font-size:12px;
+    opacity:0.8;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* MOBILE */
+  @media (max-width:540px){
+    .options-grid{grid-template-columns:1fr;}
+    .option-photos{grid-template-columns:1fr 1fr;}
+    .hero{padding:48px 16px 40px;}
+    .hero-meta{gap:12px;}
+    .hero-meta div{padding:8px 14px;font-size:13.5px;}
+    .sticky-total{flex-direction:column;text-align:center;}
+    .form-section{padding:22px;}
+    .commitment-bottom{padding:24px 18px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">Point Me to Paradise Travel — Custom Quote</div>
+    <h1>Kristina Cummings's Western Caribbean Cruise</h1>
+    <div class="ship-name">7 Nights aboard MSC Seascape</div>
+    <div class="hero-meta">
+      <div><strong>Sailing</strong>May 30 – June 6, 2027</div>
+      <div><strong>Departing From</strong>Galveston, Texas</div>
+      <div><strong>Travelers</strong>2 Adults</div>
+      <div><strong>Ports</strong>Costa Maya · Roatán · Cozumel</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- COMMITMENT TOP -->
+  <div class="commitment-top">
+    <strong>We don't book hotels. We build trips.</strong> Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+
+  <!-- ITINERARY -->
+  <div class="section-title">
+    <h2>Your Sailing, Day by Day</h2>
+  </div>
+  <p class="section-sub">Three Western Caribbean ports anchor this one — Costa Maya, Roatán, and Cozumel — with sea days bracketing each end for a slower start and finish.</p>
+
+  <div class="itinerary">
+    <p class="itinerary-intro">Roundtrip from Galveston, this sailing mixes three port days with four days at sea, so there's room to actually unwind between stops instead of treating every morning like a scramble to disembark.</p>
+
+    <div class="day-row">
+      <div class="day-num">Day 1</div>
+      <div class="day-info">
+        <div class="day-port">Galveston, Texas</div>
+        <div class="day-time">Sunday, May 30 · Departs 4:00 PM</div>
+      </div>
+    </div>
+    <div class="day-row">
+      <div class="day-num">Day 2</div>
+      <div class="day-info">
+        <div class="day-port">Day at Sea</div>
+        <div class="day-time">Monday, May 31</div>
+      </div>
+    </div>
+    <div class="day-row">
+      <div class="day-num">Day 3</div>
+      <div class="day-info">
+        <div class="day-port">Day at Sea</div>
+        <div class="day-time">Tuesday, June 1</div>
+      </div>
+    </div>
+    <div class="day-row">
+      <div class="day-num">Day 4</div>
+      <div class="day-info">
+        <div class="day-port">Costa Maya, Mexico</div>
+        <div class="day-time">Wednesday, June 2 · 8:00 AM – 6:00 PM</div>
+      </div>
+    </div>
+    <div class="day-row">
+      <div class="day-num">Day 5</div>
+      <div class="day-info">
+        <div class="day-port">Isla de Roatán, Honduras</div>
+        <div class="day-time">Thursday, June 3 · 8:00 AM – 4:00 PM</div>
+      </div>
+    </div>
+    <div class="day-row">
+      <div class="day-num">Day 6</div>
+      <div class="day-info">
+        <div class="day-port">Cozumel, Mexico</div>
+        <div class="day-time">Friday, June 4 · 8:00 AM – 4:00 PM</div>
+      </div>
+    </div>
+    <div class="day-row">
+      <div class="day-num">Day 7</div>
+      <div class="day-info">
+        <div class="day-port">Day at Sea</div>
+        <div class="day-time">Saturday, June 5</div>
+      </div>
+    </div>
+    <div class="day-row">
+      <div class="day-num">Day 8</div>
+      <div class="day-info">
+        <div class="day-port">Galveston, Texas</div>
+        <div class="day-time">Sunday, June 6 · Arrives 6:30 AM</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTIONS -->
+  <div class="section-title">
+    <h2>Choose Your Stateroom</h2>
+  </div>
+  <p class="section-sub">👉 Tap a card to select it — your choice updates the total below automatically. Both categories are shown side by side so you can compare exactly what changes between them.</p>
+
+  <div class="options-grid" id="optionsGrid">
+
+    <!-- OPTION 1 -->
+    <div class="option-card selected" id="card-option1">
+      <div class="option-photos">
+        <img src="https://www.msccruisesusa.com/-/media/global-contents/ships/fleet/seascape/cabins/sc_slt_exp.jpg?bc=transparent&as=1&mh=433&mw=700" alt="MSC Seascape balcony stateroom interior" loading="lazy">
+        <img src="https://d23n7ahjfnjotp.cloudfront.net/imgs/iphone/cabins/new/749/slwxl.jpg" alt="MSC Seascape balcony view" loading="lazy">
+      </div>
+      <div class="option-body">
+        <div class="option-cat">Fantastica Experience</div>
+        <h3>Deluxe Balcony</h3>
+        <div class="option-price">$2,229.58</div>
+        <div class="option-price-sub">Total cruise fare for 2 guests</div>
+        <p class="option-desc">A private balcony with ocean views for the whole sailing, plus the everyday comforts of the Fantastica tier — flexible dining and breakfast that shows up at your door instead of a buffet line.</p>
+        <ul class="option-features">
+          <li>King bed, convertible to two twins on request</li>
+          <li>Private balcony, approx. 54–65 sq. ft.</li>
+          <li>172–183 sq. ft. interior, Decks 11–12</li>
+          <li>Sitting area, full closet, shower/tub combo</li>
+        </ul>
+        <button class="option-perks-toggle" type="button" onclick="document.getElementById('perks-option1').classList.toggle('show'); setTimeout(updateTotal,0);">+ What's included with Fantastica</button>
+        <div class="option-perks" id="perks-option1">
+          <ul>
+            <li>Choice of available stateroom at booking</li>
+            <li>Flexible dining options (subject to availability)</li>
+            <li>Complimentary continental breakfast in-room</li>
+            <li>24-hour room service (food priced individually)</li>
+            <li>Priority dining time request</li>
+            <li>Full access to pools, fitness center, entertainment</li>
+          </ul>
+        </div>
+        <div class="gratuity-note">
+          <strong>Gratuities:</strong> $119 per person ($238 total for two guests). This can be prepaid ahead of sailing or paid onboard — your call.
+        </div>
+        <div class="option-select-row">
+          <label class="radio-label">
+            <input type="radio" name="cabinChoice" value="Deluxe Balcony – Fantastica ($2,229.58)" checked onclick="setTimeout(updateTotal,0)">
+            Select this stateroom
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 2 -->
+    <div class="option-card" id="card-option2">
+      <div class="option-photos">
+        <img src="https://www.msccruisesusa.com/-/media/global-contents/ships/fleet/seascape/cabins/sc_slt_exp.jpg?bc=transparent&as=1&mh=433&mw=700" alt="MSC Seascape Premium Suite Aurea terrace interior" loading="lazy">
+        <img src="https://d23n7ahjfnjotp.cloudfront.net/imgs/iphone/cabins/new/749/slwxl.jpg" alt="MSC Seascape Premium Suite Aurea terrace view" loading="lazy">
+      </div>
+      <div class="option-body">
+        <div class="option-cat">Aurea Experience</div>
+        <h3>Premium Suite Aurea with Terrace</h3>
+        <div class="option-price">$3,649.58</div>
+        <div class="option-price-sub">Total cruise fare for 2 guests</div>
+        <p class="option-desc">The draw here is the terrace — over 400 square feet of private outdoor space, big enough to eat breakfast outside or just stretch out without crossing paths with anyone. Aurea tier adds spa access and a welcome Prosecco to start things off.</p>
+        <ul class="option-features">
+          <li>King bed, convertible to two twins on request</li>
+          <li>Private terrace, approx. 409 sq. ft.</li>
+          <li>301 sq. ft. interior suite, Deck 9</li>
+          <li>Sitting area, full closet, shower/tub combo</li>
+        </ul>
+        <button class="option-perks-toggle" type="button" onclick="document.getElementById('perks-option2').classList.toggle('show'); setTimeout(updateTotal,0);">+ What's included with Aurea</button>
+        <div class="option-perks" id="perks-option2">
+          <ul>
+            <li>Anytime My Choice Dining, flexible times</li>
+            <li>Priority embarkation where available</li>
+            <li>Complimentary access to the exclusive Top Solarium</li>
+            <li>One complimentary thermal area visit per guest</li>
+            <li>Welcome Prosecco and chocolates</li>
+            <li>Pillow menu, bathrobe and slippers</li>
+            <li>Priority tender service in ports requiring tenders</li>
+            <li>Complimentary continental breakfast in-suite</li>
+          </ul>
+        </div>
+        <div class="gratuity-note">
+          <strong>Gratuities:</strong> $119 per person ($238 total for two guests). This can be prepaid ahead of sailing or paid onboard — your call.
+        </div>
+        <div class="option-select-row">
+          <label class="radio-label">
+            <input type="radio" name="cabinChoice" value="Premium Suite Aurea with Terrace ($3,649.58)" onclick="setTimeout(updateTotal,0)">
+            Select this stateroom
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ADD-ONS -->
+  <div class="addon-row" style="margin-bottom:32px;">
+    <label style="display:flex;align-items:center;gap:10px;min-height:44px;cursor:pointer;">
+      <input type="checkbox" id="addonGratuities" style="width:20px;height:20px;accent-color:var(--teal-dark);" onclick="setTimeout(updateTotal,0)">
+      Add prepaid gratuities ($238.00 total for two guests) to this estimate
+    </label>
+  </div>
+
+  <!-- PRICING -->
+  <div class="pricing-block">
+    <p class="pricing-copy">We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
+    <div class="sticky-total">
+      <div>
+        <div class="label">Estimated Total (2 guests)</div>
+        <div class="amount" id="totalAmount">Est. $2,229.58</div>
+      </div>
+      <div style="font-size:13px;opacity:0.85;max-width:260px;">Deposit: $200–$500 to hold this sailing, balance due closer to travel date.</div>
+    </div>
+    <p class="pricing-disclaimer">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
+  </div>
+
+  <!-- COMMITMENT BOTTOM -->
+  <div class="commitment-bottom">
+    <h3 style="color:#FFFFFF;">After You Say Yes</h3>
+    <p>What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-section" id="formSection">
+    <h2>Ready to Move Forward?</h2>
+    <p class="section-sub">Send us your preferred stateroom and we'll get the booking process started.</p>
+
+    <div class="form-error" id="formError">Something didn't go through — please check your connection and try again, or reach out directly at andrea@pointmetoparadise.com.</div>
+
+    <form id="quoteForm">
+      <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+      <input type="hidden" name="subject" value="Quote Response — Kristina Cummings | Western Caribbean Cruise">
+      <input type="hidden" name="from_name" value="Kristina Cummings Quote — Point Me to Paradise">
+      <input type="hidden" name="redirect" value="false">
+      <input type="hidden" name="selected_cabin" id="hiddenCabinChoice" value="Deluxe Balcony – Fantastica ($2,229.58)">
+      <input type="hidden" name="gratuities_addon" id="hiddenGratuities" value="No">
+      <input type="hidden" name="estimated_total" id="hiddenTotal" value="$2,229.58">
+
+      <div class="field">
+        <label class="field-label" for="nameInput">Full Name *</label>
+        <input type="text" id="nameInput" name="name" required>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="emailInput">Email *</label>
+        <input type="email" id="emailInput" name="email" required>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="phoneInput">Phone</label>
+        <input type="tel" id="phoneInput" name="phone">
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="optionInterest">Which stateroom are you most interested in?</label>
+        <select id="optionInterest" name="option_interest">
+          <option value="Deluxe Balcony – Fantastica ($2,229.58)">Deluxe Balcony – Fantastica ($2,229.58)</option>
+          <option value="Premium Suite Aurea with Terrace ($3,649.58)">Premium Suite Aurea with Terrace ($3,649.58)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="insuranceSelect">Travel Insurance</label>
+        <select id="insuranceSelect" name="travel_insurance">
+          <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+          <option value="No — not interested">No — not interested</option>
+          <option value="Already have coverage">Already have coverage</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="messageInput">Questions or notes</label>
+        <textarea id="messageInput" name="message" placeholder="Anything else we should know?"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Send My Response</button>
+    </form>
+
+    <div class="thank-you" id="thankYou">
+      <h3>Thank you, that's in our inbox!</h3>
+      <p>We'll follow up shortly to lock in your stateroom and get the booking moving.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div>Point Me to Paradise Travel</div>
+  <div style="margin-top:10px;">
+    <a href="#" id="emailLink">andrea@pointmetoparadise.com</a> &nbsp;·&nbsp; 409-789-3579
+  </div>
+  <div class="disclaimer">
+    Individual hotels, transfers, and tours in your quote are priced at publicly available rates — and in many cases lower than what you'd find on your own. You don't have to worry about overpaying for a piece of your trip. What you're paying for is the rest: the right rooms at the right property, operators we've used for years, the trip app, and a human who answers when something doesn't go to plan.
+    <br><br>
+    Prices and availability are subject to change until time of booking.
+  </div>
+</footer>
+
+<script>
+  // Assemble email at runtime to avoid Cloudflare scrambling
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var link = document.getElementById('emailLink');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+  })();
+
+  var CABIN_PRICES = {
+    "Deluxe Balcony – Fantastica ($2,229.58)": 2229.58,
+    "Premium Suite Aurea with Terrace ($3,649.58)": 3649.58
+  };
+  var GRATUITY_TOTAL = 238.00;
+
+  function formatMoney(n){
+    return "$" + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  }
+
+  function updateTotal(){
+    var radios = document.getElementsByName('cabinChoice');
+    var selectedValue = "";
+    var selectedCard = null;
+    for (var i=0; i<radios.length; i++){
+      if (radios[i].checked){
+        selectedValue = radios[i].value;
+        selectedCard = radios[i].closest('.option-card');
+      }
+      radios[i].closest('.option-card').classList.remove('selected');
+    }
+    if (selectedCard){ selectedCard.classList.add('selected'); }
+
+    var base = CABIN_PRICES[selectedValue] || 0;
+    var gratAdded = document.getElementById('addonGratuities').checked;
+    var total = base + (gratAdded ? GRATUITY_TOTAL : 0);
+
+    document.getElementById('totalAmount').textContent = "Est. " + formatMoney(total);
+    document.getElementById('hiddenCabinChoice').value = selectedValue;
+    document.getElementById('hiddenGratuities').value = gratAdded ? "Yes" : "No";
+    document.getElementById('hiddenTotal').value = formatMoney(total);
+
+    var interestSelect = document.getElementById('optionInterest');
+    if (interestSelect && interestSelect.value !== selectedValue){
+      interestSelect.value = selectedValue;
+    }
+  }
+
+  document.getElementById('optionInterest').addEventListener('change', function(){
+    var radios = document.getElementsByName('cabinChoice');
+    for (var i=0; i<radios.length; i++){
+      if (radios[i].value === this.value){
+        radios[i].checked = true;
+      }
+    }
+    updateTotal();
+  });
+
+  updateTotal();
+
+  // Web3Forms submission via fetch — never native POST
+  var form = document.getElementById('quoteForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var errorDiv = document.getElementById('formError');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorDiv.classList.remove('show');
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    var formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(function(response){ return response.json(); })
+    .then(function(data){
+      if (data.success){
+        document.getElementById('formSection').querySelector('h2').style.display = 'none';
+        document.getElementById('formSection').querySelector('.section-sub').style.display = 'none';
+        form.style.display = 'none';
+        document.getElementById('thankYou').classList.add('show');
+      } else {
+        errorDiv.classList.add('show');
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send My Response";
+      }
+    })
+    .catch(function(){
+      errorDiv.classList.add('show');
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send My Response";
+    });
+  });
+</script>
+
+</body>
+</html>
