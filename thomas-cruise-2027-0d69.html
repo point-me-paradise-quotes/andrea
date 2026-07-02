@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Symonea Thomas — Explorer of the Seas | Western Mediterranean 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #75AFB1;
+    --teal-dark: #4F8A8C;
+    --pale-teal: #C4E4E1;
+    --gold: #DAC396;
+    --gold-dark: #B89E6A;
+    --cream: #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper: #FBF9F4;
+    --paper-pure: #FFFFFF;
+    --text-primary: #3D3D3D;
+    --text-secondary: #606060;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-bottom: 90px;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--teal-dark); font-weight: 600; }
+
+  .italic-accent { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+  a { color: var(--teal-dark); }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 460px;
+    background-image: linear-gradient(180deg, rgba(38,58,58,0.35) 0%, rgba(38,58,58,0.65) 100%), url('https://assets.dm.rccl.com/is/image/RoyalCaribbeanCruises/royal/ships/explorer/explorer-of-the-seas-perfect-storm-aerial.jpg?$1440x600$');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px 24px;
+  }
+  .hero-inner { max-width: 900px; margin: 0 auto; width: 100%; color: var(--paper-pure); }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    color: var(--cream);
+    margin-bottom: 10px;
+  }
+  .hero h1 { color: var(--paper-pure); font-size: clamp(28px, 5vw, 46px); margin-bottom: 8px; }
+  .hero-sub { font-size: 17px; color: var(--cream-light); }
+  .hero-dates {
+    display: inline-block;
+    margin-top: 16px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  /* ===== TOP COMMITMENT CALLOUT ===== */
+  .commitment-banner {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    text-align: center;
+    padding: 18px 20px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  section { padding: 44px 0; }
+  section.divider { border-top: 1px solid var(--pale-teal); }
+
+  p { color: var(--text-primary); margin-bottom: 14px; }
+  .muted { color: var(--text-secondary); }
+
+  /* ===== ITINERARY ===== */
+  .itinerary-list { list-style: none; }
+  .itinerary-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--pale-teal);
+  }
+  .itinerary-item:last-child { border-bottom: none; }
+  .itin-day { font-family: 'Playfair Display', serif; color: var(--teal-dark); font-weight: 600; font-size: 14px; }
+  .itin-day span { display: block; font-size: 12px; color: var(--text-secondary); font-weight: 400; font-family: 'DM Sans', sans-serif; margin-top: 2px; }
+  .itin-port { font-weight: 600; color: var(--text-primary); }
+  .itin-time { color: var(--text-secondary); font-size: 14px; }
+
+  /* ===== SHIP INFO ===== */
+  .ship-card {
+    background: var(--paper-pure);
+    border: 1px solid var(--pale-teal);
+    border-radius: 14px;
+    padding: 28px;
+  }
+
+  /* ===== ADVISOR RECOMMENDATION ===== */
+  .advisor-note {
+    background: var(--cream-light);
+    border-left: 4px solid var(--gold-dark);
+    border-radius: 4px;
+    padding: 26px 28px;
+  }
+  .advisor-note p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--text-primary);
+  }
+  .advisor-signoff { font-size: 15px; margin-top: 10px; color: var(--teal-dark); font-weight: 600; }
+
+  /* ===== CLICK HINT ===== */
+  .click-hint {
+    text-align: center;
+    font-size: 14px;
+    color: var(--teal-dark);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  /* ===== OPTION CARDS ===== */
+  .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .option-card {
+    background: var(--paper-pure);
+    border: 2px solid var(--pale-teal);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.15s;
+    position: relative;
+  }
+  .option-card:hover { transform: translateY(-2px); }
+  .option-card.selected { border-color: var(--teal-dark); box-shadow: 0 4px 18px rgba(79,138,140,0.25); }
+  .option-img { width: 100%; height: 190px; object-fit: cover; display: block; background: var(--pale-teal); }
+  .option-body { padding: 22px; }
+  .option-label { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--teal-dark); margin-bottom: 4px; }
+  .option-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--text-primary);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .option-price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--pale-teal);
+    color: var(--text-secondary);
+  }
+  .option-price-row.total {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 16px;
+    border-bottom: none;
+    padding-top: 10px;
+  }
+  .option-deposit { font-size: 13px; color: var(--teal-dark); margin-top: 8px; font-weight: 600; }
+  .option-desc { font-size: 14px; margin: 14px 0; color: var(--text-primary); }
+  .option-list { list-style: none; font-size: 13.5px; margin-bottom: 10px; }
+  .option-list li { padding: 3px 0; padding-left: 18px; position: relative; color: var(--text-secondary); }
+  .option-list.why li::before { content: "✓"; position: absolute; left: 0; color: var(--teal-dark); font-weight: 700; }
+  .option-list.consider li::before { content: "–"; position: absolute; left: 0; color: var(--gold-dark); font-weight: 700; }
+  .option-list-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: var(--text-secondary); margin-top: 12px; margin-bottom: 4px; }
+  .radio-check {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    border: 2px solid var(--teal-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--teal-dark);
+  }
+  .option-card:not(.selected) .radio-check::after { content: ""; }
+  .option-card.selected .radio-check::after { content: "✓"; }
+
+  /* ===== VALUE / PRICING NOTE ===== */
+  .value-note {
+    background: var(--pale-teal);
+    border-radius: 12px;
+    padding: 20px 24px;
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-top: 22px;
+  }
+
+  .price-disclaimer {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* ===== BOTTOM CALLOUT ===== */
+  .bottom-callout {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    border-radius: 16px;
+    padding: 32px 28px;
+    text-align: center;
+  }
+  .bottom-callout p { color: var(--paper-pure); font-size: 15px; max-width: 640px; margin: 0 auto; }
+
+  /* ===== CONTACT FORM ===== */
+  .form-wrap {
+    background: var(--paper-pure);
+    border: 1px solid var(--pale-teal);
+    border-radius: 16px;
+    padding: 32px;
+  }
+  label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; margin-top: 16px; color: var(--text-primary); }
+  input, select, textarea {
+    width: 100%;
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+    padding: 12px 14px;
+    border: 1px solid var(--pale-teal);
+    border-radius: 8px;
+    background: var(--paper);
+    color: var(--text-primary);
+    min-height: 44px;
+  }
+  textarea { min-height: 90px; resize: vertical; }
+  .submit-btn {
+    margin-top: 24px;
+    width: 100%;
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    min-height: 48px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .submit-btn:hover { background: var(--teal); }
+  .form-error {
+    display: none;
+    background: #FBEAEA;
+    color: #9B3B3B;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+  .thank-you { display: none; text-align: center; padding: 30px 10px; }
+  .thank-you h3 { margin-bottom: 8px; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    text-align: center;
+    padding: 34px 24px 100px;
+    font-size: 14px;
+  }
+  footer a { color: var(--cream-light); text-decoration: underline; }
+  footer .disclaimer { margin-top: 14px; font-size: 12px; color: var(--pale-teal); max-width: 520px; margin-left: auto; margin-right: auto; }
+
+  /* ===== STICKY TOTAL BAR ===== */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
+    z-index: 100;
+    min-height: 44px;
+  }
+  .sticky-bar .label { font-size: 13px; color: var(--cream-light); }
+  .sticky-bar .amount { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; }
+  .sticky-bar .cta {
+    background: var(--gold);
+    color: var(--text-primary);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    min-height: 44px;
+  }
+
+  @media (max-width: 540px) {
+    .options-grid { grid-template-columns: 1fr; }
+    .itinerary-item { grid-template-columns: 70px 1fr; }
+    .hero { min-height: 380px; padding: 28px 18px; }
+    .form-wrap { padding: 22px; }
+    .bottom-callout { padding: 26px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Point Me to Paradise Travel — Custom Quote</div>
+    <h1>Symonea Thomas</h1>
+    <div class="hero-sub">Explorer of the Seas · 7-Night Western Mediterranean</div>
+    <div class="hero-dates">August 9 – August 16, 2027 &nbsp;•&nbsp; Ravenna (Venice) → Rome</div>
+  </div>
+</div>
+
+<div class="commitment-banner">
+  We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+</div>
+
+<div class="container">
+
+  <section>
+    <p>You're joining Jessica's group aboard Explorer of the Seas for her 50th birthday celebration — seven nights tracing the Adriatic and Tyrrhenian coastlines from Ravenna to Rome, with five ports in between and not a single backtrack.</p>
+    <p class="muted">This itinerary is built for people who'd rather see five different coastlines than lounge at one resort for a week: Split's Diocletian's Palace, the fjord-like approach into Kotor, Dubrovnik's walled Old Town, Messina's Sicilian waterfront, and the cliffside towns of the Amalfi Coast from Salerno — before disembarking in Rome, where you can tack on extra days if you want them.</p>
+  </section>
+
+  <section class="divider">
+    <h2 style="margin-bottom:18px;">Itinerary</h2>
+    <ul class="itinerary-list">
+      <li class="itinerary-item">
+        <div class="itin-day">Day 1<span>Mon, Aug 9</span></div>
+        <div><div class="itin-port">Ravenna (Venice), Italy</div><div class="itin-time">Depart 5:00 PM</div></div>
+      </li>
+      <li class="itinerary-item">
+        <div class="itin-day">Day 2<span>Tue, Aug 10</span></div>
+        <div><div class="itin-port">Split, Croatia</div><div class="itin-time">8:00 AM – 5:00 PM</div></div>
+      </li>
+      <li class="itinerary-item">
+        <div class="itin-day">Day 3<span>Wed, Aug 11</span></div>
+        <div><div class="itin-port">Kotor, Montenegro</div><div class="itin-time">7:00 AM – 6:00 PM (Tender Port)</div></div>
+      </li>
+      <li class="itinerary-item">
+        <div class="itin-day">Day 4<span>Thu, Aug 12</span></div>
+        <div><div class="itin-port">Dubrovnik, Croatia</div><div class="itin-time">7:00 AM – 5:00 PM</div></div>
+      </li>
+      <li class="itinerary-item">
+        <div class="itin-day">Day 5<span>Fri, Aug 13</span></div>
+        <div><div class="itin-port">Cruising</div><div class="itin-time">Day at sea</div></div>
+      </li>
+      <li class="itinerary-item">
+        <div class="itin-day">Day 6<span>Sat, Aug 14</span></div>
+        <div><div class="itin-port">Messina (Sicily), Italy</div><div class="itin-time">7:00 AM – 5:00 PM</div></div>
+      </li>
+      <li class="itinerary-item">
+        <div class="itin-day">Day 7<span>Sun, Aug 15</span></div>
+        <div><div class="itin-port">Salerno (Amalfi Coast), Italy</div><div class="itin-time">7:00 AM – 6:00 PM</div></div>
+      </li>
+      <li class="itinerary-item">
+        <div class="itin-day">Day 8<span>Mon, Aug 16</span></div>
+        <div><div class="itin-port">Rome (Civitavecchia), Italy</div><div class="itin-time">Arrive 5:00 AM</div></div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="divider">
+    <h2 style="margin-bottom:16px;">The Ship</h2>
+    <div class="ship-card">
+      <h3 style="margin-bottom:10px;">Explorer of the Seas</h3>
+      <p>Explorer is a Voyager Class ship — not RC's newest hull, but a well-kept one, recently refreshed with updated pools, an adults-only Solarium, a rock climbing wall, an ice rink, mini golf, the FlowRider surf simulator, a casino, and the multi-story Royal Promenade running through the middle of the ship. For a European sailing where the ports are doing most of the work, it's a solid, comfortable base to come back to each evening.</p>
+    </div>
+  </section>
+
+  <section class="divider">
+    <h2 style="margin-bottom:16px;">From Your Advisor</h2>
+    <div class="advisor-note">
+      <p>"For a European itinerary like this, I always recommend booking a balcony if your budget allows. Sailing into destinations like Kotor, the Amalfi Coast, and the Croatian coastline is absolutely breathtaking, and having your own private balcony to enjoy those views is worth every penny. This itinerary is one of my favorites because it combines Italy, Croatia, and Montenegro all in one unforgettable cruise."</p>
+      <div class="advisor-signoff">— Andrea, Point Me to Paradise Travel</div>
+    </div>
+  </section>
+
+  <section class="divider">
+    <h2 style="margin-bottom:6px;">Choose Your Stateroom</h2>
+    <div class="click-hint">👉 Click a card to select your option</div>
+    <div class="options-grid" id="optionsGrid">
+
+      <div class="option-card" data-option="1" data-fare="2833.08" data-grat="259.00" data-total="3092.08" data-deposit="500" onclick="selectOption(1)">
+        <div class="radio-check"></div>
+        <img class="option-img" src="https://www.royalcaribbeanincentives.com/content/uploads/RCI_EX_balcony-Oceanview_SR.webp" alt="Ocean View Balcony stateroom">
+        <div class="option-body">
+          <div class="option-tag">Best Value</div>
+          <div class="option-label">Ocean View Balcony — Guarantee</div>
+          <p class="option-desc">Royal Caribbean assigns your exact stateroom prior to sailing — you're locked into a private balcony somewhere on Deck 6, 7, or 8, but you won't know the specific cabin number until closer to departure.</p>
+          <div class="option-price-row"><span>Cruise Fare</span><span>$2,833.08</span></div>
+          <div class="option-price-row"><span>Prepaid Gratuities (flat, both guests)</span><span>$259.00</span></div>
+          <div class="option-price-row total"><span>Grand Total</span><span>$3,092.08</span></div>
+          <div class="option-deposit">Deposit due at booking: $500</div>
+          <div class="option-list-title">Why choose this</div>
+          <ul class="option-list why">
+            <li>Lowest available price</li>
+            <li>Guaranteed private balcony</li>
+            <li>Possibility of a complimentary upgrade</li>
+            <li>Great value if cabin location isn't a priority</li>
+          </ul>
+          <div class="option-list-title">Worth knowing</div>
+          <ul class="option-list consider">
+            <li>You can't choose your cabin location</li>
+            <li>Stateroom assignment comes closer to sailing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="option-card" data-option="2" data-fare="3403.08" data-grat="259.00" data-total="3662.08" data-deposit="500" onclick="selectOption(2)">
+        <div class="radio-check"></div>
+        <img class="option-img" src="https://www.royalcaribbeanincentives.com/content/uploads/RCI_EX_balcony-Oceanview_SR.webp" alt="Ocean View Balcony stateroom">
+        <div class="option-body">
+          <div class="option-tag">Choose Your Own</div>
+          <div class="option-label">Ocean View Balcony — Select Cabin</div>
+          <p class="option-desc">The same balcony experience, but you pick the exact stateroom yourself instead of leaving it to Royal Caribbean — so you know precisely where you'll be before you sail.</p>
+          <div class="option-price-row"><span>Cruise Fare</span><span>$3,403.08</span></div>
+          <div class="option-price-row"><span>Prepaid Gratuities (flat, both guests)</span><span>$259.00</span></div>
+          <div class="option-price-row total"><span>Grand Total</span><span>$3,662.08</span></div>
+          <div class="option-deposit">Deposit due at booking: $500</div>
+          <div class="option-list-title">Why choose this</div>
+          <ul class="option-list why">
+            <li>Select your preferred cabin location</li>
+            <li>Know your stateroom number immediately</li>
+            <li>Avoid cabins near elevators or public areas</li>
+            <li>Peace of mind knowing exactly where you'll stay</li>
+          </ul>
+          <div class="option-list-title">Worth knowing</div>
+          <ul class="option-list consider">
+            <li>About $570 more than the Guarantee option</li>
+            <li>Same balcony experience — you're paying for the choice, not the view</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="value-note">
+      Individual hotels, transfers, and tours in your quote are priced at publicly available rates — and in many cases lower than what you'd find on your own. You don't have to worry about overpaying for a piece of your trip. What you're paying for is the rest: the right rooms at the right property, operators we've used for years, the trip app, and a human who answers when something doesn't go to plan.
+    </div>
+    <div class="price-disclaimer">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+  </section>
+
+  <section class="divider">
+    <div class="bottom-callout">
+      <p>What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+    </div>
+  </section>
+
+  <section class="divider" id="contact">
+    <h2 style="margin-bottom:18px;">Ready to Move Forward?</h2>
+    <div class="form-wrap">
+      <form id="quoteForm">
+        <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+        <input type="hidden" name="subject" value="Quote Response — Symonea Thomas | Explorer of the Seas Mediterranean">
+        <input type="hidden" name="from_name" value="Symonea Thomas Quote — Point Me to Paradise">
+        <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="selected_option" id="selectedOptionField" value="">
+
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="option_interest">Which option interests you?</label>
+        <select id="option_interest" name="option_interest">
+          <option value="">Select an option</option>
+          <option value="Ocean View Balcony — Guarantee ($3,092.08)">Ocean View Balcony — Guarantee ($3,092.08)</option>
+          <option value="Ocean View Balcony — Select Cabin ($3,662.08)">Ocean View Balcony — Select Cabin ($3,662.08)</option>
+        </select>
+
+        <label for="insurance">Travel insurance?</label>
+        <select id="insurance" name="insurance">
+          <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+          <option value="No — not interested">No — not interested</option>
+          <option value="Already have coverage">Already have coverage</option>
+        </select>
+
+        <label for="message">Message (optional)</label>
+        <textarea id="message" name="message" placeholder="Questions, special requests, or anything else I should know..."></textarea>
+
+        <button type="submit" class="submit-btn">Send My Response</button>
+        <div class="form-error" id="formError">Something went wrong sending your message. Please try again, or reach out directly using the contact info below.</div>
+      </form>
+
+      <div class="thank-you" id="thankYou">
+        <h3>Thank you, it's on its way!</h3>
+        <p class="muted">I'll follow up shortly to walk through next steps.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div>Andrea Gunter — Point Me to Paradise Travel</div>
+  <div id="footerContact" style="margin-top:6px;"></div>
+  <div class="disclaimer">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<div class="sticky-bar">
+  <div>
+    <div class="label">Est. Total</div>
+    <div class="amount" id="stickyAmount">Select an option</div>
+  </div>
+  <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Get Started</button>
+</div>
+
+<script>
+  // Assemble email at runtime to avoid Cloudflare scrambling
+  (function() {
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var phone = '409-789-3579';
+    var el = document.getElementById('footerContact');
+    var link = document.createElement('a');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+    el.appendChild(link);
+    el.appendChild(document.createTextNode(' | ' + phone));
+  })();
+
+  var selected = null;
+
+  function selectOption(num) {
+    selected = num;
+    document.querySelectorAll('.option-card').forEach(function(card) {
+      card.classList.toggle('selected', parseInt(card.dataset.option) === num);
+    });
+    updateTotal();
+    var interestSelect = document.getElementById('option_interest');
+    if (num === 1) interestSelect.value = "Ocean View Balcony — Guarantee ($3,092.08)";
+    if (num === 2) interestSelect.value = "Ocean View Balcony — Select Cabin ($3,662.08)";
+  }
+
+  function updateTotal() {
+    var amountEl = document.getElementById('stickyAmount');
+    var hiddenField = document.getElementById('selectedOptionField');
+    if (!selected) {
+      amountEl.textContent = 'Select an option';
+      hiddenField.value = '';
+      return;
+    }
+    var card = document.querySelector('.option-card[data-option="' + selected + '"]');
+    var total = parseFloat(card.dataset.total);
+    amountEl.textContent = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    hiddenField.value = card.querySelector('.option-label').textContent;
+  }
+
+  // Web3Forms submission via fetch — never native POST
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = e.target;
+    var errorEl = document.getElementById('formError');
+    errorEl.style.display = 'none';
+    var formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.success) {
+        document.querySelector('.form-wrap form').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorEl.style.display = 'block';
+      }
+    })
+    .catch(function() {
+      errorEl.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
