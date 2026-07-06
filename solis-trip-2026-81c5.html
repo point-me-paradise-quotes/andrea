@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dalissa Solis — Cancun All-Inclusive Quote | Point Me to Paradise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1; --teal-dark:#4F8A8C; --pale-teal:#C4E4E1;
+    --gold:#DAC396; --gold-dark:#B89E6A;
+    --cream:#E9DEC0; --cream-light:#F5EFDF; --paper:#FBF9F4; --paper-pure:#FFFFFF;
+    --text:#3D3D3D; --text-muted:#606060;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--paper);line-height:1.6;}
+  h1,h2,h3{font-family:'Playfair Display',serif;color:var(--teal-dark);}
+  .voice{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--text);}
+
+  .hero{
+    position:relative;min-height:420px;display:flex;align-items:flex-end;
+    background-image:linear-gradient(180deg, rgba(79,138,140,0.35) 0%, rgba(61,61,61,0.75) 100%),
+      url('https://images.trvl-media.com/lodging/9000000/8680000/8673200/8673168/46f39925.jpg?impolicy=resizecrop&rw=1200&ra=fit');
+    background-size:cover;background-position:center;padding:40px 24px;
+  }
+  .hero-inner{color:var(--paper-pure);max-width:900px;}
+  .hero-inner p.eyebrow{font-family:'DM Sans',sans-serif;letter-spacing:2px;text-transform:uppercase;font-size:0.8rem;color:var(--cream);margin-bottom:8px;}
+  .hero-inner h1{font-size:2.2rem;color:var(--paper-pure);margin-bottom:8px;}
+  .hero-inner p.sub{font-size:1.05rem;color:var(--cream-light);}
+
+  .commitment-banner{
+    background:var(--teal-dark);color:var(--paper-pure);text-align:center;
+    padding:16px 20px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;
+  }
+
+  .container{max-width:900px;margin:0 auto;padding:32px 20px;}
+
+  .section{margin-bottom:36px;}
+  .section h2{font-size:1.5rem;margin-bottom:12px;border-bottom:2px solid var(--pale-teal);padding-bottom:8px;}
+
+  .card{
+    background:var(--paper-pure);border:1px solid var(--pale-teal);border-radius:12px;
+    padding:20px;margin-bottom:20px;
+  }
+  .card h3{font-size:1.2rem;margin-bottom:6px;}
+  .card .price{font-weight:700;color:var(--teal-dark);font-size:1.1rem;}
+  .muted{color:var(--text-muted);font-size:0.92rem;}
+
+  .flight-detail{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;}
+  @media (max-width:540px){.flight-detail{grid-template-columns:1fr;}}
+  .flight-leg{background:var(--cream-light);border-radius:8px;padding:14px;}
+  .flight-leg h4{font-family:'DM Sans',sans-serif;font-weight:600;color:var(--teal-dark);margin-bottom:6px;font-size:0.95rem;}
+
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
+  @media (max-width:540px){.gallery{grid-template-columns:1fr;}}
+  .gallery img{width:100%;height:220px;object-fit:cover;border-radius:10px;}
+
+  .room-option{
+    border:2px solid var(--teal); border-radius:12px; padding:18px; background:var(--cream-light);
+  }
+  .room-option .tag{
+    display:inline-block;background:var(--teal-dark);color:var(--paper-pure);
+    font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:10px;
+  }
+
+  .why-list{list-style:none;margin-top:10px;}
+  .why-list li{padding:8px 0 8px 26px;position:relative;border-bottom:1px solid var(--pale-teal);}
+  .why-list li:last-child{border-bottom:none;}
+  .why-list li::before{content:"—";position:absolute;left:0;color:var(--teal-dark);font-weight:700;}
+
+  .estimate-box{
+    background:var(--cream);border-radius:12px;padding:20px;margin-top:10px;
+  }
+  .estimate-row{display:flex;justify-content:space-between;padding:6px 0;font-size:0.98rem;}
+  .estimate-row.total{font-weight:700;font-size:1.15rem;border-top:2px solid var(--gold-dark);margin-top:8px;padding-top:12px;color:var(--teal-dark);}
+
+  .note-box{
+    background:var(--pale-teal);border-radius:10px;padding:14px 16px;margin-top:10px;font-size:0.92rem;
+  }
+
+  .payment-table{width:100%;border-collapse:collapse;margin-top:12px;}
+  .payment-table td, .payment-table th{padding:10px 12px;border-bottom:1px solid var(--pale-teal);text-align:left;font-size:0.95rem;}
+  .payment-table th{color:var(--teal-dark);font-family:'DM Sans',sans-serif;font-weight:600;}
+
+  .pricing-callout{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;
+    background:var(--cream-light);border-left:4px solid var(--gold-dark);padding:14px 18px;border-radius:0 8px 8px 0;margin-top:14px;
+  }
+  .disclaimer{font-size:0.8rem;color:var(--text-muted);margin-top:8px;}
+
+  .sticky-total{
+    position:sticky;bottom:0;left:0;right:0;background:var(--teal-dark);color:var(--paper-pure);
+    padding:14px 20px;display:flex;justify-content:space-between;align-items:center;
+    box-shadow:0 -4px 12px rgba(0,0,0,0.12);z-index:100;flex-wrap:wrap;gap:8px;
+  }
+  .sticky-total .amt{font-family:'Playfair Display',serif;font-size:1.3rem;}
+  .sticky-total .sub{font-size:0.8rem;color:var(--cream-light);}
+
+  .bottom-callout{
+    background:var(--teal);color:var(--paper-pure);border-radius:12px;padding:24px;margin:36px 0;
+    text-align:center;
+  }
+  .bottom-callout p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;}
+
+  form{background:var(--paper-pure);border:1px solid var(--pale-teal);border-radius:12px;padding:24px;}
+  .form-group{margin-bottom:16px;}
+  label{display:block;font-weight:600;margin-bottom:6px;font-size:0.9rem;color:var(--teal-dark);}
+  input, select, textarea{
+    width:100%;padding:12px;border:1px solid var(--pale-teal);border-radius:8px;
+    font-size:16px;font-family:'DM Sans',sans-serif;background:var(--paper);
+  }
+  textarea{min-height:90px;resize:vertical;}
+  button[type="submit"]{
+    background:var(--gold-dark);color:var(--paper-pure);border:none;border-radius:8px;
+    padding:14px 28px;font-size:1rem;font-weight:600;cursor:pointer;min-height:48px;width:100%;
+    font-family:'DM Sans',sans-serif;
+  }
+  button[type="submit"]:hover{background:var(--teal-dark);}
+  #errorMsg{display:none;background:var(--cream);color:var(--teal-dark);border:1px solid var(--gold-dark);padding:12px;border-radius:8px;margin-bottom:14px;font-weight:600;}
+  #thankYou{display:none;text-align:center;padding:30px 20px;}
+  #thankYou h3{color:var(--teal-dark);margin-bottom:10px;}
+
+  footer{
+    background:var(--teal-dark);color:var(--paper-pure);text-align:center;padding:30px 20px;font-size:0.9rem;
+  }
+  footer a{color:var(--cream-light);}
+  footer .fine-print{font-size:0.75rem;color:var(--pale-teal);margin-top:14px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Point Me to Paradise Travel</p>
+    <h1>Dalissa Solis — Cancun, Mexico</h1>
+    <p class="sub">July 24–27, 2026 &nbsp;·&nbsp; 3 Nights &nbsp;·&nbsp; 4 Adults, 1 Child &nbsp;·&nbsp; All-Inclusive</p>
+  </div>
+</div>
+
+<div class="commitment-banner">
+  "We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done."
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <h2>Flight</h2>
+    <div class="card">
+      <h3>United Airlines — Nonstop, Houston (IAH) to Cancun (CUN)</h3>
+      <p class="muted">United Economy · Includes seat selection and one carry-on bag per traveler</p>
+      <div class="flight-detail">
+        <div class="flight-leg">
+          <h4>Departure — Friday, July 24</h4>
+          <p>Depart Houston (IAH): 10:10 AM</p>
+          <p>Arrive Cancun (CUN): 12:33 PM</p>
+          <p class="muted">Flight time: 2h 23m</p>
+        </div>
+        <div class="flight-leg">
+          <h4>Return — Monday, July 27</h4>
+          <p>Depart Cancun (CUN): 5:22 PM</p>
+          <p>Arrive Houston (IAH): 7:55 PM</p>
+          <p class="muted">Flight time: 2h 33m</p>
+        </div>
+      </div>
+      <p class="voice" style="margin-top:14px;">I recommend Economy over Basic Economy for families traveling with children — it's worth the difference for the seat selection alone.</p>
+      <p class="price" style="margin-top:12px;">$3,124.00 total</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Resort</h2>
+    <div class="card">
+      <h3>Finest Playa Mujeres by The Excellence Collection</h3>
+      <p class="muted">★★★★★ All-Inclusive Resort · Playa Mujeres, Cancun</p>
+
+      <div class="gallery">
+        <img src="https://images.trvl-media.com/lodging/9000000/8680000/8673200/8673168/903b82fe.jpg?impolicy=fcrop&w=1200&h=800&quality=medium" alt="Junior Suite Spa or Pool View">
+        <img src="https://images.trvl-media.com/lodging/9000000/8680000/8673200/8673168/03773506.jpg?impolicy=fcrop&w=1200&h=800&quality=medium" alt="Junior Suite Spa or Pool View">
+      </div>
+
+      <div class="room-option">
+        <span class="tag">Selected Room Category</span>
+        <h3>Junior Suite Spa or Pool View</h3>
+        <p class="muted" style="margin-bottom:10px;">2 Junior Suites · Check-in Fri, July 24 · Check-out Mon, July 27</p>
+        <p>A spacious, elegantly designed suite with either spa or pool views, one king bed or two doubles depending on availability, and a furnished private balcony or terrace with a sitting area to unwind after a day in the sun.</p>
+        <p style="margin-top:10px;">The bathroom has a rainfall shower, dual vanities, a whirlpool tub, plush robes and slippers. Each suite also includes a daily-stocked minibar, complimentary Wi-Fi, a Nespresso coffee maker, room service, and an in-room safe.</p>
+        <p class="price" style="margin-top:12px;">$3,045.74 total</p>
+      </div>
+
+      <div class="section" style="margin-top:24px;margin-bottom:0;">
+        <h2 style="font-size:1.2rem;">Why I Chose This Resort</h2>
+        <p class="voice">This is one of my favorite family resorts in the Cancun area, and a strong fit for what you're looking for.</p>
+        <ul class="why-list">
+          <li>Located in Playa Mujeres, which typically sees less seaweed than many Riviera Maya beaches during summer months</li>
+          <li>Wide beach with calm, shallow water — a good match for young children</li>
+          <li>Splash park and water play area built for toddlers</li>
+          <li>Multiple pools, split between family and adult-focused spaces</li>
+          <li>Strong dining lineup with real kid-friendly options, not just chicken fingers</li>
+          <li>About a 35–40 minute transfer from Cancun International Airport</li>
+          <li>Spacious suites with room to actually relax after a day at the beach or pool</li>
+        </ul>
+        <p class="voice" style="margin-top:14px;">Overall, this is one of the better combinations of value, beach quality, family amenities, and location for your budget — it keeps the vacation near your target price while giving everyone, from the toddler to the adults, a resort they'll enjoy.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Optional Add-On</h2>
+    <div class="card">
+      <h3>Private Airport Transfer</h3>
+      <p>Private transfer for 5 from Cancun International Airport to the resort. Pricing varies by vehicle and availability — approximately <strong>$100–$200 round trip</strong>, quoted at booking.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Estimated Vacation Total</h2>
+    <div class="estimate-box">
+      <div class="estimate-row"><span>United Economy Airfare</span><span>$3,124.00</span></div>
+      <div class="estimate-row"><span>Finest Playa Mujeres Resort (Junior Suite)</span><span>$3,045.74</span></div>
+      <div class="estimate-row total"><span>Est. Total</span><span>$6,169.74</span></div>
+      <p class="muted" style="margin-top:8px;">Private airport transfer (optional, ~$100–$200 RT) not included above. Transfers, travel protection, and optional excursions are not included in the estimate.</p>
+    </div>
+
+    <div class="pricing-callout">
+      "We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do."
+    </div>
+    <p class="disclaimer">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
+  </div>
+
+  <div class="section">
+    <h2>Payment Information</h2>
+    <div class="card">
+      <p><strong>Airfare</strong></p>
+      <p style="margin-top:8px;">Airfare is paid in full at time of booking — airlines don't offer deferred payment on published fares.</p>
+      <table class="payment-table">
+        <tr><th>Due at Booking</th><td>$3,124.00</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <p><strong>Resort — Book Now, Pay Later Available</strong></p>
+      <p style="margin-top:8px;">You can reserve the resort today without paying the full balance upfront.</p>
+      <table class="payment-table">
+        <tr><th>Today</th><td>No payment due</td></tr>
+        <tr><th>Final Payment</th><td>Automatically charged July 15, 2026 to the payment method on file</td></tr>
+      </table>
+      <p class="muted" style="margin-top:10px;">If you'd like to pay before July 15, or make payments along the way, that's available too — just let me know.</p>
+
+      <div class="note-box">
+        <strong>Cancellation Policy — Fully Refundable</strong><br>
+        Full refund if canceled before July 23 at 1:00 AM (resort local time). After that point, the reservation becomes non-refundable.
+      </div>
+      <p class="disclaimer">Pricing and availability are subject to change until the reservation is confirmed.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="bottom-callout">
+  <p>What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+</div>
+
+<div class="container" id="contact">
+  <div class="section">
+    <h2>Ready to Move Forward?</h2>
+    <form id="quoteForm">
+      <div id="errorMsg">Something went wrong submitting the form. Please try again, or reach out directly.</div>
+
+      <div id="formFields">
+        <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+        <input type="hidden" name="subject" value="Quote Response — Dalissa Solis | Cancun, Mexico">
+        <input type="hidden" name="from_name" value="Dalissa Solis Quote — Point Me to Paradise">
+        <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="calculated_total" id="calcTotalField" value="6169.74">
+
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="insurance">Travel Insurance</label>
+          <select id="insurance" name="travel_insurance">
+            <option value="">-- Select --</option>
+            <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+            <option value="No — not interested">No — not interested</option>
+            <option value="Already have coverage">Already have coverage</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Questions, add-ons, or anything else I should know..."></textarea>
+        </div>
+        <button type="submit">Send My Response</button>
+      </div>
+
+      <div id="thankYou">
+        <h3>Thank you!</h3>
+        <p>Your response is in my inbox. I'll be in touch shortly.</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="sticky-total" id="stickyBar">
+  <div>
+    <div class="amt">Est. $6,169.74</div>
+    <div class="sub">Final pricing confirmed by your advisor</div>
+  </div>
+</div>
+
+<footer>
+  <p id="agentName">Andrea Gunter — Point Me to Paradise Travel</p>
+  <p><a id="emailLink" href="#"></a> &nbsp;·&nbsp; 409-789-3579</p>
+  <p class="fine-print">Prices and availability are subject to change until time of booking.</p>
+</footer>
+
+<script>
+  // Assemble email at runtime to avoid Cloudflare scrambling / scraping
+  var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+  var emailLink = document.getElementById('emailLink');
+  emailLink.href = 'mailto:' + addr;
+  emailLink.textContent = addr;
+
+  var form = document.getElementById('quoteForm');
+  var errorMsg = document.getElementById('errorMsg');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorMsg.style.display = 'none';
+
+    var formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(function(response){ return response.json(); })
+    .then(function(data){
+      if (data.success) {
+        document.getElementById('formFields').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      errorMsg.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
