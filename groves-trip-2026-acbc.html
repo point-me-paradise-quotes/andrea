@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashley Groves — Bahamas Getaway, July 2026 | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text:#3D3D3D;
+    --text-muted:#606060;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'DM Sans', sans-serif;
+    background:var(--paper);
+    color:var(--text);
+    line-height:1.6;
+    padding-bottom:90px;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display', serif; color:var(--teal-dark); font-weight:600;}
+  .accent{font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500;}
+  a{color:var(--teal-dark);}
+  .wrap{max-width:960px; margin:0 auto; padding:0 20px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:420px;
+    background-image: linear-gradient(180deg, rgba(30,50,50,0.35), rgba(30,50,50,0.65)), url('https://www.travelandleisure.com/thmb/LovddQ6UScwjC53MYcOngNpLHFo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-fowl-cay-BESTHOTELSBAHAMAS0224-622f8b5f8b2343e29df9cedbd7e053d0.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:flex-end;
+    color:#fff;
+  }
+  .hero-inner{padding:40px 20px 32px; max-width:960px; margin:0 auto; width:100%;}
+  .hero-inner .kicker{font-size:14px; letter-spacing:1.5px; text-transform:uppercase; color:var(--cream); margin-bottom:8px;}
+  .hero-inner h1{color:#fff; font-size:clamp(28px,5vw,44px); margin-bottom:10px;}
+  .hero-inner .details{font-size:16px; color:var(--pale-teal);}
+
+  /* CALLOUTS */
+  .callout{
+    background:var(--cream-light);
+    border-left:4px solid var(--gold-dark);
+    padding:18px 22px;
+    margin:26px 0;
+    border-radius:4px;
+    font-size:15.5px;
+    color:var(--text);
+  }
+  .callout.top{margin-top:0;}
+
+  section{padding:36px 0;}
+  .section-title{font-size:26px; margin-bottom:6px;}
+  .section-sub{color:var(--text-muted); font-size:15px; margin-bottom:24px;}
+
+  /* COMPARISON TABLE */
+  .compare-wrap{overflow-x:auto; border-radius:10px; border:1px solid var(--pale-teal); background:var(--paper-pure);}
+  table.compare{width:100%; border-collapse:collapse; min-width:600px;}
+  table.compare th, table.compare td{padding:14px 16px; text-align:left; font-size:14.5px; border-bottom:1px solid var(--cream);}
+  table.compare th{background:var(--teal-dark); color:#fff; font-family:'Playfair Display', serif; font-weight:600; font-size:15px;}
+  table.compare tr:last-child td{border-bottom:none;}
+  table.compare td.highlight{background:var(--cream-light); font-weight:600;}
+  .advisor-note{
+    margin-top:18px;
+    padding:16px 20px;
+    background:var(--paper-pure);
+    border:1px dashed var(--gold-dark);
+    border-radius:8px;
+    font-size:16px;
+  }
+  .advisor-note .label{
+    font-family:'DM Sans',sans-serif;
+    font-weight:600;
+    font-style:normal;
+    color:var(--teal-dark);
+    text-transform:uppercase;
+    font-size:12px;
+    letter-spacing:1px;
+    display:block;
+    margin-bottom:6px;
+  }
+
+  /* RESORT CARDS */
+  .resort-card{
+    background:var(--paper-pure);
+    border:1px solid var(--pale-teal);
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:34px;
+  }
+  .resort-head{padding:22px 24px 0;}
+  .resort-head .tag{
+    display:inline-block; background:var(--pale-teal); color:var(--teal-dark);
+    font-size:12px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase;
+    padding:4px 10px; border-radius:20px; margin-bottom:10px;
+  }
+  .resort-head h3{font-size:24px; margin-bottom:2px;}
+  .resort-head .loc{color:var(--text-muted); font-size:14.5px; margin-bottom:14px;}
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:6px; padding:0 24px;}
+  .gallery img{width:100%; height:130px; object-fit:cover; border-radius:6px; background:var(--cream-light);}
+  .resort-body{padding:20px 24px 24px;}
+  .resort-body h4{font-size:16px; margin:16px 0 6px;}
+  .resort-body p{font-size:15px; color:var(--text); margin-bottom:8px;}
+  ul.highlights{margin:8px 0 0 18px; font-size:14.5px; color:var(--text);}
+  ul.highlights li{margin-bottom:4px;}
+
+  .price-block{
+    margin-top:18px;
+    background:var(--cream-light);
+    border-radius:8px;
+    padding:16px 18px;
+  }
+  .price-row{display:flex; justify-content:space-between; font-size:14.5px; padding:4px 0;}
+  .price-row.total{font-weight:700; font-size:17px; color:var(--teal-dark); border-top:1px solid var(--pale-teal); margin-top:6px; padding-top:10px;}
+  .savings-line{color:var(--teal-dark); font-size:13.5px;}
+  .schedule-cards{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px;}
+  .schedule-cards.single{grid-template-columns:1fr;}
+  .sched-card{background:var(--paper-pure); border:1px solid var(--pale-teal); border-radius:8px; padding:12px 14px; font-size:13.5px;}
+  .sched-card .amt{font-family:'Playfair Display',serif; font-size:18px; color:var(--teal-dark); display:block; margin-top:2px;}
+  .deadline-note{
+    background:var(--cream); border-radius:8px; padding:12px 14px; font-size:13.5px; margin-top:12px; color:var(--text);
+  }
+
+  .transfer-note{font-size:14px; color:var(--text-muted); margin-top:14px; font-style:italic; font-family:'Cormorant Garamond',serif; font-size:16px;}
+
+  .select-row{
+    margin-top:18px; padding-top:16px; border-top:1px solid var(--pale-teal);
+    display:flex; align-items:center; gap:10px;
+  }
+  .select-row input[type="radio"]{width:20px; height:20px; accent-color:var(--teal-dark);}
+  .select-row label{font-weight:600; font-size:15px; cursor:pointer;}
+
+  /* STICKY TOTAL */
+  .sticky-total{
+    position:fixed; bottom:0; left:0; right:0;
+    background:var(--teal-dark); color:#fff;
+    padding:14px 20px;
+    display:flex; justify-content:space-between; align-items:center;
+    z-index:50;
+    box-shadow:0 -4px 14px rgba(0,0,0,0.12);
+  }
+  .sticky-total .amt{font-family:'Playfair Display',serif; font-size:22px;}
+  .sticky-total .fine{font-size:11.5px; color:var(--pale-teal); display:block; margin-top:2px;}
+  .sticky-total button{
+    background:var(--gold); color:var(--teal-dark); border:none; font-weight:700;
+    padding:10px 20px; border-radius:24px; font-size:14.5px; cursor:pointer; min-height:44px;
+  }
+
+  /* FORM */
+  .form-section{background:var(--pale-teal); border-radius:14px; padding:32px 26px;}
+  .form-section h2{margin-bottom:6px;}
+  .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px;}
+  .form-grid .full{grid-column:1 / -1;}
+  label.field-label{display:block; font-size:13.5px; font-weight:600; margin-bottom:5px; color:var(--teal-dark);}
+  input, select, textarea{
+    width:100%; font-size:16px; padding:12px 14px; border:1px solid var(--gold-dark);
+    border-radius:8px; font-family:'DM Sans',sans-serif; background:var(--paper-pure); color:var(--text);
+    min-height:44px;
+  }
+  textarea{min-height:90px; resize:vertical;}
+  .submit-btn{
+    margin-top:20px; background:var(--teal-dark); color:#fff; border:none;
+    padding:14px 28px; border-radius:24px; font-size:16px; font-weight:700; cursor:pointer;
+    min-height:48px; width:100%;
+  }
+  .submit-btn:hover{background:var(--gold-dark); color:var(--teal-dark);}
+  #error-box{display:none; background:#fff3f0; border:1px solid #d98a76; color:#a3402a; padding:12px 16px; border-radius:8px; margin-top:14px; font-size:14px;}
+  #thankyou{display:none; text-align:center; padding:20px;}
+  #thankyou h3{margin-bottom:8px;}
+
+  footer{
+    background:var(--teal-dark); color:#fff; text-align:center; padding:34px 20px; margin-top:20px;
+  }
+  footer .agent-name{font-family:'Playfair Display',serif; font-size:19px; margin-bottom:6px;}
+  footer .contact-line{font-size:14.5px; color:var(--pale-teal); margin-bottom:14px;}
+  footer .disclaimer{font-size:12px; color:var(--cream); max-width:520px; margin:0 auto; opacity:0.9;}
+
+  @media (max-width:540px){
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .form-grid{grid-template-columns:1fr;}
+    .schedule-cards{grid-template-columns:1fr;}
+    table.compare{min-width:520px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Point Me to Paradise Travel — Custom Quote</div>
+    <h1>Ashley Groves — Bahamas</h1>
+    <div class="details">3 Nights · July 20–23, 2026 · 2 Adults</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="callout top">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+
+  <section id="compare">
+    <h2 class="section-title">Three Resorts, Three Different Trips</h2>
+    <p class="section-sub">Same three nights, same two adults — but these properties don't overlap much. Here's the honest side-by-side.</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <tr>
+          <th>Resort</th>
+          <th>Vibe</th>
+          <th>Best for</th>
+          <th>Est. Total</th>
+        </tr>
+        <tr>
+          <td><strong>Sandals Royal Bahamian</strong></td>
+          <td>Two distinct sides of the resort — a lively beachfront scene and a quieter retreat — plus a private offshore island reachable by ferry.</td>
+          <td>Couples who want top-tier all-inclusive: unlimited premium spirits, multiple restaurants, gratuities and airport transfers built in.</td>
+          <td class="highlight">$2,479.20</td>
+        </tr>
+        <tr>
+          <td><strong>Warwick Paradise Island</strong></td>
+          <td>Laid-back harborfront property a short walk from Cabbage Beach — less polish, more value.</td>
+          <td>Couples prioritizing budget and location over resort-wide luxury touches.</td>
+          <td>$1,810.00 (est.)</td>
+        </tr>
+        <tr>
+          <td><strong>Riu Palace Paradise Island</strong></td>
+          <td>Recently renovated beachfront property directly on Cabbage Beach with a modern, upscale feel.</td>
+          <td>Couples who want beachfront and a newer renovation, with flexible pay-later booking.</td>
+          <td>$1,848.86</td>
+        </tr>
+      </table>
+    </div>
+    <div class="advisor-note">
+      <span class="label">Andrea's Take</span>
+      For a top-tier all-inclusive experience, Sandals Royal Bahamian is the strongest pick of the three — it's the most complete resort experience and it's within reach at this price point. Warwick and Riu Palace are both solid at their price, but neither matches Sandals on inclusions or service level.
+    </div>
+  </section>
+
+  <section id="resorts">
+    <h2 class="section-title">Your Options</h2>
+    <p class="section-sub">Choose one resort, then confirm your room category below.</p>
+
+    <!-- RESORT 1: SANDALS -->
+    <div class="resort-card">
+      <div class="resort-head">
+        <span class="tag">Option 1 of 3</span>
+        <h3>Sandals Royal Bahamian</h3>
+        <div class="loc">Nassau, Bahamas · Adults Only · All-Inclusive</div>
+      </div>
+      <div class="gallery">
+        <img src="https://cdn.sandals.com/sandals/v13/images/EN/resorts/srb/accommodations/large/srb-290.jpg" alt="Sandals Royal Bahamian suite">
+        <img src="https://cdn.sandals.com/sandals/v13/images/EN/resorts/srb/accommodations/large/srb-291.jpg" alt="Sandals Royal Bahamian suite view">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/78/cf/6e/sandals-royal-bahamian.jpg?w=900&h=500&s=1" alt="Sandals Royal Bahamian resort view">
+      </div>
+      <div class="resort-body">
+        <h4>West Bay Honeymoon Club Level Oversized Junior Suite</h4>
+        <p>King bed, a separate sitting area, island-toned furnishings, and a private furnished balcony or patio. Club Level status brings private check-in, help booking dinner reservations and excursions, and access to the Club Sandals Lounge.</p>
+        <h4>Resort Highlights</h4>
+        <p>Sandals Royal Bahamian sits a few minutes from downtown Nassau and splits into two distinct sides — one built around beachfront energy, the other set up as a quieter retreat.</p>
+        <ul class="highlights">
+          <li>Unlimited dining across multiple on-site restaurants</li>
+          <li>Unlimited premium spirits, plus Robert Mondavi Twin Oaks® wines</li>
+          <li>Several pools and whirlpools</li>
+          <li>A private offshore island with its own beach, swim-up bar, restaurant, and snorkeling</li>
+          <li>Paddleboarding, kayaking, snorkeling, and other water sports included</li>
+          <li>Nightly entertainment</li>
+          <li>Airport transfers and gratuities included</li>
+        </ul>
+        <div class="price-block">
+          <div class="price-row"><span>Rack Rate Discount (60%)</span><span class="savings-line">-$3,868.80</span></div>
+          <div class="price-row"><span>Last-Minute Deal — First Night Free</span><span class="savings-line">-$3,224.00</span></div>
+          <div class="price-row"><span>Online Instant Credit</span><span class="savings-line">-$100.00</span></div>
+          <div class="price-row total"><span>Vacation Total</span><span>$2,479.20</span></div>
+          <div class="price-row" style="color:var(--text-muted); font-size:13px;"><span>≈ $413/person, per night</span><span></span></div>
+        </div>
+        <p class="transfer-note">Transfers are included in the package price.</p>
+        <div class="select-row">
+          <input type="radio" name="resort_choice" id="opt-sandals" value="Sandals Royal Bahamian – $2,479.20" data-price="2479.20" onchange="updateTotal()">
+          <label for="opt-sandals">Select Sandals Royal Bahamian</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESORT 2: WARWICK -->
+    <div class="resort-card">
+      <div class="resort-head">
+        <span class="tag">Option 2 of 3</span>
+        <h3>Warwick Paradise Island</h3>
+        <div class="loc">Paradise Island, Bahamas · Adults Only · All-Inclusive</div>
+      </div>
+      <div class="gallery">
+        <img src="https://img.cdnpth.com/media/311954/10912061-4e96e3b2_z_main.jpg" alt="Warwick Paradise Island Water View Room">
+        <img src="https://img.cdnpth.com/media/311954/10912061-d7f75d63_z.jpg" alt="Warwick Paradise Island room detail">
+        <img src="https://img.cdnpth.com/media/311954/10912061-a94af60d_z.jpg" alt="Warwick Paradise Island view">
+      </div>
+      <div class="resort-body">
+        <h4>Water View King Room</h4>
+        <p>King bed with a view over Paradise Island's harbor. Complimentary Wi-Fi, mini-fridge, coffee maker, flat-screen TV, and a private balcony or large windows facing the water.</p>
+        <h4>Resort Highlights</h4>
+        <p>Warwick Paradise Island is an adults-only all-inclusive within walking distance of Cabbage Beach, minutes from Nassau's shopping and casinos.</p>
+        <ul class="highlights">
+          <li>Breakfast, lunch, dinner, snacks, and unlimited beverages</li>
+          <li>Five restaurants and bars with international cuisine</li>
+          <li>Harborfront pool with loungers</li>
+          <li>Private beach area with a complimentary shuttle</li>
+          <li>Fitness center</li>
+          <li>Daily activities and nightly entertainment</li>
+          <li>Non-motorized water sports</li>
+        </ul>
+        <div class="price-block">
+          <div class="schedule-cards">
+            <div class="sched-card">Vacation Total (due at booking)<span class="amt">$1,630.00</span></div>
+            <div class="sched-card">Resort Fee + Taxes (due at resort)<span class="amt">$180.00</span></div>
+          </div>
+          <div class="price-row total" style="margin-top:14px;"><span>Estimated Total Cost</span><span>$1,810.00</span></div>
+        </div>
+        <p class="transfer-note">Private transfer can be added once airfare is booked.</p>
+        <div class="select-row">
+          <input type="radio" name="resort_choice" id="opt-warwick" value="Warwick Paradise Island – $1,810.00 est." data-price="1810.00" onchange="updateTotal()">
+          <label for="opt-warwick">Select Warwick Paradise Island</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESORT 3: RIU PALACE -->
+    <div class="resort-card">
+      <div class="resort-head">
+        <span class="tag">Option 3 of 3</span>
+        <h3>Riu Palace Paradise Island</h3>
+        <div class="loc">Nassau, Bahamas · Adults Only · All-Inclusive</div>
+      </div>
+      <div class="gallery">
+        <img src="https://img.cdnpth.com/media/100520/1039-81b7583a_z_main.jpg" alt="Riu Palace Paradise Island Junior Suite">
+        <img src="https://img.cdnpth.com/media/100520/1039-008645ba_z.jpg" alt="Riu Palace Paradise Island suite detail">
+        <img src="https://img.cdnpth.com/media/100520/1039-231d2dc0_z.jpg" alt="Riu Palace Paradise Island view">
+      </div>
+      <div class="resort-body">
+        <h4>Junior Suite Ocean View</h4>
+        <p>King bed, a sitting area, a furnished balcony or terrace, complimentary Wi-Fi, a regularly restocked mini-bar with liquor dispenser, coffee maker, and a walk-in shower.</p>
+        <h4>Resort Highlights</h4>
+        <p>Riu Palace Paradise Island sits directly on Cabbage Beach and finished a full renovation, pairing a modern look with RIU's standard all-inclusive setup.</p>
+        <ul class="highlights">
+          <li>Unlimited meals, snacks, and premium beverages</li>
+          <li>Multiple restaurants — international, Japanese, steakhouse, and fusion</li>
+          <li>24-hour all-inclusive service</li>
+          <li>Beachfront pool with swim-up bar</li>
+          <li>Direct access to Cabbage Beach</li>
+          <li>Daily activities and nightly entertainment</li>
+          <li>Fitness center</li>
+        </ul>
+        <div class="price-block">
+          <div class="price-row"><span>55% Off Savings</span><span class="savings-line">-$2,137.00</span></div>
+          <div class="price-row total"><span>Vacation Total</span><span>$1,848.86</span></div>
+          <div class="deadline-note"><strong>Book Now, Pay Later:</strong> no payment due today. Reservation can be secured now, with full payment due by July 14, 2026 at 11:59 PM.</div>
+        </div>
+        <p class="transfer-note">Private transfer can be quoted once airfare is booked.</p>
+        <div class="select-row">
+          <input type="radio" name="resort_choice" id="opt-riu" value="Riu Palace Paradise Island – $1,848.86" data-price="1848.86" onchange="updateTotal()">
+          <label for="opt-riu">Select Riu Palace Paradise Island</label>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="callout">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+  </div>
+
+  <div class="callout" style="font-size:13px; color:var(--text-muted); background:transparent; border-left-color:var(--pale-teal);">
+    Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.
+  </div>
+
+  <section id="contact">
+    <div class="callout" style="margin-bottom:0;">
+      What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+    </div>
+
+    <div class="form-section" style="margin-top:26px;">
+      <h2>Let's Lock This In</h2>
+      <p class="section-sub" style="margin-bottom:0;">Tell us which resort you're leaning toward and any questions — we'll follow up fast.</p>
+
+      <form id="quoteForm">
+        <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+        <input type="hidden" name="subject" value="Quote Response — Ashley Groves | Bahamas All-Inclusive">
+        <input type="hidden" name="from_name" value="Ashley Groves Quote — Point Me to Paradise">
+        <input type="hidden" name="redirect" value="false">
+
+        <div class="form-grid">
+          <div>
+            <label class="field-label" for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div>
+            <label class="field-label" for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label class="field-label" for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div>
+            <label class="field-label" for="option_interest">Which option interests you most?</label>
+            <select id="option_interest" name="option_interest">
+              <option value="Sandals Royal Bahamian">Sandals Royal Bahamian</option>
+              <option value="Warwick Paradise Island">Warwick Paradise Island</option>
+              <option value="Riu Palace Paradise Island">Riu Palace Paradise Island</option>
+            </select>
+          </div>
+          <div class="full">
+            <label class="field-label" for="insurance">Travel Insurance</label>
+            <select id="insurance" name="insurance">
+              <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+              <option value="No — not interested">No — not interested</option>
+              <option value="Already have coverage">Already have coverage</option>
+            </select>
+          </div>
+          <div class="full">
+            <label class="field-label" for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Questions, preferred room, dates flexibility, anything else..."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Send to My Advisor</button>
+        <div id="error-box"></div>
+      </form>
+
+      <div id="thankyou">
+        <h3>Thanks, Ashley!</h3>
+        <p>Your message is in. Andrea will follow up shortly.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="sticky-total">
+  <div>
+    <span class="amt" id="totalDisplay">Select a resort</span>
+    <span class="fine">Final pricing confirmed by your advisor</span>
+  </div>
+  <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Get This Trip</button>
+</div>
+
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div class="contact-line">
+    <span id="emailLink"></span> · <span id="phoneText"></span>
+  </div>
+  <div class="disclaimer">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<script>
+  function updateTotal(){
+    var radios = document.getElementsByName('resort_choice');
+    var chosen = null;
+    for (var i=0; i<radios.length; i++){
+      if (radios[i].checked){ chosen = radios[i]; break; }
+    }
+    var display = document.getElementById('totalDisplay');
+    if (chosen){
+      var price = parseFloat(chosen.getAttribute('data-price'));
+      display.textContent = 'Est. $' + price.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+    } else {
+      display.textContent = 'Select a resort';
+    }
+  }
+
+  // Assemble email via JS at runtime to avoid Cloudflare scrambling
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var emailSpan = document.getElementById('emailLink');
+    emailSpan.textContent = addr;
+    var phoneSpan = document.getElementById('phoneText');
+    phoneSpan.textContent = '(409) 789-3579';
+  })();
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var errorBox = document.getElementById('error-box');
+    errorBox.style.display = 'none';
+
+    var radios = document.getElementsByName('resort_choice');
+    var chosen = null;
+    for (var i=0; i<radios.length; i++){
+      if (radios[i].checked){ chosen = radios[i]; break; }
+    }
+    var hiddenChoice = document.createElement('input');
+    hiddenChoice.type = 'hidden';
+    hiddenChoice.name = 'selected_resort';
+    hiddenChoice.value = chosen ? chosen.value : 'No selection made';
+    form.appendChild(hiddenChoice);
+
+    var data = new FormData(form);
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(result){
+      if (result.success){
+        form.style.display = 'none';
+        document.getElementById('thankyou').style.display = 'block';
+      } else {
+        errorBox.textContent = 'Something went wrong sending your message. Please try again or call (409) 789-3579.';
+        errorBox.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      errorBox.textContent = 'Something went wrong sending your message. Please try again or call (409) 789-3579.';
+      errorBox.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
