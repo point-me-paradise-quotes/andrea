@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yesenia Palos — Riviera Maya Resort Options | Point Me to Paradise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text:#3D3D3D;
+    --text-muted:#606060;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--text);
+    line-height:1.6;
+    padding-bottom:110px;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--teal-dark);}
+  .accent{font-family:'Cormorant Garamond',serif;font-style:italic;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:70vh;
+    display:flex;
+    align-items:flex-end;
+    background-image:linear-gradient(180deg, rgba(30,50,50,0.15) 0%, rgba(20,35,35,0.75) 100%), url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/62/a6/c6/photo3jpg.jpg?w=1200&h=-1&s=1');
+    background-size:cover;
+    background-position:center;
+    padding:60px 24px 40px;
+    color:var(--paper-pure);
+  }
+  .hero-inner{max-width:900px;margin:0 auto;width:100%;}
+  .hero-eyebrow{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:1.25rem;color:var(--cream);letter-spacing:0.02em;margin-bottom:8px;
+  }
+  .hero h1{color:var(--paper-pure);font-size:2.4rem;font-weight:600;margin-bottom:10px;}
+  .hero-dates{font-size:1.05rem;color:var(--cream-light);font-weight:500;}
+  .hero-flex-note{
+    margin-top:14px;font-size:0.92rem;color:var(--paper-pure);
+    background:rgba(79,138,140,0.55);
+    display:inline-block;padding:8px 14px;border-radius:6px;
+    border:1px solid rgba(255,255,255,0.25);
+  }
+
+  /* TOP CALLOUT */
+  .top-callout{
+    max-width:900px;margin:32px auto 0;padding:0 24px;
+  }
+  .callout-box{
+    background:var(--pale-teal);
+    border-left:4px solid var(--teal-dark);
+    padding:18px 22px;border-radius:8px;
+    font-size:1rem;color:var(--text);
+  }
+  .budget-note{
+    max-width:900px;margin:18px auto 0;padding:0 24px;
+  }
+  .budget-box{
+    background:var(--cream-light);
+    border:1px solid var(--gold);
+    border-radius:8px;
+    padding:16px 20px;
+    font-size:0.95rem;
+    color:var(--text);
+  }
+  .budget-box strong{color:var(--teal-dark);}
+
+  /* COMPARISON TABLE */
+  .compare-wrap{max-width:900px;margin:36px auto 0;padding:0 24px;}
+  .compare-wrap h2{font-size:1.6rem;text-align:center;margin-bottom:6px;}
+  .compare-sub{text-align:center;color:var(--text-muted);font-size:0.95rem;margin-bottom:20px;max-width:600px;margin-left:auto;margin-right:auto;}
+  .compare-scroll{overflow-x:auto;border-radius:12px;border:1px solid var(--pale-teal);}
+  table.compare-table{
+    width:100%;border-collapse:collapse;min-width:640px;background:var(--paper-pure);
+  }
+  .compare-table th, .compare-table td{
+    padding:14px 16px;text-align:left;font-size:0.92rem;vertical-align:top;
+    border-bottom:1px solid var(--cream);
+  }
+  .compare-table thead th{
+    background:var(--teal-dark);color:var(--paper-pure);
+    font-family:'Playfair Display',serif;font-weight:600;font-size:1.05rem;
+  }
+  .compare-table thead th.row-label-head{background:var(--teal-dark);}
+  .compare-table tbody th{
+    background:var(--cream-light);color:var(--teal-dark);font-weight:700;
+    font-size:0.85rem;white-space:nowrap;
+  }
+  .compare-table tbody tr:nth-child(even) td{background:var(--paper);}
+  .compare-table td .price-cell{font-family:'Playfair Display',serif;font-weight:700;font-size:1.05rem;color:var(--teal-dark);}
+  .compare-scroll-hint{display:none;font-size:0.78rem;color:var(--text-muted);text-align:center;margin-top:8px;}
+
+  /* SECTIONS */
+  .section{max-width:900px;margin:0 auto;padding:40px 24px 0;}
+  .section-intro{text-align:center;margin-bottom:28px;}
+  .section-intro h2{font-size:1.8rem;margin-bottom:8px;}
+  .section-intro p{color:var(--text-muted);font-size:1rem;max-width:640px;margin:0 auto;}
+
+  /* RESORT CARD */
+  .resort-card{
+    background:var(--paper-pure);
+    border:2px solid var(--pale-teal);
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:32px;
+    transition:border-color 0.2s;
+  }
+  .resort-card.selected{border-color:var(--teal-dark);}
+  .resort-header{
+    padding:22px 24px 16px;
+    display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;
+    border-bottom:1px solid var(--cream);
+  }
+  .resort-name-block h3{font-size:1.4rem;margin-bottom:4px;}
+  .resort-location{font-size:0.92rem;color:var(--text-muted);}
+  .resort-vibe-tag{
+    display:inline-block;margin-top:8px;font-size:0.8rem;
+    background:var(--cream);color:var(--teal-dark);
+    padding:4px 10px;border-radius:20px;font-weight:600;letter-spacing:0.02em;
+  }
+  .resort-price-block{text-align:right;}
+  .resort-price{font-size:1.5rem;font-weight:700;color:var(--teal-dark);}
+  .resort-price-sub{font-size:0.8rem;color:var(--text-muted);}
+  .resort-savings{font-size:0.82rem;color:var(--gold-dark);font-weight:600;margin-top:4px;}
+
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+    padding:10px;
+    background:var(--cream-light);
+  }
+  .gallery img{
+    width:100%;
+    height:220px;
+    object-fit:contain;
+    background:var(--paper-pure);
+    border-radius:8px;
+    display:block;
+  }
+
+  .resort-body{padding:24px 24px 22px;border-top:1px solid var(--cream);}
+  .resort-body h4{font-size:1.05rem;margin-bottom:6px;margin-top:18px;}
+  .resort-body h4:first-child{margin-top:0;}
+  .resort-body p{font-size:0.96rem;margin-bottom:10px;}
+  .highlight-list{list-style:none;margin:10px 0;}
+  .highlight-list li{
+    padding-left:20px;position:relative;font-size:0.94rem;margin-bottom:6px;color:var(--text);
+  }
+  .highlight-list li::before{
+    content:"—";position:absolute;left:0;color:var(--teal-dark);font-weight:700;
+  }
+  .transfer-note{
+    margin-top:14px;padding:10px 14px;background:var(--cream-light);
+    border-radius:6px;font-size:0.9rem;color:var(--text-muted);
+  }
+
+  .select-row{
+    display:flex;align-items:center;gap:12px;
+    padding:16px 24px 22px;border-top:1px solid var(--cream);
+  }
+  .select-row input[type="radio"]{
+    width:22px;height:22px;accent-color:var(--teal-dark);cursor:pointer;flex-shrink:0;
+  }
+  .select-row label{font-weight:600;color:var(--teal-dark);cursor:pointer;font-size:0.98rem;}
+
+  /* PRICING PROMISE */
+  .pricing-promise{
+    max-width:900px;margin:8px auto 0;padding:0 24px;
+  }
+  .promise-box{
+    background:var(--cream);border-radius:8px;padding:16px 20px;font-size:0.92rem;color:var(--text);
+  }
+  .pricing-disclaimer{
+    max-width:900px;margin:10px auto 0;padding:0 24px;
+    font-size:0.78rem;color:var(--text-muted);
+  }
+
+  /* STICKY TOTAL BAR */
+  .total-bar{
+    position:fixed;bottom:0;left:0;right:0;
+    background:var(--teal-dark);color:var(--paper-pure);
+    padding:14px 20px;display:flex;justify-content:space-between;align-items:center;
+    box-shadow:0 -4px 14px rgba(0,0,0,0.15);z-index:100;flex-wrap:wrap;gap:6px;
+  }
+  .total-bar .label{font-size:0.82rem;color:var(--cream-light);}
+  .total-bar .amount{font-size:1.3rem;font-weight:700;font-family:'Playfair Display',serif;}
+  .total-bar button{
+    background:var(--gold);color:var(--teal-dark);border:none;
+    padding:10px 20px;border-radius:8px;font-weight:700;font-size:0.95rem;
+    cursor:pointer;min-height:44px;
+  }
+
+  /* BOTTOM CALLOUT */
+  .bottom-callout{max-width:900px;margin:50px auto 0;padding:0 24px;}
+  .bottom-box{
+    background:var(--pale-teal);border-radius:10px;padding:24px;text-align:center;
+    font-size:1rem;color:var(--text);
+  }
+
+  /* CONTACT FORM */
+  .contact-section{max-width:700px;margin:40px auto 0;padding:0 24px;}
+  .contact-box{
+    background:var(--paper-pure);border:1px solid var(--pale-teal);
+    border-radius:14px;padding:32px 28px;
+  }
+  .contact-box h2{font-size:1.5rem;margin-bottom:6px;text-align:center;}
+  .contact-box .sub{text-align:center;color:var(--text-muted);font-size:0.92rem;margin-bottom:24px;}
+  .form-group{margin-bottom:16px;}
+  .form-group label{display:block;font-size:0.88rem;font-weight:600;color:var(--teal-dark);margin-bottom:6px;}
+  .form-group input,.form-group select,.form-group textarea{
+    width:100%;padding:12px 14px;font-size:16px;border:1px solid var(--pale-teal);
+    border-radius:8px;font-family:'DM Sans',sans-serif;color:var(--text);background:var(--paper);
+    min-height:44px;
+  }
+  .form-group textarea{min-height:90px;resize:vertical;}
+  .submit-btn{
+    width:100%;padding:14px;background:var(--teal-dark);color:var(--paper-pure);
+    border:none;border-radius:8px;font-size:1rem;font-weight:700;cursor:pointer;min-height:48px;
+    margin-top:6px;
+  }
+  .error-msg{
+    display:none;background:#fbe4e4;color:#8a2e2e;padding:12px 14px;border-radius:8px;
+    font-size:0.9rem;margin-bottom:14px;
+  }
+  .thank-you{display:none;text-align:center;padding:20px 0;}
+  .thank-you h3{margin-bottom:8px;}
+
+  /* FOOTER */
+  footer{
+    background:var(--teal-dark);color:var(--paper-pure);text-align:center;
+    padding:36px 24px 46px;margin-top:50px;
+  }
+  footer .agent-name{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:6px;}
+  footer .agent-contact{font-size:0.92rem;color:var(--cream-light);margin-bottom:14px;}
+  footer .agent-contact a{color:var(--paper-pure);text-decoration:underline;}
+  footer .fine-print{font-size:0.76rem;color:var(--pale-teal);max-width:600px;margin:0 auto;}
+
+  @media (max-width:540px){
+    .hero h1{font-size:1.8rem;}
+    .resort-header{flex-direction:column;}
+    .resort-price-block{text-align:left;}
+    .gallery{grid-template-columns:1fr;}
+    .gallery img{height:200px;}
+    .compare-scroll-hint{display:block;}
+    .total-bar{flex-direction:column;align-items:stretch;text-align:center;}
+    .total-bar button{width:100%;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">A trip built for Yesenia Palos</div>
+    <h1>Riviera Maya, Three Ways</h1>
+    <div class="hero-dates">January 18 – 23, 2027 · 5 Nights · 2 Adults</div>
+    <div class="hero-flex-note">This is quoted at 5 nights — dates and length of stay can be adjusted if your plans shift.</div>
+  </div>
+</div>
+
+<div class="top-callout">
+  <div class="callout-box">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+</div>
+
+<div class="budget-note">
+  <div class="budget-box">
+    <strong>A note on these three:</strong> they sit at different price points and different personalities on purpose, so you can see the range. If none of them land where you want to spend, that's useful information too — tell us and we'll pull other properties.
+  </div>
+</div>
+
+<div class="compare-wrap">
+  <h2>Side by side</h2>
+  <p class="compare-sub">Same dates, same room count, three different trips. Here's how they actually stack up.</p>
+  <div class="compare-scroll">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th class="row-label-head">&nbsp;</th>
+          <th>Hotel Xcaret Arte</th>
+          <th>Secrets Tulum</th>
+          <th>BE Tulum</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Total (5 nights, 2 adults)</th>
+          <td><span class="price-cell">$5,775.76</span></td>
+          <td><span class="price-cell">$2,596.15</span></td>
+          <td><span class="price-cell">$3,916.66</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Setting</th>
+          <td>Playa del Carmen, inside Grupo Xcaret's own park complex</td>
+          <td>Jungle grounds in Tulum, private beach club by shuttle</td>
+          <td>Beachfront in Tulum, walkable to town</td>
+        </tr>
+        <tr>
+          <th scope="row">Best fit for</th>
+          <td>Travelers who want a packed itinerary — parks, tours, and activities every day</td>
+          <td>Travelers who want a classic all-inclusive resort day with beach access nearby</td>
+          <td>Couples who want a quiet, design-forward stay with room to do less</td>
+        </tr>
+        <tr>
+          <th scope="row">Standout feature</th>
+          <td>Unlimited access to 8 Xcaret parks, included transport to each</td>
+          <td>Private Secrets Beach Club with complimentary shuttle</td>
+          <td>Private plunge pool in the room itself</td>
+        </tr>
+        <tr>
+          <th scope="row">Dining &amp; drinks</th>
+          <td>Unlimited dining, multiple chef-driven restaurants</td>
+          <td>Unlimited dining, no reservations required</td>
+          <td>Multiple restaurants, local and international menus (not all-inclusive drinks)</td>
+        </tr>
+        <tr>
+          <th scope="row">Transfers</th>
+          <td>Included in package price</td>
+          <td>Priced once airfare is booked</td>
+          <td>Can be added once airfare is purchased</td>
+        </tr>
+        <tr>
+          <th scope="row">Payment due</th>
+          <td>Dec 25, 2026</td>
+          <td>Jan 7, 2027</td>
+          <td>Dec 21, 2026 (refundable through Dec 28, 2026)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="compare-scroll-hint">Swipe to see all three →</p>
+</div>
+
+<div class="section">
+  <div class="section-intro">
+    <h2>Three resorts, three different trips</h2>
+    <p>Same five nights, same two travelers, genuinely different vacations. Pick the one that matches how you actually want to spend your days.</p>
+  </div>
+
+  <!-- RESORT 1 -->
+  <div class="resort-card" id="card-1">
+    <div class="resort-header">
+      <div class="resort-name-block">
+        <h3>Hotel Xcaret Arte</h3>
+        <div class="resort-location">Playa del Carmen, Riviera Maya · Adults Only</div>
+        <div class="resort-vibe-tag">Adventure park access, all day, every day</div>
+      </div>
+      <div class="resort-price-block">
+        <div class="resort-price">$5,775.76</div>
+        <div class="resort-price-sub">total, 2 adults / 5 nights</div>
+        <div class="resort-savings">20% off — $1,419 saved</div>
+      </div>
+    </div>
+    <div class="gallery">
+      <img src="https://img.cdnpth.com/media/426403/d2557f73-8265-477e-a3f6-00ad8bb01369_main.jpg" alt="Hotel Xcaret Arte Garden Spa Suite">
+      <img src="https://img.cdnpth.com/media/426403/06fe777a-df01-4192-b5f0-35c7990e33e6.jpg" alt="Hotel Xcaret Arte room detail">
+      <img src="https://img.cdnpth.com/media/426403/02ae87c3-1732-472d-b2c8-8bde98e31b62.jpg" alt="Hotel Xcaret Arte terrace">
+    </div>
+    <div class="resort-body">
+      <h4>Garden Spa Suite</h4>
+      <p>King bed, a furnished terrace facing the gardens, a hydro spa tub, and 24-hour room service. It's built for the days you're not out at a park — a real place to land, not just a place to sleep.</p>
+      <h4>Why this one</h4>
+      <p>This isn't a beach-chair-and-book resort. Your stay includes unrestricted access to Xcaret, Xel-Há, Xplor, Xplor Fuego, Xenses, Xoximilco, Xenotes, and Xavage — Grupo Xcaret's own parks, plus transportation to all of them. If Yesenia wants a trip with a full daily itinerary of ziplining, cenotes, and cultural shows rather than five days of stillness, this is the property that's built around that.</p>
+      <ul class="highlight-list">
+        <li>Unlimited dining across multiple chef-driven restaurants</li>
+        <li>Unlimited premium beverages</li>
+        <li>Round-trip airport transportation included</li>
+        <li>Full access + transport to all Xcaret parks and select cultural tours</li>
+        <li>Kayaking, paddleboarding, and other non-motorized water sports</li>
+        <li>Daily art, culinary, dance, and wellness workshops</li>
+      </ul>
+      <div class="transfer-note">Transfers: included in the package price.</div>
+    </div>
+    <div class="select-row">
+      <input type="radio" name="resort" id="radio-1" value="Hotel Xcaret Arte — Garden Spa Suite ($5,775.76)" data-price="5775.76" onchange="updateSelection()">
+      <label for="radio-1">Choose Hotel Xcaret Arte — $5,775.76</label>
+    </div>
+  </div>
+
+  <!-- RESORT 2 -->
+  <div class="resort-card" id="card-2">
+    <div class="resort-header">
+      <div class="resort-name-block">
+        <h3>Secrets Tulum Resort &amp; Beach Club</h3>
+        <div class="resort-location">Tulum, Quintana Roo · Adults Only</div>
+        <div class="resort-vibe-tag">Jungle setting, private beach club</div>
+      </div>
+      <div class="resort-price-block">
+        <div class="resort-price">$2,596.15</div>
+        <div class="resort-price-sub">total, 2 adults / 5 nights</div>
+      </div>
+    </div>
+    <div class="gallery">
+      <img src="https://img.cdnpth.com/media/472921/b3cd13f6-e08c-42a8-a069-2df3ae9cb4cf_main.jpeg" alt="Secrets Tulum Junior Suite">
+      <img src="https://img.cdnpth.com/media/472921/c6ffe17d-ebd2-4a83-8414-4d3a23671e07.jpg" alt="Secrets Tulum room detail">
+      <img src="https://img.cdnpth.com/media/472921/05079bff-f33f-483b-859a-68df2a923bef.jpg" alt="Secrets Tulum resort grounds">
+    </div>
+    <div class="resort-body">
+      <h4>Junior Suite Garden View — King Bed</h4>
+      <p>King bed, Mayan-inspired décor, a furnished balcony or terrace, and a double-vanity bathroom with a rainfall shower. Minibar refreshed daily, room service around the clock.</p>
+      <h4>Why this one</h4>
+      <p>Secrets Tulum sits back in the jungle, then shuttles you to its own private stretch of Tulum's beach — so the resort itself is quiet and green, and the beach is a short ride away rather than out the front door. It's the middle option here on price, and it reads as the most "resort" of the three: pools, a full drink and dining program, nightly entertainment.</p>
+      <ul class="highlight-list">
+        <li>Unlimited dining, no reservations required</li>
+        <li>Unlimited premium spirits, wine, beer, soft drinks</li>
+        <li>24-hour room service</li>
+        <li>Complimentary shuttle to the private Secrets Beach Club</li>
+        <li>Cenote-inspired pools throughout the property</li>
+        <li>Daily activities, nightly live entertainment</li>
+      </ul>
+      <div class="transfer-note">Transfers: private transfer pricing available once airfare is booked.</div>
+    </div>
+    <div class="select-row">
+      <input type="radio" name="resort" id="radio-2" value="Secrets Tulum Resort &amp; Beach Club — Junior Suite Garden View ($2,596.15)" data-price="2596.15" onchange="updateSelection()">
+      <label for="radio-2">Choose Secrets Tulum — $2,596.15</label>
+    </div>
+  </div>
+
+  <!-- RESORT 3 -->
+  <div class="resort-card" id="card-3">
+    <div class="resort-header">
+      <div class="resort-name-block">
+        <h3>BE Tulum</h3>
+        <div class="resort-location">Tulum, Quintana Roo · Boutique</div>
+        <div class="resort-vibe-tag">Private plunge pool, beachfront boutique</div>
+      </div>
+      <div class="resort-price-block">
+        <div class="resort-price">$3,916.66</div>
+        <div class="resort-price-sub">total, 2 adults / 5 nights</div>
+        <div class="resort-savings">28% off regular room rate</div>
+      </div>
+    </div>
+    <div class="gallery">
+      <img src="https://images.trvl-media.com/lodging/4000000/3390000/3389400/3389380/59601dbf.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="BE Tulum Alcove Suite with plunge pool">
+      <img src="https://images.trvl-media.com/lodging/4000000/3390000/3389400/3389380/45396e2a.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="BE Tulum room interior">
+      <img src="https://images.trvl-media.com/lodging/4000000/3390000/3389400/3389380/aee67cba.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="BE Tulum grounds">
+    </div>
+    <div class="resort-body">
+      <h4>Alcove Suite with Private Plunge Pool</h4>
+      <p>King bed, bohemian-leaning décor, and a private outdoor plunge pool on a furnished terrace — this is the option where the room itself is the amenity.</p>
+      <h4>Why this one</h4>
+      <p>BE Tulum is small and boutique rather than resort-scale — beachfront on Tulum's white sand, close enough to walk to the restaurants and shops Tulum is known for. It's the most intimate and design-forward of the three, best suited if Yesenia wants a quieter, more personal stay over a bigger all-inclusive footprint. Fully refundable through December 28, 2026.</p>
+      <ul class="highlight-list">
+        <li>Beachfront on Tulum's white-sand beach</li>
+        <li>Multiple restaurants, fresh local and international menus</li>
+        <li>Beach club with food and beverage service</li>
+        <li>Full-service spa and holistic wellness treatments</li>
+        <li>Yoga and wellness programming</li>
+        <li>Personalized, boutique-style service</li>
+      </ul>
+      <div class="transfer-note">Transfers: can be added once airfare is purchased.</div>
+    </div>
+    <div class="select-row">
+      <input type="radio" name="resort" id="radio-3" value="BE Tulum — Alcove Suite with Private Plunge Pool ($3,916.66)" data-price="3916.66" onchange="updateSelection()">
+      <label for="radio-3">Choose BE Tulum — $3,916.66</label>
+    </div>
+  </div>
+</div>
+
+<div class="pricing-promise">
+  <div class="promise-box">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+  </div>
+</div>
+<div class="pricing-disclaimer">
+  Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.
+</div>
+
+<div class="bottom-callout">
+  <div class="bottom-box">
+    What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+</div>
+
+<div class="contact-section">
+  <div class="contact-box">
+    <h2>Ready to move forward?</h2>
+    <div class="sub">Tell us which option you're leaning toward — or if you'd rather see more choices.</div>
+
+    <div class="error-msg" id="errorMsg">Something went wrong submitting the form. Please try again, or call/text 409-789-3579.</div>
+
+    <form id="quoteForm">
+      <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+      <input type="hidden" name="subject" value="Quote Response — Yesenia Palos | Riviera Maya">
+      <input type="hidden" name="from_name" value="Yesenia Palos Quote — Point Me to Paradise">
+      <input type="hidden" name="redirect" value="false">
+
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="option_interest">Which option are you leaning toward?</label>
+        <select id="option_interest" name="Option Interest">
+          <option value="">Select one...</option>
+          <option value="Hotel Xcaret Arte — $5,775.76">Hotel Xcaret Arte — $5,775.76</option>
+          <option value="Secrets Tulum — $2,596.15">Secrets Tulum — $2,596.15</option>
+          <option value="BE Tulum — $3,916.66">BE Tulum — $3,916.66</option>
+          <option value="None of these — want other options">None of these — want other options</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="insurance">Travel insurance</label>
+        <select id="insurance" name="Travel Insurance">
+          <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+          <option value="No — not interested">No — not interested</option>
+          <option value="Already have coverage">Already have coverage</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message (optional)</label>
+        <textarea id="message" name="message" placeholder="Questions, budget notes, anything else..."></textarea>
+      </div>
+      <input type="hidden" name="Selected Resort" id="selectedResortField" value="No selection yet">
+      <button type="submit" class="submit-btn">Send to Andrea</button>
+    </form>
+
+    <div class="thank-you" id="thankYou">
+      <h3>Got it — thank you!</h3>
+      <p>Andrea will be in touch shortly.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div class="agent-contact">
+    <span id="agentEmail"></span> · <a href="tel:4097893579">409-789-3579</a><br>
+    Point Me to Paradise Travel
+  </div>
+  <div class="fine-print">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<div class="total-bar">
+  <div>
+    <div class="label">Estimated total</div>
+    <div class="amount" id="totalAmount">Est. $0 — choose an option</div>
+  </div>
+  <button onclick="document.querySelector('.contact-section').scrollIntoView({behavior:'smooth'});">Get This Quote</button>
+</div>
+
+<script>
+  function updateSelection(){
+    document.querySelectorAll('.resort-card').forEach(function(card){card.classList.remove('selected');});
+    var selected = document.querySelector('input[name="resort"]:checked');
+    var totalEl = document.getElementById('totalAmount');
+    var hiddenField = document.getElementById('selectedResortField');
+    if(selected){
+      var price = parseFloat(selected.getAttribute('data-price'));
+      totalEl.textContent = 'Est. $' + price.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+      hiddenField.value = selected.value;
+      var card = selected.closest('.resort-card');
+      if(card) card.classList.add('selected');
+    } else {
+      totalEl.textContent = 'Est. $0 — choose an option';
+      hiddenField.value = 'No selection yet';
+    }
+  }
+
+  // Assemble agent email via JS at runtime (avoid Cloudflare scrambling)
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var el = document.getElementById('agentEmail');
+    el.textContent = addr;
+    el.innerHTML = '<a href="mailto:' + addr + '" style="color:#FFFFFF;text-decoration:underline;">' + addr + '</a>';
+  })();
+
+  // Web3Forms submission via fetch (never native POST)
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var errorMsg = document.getElementById('errorMsg');
+    errorMsg.style.display = 'none';
+    var formData = new FormData(form);
+    var object = {};
+    formData.forEach(function(value, key){ object[key] = value; });
+    var json = JSON.stringify(object);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: json
+    })
+    .then(function(response){ return response.json(); })
+    .then(function(result){
+      if(result.success){
+        form.style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      errorMsg.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
