@@ -338,7 +338,6 @@
             </div>
           </label>
           <div class="option-detail">No window — the most budget-friendly way onto this sailing. Same bed configuration and storage as the other categories.</div>
-          <span class="verify-flag">Photo pending Andrea's visual verification</span>
         </div>
       </div>
 
@@ -353,7 +352,6 @@
             </div>
           </label>
           <div class="option-detail">A real window to check the water and the weather without leaving the room — useful on the sea days.</div>
-          <span class="verify-flag">Photo pending Andrea's visual verification</span>
         </div>
       </div>
 
@@ -378,7 +376,11 @@
     </div>
 
     <div class="note-box">
-      <strong>Gratuities:</strong> $119 per person ($238 total for two travelers), not included in the prices above. These can be prepaid before the cruise or added to your onboard account and settled during the sailing.
+      <strong>Gratuities:</strong> $119 per person ($238 total for two travelers), not included in the stateroom prices above. These aren't collected through this quote — you can prepay them directly with MSC before the cruise, or they'll be added to your onboard account and settled during the sailing.
+      <label style="display:flex; align-items:center; gap:10px; margin-top:12px; cursor:pointer; min-height:44px;">
+        <input type="checkbox" id="includeGratuities" onclick="updateTotal()" style="width:22px; height:22px; accent-color: var(--teal-dark); flex-shrink:0;">
+        <span>Include the $238 gratuities estimate in my running total below (for planning only — not charged here)</span>
+      </label>
     </div>
   </section>
 
@@ -512,9 +514,11 @@
 
     if (selected) {
       var price = parseFloat(selected.getAttribute('data-price'));
-      var gratuities = 238;
+      var includeGratuities = document.getElementById('includeGratuities').checked;
+      var gratuities = includeGratuities ? 238 : 0;
       var total = price + gratuities;
-      display.textContent = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' (incl. gratuities)';
+      var suffix = includeGratuities ? ' (incl. gratuities)' : ' (gratuities not included)';
+      display.textContent = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + suffix;
       hiddenOption.value = selected.value;
       hiddenTotal.value = total.toFixed(2);
       selected.closest('.option-card').classList.add('selected');
