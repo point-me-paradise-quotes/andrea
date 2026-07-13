@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marissa Hurry — Family Vacation Quote | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #75AFB1;
+    --teal-dark: #4F8A8C;
+    --pale-teal: #C4E4E1;
+    --gold: #DAC396;
+    --gold-dark: #B89E6A;
+    --cream: #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper: #FBF9F4;
+    --paper-pure: #FFFFFF;
+    --text-primary: #3D3D3D;
+    --text-muted: #606060;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-bottom: 90px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--teal-dark);
+  }
+
+  .italic-accent {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 380px;
+    background-image: linear-gradient(180deg, rgba(30,50,50,0.35) 0%, rgba(30,50,50,0.65) 100%), url('https://randomtrip.es/wp-content/uploads/2024/08/x-tulum-playa-zona-arqueologica.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px 20px;
+  }
+
+  .hero-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    color: var(--paper-pure);
+  }
+
+  .hero-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+
+  .hero h1 {
+    color: var(--paper-pure);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-details {
+    font-size: 1rem;
+    color: var(--cream-light);
+  }
+
+  /* COMMITMENT CALLOUT — TOP */
+  .commitment-top {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    padding: 22px 20px;
+    text-align: center;
+  }
+
+  .commitment-top p {
+    max-width: 780px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 40px 0;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .section-intro {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 0 auto 30px;
+  }
+
+  /* COMPARISON TABLE */
+  .compare-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table.compare {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--paper-pure);
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 640px;
+  }
+
+  table.compare th, table.compare td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--pale-teal);
+    font-size: 0.92rem;
+  }
+
+  table.compare th {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+  }
+
+  table.compare tr:last-child td { border-bottom: none; }
+  table.compare tr:nth-child(even) td { background: var(--cream-light); }
+
+  .price-cell { font-weight: 700; color: var(--teal-dark); }
+
+  table.detail-compare {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--paper-pure);
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 780px;
+  }
+
+  table.detail-compare th, table.detail-compare td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--pale-teal);
+    font-size: 0.88rem;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  table.detail-compare th {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  table.detail-compare .row-label {
+    background: var(--cream-light);
+    font-weight: 600;
+    color: var(--teal-dark);
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
+
+  table.detail-compare tr:last-child td { border-bottom: none; }
+
+  /* RESORT CARDS */
+  .resort-card {
+    background: var(--paper-pure);
+    border: 1px solid var(--pale-teal);
+    border-radius: 14px;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+
+  .resort-header {
+    padding: 24px 24px 14px;
+    border-bottom: 1px solid var(--cream);
+  }
+
+  .resort-name {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+  }
+
+  .resort-location {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .resort-vibe {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--teal-dark);
+    font-size: 1.15rem;
+  }
+
+  .photo-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 6px;
+    padding: 16px 24px 0;
+  }
+
+  .photo-strip img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    background: var(--cream-light);
+  }
+
+  .resort-body {
+    padding: 20px 24px 24px;
+  }
+
+  .resort-includes {
+    margin: 16px 0;
+  }
+
+  .resort-includes h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+  }
+
+  .resort-includes ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+  }
+
+  .resort-includes li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .resort-includes li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--gold-dark);
+  }
+
+  .room-option {
+    background: var(--cream-light);
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: 14px;
+  }
+
+  .room-option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .room-option-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--teal-dark);
+  }
+
+  .room-option-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--teal-dark);
+    white-space: nowrap;
+  }
+
+  .room-option-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .select-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--pale-teal);
+    margin-top: 10px;
+  }
+
+  .select-row input[type="radio"] {
+    width: 22px;
+    height: 22px;
+    accent-color: var(--teal-dark);
+    cursor: pointer;
+  }
+
+  .select-row label {
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .transfer-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+
+  /* EDUCATIONAL CONTENT */
+  .edu-box {
+    background: var(--cream-light);
+    border-left: 4px solid var(--gold-dark);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 30px 0;
+  }
+
+  .edu-box h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+  }
+
+  .edu-box p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  /* PRICING NOTE NEAR TOTAL */
+  .pricing-note {
+    background: var(--paper-pure);
+    border: 1px solid var(--pale-teal);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .pricing-note p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .pricing-disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  /* STICKY TOTAL BAR */
+  .sticky-total {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -4px 14px rgba(0,0,0,0.15);
+    z-index: 100;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .sticky-total .label {
+    font-size: 0.85rem;
+    color: var(--cream-light);
+  }
+
+  .sticky-total .amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  /* BOTTOM COMMITMENT CALLOUT */
+  .commitment-bottom {
+    background: var(--teal);
+    color: var(--paper-pure);
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .commitment-bottom p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* CONTACT FORM */
+  .contact-section {
+    background: var(--paper-pure);
+    padding: 40px 20px;
+  }
+
+  .contact-form {
+    max-width: 560px;
+    margin: 0 auto;
+    background: var(--cream-light);
+    border-radius: 14px;
+    padding: 30px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1px solid var(--pale-teal);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper-pure);
+    min-height: 44px;
+  }
+
+  .form-group textarea {
+    min-height: 90px;
+    resize: vertical;
+  }
+
+  .submit-btn {
+    width: 100%;
+    min-height: 48px;
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover { background: var(--teal); }
+
+  .error-msg {
+    display: none;
+    background: #FBEAEA;
+    color: #A33A3A;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+  }
+
+  .thank-you {
+    display: none;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .thank-you h3 { margin-bottom: 10px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  footer .agent-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  footer a {
+    color: var(--cream-light);
+    text-decoration: none;
+  }
+
+  footer .disclaimer {
+    font-size: 0.78rem;
+    color: var(--pale-teal);
+    margin-top: 14px;
+  }
+
+  /* MOBILE */
+  @media (max-width: 540px) {
+    .resort-includes ul { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.6rem; }
+    .room-option-header { flex-direction: column; align-items: flex-start; }
+    .sticky-total { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">A Point Me to Paradise Travel Quote</div>
+    <h1>Marissa Hurry — Riviera Maya &amp; Tulum Family Getaway</h1>
+    <div class="hero-details">2 Adults · 2 Kids &nbsp;|&nbsp; December 18–22, 2026 (4 Nights) &nbsp;|&nbsp; 4 All-Inclusive Resort Options</div>
+  </div>
+</div>
+
+<!-- COMMITMENT TOP -->
+<div class="commitment-top">
+  <p>We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.</p>
+</div>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <section>
+    <h2>Four Resorts, Four Different Trips</h2>
+    <p class="section-intro">Same dates, same group size, genuinely different vacations. Xpu-Ha and Puerto Aventuras sit on quieter stretches of the Riviera Maya coast; Playa Paraíso leans into resort-scale water features; Tulum trades some of that scale for a more design-forward, boutique feel with Preferred Club perks built in. Compare below, then look closer at whichever ones catch your eye.</p>
+
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th>Resort</th>
+            <th>Location</th>
+            <th>Room Category</th>
+            <th>Price (4 nights, family of 4)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Barceló Maya Palace</td>
+            <td>Xpu-Ha</td>
+            <td>Junior Suite</td>
+            <td class="price-cell">Est. $1,963</td>
+          </tr>
+          <tr>
+            <td>Hard Rock Hotel Riviera Maya</td>
+            <td>Puerto Aventuras</td>
+            <td>Deluxe Gold – Double Beds</td>
+            <td class="price-cell">Est. $2,311</td>
+          </tr>
+          <tr>
+            <td>Iberostar Selection Paraíso Maya</td>
+            <td>Playa Paraíso</td>
+            <td>Junior Suite Tropical View</td>
+            <td class="price-cell">Est. $3,217</td>
+          </tr>
+          <tr>
+            <td>Dreams Tulum Resort &amp; Spa</td>
+            <td>Tulum</td>
+            <td>Preferred Club Junior Suite Garden View</td>
+            <td class="price-cell">Est. $2,189</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>A Closer Look: Beach, Pools &amp; Kids Activities</h2>
+    <p class="section-intro">The price comparison only tells part of the story. Here's how the four actually differ once you're standing on the beach or in the pool with the kids.</p>
+
+    <div class="compare-wrap">
+      <table class="detail-compare">
+        <thead>
+          <tr>
+            <th>&nbsp;</th>
+            <th>Barceló Maya Palace</th>
+            <th>Hard Rock Riviera Maya</th>
+            <th>Iberostar Paraíso Maya</th>
+            <th>Dreams Tulum</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label">Beach &amp; Snorkeling</td>
+            <td>Private white-sand beach shared across the connected Barceló complex. Guests consistently mention it as some of the better snorkeling in the immediate area — schools of fish right off the sand and sea turtles known to pass by in the mornings. One patch near the dock is rocky, so water shoes help.</td>
+            <td>The standout feature here: the beach sits in a calm, semi-enclosed saltwater lagoon shielded by rocks from open-ocean waves and most seaweed. That makes it genuinely easy for younger kids to snorkel and swim without worrying about currents. Plenty of fish life in the lagoon, and snorkel gear is available to borrow.</td>
+            <td>A wide beach, but with rougher surf and some rocky sections than the other three — water shoes are worth packing. The resort stays on top of seaweed cleanup. Snorkeling directly off the beach is workable, though the reef here isn't the draw; the pool complex is.</td>
+            <td>A long, quiet stretch of white sand with no neighboring resorts crowding the view. Water clarity varies day to day and there are rocky patches, particularly toward the south end. It's near a large offshore reef system, so snorkeling can be good, just less consistent than a lagoon setup.</td>
+          </tr>
+          <tr>
+            <td class="row-label">Pools &amp; Water Parks</td>
+            <td>Three outdoor pools at the Palace itself, plus access to additional pools across the wider Barceló Maya Grand complex.</td>
+            <td>Rockaway Bay Water Park is the centerpiece — waterslides and splash zones — alongside multiple additional pools throughout the resort.</td>
+            <td>The most pool-focused of the four: a full complex with a lazy river, a wave pool, water slides, and a separate pirate-ship-themed splash area for younger kids.</td>
+            <td>Two main pools, including a quieter lap/lagoon-style pool and an activity pool with a swim-up bar, plus a shallow kid-friendly pool and a splash park inside the kids' club.</td>
+          </tr>
+          <tr>
+            <td class="row-label">Things for Kids to Do</td>
+            <td>Kids Club on-site, with additional family programming available across the connected resort complex.</td>
+            <td>Kids Club for younger children and a separate Teen Lounge so older kids aren't stuck with the same programming as toddlers.</td>
+            <td>Star Camp runs daily programming and nightly kids' shows on the main stage — one of the more structured kids' club setups of the four.</td>
+            <td>Explorer's Club (ages 3–12) includes its own splash park, arts and crafts, and camping nights on the beach; teens have a separate Core Zone with games.</td>
+          </tr>
+          <tr>
+            <td class="row-label">Distance from Cancun Airport</td>
+            <td>~50 miles — roughly 60–65 minutes by car.</td>
+            <td>~48 miles — roughly 65–75 minutes by car.</td>
+            <td>~24 miles — roughly 30–35 minutes by car. The closest of the four by a wide margin.</td>
+            <td>~69 miles — roughly 90 minutes by car. The farthest, but also the quietest and most secluded setting.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="pricing-note">
+    <p>We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
+    <div class="pricing-disclaimer">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+  </div>
+
+  <!-- RESORT OPTIONS -->
+  <section id="options">
+    <h2>The Four Options</h2>
+
+    <!-- OPTION 1: Barcelo -->
+    <div class="resort-card">
+      <div class="resort-header">
+        <div class="resort-name">1. Barceló Maya Palace</div>
+        <div class="resort-location">Xpu-Ha, Riviera Maya, Mexico</div>
+        <div class="resort-vibe">Big resort energy — part of the connected Barceló Maya Grand complex, with room to roam across pools, beach, and amenities without ever feeling boxed in.</div>
+      </div>
+      <div class="photo-strip">
+        <img src="https://img.cdnpth.com/media/100905/7153cb74-e367-4be8-878c-c469f7f59e6c_main.jpg" alt="Barceló Maya Palace Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100905/dc57d854-02db-450a-8b86-e34a0783da27.jpg" alt="Barceló Maya Palace Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100905/1085f3b0-f440-442a-89e2-36997ccb3f1c.jpg" alt="Barceló Maya Palace Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100905/fd60a412-697e-4411-a12f-a8e9dc844793.jpg" alt="Barceló Maya Palace Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100905/d90ec306-81da-4ab8-ba97-092ff6db3f78.jpg" alt="Barceló Maya Palace Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100905/ec3aceb7-c67d-4cd2-ab7b-8e89d1ef0aee.png" alt="Barceló Maya Palace Junior Suite" loading="lazy">
+      </div>
+      <div class="resort-body">
+        <div class="resort-includes">
+          <h4>Your Stay Includes</h4>
+          <ul>
+            <li>Unlimited meals, snacks and beverages</li>
+            <li>Multiple pools and kids' water play areas</li>
+            <li>White-sand beach access</li>
+            <li>Snorkeling right from the resort beach</li>
+            <li>Daily activities and nightly entertainment</li>
+            <li>Kids Club and family activities</li>
+            <li>Access to the full Barceló Maya Grand complex</li>
+          </ul>
+        </div>
+
+        <div class="room-option">
+          <div class="room-option-header">
+            <div>
+              <div class="room-option-name">Junior Suite</div>
+            </div>
+            <div class="room-option-price">Est. $1,963</div>
+          </div>
+          <div class="room-option-desc">One king bed or two double beds plus a sofa bed (based on availability), a sitting area, a furnished private balcony or terrace, a fully stocked minibar, and a bathroom with a whirlpool tub and separate shower.</div>
+          <div class="select-row">
+            <input type="radio" name="resort_choice" id="barcelo-js" value="Barceló Maya Palace — Junior Suite ($1,963)">
+            <label for="barcelo-js">Select Barceló Maya Palace — Junior Suite</label>
+          </div>
+        </div>
+
+        <div class="transfer-note">Private airport transfer can be booked once flights are confirmed.</div>
+      </div>
+    </div>
+
+    <!-- OPTION 2: Hard Rock -->
+    <div class="resort-card">
+      <div class="resort-header">
+        <div class="resort-name">2. Hard Rock Hotel Riviera Maya</div>
+        <div class="resort-location">Puerto Aventuras, Riviera Maya, Mexico</div>
+        <div class="resort-vibe">The pick for a family that wants a water park built into the vacation — Rockaway Bay is the centerpiece, with a Teen Lounge that gives older kids their own space.</div>
+      </div>
+      <div class="photo-strip">
+        <img src="https://img.cdnpth.com/media/101760/689fac43-8250-459e-aa35-3e67a409ed5a.jpg" alt="Hard Rock Hotel Riviera Maya Deluxe Gold Room" loading="lazy">
+        <img src="https://img.cdnpth.com/media/101760/b8fd03fd-c3e0-4a24-81ec-b8fc30ea3888.jpg" alt="Hard Rock Hotel Riviera Maya Deluxe Gold Room" loading="lazy">
+        <img src="https://img.cdnpth.com/media/101760/a1ff7352-cf1d-469a-95f6-6e023bd50e10.jpg" alt="Hard Rock Hotel Riviera Maya Deluxe Gold Room" loading="lazy">
+        <img src="https://img.cdnpth.com/media/101760/821e742f-089a-426b-9ffd-c9fb8f5dda59.jpg" alt="Hard Rock Hotel Riviera Maya Deluxe Gold Room" loading="lazy">
+        <img src="https://img.cdnpth.com/media/101760/763fe2d1-8ac0-432b-8016-a7578928e0f1.jpg" alt="Hard Rock Hotel Riviera Maya Deluxe Gold Room" loading="lazy">
+        <img src="https://img.cdnpth.com/media/101760/ffe01dc9-d698-4a97-a2b0-747a9a1c8585.jpg" alt="Hard Rock Hotel Riviera Maya Deluxe Gold Room" loading="lazy">
+        <img src="https://img.cdnpth.com/media/101760/9665567b-6201-46b1-9b3b-44a8a004bb9b.jpg" alt="Hard Rock Hotel Riviera Maya Deluxe Gold Room" loading="lazy">
+        <img src="https://img.cdnpth.com/media/101760/4101960a-4167-496e-b2cd-13af5a5ea7d8.jpg" alt="Hard Rock Hotel Riviera Maya Deluxe Gold Room" loading="lazy">
+      </div>
+      <div class="resort-body">
+        <div class="resort-includes">
+          <h4>Your Stay Includes</h4>
+          <ul>
+            <li>All meals, snacks and beverages</li>
+            <li>Rockaway Bay Water Park with waterslides and splash zones</li>
+            <li>Multiple pools and family activities</li>
+            <li>Kids Club and Teen Lounge</li>
+            <li>Snorkeling, kayaking and paddleboarding</li>
+            <li>Daily entertainment and live shows</li>
+            <li>Fitness center and non-motorized water sports</li>
+          </ul>
+        </div>
+
+        <div class="room-option">
+          <div class="room-option-header">
+            <div>
+              <div class="room-option-name">Deluxe Gold – Double Beds</div>
+            </div>
+            <div class="room-option-price">Est. $2,311</div>
+          </div>
+          <div class="room-option-desc">Two double beds, a private furnished balcony or terrace, a hydro spa tub, a fully stocked minibar replenished daily, complimentary Wi-Fi, and modern amenities.</div>
+          <div class="select-row">
+            <input type="radio" name="resort_choice" id="hardrock-dg" value="Hard Rock Riviera Maya — Deluxe Gold ($2,311)">
+            <label for="hardrock-dg">Select Hard Rock Riviera Maya — Deluxe Gold</label>
+          </div>
+        </div>
+
+        <div class="transfer-note">Private airport transfer can be scheduled once flights are confirmed.</div>
+      </div>
+    </div>
+
+    <!-- OPTION 3: Iberostar -->
+    <div class="resort-card">
+      <div class="resort-header">
+        <div class="resort-name">3. Iberostar Selection Paraíso Maya Suites</div>
+        <div class="resort-location">Playa Paraíso, Riviera Maya, Mexico</div>
+        <div class="resort-vibe">The most pool-focused option of the four — a lazy river and wave pool alongside its own waterpark, plus a Star Camp kids program that runs a full daily schedule.</div>
+      </div>
+      <div class="photo-strip">
+        <img src="https://img.cdnpth.com/media/100322/67f14998-3029-4227-ba49-79a545b1f118.jpg" alt="Iberostar Selection Paraíso Maya Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100322/a17b1088-bf05-460d-ab40-f4c6d4957a34.jpg" alt="Iberostar Selection Paraíso Maya Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100322/e26c182b-bd45-4258-bb1e-a4d8ce3f53b1.jpg" alt="Iberostar Selection Paraíso Maya Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100322/9c29afda-f38c-4db5-9d82-15a1345b1594.jpg" alt="Iberostar Selection Paraíso Maya Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100322/50d31978-20a4-4b64-89ad-d927347732c6.jpg" alt="Iberostar Selection Paraíso Maya Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100322/d9edb7a8-7ba4-4776-93d6-c981b66c2ac6.jpg" alt="Iberostar Selection Paraíso Maya Junior Suite" loading="lazy">
+      </div>
+      <div class="resort-body">
+        <div class="resort-includes">
+          <h4>Your Stay Includes</h4>
+          <ul>
+            <li>Unlimited dining, snacks and beverages</li>
+            <li>Multiple pools, including a lazy river and wave pool</li>
+            <li>Waterpark with slides and splash areas</li>
+            <li>White-sand beach</li>
+            <li>Star Camp kids program and family activities</li>
+            <li>Daily entertainment and nightly shows</li>
+            <li>Fitness center and non-motorized water sports</li>
+          </ul>
+        </div>
+
+        <div class="room-option">
+          <div class="room-option-header">
+            <div>
+              <div class="room-option-name">Junior Suite Tropical View</div>
+            </div>
+            <div class="room-option-price">Est. $3,217</div>
+          </div>
+          <div class="room-option-desc">One king bed or two double beds (based on availability), a sitting area with sofa, a private furnished balcony or terrace, a fully stocked minibar, and a bathroom with whirlpool tub and separate shower, overlooking the resort's tropical gardens.</div>
+          <div class="select-row">
+            <input type="radio" name="resort_choice" id="iberostar-js" value="Iberostar Paraíso Maya — Junior Suite Tropical View ($3,217)">
+            <label for="iberostar-js">Select Iberostar — Junior Suite Tropical View</label>
+          </div>
+        </div>
+
+        <div class="transfer-note">Private airport transfer can be scheduled after flights are confirmed.</div>
+      </div>
+    </div>
+
+    <!-- OPTION 4: Dreams Tulum -->
+    <div class="resort-card">
+      <div class="resort-header">
+        <div class="resort-name">4. Dreams Tulum Resort &amp; Spa</div>
+        <div class="resort-location">Tulum, Quintana Roo, Mexico</div>
+        <div class="resort-vibe">The Preferred Club upgrade is baked in here — a private lounge, dedicated concierge, and its own beach and pool areas set this apart from the other three, which are standard-category rooms.</div>
+      </div>
+      <div class="photo-strip">
+        <img src="https://img.cdnpth.com/media/100177/da728649ee6a47d177fa66adf67116d781ee0c2903650911d46ee5190aeadf91_main.png" alt="Dreams Tulum Preferred Club Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100177/e5167a606b336c01ad0c816b1fa17f919d08f9c0a46d30cadbcd4b323342266e.png" alt="Dreams Tulum Preferred Club Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100177/32d3bbe94f7e4552864015d09a116b45a84091606732acf60442e504636b5dc5.png" alt="Dreams Tulum Preferred Club Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100177/45867b580f4ba4d6b43221e2c4ccaddb7624a77836c472ade6308ad2f5cedf50.png" alt="Dreams Tulum Preferred Club Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100177/733a864fc73746058c6759b9871299f5984bbc9ff431f47032fa6086bb6e7b59.png" alt="Dreams Tulum Preferred Club Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100177/3c958a1eb225d542d151b22c4ed7d31186711790747984e99bc0935c4481440a.png" alt="Dreams Tulum Preferred Club Junior Suite" loading="lazy">
+        <img src="https://img.cdnpth.com/media/100177/4cc5ea2a5a123c1e91ff311b7135a23431f8938894bf286943103affaddabc2e.png" alt="Dreams Tulum Preferred Club Junior Suite" loading="lazy">
+      </div>
+      <div class="resort-body">
+        <div class="resort-includes">
+          <h4>Your Stay Includes</h4>
+          <ul>
+            <li>Unlimited dining, snacks and premium beverages</li>
+            <li>Family-friendly waterpark with waterslides and splash zone</li>
+            <li>Explorer's Club for Kids and Core Zone Teens Club</li>
+            <li>White-sand beach</li>
+            <li>Kayaking, paddleboarding and other water sports</li>
+            <li>Daily activities and nightly entertainment</li>
+            <li>Multiple pools and family recreation</li>
+          </ul>
+        </div>
+
+        <div class="edu-box">
+          <h3>What "Preferred Club" Adds</h3>
+          <p>This is the one option of the four with a resort-within-a-resort upgrade included: a private lounge, dedicated concierge, upgraded in-room amenities, and exclusive beach and pool areas reserved for Preferred Club guests only.</p>
+        </div>
+
+        <div class="room-option">
+          <div class="room-option-header">
+            <div>
+              <div class="room-option-name">Preferred Club Junior Suite Garden View Double</div>
+            </div>
+            <div class="room-option-price">Est. $2,189</div>
+          </div>
+          <div class="room-option-desc">Two double beds, a private furnished balcony or terrace overlooking the tropical gardens, a sitting area, a fully stocked minibar refreshed daily, and a spa-inspired bathroom with whirlpool tub and separate shower. Includes Preferred Club lounge access, upgraded amenities, and dedicated concierge service.</div>
+          <div class="select-row">
+            <input type="radio" name="resort_choice" id="dreams-pc" value="Dreams Tulum — Preferred Club Junior Suite ($2,189)">
+            <label for="dreams-pc">Select Dreams Tulum — Preferred Club Junior Suite</label>
+          </div>
+        </div>
+
+        <div class="transfer-note">Private airport transfer can be scheduled after flights are confirmed.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="edu-box">
+    <h3>Choosing Between These Four</h3>
+    <p>Barceló Maya Palace is the value play with the biggest connected-resort footprint. Hard Rock leans into water park thrills for kids who want to be wet all day. Iberostar splits the difference with a lazy river and heavy activity programming. Dreams Tulum is the only one with a Preferred Club upgrade included, trading some of the sprawl of the others for a more personal, service-forward stay.</p>
+  </div>
+
+</div>
+
+<!-- COMMITMENT BOTTOM -->
+<div class="commitment-bottom">
+  <p>What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+</div>
+
+<!-- CONTACT FORM -->
+<div class="contact-section">
+  <div class="container" style="padding:0;">
+    <h2 style="text-align:center; margin-bottom: 20px;">Let's Lock In Your Trip</h2>
+    <p class="section-intro">Tell us which resort caught your eye and we'll follow up to finalize the booking.</p>
+
+    <form id="quoteForm" class="contact-form">
+      <div class="error-msg" id="errorMsg">Something went wrong submitting the form. Please try again or call/text us directly.</div>
+
+      <div id="formFields">
+        <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+        <input type="hidden" name="subject" value="Quote Response — Marissa Hurry | Family Vacation Quote">
+        <input type="hidden" name="from_name" value="Marissa Hurry Quote — Point Me to Paradise">
+        <input type="hidden" name="redirect" value="false">
+
+        <div class="form-group">
+          <label for="clientName">Name *</label>
+          <input type="text" id="clientName" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="clientEmail">Email *</label>
+          <input type="email" id="clientEmail" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="clientPhone">Phone</label>
+          <input type="tel" id="clientPhone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="optionInterest">Which resort are you most interested in?</label>
+          <select id="optionInterest" name="option_interest">
+            <option value="">Select one</option>
+            <option value="Barceló Maya Palace">Barceló Maya Palace</option>
+            <option value="Hard Rock Hotel Riviera Maya">Hard Rock Hotel Riviera Maya</option>
+            <option value="Iberostar Selection Paraíso Maya Suites">Iberostar Selection Paraíso Maya Suites</option>
+            <option value="Dreams Tulum Resort & Spa">Dreams Tulum Resort &amp; Spa</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="insurance">Travel Insurance</label>
+          <select id="insurance" name="travel_insurance">
+            <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+            <option value="No — not interested">No — not interested</option>
+            <option value="Already have coverage">Already have coverage</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" placeholder="Questions, preferred room view, anything else we should know..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send My Interest</button>
+      </div>
+
+      <div class="thank-you" id="thankYou">
+        <h3>Thanks, we've got it.</h3>
+        <p>We'll follow up shortly to finalize your booking.</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- STICKY TOTAL BAR -->
+<div class="sticky-total" id="stickyTotal">
+  <div>
+    <div class="label">Selected resort</div>
+    <div class="amount" id="totalAmount">Choose an option above</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div>Point Me to Paradise Travel</div>
+  <div style="margin-top:8px;">
+    <a href="#" id="emailLink">Loading...</a> &nbsp;|&nbsp; 409-789-3579
+  </div>
+  <div class="disclaimer">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<script>
+  // Assemble email via JS to avoid Cloudflare scrambling
+  (function() {
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var link = document.getElementById('emailLink');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+  })();
+
+  // Update sticky total on resort selection
+  var radios = document.querySelectorAll('input[name="resort_choice"]');
+  var totalAmount = document.getElementById('totalAmount');
+  radios.forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      totalAmount.textContent = this.value;
+    });
+  });
+
+  // Form submission via fetch — never native POST
+  var form = document.getElementById('quoteForm');
+  var errorMsg = document.getElementById('errorMsg');
+  var formFields = document.getElementById('formFields');
+  var thankYou = document.getElementById('thankYou');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    errorMsg.style.display = 'none';
+
+    var formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.success) {
+        formFields.style.display = 'none';
+        thankYou.style.display = 'block';
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    })
+    .catch(function() {
+      errorMsg.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
