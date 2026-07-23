@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beth Munoz — Western Caribbean Sailing | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text:#3D3D3D;
+    --text-muted:#606060;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'DM Sans',sans-serif;
+    color:var(--text);
+    background:var(--paper);
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Playfair Display',serif;color:var(--teal-dark);margin:0 0 .4em;}
+  .accent{font-family:'Cormorant Garamond',serif;font-style:italic;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:340px;
+    background-image:linear-gradient(180deg, rgba(79,138,140,.55), rgba(61,61,61,.65)), url('https://www.royalcaribbeanincentives.com/content/uploads/RCI_MA_Aerials_June2018_MichelVerdure_617_RET_CMYK-1-scaled.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:flex-end;
+    padding:40px 0 30px;
+  }
+  .hero-inner{color:var(--paper-pure);width:100%;}
+  .hero-eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--cream);margin-bottom:6px;}
+  .hero h1{color:var(--paper-pure);font-size:2.1rem;margin-bottom:8px;}
+  .hero-meta{font-size:.98rem;color:var(--cream-light);}
+
+  /* COMMITMENT CALLOUTS */
+  .commit-top{
+    background:var(--cream-light);
+    border-left:4px solid var(--teal);
+    padding:16px 20px;
+    margin:22px 0;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--text);
+  }
+  .commit-bottom{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:24px 26px;
+    margin:34px 0 24px;
+    border-radius:6px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.15rem;
+    line-height:1.55;
+  }
+
+  /* EXCLUSIVE BADGE */
+  .exclusive-badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--text);
+    font-family:'DM Sans',sans-serif;
+    font-weight:600;
+    font-size:.85rem;
+    padding:6px 14px;
+    border-radius:20px;
+    margin:14px 0;
+  }
+
+  /* ITINERARY */
+  .itinerary{margin:30px 0;}
+  .itin-row{
+    display:flex;
+    gap:14px;
+    padding:10px 0;
+    border-bottom:1px solid var(--pale-teal);
+    font-size:.95rem;
+  }
+  .itin-day{font-weight:600;color:var(--teal-dark);min-width:150px;}
+
+  /* OPTION CARDS */
+  .options{margin:36px 0;}
+  .option-card{
+    background:var(--paper-pure);
+    border:2px solid var(--pale-teal);
+    border-radius:10px;
+    margin-bottom:20px;
+    overflow:hidden;
+    transition:border-color .2s;
+  }
+  .option-card.selected{border-color:var(--teal);}
+  .option-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+  }
+  .option-body{padding:20px;}
+  .option-label{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    cursor:pointer;
+  }
+  .option-label input[type="radio"]{
+    width:22px;height:22px;
+    min-width:22px;
+    margin-top:4px;
+    accent-color:var(--teal-dark);
+  }
+  .option-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--teal-dark);margin-bottom:4px;}
+  .option-sqft{font-size:.85rem;color:var(--text-muted);margin-bottom:8px;}
+  .option-desc{font-size:.95rem;color:var(--text);margin-bottom:10px;}
+  .option-perfect{font-size:.9rem;font-style:italic;font-family:'Cormorant Garamond',serif;color:var(--text-muted);margin-bottom:12px;}
+  .option-price{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--teal-dark);font-weight:600;}
+  .option-price-sub{font-size:.82rem;color:var(--text-muted);margin-top:2px;}
+
+  /* GRATUITY / PAYMENT NOTES */
+  .addon-box{
+    background:var(--cream-light);
+    border:1px solid var(--gold);
+    border-radius:8px;
+    padding:16px 18px;
+    margin:20px 0;
+  }
+  .addon-box label{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:.95rem;
+    cursor:pointer;
+  }
+  .addon-box input[type="checkbox"]{
+    width:20px;height:20px;min-width:20px;margin-top:2px;
+    accent-color:var(--teal-dark);
+  }
+  .addon-note{font-size:.82rem;color:var(--text-muted);margin-top:8px;}
+
+  .payment-note{
+    font-size:.88rem;
+    color:var(--text-muted);
+    background:var(--paper);
+    border:1px solid var(--pale-teal);
+    border-radius:8px;
+    padding:14px 16px;
+    margin:20px 0;
+  }
+
+  /* STICKY TOTAL BAR */
+  .total-bar{
+    position:sticky;
+    bottom:0;
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:14px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    box-shadow:0 -3px 10px rgba(0,0,0,.15);
+    z-index:50;
+  }
+  .total-label{font-size:.85rem;color:var(--cream-light);}
+  .total-amount{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;}
+
+  .commit-pricing{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.05rem;
+    color:var(--text);
+    background:var(--pale-teal);
+    padding:14px 18px;
+    border-radius:8px;
+    margin:16px 0;
+  }
+  .pricing-disclaimer{
+    font-size:.78rem;
+    color:var(--text-muted);
+    margin:8px 0 20px;
+  }
+
+  /* FORM */
+  .form-section{margin:20px 0 40px;}
+  .form-card{
+    background:var(--paper-pure);
+    border:2px solid var(--pale-teal);
+    border-radius:10px;
+    padding:26px;
+  }
+  .form-row{margin-bottom:16px;}
+  .form-row label{
+    display:block;
+    font-weight:600;
+    font-size:.9rem;
+    margin-bottom:6px;
+    color:var(--teal-dark);
+  }
+  .form-row input,
+  .form-row select,
+  .form-row textarea{
+    width:100%;
+    font-size:16px;
+    padding:12px;
+    min-height:44px;
+    border:1px solid var(--pale-teal);
+    border-radius:6px;
+    font-family:'DM Sans',sans-serif;
+    color:var(--text);
+    background:var(--paper);
+  }
+  .form-row textarea{min-height:90px;resize:vertical;}
+  .submit-btn{
+    width:100%;
+    min-height:48px;
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    border:none;
+    border-radius:6px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    font-family:'DM Sans',sans-serif;
+  }
+  .submit-btn:hover{background:var(--gold-dark);}
+  .form-error{
+    display:none;
+    background:var(--cream-light);
+    border:1px solid var(--gold-dark);
+    color:var(--teal-dark);
+    padding:12px;
+    border-radius:6px;
+    margin-bottom:14px;
+    font-size:.9rem;
+    font-weight:600;
+  }
+  .thankyou{
+    display:none;
+    text-align:center;
+    padding:30px 20px;
+  }
+  .thankyou h3{color:var(--teal-dark);}
+
+  /* FOOTER */
+  footer{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:26px 0;
+    font-size:.85rem;
+  }
+  footer a{color:var(--cream-light);}
+  .footer-disclaimer{font-size:.78rem;color:var(--pale-teal);margin-top:10px;}
+
+  @media (max-width:540px){
+    .hero h1{font-size:1.6rem;}
+    .option-card img{height:170px;}
+    .total-bar{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-eyebrow">A quote prepared for</div>
+    <h1>Beth Munoz — Western Caribbean Sailing</h1>
+    <div class="hero-meta">Mariner of the Seas &middot; 4 Nights &middot; October 8&ndash;12, 2026 &middot; Roundtrip from Galveston, TX &middot; 2 Guests</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="commit-top">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+
+  <span class="exclusive-badge">Agency Exclusive: $50 Shipboard Credit per Couple</span>
+
+  <h2>The Sailing</h2>
+  <p>Four nights aboard Mariner of the Seas, out and back from Galveston, with a full day in Cozumel sandwiched between two sea days. No flights, no connections — you drive to the port, park, and the ship does the rest.</p>
+
+  <div class="itinerary">
+    <div class="itin-row"><span class="itin-day">Oct. 8 — Galveston, TX</span><span>Depart 4:00 PM</span></div>
+    <div class="itin-row"><span class="itin-day">Oct. 9 — Day at Sea</span><span>Pools, dining, entertainment onboard</span></div>
+    <div class="itin-row"><span class="itin-day">Oct. 10 — Cozumel, Mexico</span><span>7:00 AM &ndash; 5:00 PM</span></div>
+    <div class="itin-row"><span class="itin-day">Oct. 11 — Day at Sea</span><span>Pools, dining, entertainment onboard</span></div>
+    <div class="itin-row"><span class="itin-day">Oct. 12 — Galveston, TX</span><span>Return</span></div>
+  </div>
+
+  <h2>Your Stateroom Options</h2>
+  <p style="color:var(--text-muted);font-size:.95rem;">Pick a stateroom below — the total updates as you go. Prices shown are for 2 guests.</p>
+
+  <form id="optionsForm">
+  <div class="options">
+
+    <div class="option-card selected" id="card-1">
+      <img src="https://www.royalcaribbeanblog.com/sites/default/files/styles/mobile_1x/public/fb/DSC_0005_0.jpg.webp?itok=O_f3YPjn" alt="Interior Stateroom aboard Mariner of the Seas">
+      <div class="option-body">
+        <label class="option-label">
+          <input type="radio" name="cabin" value="Interior Stateroom (Cat. 4V) — $1,204.86" data-price="1204.86" checked onchange="updateTotal()">
+          <span>
+            <div class="option-title">Interior Stateroom — Category 4V</div>
+            <div class="option-sqft">~160 sq ft</div>
+            <div class="option-desc">Two twin beds convert to a Royal King, with two Pullman beds available in select rooms for up to four guests. Private bathroom, vanity area, and enough storage for a 4-night bag without living out of a suitcase on the floor.</div>
+            <div class="option-perfect">Perfect for: the most affordable way to get everything the ship offers, with a comfortable place to sleep it off.</div>
+            <div class="option-price">$1,204.86 <span style="font-size:.9rem;font-weight:400;">total</span></div>
+            <div class="option-price-sub">Cruise fare &amp; taxes for 2 guests</div>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <div class="option-card" id="card-2">
+      <img src="https://www.royalcaribbeanincentives.com/content/uploads/FR-Oceanview-CatF.webp" alt="Ocean View Stateroom aboard Mariner of the Seas">
+      <div class="option-body">
+        <label class="option-label">
+          <input type="radio" name="cabin" value="Ocean View Stateroom (Cat. 4N) — $1,076.12" data-price="1076.12" onchange="updateTotal()">
+          <span>
+            <div class="option-title">Ocean View Stateroom — Category 4N</div>
+            <div class="option-sqft">~161 sq ft</div>
+            <div class="option-desc">A large picture window brings in natural light and a changing view of the water all four days. Two twin beds convert to a Royal King, plus two Pullman beds in select rooms for up to four guests. Private bathroom, vanity area, sitting space.</div>
+            <div class="option-perfect">Perfect for: natural light and open water views without paying for a balcony.</div>
+            <div class="option-price">$1,076.12 <span style="font-size:.9rem;font-weight:400;">total</span></div>
+            <div class="option-price-sub">Cruise fare &amp; taxes for 2 guests — agency exclusive rate</div>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <div class="option-card" id="card-3">
+      <img src="https://www.royalcaribbeanincentives.com/content/uploads/RCI_EX_balcony-Oceanview_SR.webp" alt="Ocean View Balcony Stateroom aboard Mariner of the Seas">
+      <div class="option-body">
+        <label class="option-label">
+          <input type="radio" name="cabin" value="Ocean View Balcony Stateroom (Cat. 4D) — $1,478.12" data-price="1478.12" onchange="updateTotal()">
+          <span>
+            <div class="option-title">Ocean View Balcony Stateroom — Category 4D</div>
+            <div class="option-sqft">~198 sq ft interior + 46 sq ft private balcony</div>
+            <div class="option-desc">Room to actually use the balcony — morning coffee, watching Galveston disappear on departure night, the last look at Cozumel before it's a sea day again. Two twin beds convert to a Royal King, with a double sofa bed or Pullman available in select rooms for up to four guests. Private bathroom, vanity area, sitting area.</div>
+            <div class="option-perfect">Perfect for: the couple who wants their own outdoor space instead of sharing the pool deck view.</div>
+            <div class="option-price">$1,478.12 <span style="font-size:.9rem;font-weight:400;">total</span></div>
+            <div class="option-price-sub">Cruise fare &amp; taxes for 2 guests</div>
+          </span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="payment-note">
+    <strong>Payment terms:</strong> This sailing is inside the 90-day window, so Royal Caribbean requires the full cruise fare paid in full at the time of booking — there's no deposit-and-balance option available on this one. Whatever cabin you choose, that fare amount is due in one payment when we book it.
+  </div>
+
+  <div class="addon-box">
+    <label>
+      <input type="checkbox" id="gratuityCheck" value="Prepaid Gratuities — $148.00" onchange="updateTotal()">
+      <span>Add prepaid gratuities — <strong>$148.00 total for both guests</strong> — to this estimate.</span>
+    </label>
+    <div class="addon-note">Gratuities are collected by Royal Caribbean, not by Point Me to Paradise Travel — this checkbox is only here to help you plan the full trip cost. You can also choose to pay gratuities onboard instead.</div>
+  </div>
+
+  <div class="commit-pricing">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+  </div>
+  <div class="pricing-disclaimer">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+
+  </form>
+
+  <div class="commit-bottom">
+    What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+
+  <div class="form-section">
+    <h2>Let's Lock It In</h2>
+    <div class="form-card">
+      <div class="form-error" id="formError">Something didn't go through — please check your details and try again, or give me a call directly at 409-789-3579.</div>
+
+      <form id="quoteForm">
+        <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+        <input type="hidden" name="subject" value="Quote Response — Beth Munoz | Western Caribbean Cruise">
+        <input type="hidden" name="from_name" value="Beth Munoz Quote — Point Me to Paradise">
+        <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="selected_cabin" id="hiddenCabin" value="Interior Stateroom (Cat. 4V) — $1,204.86">
+        <input type="hidden" name="gratuities_added" id="hiddenGratuity" value="No">
+        <input type="hidden" name="estimated_total" id="hiddenTotal" value="$1,204.86">
+
+        <div class="form-row">
+          <label for="fName">Name</label>
+          <input type="text" id="fName" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="fEmail">Email</label>
+          <input type="email" id="fEmail" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="fPhone">Phone</label>
+          <input type="tel" id="fPhone" name="phone">
+        </div>
+        <div class="form-row">
+          <label for="fOption">Which stateroom are you leaning toward?</label>
+          <select id="fOption" name="option_interest">
+            <option value="Interior Stateroom (Cat. 4V) — $1,204.86">Interior Stateroom — $1,204.86</option>
+            <option value="Ocean View Stateroom (Cat. 4N) — $1,076.12">Ocean View Stateroom — $1,076.12</option>
+            <option value="Ocean View Balcony Stateroom (Cat. 4D) — $1,478.12">Ocean View Balcony Stateroom — $1,478.12</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="fInsurance">Travel insurance</label>
+          <select id="fInsurance" name="travel_insurance">
+            <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+            <option value="No — not interested">No — not interested</option>
+            <option value="Already have coverage">Already have coverage</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="fMessage">Anything else I should know?</label>
+          <textarea id="fMessage" name="message"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Send My Selections</button>
+      </form>
+
+      <div class="thankyou" id="thankYou">
+        <h3>Got it, Beth!</h3>
+        <p>Your selections are in my inbox — I'll follow up shortly to get this booked.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="total-bar">
+  <div>
+    <div class="total-label">Estimated Total (2 guests)</div>
+  </div>
+  <div class="total-amount" id="totalDisplay">Est. $1,204.86</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>Andrea Gunter &middot; Point Me to Paradise Travel &middot; <span id="agentEmailWrap"></span> &middot; 409-789-3579</div>
+    <div class="footer-disclaimer">Prices and availability are subject to change until time of booking.</div>
+  </div>
+</footer>
+
+<script>
+  // Assemble agent email at runtime (Cloudflare scrape prevention)
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var a = document.createElement('a');
+    a.href = 'mailto:' + addr;
+    a.textContent = addr;
+    document.getElementById('agentEmailWrap').appendChild(a);
+  })();
+
+  function updateTotal(){
+    var cabinInputs = document.getElementsByName('cabin');
+    var basePrice = 0, cabinLabel = '';
+    for (var i=0; i<cabinInputs.length; i++){
+      var card = document.getElementById('card-' + (i+1));
+      if (cabinInputs[i].checked){
+        basePrice = parseFloat(cabinInputs[i].getAttribute('data-price'));
+        cabinLabel = cabinInputs[i].value;
+        card.classList.add('selected');
+      } else {
+        card.classList.remove('selected');
+      }
+    }
+    var gratChecked = document.getElementById('gratuityCheck').checked;
+    var total = basePrice + (gratChecked ? 148.00 : 0);
+
+    document.getElementById('totalDisplay').textContent = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+    document.getElementById('hiddenCabin').value = cabinLabel;
+    document.getElementById('hiddenGratuity').value = gratChecked ? 'Yes ($148.00)' : 'No';
+    document.getElementById('hiddenTotal').value = '$' + total.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  }
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var btn = document.getElementById('submitBtn');
+    var errorBox = document.getElementById('formError');
+    errorBox.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    var formData = new FormData(form);
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if (data.success){
+        document.getElementById('quoteForm').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorBox.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Send My Selections';
+      }
+    })
+    .catch(function(){
+      errorBox.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send My Selections';
+    });
+  });
+</script>
+
+</body>
+</html>
