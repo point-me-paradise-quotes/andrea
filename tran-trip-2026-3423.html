@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cam Tran — San Juan Quote | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text-body:#3D3D3D;
+    --text-muted:#606060;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--text-body);
+    line-height:1.6;
+    padding-bottom:100px;
+  }
+  h1,h2,h3{font-family:'Playfair Display',serif;color:var(--teal-dark);}
+  .accent{font-family:'Cormorant Garamond',serif;font-style:italic;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:440px;
+    background-image:linear-gradient(180deg, rgba(30,50,50,0.55) 0%, rgba(30,50,50,0.75) 100%), url('https://escapewitheffy.com/wp-content/uploads/2025/07/San-Juan_1067855027.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
+  }
+  .hero-inner{max-width:720px;}
+  .hero-eyebrow{
+    color:var(--cream);
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.3rem;
+    margin-bottom:10px;
+  }
+  .hero h1{
+    color:var(--paper-pure);
+    font-size:2.4rem;
+    margin-bottom:14px;
+  }
+  .hero-sub{
+    color:var(--cream-light);
+    font-size:1.05rem;
+    font-weight:400;
+  }
+
+  /* COMMITMENT CALLOUTS */
+  .commitment{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    text-align:center;
+    padding:22px 20px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.15rem;
+    line-height:1.5;
+  }
+  .commitment.bottom{
+    margin:50px 20px 30px;
+    border-radius:12px;
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .container{max-width:800px;margin:0 auto;padding:0 20px;}
+
+  /* TRIP OVERVIEW */
+  .overview{
+    padding:36px 0 10px;
+    text-align:center;
+  }
+  .overview h2{font-size:1.6rem;margin-bottom:8px;}
+  .overview .details{
+    color:var(--text-muted);
+    font-size:1rem;
+  }
+
+  /* PRICING NOTE BLOCK */
+  .pricing-note{
+    background:var(--cream-light);
+    border:1px solid var(--cream);
+    border-radius:10px;
+    padding:18px 20px;
+    margin:26px 0;
+    font-size:0.95rem;
+    color:var(--text-body);
+  }
+  .pricing-disclaimer{
+    font-size:0.82rem;
+    color:var(--text-muted);
+    margin-top:10px;
+    text-align:center;
+  }
+
+  /* OPTION CARD */
+  .option-card{
+    background:var(--paper-pure);
+    border:1px solid var(--pale-teal);
+    border-radius:14px;
+    overflow:hidden;
+    margin:28px 0;
+    box-shadow:0 2px 10px rgba(79,138,140,0.08);
+  }
+  .option-img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    display:block;
+  }
+  .option-body{padding:22px;}
+  .option-body h3{font-size:1.35rem;margin-bottom:4px;}
+  .option-basis{
+    display:inline-block;
+    background:var(--pale-teal);
+    color:var(--teal-dark);
+    font-size:0.78rem;
+    font-weight:600;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .option-desc{margin-bottom:16px;color:var(--text-body);}
+  .feature-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px 16px;
+    list-style:none;
+    margin-bottom:16px;
+    font-size:0.92rem;
+    color:var(--text-muted);
+  }
+  .feature-list li:before{content:"— ";color:var(--gold-dark);}
+  .not-included{
+    background:var(--cream-light);
+    border-left:3px solid var(--gold-dark);
+    padding:10px 14px;
+    font-size:0.88rem;
+    color:var(--text-body);
+    margin-bottom:16px;
+    border-radius:0 6px 6px 0;
+  }
+  .option-price-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid var(--cream);
+    padding-top:14px;
+  }
+  .option-price{
+    font-family:'Playfair Display',serif;
+    font-size:1.3rem;
+    color:var(--teal-dark);
+  }
+  .radio-label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.95rem;
+    cursor:pointer;
+    min-height:44px;
+  }
+  .radio-label input[type="radio"]{
+    width:22px;
+    height:22px;
+    accent-color:var(--teal-dark);
+  }
+
+  /* SECTION: LOCATION / TRANSFER */
+  .section{padding:20px 0;}
+  .section h2{font-size:1.35rem;margin-bottom:12px;}
+  .section p{margin-bottom:10px;color:var(--text-body);}
+  .transfer-box{
+    background:var(--cream-light);
+    border-radius:10px;
+    padding:18px 20px;
+    font-size:0.95rem;
+  }
+  .transfer-box p{margin-bottom:8px;}
+
+  /* ADD-ON CARD */
+  .addon-card{
+    background:var(--paper-pure);
+    border:1px solid var(--cream);
+    border-radius:14px;
+    overflow:hidden;
+    margin:20px 0;
+  }
+  .addon-imgs{display:grid;grid-template-columns:1fr 1fr;}
+  .addon-imgs img{width:100%;height:170px;object-fit:cover;display:block;}
+  .addon-body{padding:20px;}
+  .addon-body h3{font-size:1.2rem;margin-bottom:6px;}
+  .addon-meta{
+    color:var(--text-muted);
+    font-size:0.85rem;
+    margin-bottom:10px;
+  }
+  .addon-highlights{
+    list-style:none;
+    font-size:0.9rem;
+    color:var(--text-body);
+    margin-bottom:14px;
+  }
+  .addon-highlights li{padding-left:16px;position:relative;margin-bottom:5px;}
+  .addon-highlights li:before{content:"•";color:var(--teal-dark);position:absolute;left:0;}
+  .addon-good-to-know{
+    background:var(--cream-light);
+    border-radius:8px;
+    padding:12px 14px;
+    font-size:0.85rem;
+    color:var(--text-muted);
+    margin-bottom:14px;
+  }
+  .addon-check-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-top:1px solid var(--cream);
+    padding-top:14px;
+  }
+  .checkbox-label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:0.95rem;
+    cursor:pointer;
+    min-height:44px;
+  }
+  .checkbox-label input[type="checkbox"]{
+    width:22px;
+    height:22px;
+    accent-color:var(--teal-dark);
+  }
+  .addon-price{
+    font-family:'Playfair Display',serif;
+    color:var(--teal-dark);
+    font-size:1.1rem;
+  }
+
+  /* STICKY TOTAL */
+  .sticky-total{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:14px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:100;
+    box-shadow:0 -2px 12px rgba(0,0,0,0.15);
+  }
+  .sticky-total .label{font-size:0.85rem;opacity:0.9;}
+  .sticky-total .amount{
+    font-family:'Playfair Display',serif;
+    font-size:1.4rem;
+    font-weight:600;
+  }
+
+  /* FORM */
+  .form-section{
+    background:var(--paper-pure);
+    border:1px solid var(--pale-teal);
+    border-radius:14px;
+    padding:26px 22px;
+    margin:20px 0 40px;
+  }
+  .form-section h2{margin-bottom:6px;}
+  .form-section .sub{color:var(--text-muted);font-size:0.92rem;margin-bottom:20px;}
+  label.field-label{
+    display:block;
+    font-size:0.9rem;
+    font-weight:600;
+    color:var(--teal-dark);
+    margin-bottom:6px;
+    margin-top:16px;
+  }
+  input[type="text"],input[type="email"],input[type="tel"],select,textarea{
+    width:100%;
+    padding:12px 14px;
+    font-size:16px;
+    font-family:'DM Sans',sans-serif;
+    border:1px solid var(--pale-teal);
+    border-radius:8px;
+    background:var(--paper);
+    color:var(--text-body);
+    min-height:44px;
+  }
+  textarea{min-height:90px;resize:vertical;}
+  .submit-btn{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    border:none;
+    border-radius:8px;
+    padding:14px 24px;
+    font-size:16px;
+    font-weight:600;
+    font-family:'DM Sans',sans-serif;
+    cursor:pointer;
+    width:100%;
+    margin-top:20px;
+    min-height:48px;
+  }
+  .submit-btn:hover{background:var(--teal);}
+  .error-msg{
+    display:none;
+    background:var(--cream-light);
+    border-left:3px solid var(--gold-dark);
+    color:var(--text-body);
+    padding:12px 14px;
+    border-radius:0 6px 6px 0;
+    margin-top:14px;
+    font-size:0.9rem;
+  }
+  .thank-you{
+    display:none;
+    text-align:center;
+    padding:30px 10px;
+  }
+  .thank-you h3{margin-bottom:10px;}
+
+  footer{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    text-align:center;
+    padding:30px 20px 120px;
+    font-size:0.9rem;
+  }
+  footer .agent-name{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:6px;}
+  footer a{color:var(--cream-light);text-decoration:underline;}
+  footer .disclaimer{
+    font-size:0.78rem;
+    opacity:0.85;
+    margin-top:14px;
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  @media (max-width:540px){
+    .feature-list{grid-template-columns:1fr;}
+    .addon-imgs{grid-template-columns:1fr;}
+    .hero h1{font-size:1.8rem;}
+    .option-price-row{flex-direction:column;align-items:flex-start;gap:12px;}
+    .addon-check-row{flex-direction:column;align-items:flex-start;gap:12px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">A quote prepared for Cam Tran</div>
+    <h1>San Juan, Puerto Rico</h1>
+    <div class="hero-sub">October 8 – 11, 2026 &nbsp;·&nbsp; 2 Adults &nbsp;·&nbsp; San Juan Marriott Resort &amp; Stellaris Casino</div>
+  </div>
+</div>
+
+<div class="commitment">
+  "We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done."
+</div>
+
+<div class="container">
+
+  <div class="overview">
+    <h2>Your Condado Stay</h2>
+    <div class="details">3 nights &nbsp;·&nbsp; San Juan Marriott Resort &amp; Stellaris Casino &nbsp;·&nbsp; Arrival Thu, Oct 8 &nbsp;·&nbsp; Departure Sun, Oct 11</div>
+  </div>
+
+  <div class="pricing-note">
+    "We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do."
+    <div class="pricing-disclaimer">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+  </div>
+
+  <div class="option-card">
+    <img class="option-img" src="https://img.cdnpth.com/media/109732/11144-dfebfd10_z.jpg" alt="Tower City View Room, San Juan Marriott Resort">
+    <div class="option-body">
+      <h3>Tower City View — 1 King Bed</h3>
+      <span class="option-basis">Room Only</span>
+      <p class="option-desc">The room sits in the resort's tower, looking out over Condado toward the city rather than the water — a trade that gets you a quieter floor and a shorter walk to the elevators. Coastal-toned décor, a sitting area separate from the bed, and a work desk if either of you needs to send an email before the beach.</p>
+      <ul class="feature-list">
+        <li>One king bed</li>
+        <li>City view, tower location</li>
+        <li>Sitting area</li>
+        <li>Complimentary Wi-Fi</li>
+        <li>Flat-screen TV</li>
+        <li>Mini refrigerator</li>
+        <li>Coffee maker</li>
+        <li>In-room safe</li>
+        <li>Work desk</li>
+        <li>Air conditioning</li>
+      </ul>
+      <div class="not-included">
+        <strong>Room Only</strong> — no meals bundled into this rate. At check-in, the property collects a $195 resort fee and $21 in mandatory hotel taxes directly; neither is included in the price below.
+      </div>
+      <div class="option-price-row">
+        <label class="radio-label">
+          <input type="radio" name="roomOption" value="Tower City View — 1 King Bed ($1,052)" checked onclick="updateTotal()">
+          Select this room
+        </label>
+        <div class="option-price">$1,052 <span style="font-size:0.75rem;color:var(--text-muted);font-weight:400;">total for stay</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Getting Around</h2>
+    <div class="transfer-box">
+      <p>The hotel sits in Condado, close enough to walk to restaurants, shops, and the beach without needing a car. Old San Juan is about a 10–15 minute drive away for the day you want cobblestone streets and the fort.</p>
+      <p>From Luis Muñoz Marín International Airport (SJU), it's roughly 6–7 miles — about 15–20 minutes depending on traffic. Taxi or rideshare typically runs $20–$30 each way, plus tip. A private transfer can also be arranged on request — just let us know.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Optional Add-On</h2>
+    <div class="addon-card">
+      <div class="addon-imgs">
+        <img src="https://dynamic-media.tacdn.com/media/photo-o/2e/ed/85/f3/caption.jpg?w=1400&h=1000&s=1" alt="El Yunque Rainforest">
+        <img src="https://dynamic-media.tacdn.com/media/photo-o/2e/ed/90/5c/caption.jpg?w=1400&h=1000&s=1" alt="Bioluminescent Bay kayak tour">
+      </div>
+      <div class="addon-body">
+        <h3>El Yunque Rainforest &amp; Bioluminescent Bay — Two-in-One Day Trip</h3>
+        <div class="addon-meta">Approx. 12 hours &nbsp;·&nbsp; Moderate to strenuous &nbsp;·&nbsp; Minimum age 8</div>
+        <p class="option-desc">A full day split between two of the island's natural landmarks: a guided hike through El Yunque National Forest with stops at natural pools and waterfalls, followed by a sunset paddle through the Red Mangrove Forest into Laguna Grande, where the water glows with each stroke — brightness depends on conditions that night.</p>
+        <ul class="addon-highlights">
+          <li>Roundtrip transportation from Condado (pickup at La Concha Resort, a 2–3 minute walk from your hotel)</li>
+          <li>Guided hike through El Yunque National Forest</li>
+          <li>Swim in natural pools and waterfalls; optional waterslide, rope swing, cliff jump</li>
+          <li>Sunset kayak through the Red Mangrove Forest to the bioluminescent bay</li>
+          <li>Local fruit, snacks, and refreshments included</li>
+          <li>Complimentary rainforest photos</li>
+          <li>Professional guides and safety equipment provided</li>
+        </ul>
+        <div class="addon-good-to-know">
+          Closed-toe shoes that can get wet are required. A dinner stop is included in the itinerary, though the meal itself is purchased separately.
+        </div>
+        <div class="addon-check-row">
+          <label class="checkbox-label">
+            <input type="checkbox" id="addonExcursion" value="El Yunque & Bio Bay Excursion ($183.98 pp)" onclick="setTimeout(updateTotal,0)">
+            Add this excursion
+          </label>
+          <div class="addon-price">$183.98 <span style="font-size:0.75rem;color:var(--text-muted);font-weight:400;">per person</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="commitment bottom">
+    "What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest."
+  </div>
+
+  <div class="form-section">
+    <h2>Let's Lock This In</h2>
+    <div class="sub">Tell us how you'd like to move forward — we'll follow up within one business day.</div>
+
+    <form id="quoteForm">
+      <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+      <input type="hidden" name="subject" value="Quote Response — Cam Tran | San Juan, Puerto Rico">
+      <input type="hidden" name="from_name" value="Cam Tran Quote — Point Me to Paradise">
+      <input type="hidden" name="redirect" value="false">
+      <input type="hidden" name="selected_room" id="selectedRoomField">
+      <input type="hidden" name="selected_addon" id="selectedAddonField">
+      <input type="hidden" name="estimated_total" id="estimatedTotalField">
+
+      <label class="field-label" for="clientName">Name *</label>
+      <input type="text" id="clientName" name="name" required>
+
+      <label class="field-label" for="clientEmail">Email *</label>
+      <input type="email" id="clientEmail" name="email" required>
+
+      <label class="field-label" for="clientPhone">Phone</label>
+      <input type="tel" id="clientPhone" name="phone">
+
+      <label class="field-label" for="insurance">Travel Insurance</label>
+      <select id="insurance" name="travel_insurance">
+        <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+        <option value="No — not interested">No — not interested</option>
+        <option value="Already have coverage">Already have coverage</option>
+      </select>
+
+      <label class="field-label" for="clientMessage">Message</label>
+      <textarea id="clientMessage" name="message" placeholder="Questions, special requests, anything we should know..."></textarea>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Send My Response</button>
+
+      <div class="error-msg" id="errorMsg">Something didn't go through — please try again, or reach us directly using the contact info below.</div>
+    </form>
+
+    <div class="thank-you" id="thankYou">
+      <h3>Thank you, Cam!</h3>
+      <p>Your response is in. We'll follow up within one business day.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="sticky-total">
+  <div>
+    <div class="label">Est. Total</div>
+    <div class="amount" id="totalAmount">Est. $1,052</div>
+  </div>
+  <div style="font-size:0.78rem;text-align:right;max-width:160px;opacity:0.9;">Final pricing confirmed by your advisor</div>
+</div>
+
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div>Point Me to Paradise Travel</div>
+  <div><a href="#" id="emailLink">Loading...</a> &nbsp;·&nbsp; 409-789-3579</div>
+  <div class="disclaimer">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<script>
+  // Assemble email via JS to avoid Cloudflare scraping scramble
+  var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+  var emailLink = document.getElementById('emailLink');
+  emailLink.href = 'mailto:' + addr;
+  emailLink.textContent = addr;
+
+  var ROOM_PRICE = 1052;
+  var ADDON_PRICE_PP = 183.98;
+  var TRAVELERS = 2;
+
+  function updateTotal(){
+    var total = ROOM_PRICE;
+    var addonChecked = document.getElementById('addonExcursion').checked;
+    if(addonChecked){
+      total += ADDON_PRICE_PP * TRAVELERS;
+    }
+    document.getElementById('totalAmount').textContent = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+    document.getElementById('selectedRoomField').value = 'Tower City View — 1 King Bed ($1,052 total)';
+    document.getElementById('selectedAddonField').value = addonChecked ? 'El Yunque & Bio Bay Excursion ($183.98 pp x 2)' : 'None selected';
+    document.getElementById('estimatedTotalField').value = '$' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  }
+
+  updateTotal();
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var errorMsg = document.getElementById('errorMsg');
+    var submitBtn = document.getElementById('submitBtn');
+    errorMsg.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    var formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(function(response){ return response.json(); })
+    .then(function(data){
+      if(data.success){
+        document.querySelector('.form-section form').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorMsg.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send My Response';
+      }
+    })
+    .catch(function(){
+      errorMsg.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send My Response';
+    });
+  });
+</script>
+
+</body>
+</html>
