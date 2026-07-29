@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faith McDaniel — Icon of the Seas, August 2027 | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text-primary:#3D3D3D;
+    --text-secondary:#606060;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text-primary);
+    font-family:'DM Sans', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    padding-bottom:110px;
+  }
+  h1,h2,h3,h4{
+    font-family:'Playfair Display', serif;
+    color:var(--teal-dark);
+    margin:0 0 .5em 0;
+  }
+  .advisor-voice{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--text-primary);
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    min-height:340px;
+    display:flex;
+    align-items:flex-end;
+    background-image:
+      linear-gradient(180deg, rgba(79,138,140,.55) 0%, rgba(61,61,61,.75) 100%),
+      url('https://assets.dm.rccl.com/is/image/RoyalCaribbeanCruises/royal/ships/icon/icon-of-the-seas-pool-deck-jacuzzi-whirlpool-friends-cocktails.jpg?$1600x700$');
+    background-size:cover;
+    background-position:center;
+    color:var(--paper-pure);
+    padding:40px 20px 28px;
+  }
+  .hero-inner{max-width:900px;margin:0 auto;width:100%;}
+  .hero h1{color:var(--paper-pure);font-size:2.1rem;margin-bottom:.2em;}
+  .hero .sub{font-size:1.05rem;font-weight:500;}
+  .hero .dates{font-size:.95rem;opacity:.95;margin-top:.3em;}
+
+  /* Commitment callouts */
+  .commitment{
+    background:var(--teal);
+    color:var(--paper-pure);
+    padding:18px 22px;
+    border-radius:10px;
+    margin:22px auto;
+    font-size:.98rem;
+    font-weight:500;
+  }
+  .commitment.top{margin-top:-30px;position:relative;z-index:2;}
+
+  section{margin:34px auto;}
+
+  .trip-overview p{color:var(--text-primary);}
+
+  table.itinerary{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--paper-pure);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+  }
+  table.itinerary th{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    text-align:left;
+    padding:10px 14px;
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size:.95rem;
+  }
+  table.itinerary td{
+    padding:10px 14px;
+    border-bottom:1px solid var(--cream);
+    font-size:.92rem;
+    color:var(--text-primary);
+  }
+  table.itinerary tr:last-child td{border-bottom:none;}
+
+  .credit-note{
+    background:var(--cream-light);
+    border-left:4px solid var(--gold-dark);
+    padding:14px 18px;
+    border-radius:6px;
+    font-size:.93rem;
+    margin-top:18px;
+  }
+
+  /* Option cards */
+  .options-heading{margin-bottom:6px;}
+  .option-card{
+    background:var(--paper-pure);
+    border:2px solid var(--cream);
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:18px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    transition:border-color .15s ease;
+  }
+  .option-card:has(input:checked){
+    border-color:var(--teal);
+    background:var(--cream-light);
+  }
+  .option-card img{
+    width:220px;
+    max-width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:8px;
+    flex-shrink:0;
+  }
+  .option-content{flex:1;min-width:220px;}
+  .option-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .option-name-row{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .option-name-row input[type="radio"]{
+    width:22px;height:22px;
+    margin-top:3px;
+    accent-color:var(--teal-dark);
+    flex-shrink:0;
+  }
+  .option-name-row label{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size:1.08rem;
+    color:var(--teal-dark);
+    cursor:pointer;
+  }
+  .option-price{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:1.2rem;
+    color:var(--teal-dark);
+    white-space:nowrap;
+  }
+  .option-desc{
+    font-size:.93rem;
+    color:var(--text-primary);
+    margin:8px 0;
+  }
+  .option-terms{
+    font-size:.82rem;
+    color:var(--text-secondary);
+    border-top:1px solid var(--cream);
+    padding-top:8px;
+    margin-top:8px;
+  }
+
+  .image-note{
+    font-size:.78rem;
+    color:var(--text-secondary);
+    font-style:italic;
+  }
+
+  .advisor-picks{
+    background:var(--cream-light);
+    border-radius:12px;
+    padding:22px 24px;
+  }
+  .advisor-picks h3{margin-bottom:.6em;}
+  .advisor-picks p{margin:.6em 0;}
+
+  .disclaimer-small{
+    font-size:.82rem;
+    color:var(--text-secondary);
+    margin-top:14px;
+  }
+
+  /* Sticky total bar */
+  .total-bar{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:14px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    z-index:50;
+    box-shadow:0 -2px 8px rgba(0,0,0,.15);
+  }
+  .total-bar .label{font-size:.85rem;opacity:.9;}
+  .total-bar .amount{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:1.3rem;
+  }
+
+  /* Contact form */
+  .contact-section{
+    background:var(--paper-pure);
+    border-radius:12px;
+    padding:26px;
+    border:1px solid var(--cream);
+  }
+  .form-row{margin-bottom:16px;}
+  .form-row label{
+    display:block;
+    font-weight:600;
+    margin-bottom:6px;
+    font-size:.95rem;
+  }
+  .form-row input,
+  .form-row select,
+  .form-row textarea{
+    width:100%;
+    font-size:16px;
+    padding:12px 14px;
+    min-height:44px;
+    border:1px solid var(--cream);
+    border-radius:8px;
+    font-family:'DM Sans', sans-serif;
+    color:var(--text-primary);
+    background:var(--paper-light, #fff);
+  }
+  .form-row textarea{min-height:100px;}
+  .booking-details{
+    background:var(--cream-light);
+    border-radius:10px;
+    padding:20px 20px 6px;
+    margin:24px 0;
+  }
+  .booking-details h3{margin-bottom:.2em;}
+  .guest-heading{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    color:var(--teal-dark);
+    margin:18px 0 6px;
+    font-size:1rem;
+  }
+  .submit-btn{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    border:none;
+    padding:14px 26px;
+    min-height:44px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:600;
+    font-family:'DM Sans', sans-serif;
+    cursor:pointer;
+  }
+  .submit-btn:hover{background:var(--teal);}
+  .form-error{
+    display:none;
+    background:var(--cream-light);
+    border-left:4px solid var(--gold-dark);
+    color:var(--text-primary);
+    padding:12px 16px;
+    border-radius:6px;
+    margin-bottom:16px;
+    font-size:.9rem;
+  }
+  .thank-you{
+    display:none;
+    text-align:center;
+    padding:30px 10px;
+  }
+  .thank-you h3{margin-bottom:.4em;}
+
+  footer{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:30px 20px 100px;
+    margin-top:40px;
+    text-align:center;
+  }
+  footer .agent-name{
+    font-family:'Playfair Display', serif;
+    font-size:1.1rem;
+    margin-bottom:4px;
+  }
+  footer a{color:var(--paper-pure);}
+  footer .footer-disclaimer{
+    font-size:.8rem;
+    opacity:.9;
+    margin-top:14px;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  @media (max-width:540px){
+    .option-card{flex-direction:column;}
+    .option-card img{width:100%;height:180px;}
+    .hero h1{font-size:1.6rem;}
+    table.itinerary th, table.itinerary td{font-size:.82rem;padding:8px 8px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Faith McDaniel — Icon of the Seas</h1>
+    <div class="sub">9-Night Cruise · Miami to Galveston</div>
+    <div class="dates">August 7 – 16, 2027 · 2 Guests</div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="commitment top">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+
+  <section class="trip-overview">
+    <h2>Your Sailing</h2>
+    <p>This is a one-way sailing aboard Royal Caribbean's Icon of the Seas — you'll depart from Miami, spend a day at Perfect Day at CocoCay, call at Willemstad in Curaçao and Oranjestad in Aruba, and log five open sea days before arriving in Galveston. Pricing below reflects 2 guests.</p>
+
+    <table class="itinerary">
+      <thead>
+        <tr><th>Date</th><th>Port</th><th>Times</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Aug 7</td><td>Depart Miami</td><td>4:30 PM</td></tr>
+        <tr><td>Aug 8</td><td>Perfect Day at CocoCay</td><td>7:00 AM – 4:00 PM</td></tr>
+        <tr><td>Aug 9</td><td>Cruising</td><td>—</td></tr>
+        <tr><td>Aug 10</td><td>Cruising</td><td>—</td></tr>
+        <tr><td>Aug 11</td><td>Willemstad, Curaçao</td><td>10:30 AM – 6:00 PM</td></tr>
+        <tr><td>Aug 12</td><td>Oranjestad, Aruba</td><td>7:00 AM – 4:00 PM</td></tr>
+        <tr><td>Aug 13</td><td>Cruising</td><td>—</td></tr>
+        <tr><td>Aug 14</td><td>Cruising</td><td>—</td></tr>
+        <tr><td>Aug 15</td><td>Cruising</td><td>—</td></tr>
+        <tr><td>Aug 16</td><td>Arrive Galveston</td><td>6:00 AM</td></tr>
+      </tbody>
+    </table>
+
+    <div class="credit-note">
+      All options below include $50 onboard credit. Prepaid gratuities for both guests ($333) are already reflected in each grand total shown.
+    </div>
+  </section>
+
+  <section class="options">
+    <h2 class="options-heading">Choose Your Stateroom</h2>
+    <p style="color:var(--text-secondary);font-size:.92rem;margin-top:0;">Deposits below are due August 2, 2026. Final balances are due May 9, 2027. All deposits are non-refundable once the reservation is placed. Once your reservation is booked, you'll have 3 days from the time of booking to submit your deposit.</p>
+
+    <form id="cabinForm">
+
+      <div class="option-card">
+        <img src="https://www.royalcaribbeanblog.com/sites/default/files/styles/mobile_1x/public/2024-05/icon-cabin-art.jpeg.webp?itok=6gB_mhGv" alt="Spacious Interior Stateroom on Icon of the Seas">
+        <div class="option-content">
+          <div class="option-top">
+            <div class="option-name-row">
+              <input type="radio" name="cabin" id="cabin1" value="Spacious Interior Stateroom" data-price="4441.66" onclick="updateTotal()">
+              <label for="cabin1">Spacious Interior Stateroom</label>
+            </div>
+            <div class="option-price">Est. $4,441.66</div>
+          </div>
+          <p class="option-desc">A larger interior stateroom with no window or exterior view. A solid choice if you plan to spend most of your time out on the ship rather than in the room.</p>
+          <div class="option-terms">Deposit: $500 due Aug 2, 2026 · Final balance: $3,608.66 due May 9, 2027</div>
+        </div>
+      </div>
+
+      <div class="option-card">
+        <img src="https://www.royalcaribbean.com/content/dam/royal/booking-funnel/stateroom-image-gallery/icon/stateroom-subtype/ocean-view/ocean-view-n1-ic.jpg" alt="Ocean View Stateroom Guarantee on Icon of the Seas">
+        <div class="option-content">
+          <div class="option-top">
+            <div class="option-name-row">
+              <input type="radio" name="cabin" id="cabin2" value="Ocean View Stateroom Guarantee" data-price="4501.66" onclick="updateTotal()">
+              <label for="cabin2">Ocean View Stateroom Guarantee</label>
+            </div>
+            <div class="option-price">Est. $4,501.66</div>
+          </div>
+          <p class="option-desc">A window-view stateroom in the guarantee category, meaning Royal Caribbean assigns the specific room and location — you'll get an ocean-view room or possibly a higher category, but you won't choose the exact spot. Only $60 more than the Spacious Interior, and a strong value for natural light and a sea view.</p>
+          <div class="option-terms">Deposit: $500 due Aug 2, 2026 · Final balance: $3,668.66 due May 9, 2027</div>
+        </div>
+      </div>
+
+      <div class="option-card">
+        <img src="https://www.royalcaribbean.com/content/dam/royal/booking-funnel/stateroom-image-gallery/icon/stateroom-subtype/ocean-view/ocean-view-n1-ic.jpg" alt="Ocean View Stateroom on Icon of the Seas">
+        <div class="option-content">
+          <div class="option-top">
+            <div class="option-name-row">
+              <input type="radio" name="cabin" id="cabin3" value="Ocean View Stateroom" data-price="4841.66" onclick="updateTotal()">
+              <label for="cabin3">Ocean View Stateroom</label>
+            </div>
+            <div class="option-price">Est. $4,841.66</div>
+          </div>
+          <p class="option-desc">An ocean-facing window room where you choose the specific room location rather than leaving the assignment to Royal Caribbean.</p>
+          <div class="option-terms">Deposit: $500 due Aug 2, 2026 · Final balance: $4,008.66 due May 9, 2027</div>
+        </div>
+      </div>
+
+      <div class="option-card">
+        <img src="https://assets.dm.rccl.com/is/image/RoyalCaribbeanCruises/royal/accommodations/icon/spacious-infinite-central-park-view-balcony/icon-of-the-seas-spacious-infinite-central-park-view-balcony-accessible-living-room-balcony.jpg?$960x640$" alt="Spacious Infinite Central Park View Balcony on Icon of the Seas">
+        <div class="option-content">
+          <div class="option-top">
+            <div class="option-name-row">
+              <input type="radio" name="cabin" id="cabin4" value="Spacious Infinite Central Park View Balcony" data-price="6121.66" onclick="updateTotal()">
+              <label for="cabin4">Spacious Infinite Central Park View Balcony</label>
+            </div>
+            <div class="option-price">Est. $6,121.66</div>
+          </div>
+          <p class="option-desc">Not a traditional walk-out balcony — a floor-to-ceiling window that lowers at the touch of a button, turning part of the room into open-air space. Closed, that space becomes extra interior room. The view looks inward toward Icon's Central Park neighborhood — plants, restaurants, walking paths — rather than the ocean. A good fit if you want fresh air and a lively view without needing it to face the sea.</p>
+          <div class="option-terms">Deposit: $500 due Aug 2, 2026 · Final balance: $5,288.66 due May 9, 2027</div>
+        </div>
+      </div>
+
+      <div class="option-card">
+        <img src="https://www.royalcaribbeanblog.com/sites/default/files/styles/fb_style/public/fb/icon-pd-145.jpg?itok=kuh_PPvW" alt="Balcony Stateroom Guarantee on Icon of the Seas">
+        <div class="option-content">
+          <div class="option-top">
+            <div class="option-name-row">
+              <input type="radio" name="cabin" id="cabin5" value="Balcony Stateroom Guarantee" data-price="6461.66" onclick="updateTotal()">
+              <label for="cabin5">Balcony Stateroom Guarantee</label>
+            </div>
+            <div class="option-price">Est. $6,461.66</div>
+          </div>
+          <p class="option-desc">Locks in a balcony-category stateroom, with Royal Caribbean choosing the specific room, location, and view — it could land you an ocean view or a Central Park view. The trade-off for a lower balcony price is giving up control over the exact spot.</p>
+          <div class="option-terms">Deposit: $500 due Aug 2, 2026 · Final balance: $5,628.66 due May 9, 2027</div>
+        </div>
+      </div>
+
+      <div class="option-card">
+        <img src="https://www.royalcaribbeanblog.com/sites/default/files/styles/desktop_1x/public/2022-10/1666137916_RCI-IC-Infinite-Balcony-OV-View-CGI59-RET-LR.JPG.webp?itok=zDlUGc9z" alt="Spacious Infinite Ocean View Balcony on Icon of the Seas">
+        <div class="option-content">
+          <div class="option-top">
+            <div class="option-name-row">
+              <input type="radio" name="cabin" id="cabin6" value="Spacious Infinite Ocean View Balcony" data-price="6521.66" onclick="updateTotal()">
+              <label for="cabin6">Spacious Infinite Ocean View Balcony</label>
+            </div>
+            <div class="option-price">Est. $6,521.66</div>
+          </div>
+          <p class="option-desc">A floor-to-ceiling ocean-facing window that lowers into an open-air balcony at the touch of a button, or stays closed for a larger interior room. No separate outdoor platform like a traditional balcony, but you get the ocean view, fresh air, and more living space. Only $60 more than the Balcony Guarantee — and here, you know exactly what you're getting: an ocean-facing Infinite Balcony, not a random assignment.</p>
+          <div class="option-terms">Deposit: $500 due Aug 2, 2026 · Final balance: $5,688.66 due May 9, 2027</div>
+        </div>
+      </div>
+
+      <div class="option-card">
+        <img src="https://www.royalcaribbeanblog.com/sites/default/files/styles/fb_style/public/fb/icon-pd-145.jpg?itok=kuh_PPvW" alt="Ocean View Large Balcony Stateroom on Icon of the Seas">
+        <div class="option-content">
+          <div class="option-top">
+            <div class="option-name-row">
+              <input type="radio" name="cabin" id="cabin7" value="Ocean View Large Balcony Stateroom" data-price="7181.66" onclick="updateTotal()">
+              <label for="cabin7">Ocean View Large Balcony Stateroom</label>
+            </div>
+            <div class="option-price">Est. $7,181.66</div>
+          </div>
+          <p class="option-desc">A traditional ocean-facing balcony room with a separate outdoor balcony you physically walk out onto — larger than a standard balcony, with more outdoor space for sitting and taking in the ocean. The pick if you want a true walk-out balcony rather than the Infinite Balcony window design.</p>
+          <div class="option-terms">Deposit: $500 due Aug 2, 2026 · Final balance: $6,348.66 due May 9, 2027</div>
+        </div>
+      </div>
+
+      <div class="option-card">
+        <div class="option-content">
+          <div class="option-top">
+            <div class="option-name-row">
+              <input type="radio" name="cabin" id="cabin8" value="Suite Guarantee" data-price="11448.66" onclick="updateTotal()">
+              <label for="cabin8">Suite Guarantee</label>
+            </div>
+            <div class="option-price">Est. $11,448.66</div>
+          </div>
+          <p class="option-desc">Secures a stateroom within an eligible suite category, with Royal Caribbean choosing the exact suite and location. Suite benefits vary depending on which category is assigned — a fit for guests who want the suite experience but can stay flexible on layout, view, and location.</p>
+          <div class="option-terms">Deposit: $1,081 due Aug 2, 2026 · Final balance: $10,034.66 due May 9, 2027</div>
+        </div>
+      </div>
+
+      <div class="option-card">
+        <img src="https://www.royalcaribbeanblog.com/sites/default/files/styles/desktop_1x/public/2022-10/junior-suite-icon.jpg.webp?itok=_AmjTG97" alt="Junior Suite on Icon of the Seas">
+        <div class="option-content">
+          <div class="option-top">
+            <div class="option-name-row">
+              <input type="radio" name="cabin" id="cabin9" value="Junior Suite" data-price="13846.66" onclick="updateTotal()">
+              <label for="cabin9">Junior Suite</label>
+            </div>
+            <div class="option-price">Est. $13,846.66</div>
+          </div>
+          <p class="option-desc">A larger room with an upgraded bathroom, additional seating, and a private balcony — more space and comfort than a standard balcony room, though without the full set of benefits that come with Royal Caribbean's higher-tier Sky Class suites. Junior Suite benefits are more limited, and may include priority boarding and access to select suite dining based on availability.</p>
+          <div class="option-terms">Deposit: $1,320 due Aug 2, 2026 · Final balance: $12,193.66 due May 9, 2027</div>
+        </div>
+      </div>
+
+      <div class="option-card">
+        <img src="https://www.royalcaribbeanblog.com/sites/default/files/styles/desktop_1x/public/fb/Icon-Sky-Junior-Suite-5.jpg.webp?itok=fMcKshq5" alt="Sky Junior Suite on Icon of the Seas">
+        <div class="option-content">
+          <div class="option-top">
+            <div class="option-name-row">
+              <input type="radio" name="cabin" id="cabin10" value="Sky Junior Suite" data-price="17331.66" onclick="updateTotal()">
+              <label for="cabin10">Sky Junior Suite</label>
+            </div>
+            <div class="option-price">Est. $17,331.66</div>
+          </div>
+          <p class="option-desc">Combines the larger room and balcony of a Junior Suite with Royal Caribbean's upgraded Sky Class benefits — generally priority boarding, access to the suite dining venue, suite lounge and suite sun deck, along with additional priority services. Exact benefits are subject to Royal Caribbean's current program rules. The choice for guests who want both a larger room and the fuller suite experience.</p>
+          <div class="option-terms">Deposit: $1,669 due Aug 2, 2026 · Final balance: $15,329.66 due May 9, 2027</div>
+        </div>
+      </div>
+
+    </form>
+
+    <div class="commitment">
+      We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+    </div>
+    <div class="disclaimer-small">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+  </section>
+
+  <section class="advisor-picks">
+    <h3>Andrea's Take</h3>
+    <p class="advisor-voice">For the lowest price with real upside, I'd point you to the Ocean View Guarantee — it's only $60 more than the Interior room, and gets you natural light and a sea view.</p>
+    <p class="advisor-voice">If you want a balcony, my pick is the Spacious Infinite Ocean View Balcony. It's only $60 more than the Balcony Guarantee, and unlike the guarantee category, you know exactly what you're getting — an ocean-facing Infinite Balcony, not whatever Royal Caribbean happens to assign.</p>
+    <p class="advisor-voice">If a true walk-out balcony matters to you, the Ocean View Large Balcony Stateroom is the one to book.</p>
+    <p style="font-size:.85rem;color:var(--text-secondary);margin-top:14px;">Pricing and availability can change until the reservation is deposited. Quoted deposits are non-refundable. The payment schedules above already include the $333 prepaid gratuities for both guests.</p>
+  </section>
+
+  <div class="commitment">
+    What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+
+  <section class="contact-section">
+    <h2>Ready to Move Forward?</h2>
+    <div class="form-error" id="formError">There was a problem submitting your response. Please try again, or call/text Andrea directly.</div>
+
+    <form id="quoteForm">
+      <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+      <input type="hidden" name="subject" value="Quote Response — Faith McDaniel | Icon of the Seas, Aug 2027">
+      <input type="hidden" name="from_name" value="Faith McDaniel Quote — Point Me to Paradise">
+      <input type="hidden" name="redirect" value="false">
+
+      <div class="form-row">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-row">
+        <label for="optionInterest">Which stateroom are you interested in?</label>
+        <select id="optionInterest" name="option_interest">
+          <option value="">Select an option</option>
+          <option value="Spacious Interior Stateroom">Spacious Interior Stateroom</option>
+          <option value="Ocean View Stateroom Guarantee">Ocean View Stateroom Guarantee</option>
+          <option value="Ocean View Stateroom">Ocean View Stateroom</option>
+          <option value="Spacious Infinite Central Park View Balcony">Spacious Infinite Central Park View Balcony</option>
+          <option value="Balcony Stateroom Guarantee">Balcony Stateroom Guarantee</option>
+          <option value="Spacious Infinite Ocean View Balcony">Spacious Infinite Ocean View Balcony</option>
+          <option value="Ocean View Large Balcony Stateroom">Ocean View Large Balcony Stateroom</option>
+          <option value="Suite Guarantee">Suite Guarantee</option>
+          <option value="Junior Suite">Junior Suite</option>
+          <option value="Sky Junior Suite">Sky Junior Suite</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="insurance">Travel insurance?</label>
+        <select id="insurance" name="travel_insurance">
+          <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+          <option value="No — not interested">No — not interested</option>
+          <option value="Already have coverage">Already have coverage</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+
+      <div class="booking-details">
+        <h3>Ready to Book?</h3>
+        <p style="font-size:.9rem;color:var(--text-secondary);margin-top:-6px;">If you're ready to move forward, add your details below so Andrea can start your reservation. Once booked, you'll have 3 days from the time of booking to submit your deposit.</p>
+
+        <p class="guest-heading">Guest 1</p>
+        <div class="form-row">
+          <label for="guest1Name">Full name (as it appears on passport/ID)</label>
+          <input type="text" id="guest1Name" name="guest1_name">
+        </div>
+        <div class="form-row">
+          <label for="guest1Dob">Date of birth</label>
+          <input type="date" id="guest1Dob" name="guest1_dob">
+        </div>
+        <div class="form-row">
+          <label for="guest1Ca">Crown &amp; Anchor number (if you have one)</label>
+          <input type="text" id="guest1Ca" name="guest1_crown_anchor">
+        </div>
+
+        <p class="guest-heading">Guest 2</p>
+        <div class="form-row">
+          <label for="guest2Name">Full name (as it appears on passport/ID)</label>
+          <input type="text" id="guest2Name" name="guest2_name">
+        </div>
+        <div class="form-row">
+          <label for="guest2Dob">Date of birth</label>
+          <input type="date" id="guest2Dob" name="guest2_dob">
+        </div>
+        <div class="form-row">
+          <label for="guest2Ca">Crown &amp; Anchor number (if you have one)</label>
+          <input type="text" id="guest2Ca" name="guest2_crown_anchor">
+        </div>
+      </div>
+
+      <input type="hidden" name="selected_cabin" id="selectedCabinField" value="">
+      <button type="submit" class="submit-btn">Send to Andrea</button>
+    </form>
+
+    <div class="thank-you" id="thankYou">
+      <h3>Thank you, <span id="thankName">Faith</span>!</h3>
+      <p>Your response is on its way to Andrea. She'll follow up shortly.</p>
+    </div>
+  </section>
+</div>
+
+<div class="total-bar">
+  <div>
+    <div class="label">Selected stateroom</div>
+    <div id="selectedLabel" style="font-weight:600;">None selected yet</div>
+  </div>
+  <div class="amount" id="totalAmount">Est. $0.00</div>
+</div>
+
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div>Point Me to Paradise Travel</div>
+  <div><a href="#" id="emailLink">Loading…</a> · 409-789-3579</div>
+  <div class="footer-disclaimer">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<script>
+  function updateTotal(){
+    var radios = document.getElementsByName('cabin');
+    var selected = null;
+    for (var i=0;i<radios.length;i++){
+      if (radios[i].checked){ selected = radios[i]; break; }
+    }
+    var totalEl = document.getElementById('totalAmount');
+    var labelEl = document.getElementById('selectedLabel');
+    var hiddenField = document.getElementById('selectedCabinField');
+    var optionSelect = document.getElementById('optionInterest');
+    if (selected){
+      var price = parseFloat(selected.getAttribute('data-price'));
+      totalEl.textContent = 'Est. $' + price.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+      labelEl.textContent = selected.value;
+      hiddenField.value = selected.value;
+      if (optionSelect) { optionSelect.value = selected.value; }
+    } else {
+      totalEl.textContent = 'Est. $0.00';
+      labelEl.textContent = 'None selected yet';
+      hiddenField.value = '';
+    }
+  }
+
+  // Assemble agent email via JS at runtime (avoids Cloudflare scrambling)
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var link = document.getElementById('emailLink');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+  })();
+
+  // Web3Forms submission via fetch — never native POST
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var formData = new FormData(form);
+    var errorEl = document.getElementById('formError');
+    errorEl.style.display = 'none';
+
+    var nameVal = document.getElementById('name').value || 'there';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(function(response){ return response.json(); })
+    .then(function(data){
+      if (data.success){
+        document.getElementById('quoteForm').style.display = 'none';
+        document.getElementById('thankName').textContent = nameVal;
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorEl.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      errorEl.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
