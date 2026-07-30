@@ -252,28 +252,28 @@
     <p style="color:var(--text-muted);font-size:0.92rem;margin-bottom:14px;">Southwest Airlines · Priced for all 5 travelers · Choice Fare (free seat selection, changes allowed with possible fare difference, nonrefundable)</p>
 
     <div class="option-card selected">
-      <input type="radio" name="flightOption" id="flight1" value="Flight Option 1 — Best Nonstop ($1,960)" checked onchange="updateTotal()">
+      <input type="radio" name="flightOption" id="flight1" value="Flight Option 1 — Best Nonstop ($2,449)" checked onchange="updateTotal()">
       <label for="flight1">
-        <span class="opt-price">$1,960</span>
+        <span class="opt-price">$2,449</span>
         <div class="opt-title">Option 1 — Best Nonstop <span class="badge">Recommended</span></div>
         <div class="opt-details">
-          <p><strong>Outbound</strong> Mon, Sept 21 · Depart Houston Hobby 7:10 AM → Arrive Orlando 10:30 AM (2h 20m, nonstop)</p>
+          <p><strong>Outbound</strong> Mon, Sept 21 · Depart Houston Hobby 5:05 AM → Arrive Orlando 8:25 AM (2h 20m, nonstop)</p>
           <p><strong>Return</strong> Thu, Sept 24 · Depart Orlando 8:55 PM → Arrive Houston Hobby 10:25 PM (2h 30m, nonstop)</p>
-          <p>The early arrival gets you checked in with time to enjoy part of day one. The late return lets you use nearly the whole last day before heading to the airport.</p>
+          <p>An early start gets your whole first day in Orlando. The late return lets you use nearly the whole last day before heading to the airport.</p>
           <p style="margin-top:8px;">First checked bag is $90 per passenger, not included.</p>
         </div>
       </label>
     </div>
 
     <div class="option-card">
-      <input type="radio" name="flightOption" id="flight2" value="Flight Option 2 — Most Economical ($1,035)" onchange="updateTotal()">
+      <input type="radio" name="flightOption" id="flight2" value="Flight Option 2 — Most Economical ($1,294)" onchange="updateTotal()">
       <label for="flight2">
-        <span class="opt-price">$1,035</span>
+        <span class="opt-price">$1,294</span>
         <div class="opt-title">Option 2 — Most Economical</div>
         <div class="opt-details">
           <p><strong>Outbound</strong> Mon, Sept 21 · Depart Houston Hobby 7:05 AM → Arrive Orlando 3:20 PM (7h 15m, 1 stop in Washington, D.C., 1h 55m layover)</p>
           <p><strong>Return</strong> Thu, Sept 24 · Depart Orlando 8:55 PM → Arrive Houston Hobby 10:25 PM (2h 30m, nonstop)</p>
-          <p>Saves $925 over the nonstop Choice Fare. The tradeoff is a longer outbound day with one connection — you'll still land in the afternoon with the evening ahead of you.</p>
+          <p>Saves $1,155 over the nonstop Choice Fare. The tradeoff is a longer outbound day with one connection — you'll still land in the afternoon with the evening ahead of you.</p>
           <p style="margin-top:8px;">First checked bag is $90 per passenger, not included.</p>
         </div>
       </label>
@@ -333,7 +333,7 @@
           <tbody>
             <tr style="border-bottom:1px solid var(--cream);">
               <td style="padding:10px 0;">Airfare — due in full at time of booking</td>
-              <td style="padding:10px 0;text-align:right;font-weight:700;color:var(--teal-dark);" id="airfareDueDisplay">$1,960.00</td>
+              <td style="padding:10px 0;text-align:right;font-weight:700;color:var(--teal-dark);" id="airfareDueDisplay">$2,449.00</td>
             </tr>
             <tr style="border-bottom:1px solid var(--cream);">
               <td style="padding:10px 0;">Disney package — deposit due at time of booking</td>
@@ -372,7 +372,7 @@
         <input type="hidden" name="subject" value="Quote Response — Maria Villereal | Walt Disney World">
         <input type="hidden" name="from_name" value="Maria Villereal Quote — Point Me to Paradise">
         <input type="hidden" name="redirect" value="false">
-        <input type="hidden" name="selected_flight" id="selectedFlightHidden" value="Flight Option 1 — Best Nonstop ($1,960)">
+        <input type="hidden" name="selected_flight" id="selectedFlightHidden" value="Flight Option 1 — Best Nonstop ($2,449)">
         <input type="hidden" name="estimated_total" id="estimatedTotalHidden" value="">
 
         <div class="form-group">
@@ -390,8 +390,8 @@
         <div class="form-group">
           <label for="optionInterest">Which flight are you leaning toward?</label>
           <select id="optionInterest" name="option_interest">
-            <option value="Flight Option 1 — Best Nonstop ($1,960)">Option 1 — Best Nonstop ($1,960)</option>
-            <option value="Flight Option 2 — Most Economical ($1,035)">Option 2 — Most Economical ($1,035)</option>
+            <option value="Flight Option 1 — Best Nonstop ($2,449)">Option 1 — Best Nonstop ($2,449)</option>
+            <option value="Flight Option 2 — Most Economical ($1,294)">Option 2 — Most Economical ($1,294)</option>
             <option value="Not sure yet">Not sure yet</option>
           </select>
         </div>
@@ -420,7 +420,7 @@
 
 <div class="sticky-total">
   <span class="label">Estimated Total (flight + resort)</span>
-  <span class="amount" id="totalDisplay">Est. $5,327.59</span>
+  <span class="amount" id="totalDisplay">Est. $5,816.59</span>
 </div>
 
 <footer>
@@ -453,8 +453,8 @@
     if(selected){
       flightLabel = selected.value;
       selected.closest('.option-card').classList.add('selected');
-      if(selected.id === 'flight1'){ flightPrice = 1960; }
-      if(selected.id === 'flight2'){ flightPrice = 1035; }
+      if(selected.id === 'flight1'){ flightPrice = 2449; }
+      if(selected.id === 'flight2'){ flightPrice = 1294; }
     }
     var total = flightPrice + HOTEL_PRICE;
     document.getElementById('totalDisplay').textContent = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
