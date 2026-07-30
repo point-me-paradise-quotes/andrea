@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria Villereal — Walt Disney World Vacation | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text:#3D3D3D;
+    --text-muted:#606060;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'DM Sans',sans-serif;
+    color:var(--text);
+    background:var(--paper);
+    line-height:1.6;
+    padding-bottom:90px;
+  }
+  h1,h2,h3{font-family:'Playfair Display',serif;color:var(--teal-dark);}
+  em, .voice-accent{font-family:'Cormorant Garamond',serif;font-style:italic;}
+  a{color:var(--teal-dark);}
+  .container{max-width:900px;margin:0 auto;padding:0 20px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:380px;
+    display:flex;
+    align-items:flex-end;
+    background-image:
+      linear-gradient(180deg, rgba(79,138,140,0.55) 0%, rgba(79,138,140,0.85) 100%),
+      url('https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/11595/900/75/dam/wdpro-assets/places-to-stay/all-star-movies/all-star-movies-resort-00-full.jpg?1781687269858');
+    background-size:cover;
+    background-position:center;
+    color:var(--paper-pure);
+    padding:40px 20px 30px;
+  }
+  .hero-inner{max-width:900px;margin:0 auto;width:100%;}
+  .hero h1{color:var(--paper-pure);font-size:2rem;margin-bottom:8px;}
+  .hero .trip-meta{font-size:1.05rem;font-weight:500;margin-bottom:6px;}
+  .hero .trip-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--cream-light);}
+
+  /* COMMITMENT CALLOUTS */
+  .commitment{
+    background:var(--cream-light);
+    border-left:4px solid var(--gold-dark);
+    padding:16px 20px;
+    margin:24px 0;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--text);
+  }
+  .commitment.pricing-note{
+    background:var(--pale-teal);
+    border-left:4px solid var(--teal-dark);
+  }
+  .disclaimer-small{
+    font-size:0.82rem;
+    color:var(--text-muted);
+    margin:10px 0 24px;
+  }
+
+  section{margin:36px 0;}
+  section h2{font-size:1.5rem;margin-bottom:14px;border-bottom:2px solid var(--cream);padding-bottom:8px;}
+
+  /* OPTION CARDS */
+  .option-card{
+    background:var(--paper-pure);
+    border:1px solid var(--cream);
+    border-radius:10px;
+    padding:20px;
+    margin-bottom:18px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .option-card.selected{border-color:var(--teal);box-shadow:0 0 0 2px var(--pale-teal);}
+  .option-card input[type="radio"]{
+    width:22px;height:22px;margin-top:4px;accent-color:var(--teal-dark);flex-shrink:0;
+  }
+  .option-card label{cursor:pointer;display:block;width:100%;}
+  .option-card .opt-title{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--teal-dark);margin-bottom:4px;}
+  .option-card .opt-price{font-weight:700;color:var(--teal-dark);font-size:1.15rem;float:right;}
+  .option-card .opt-details{font-size:0.92rem;color:var(--text-muted);margin-top:6px;}
+  .option-card .opt-details p{margin:4px 0;}
+  .badge{
+    display:inline-block;background:var(--gold);color:var(--text);
+    font-size:0.72rem;font-weight:600;padding:2px 8px;border-radius:10px;
+    text-transform:uppercase;letter-spacing:0.03em;margin-left:8px;
+  }
+
+  /* HOTEL PACKAGE CARD */
+  .hotel-card{
+    background:var(--paper-pure);
+    border:1px solid var(--cream);
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:18px;
+  }
+  .hotel-card img{width:100%;display:block;max-height:280px;object-fit:cover;}
+  .hotel-card .hotel-body{padding:20px;}
+  .hotel-card .opt-price{font-weight:700;color:var(--teal-dark);font-size:1.3rem;}
+  .includes-list{list-style:none;margin:12px 0;padding:0;}
+  .includes-list li{padding:5px 0 5px 26px;position:relative;font-size:0.95rem;}
+  .includes-list li:before{content:"✓";position:absolute;left:0;color:var(--teal-dark);font-weight:700;}
+  .not-included{
+    background:var(--cream-light);
+    border-radius:8px;
+    padding:12px 16px;
+    font-size:0.9rem;
+    color:var(--text-muted);
+    margin-top:10px;
+  }
+  .addon-note{
+    background:var(--pale-teal);
+    border-radius:8px;
+    padding:14px 16px;
+    font-size:0.9rem;
+    margin-top:14px;
+  }
+
+  .amenities-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:10px;
+  }
+  .amenities-grid div{
+    background:var(--cream-light);
+    border-radius:8px;
+    padding:10px 14px;
+    font-size:0.9rem;
+  }
+
+  /* STICKY TOTAL BAR */
+  .sticky-total{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:14px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+    z-index:100;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .sticky-total .label{font-size:0.85rem;opacity:0.9;}
+  .sticky-total .amount{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;}
+
+  /* FORM */
+  .form-section{background:var(--cream-light);border-radius:10px;padding:24px 20px;}
+  .form-group{margin-bottom:16px;}
+  .form-group label{display:block;font-weight:600;margin-bottom:6px;font-size:0.95rem;}
+  .form-group input, .form-group select, .form-group textarea{
+    width:100%;
+    padding:12px;
+    font-size:16px;
+    font-family:'DM Sans',sans-serif;
+    border:1px solid var(--gold-dark);
+    border-radius:6px;
+    background:var(--paper-pure);
+    color:var(--text);
+    min-height:44px;
+  }
+  .form-group textarea{min-height:90px;resize:vertical;}
+  .submit-btn{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    border:none;
+    padding:14px 28px;
+    font-size:16px;
+    font-weight:600;
+    border-radius:6px;
+    cursor:pointer;
+    min-height:44px;
+    width:100%;
+  }
+  .submit-btn:hover{background:var(--teal);}
+  #formError{
+    display:none;
+    background:var(--cream-light);
+    border-left:4px solid var(--gold-dark);
+    color:var(--text);
+    padding:12px 16px;
+    border-radius:6px;
+    margin-bottom:16px;
+    font-size:0.9rem;
+  }
+  #formSuccess{
+    display:none;
+    text-align:center;
+    padding:30px 20px;
+  }
+  #formSuccess h3{margin-bottom:10px;}
+
+  footer{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:30px 20px;
+    margin-top:40px;
+    text-align:center;
+    font-size:0.9rem;
+  }
+  footer .agent-name{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:6px;}
+  footer .disclaimer{font-size:0.78rem;opacity:0.85;margin-top:14px;max-width:600px;margin-left:auto;margin-right:auto;}
+  footer a{color:var(--paper-pure);text-decoration:underline;}
+
+  @media (max-width:540px){
+    .option-card{flex-direction:column;}
+    .option-card .opt-price{float:none;display:block;margin-top:6px;}
+    .amenities-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:1.5rem;}
+    .sticky-total{flex-direction:column;text-align:center;padding:10px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Maria Villereal's Walt Disney World Vacation</h1>
+    <div class="trip-meta">September 21–24, 2026 · 2 Adults, 3 Children</div>
+    <div class="trip-note">Your first Disney trip together — three nights, three park days, one family.</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="commitment">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+
+  <section id="flights">
+    <h2>Your Flights — Houston Hobby to Orlando</h2>
+    <p style="color:var(--text-muted);font-size:0.92rem;margin-bottom:14px;">Southwest Airlines · Priced for all 5 travelers · Choice Fare (free seat selection, changes allowed with possible fare difference, nonrefundable)</p>
+
+    <div class="option-card selected">
+      <input type="radio" name="flightOption" id="flight1" value="Flight Option 1 — Best Nonstop ($1,960)" checked onchange="updateTotal()">
+      <label for="flight1">
+        <span class="opt-price">$1,960</span>
+        <div class="opt-title">Option 1 — Best Nonstop <span class="badge">Recommended</span></div>
+        <div class="opt-details">
+          <p><strong>Outbound</strong> Mon, Sept 21 · Depart Houston Hobby 7:10 AM → Arrive Orlando 10:30 AM (2h 20m, nonstop)</p>
+          <p><strong>Return</strong> Thu, Sept 24 · Depart Orlando 8:55 PM → Arrive Houston Hobby 10:25 PM (2h 30m, nonstop)</p>
+          <p>The early arrival gets you checked in with time to enjoy part of day one. The late return lets you use nearly the whole last day before heading to the airport.</p>
+          <p style="margin-top:8px;">First checked bag is $90 per passenger, not included.</p>
+        </div>
+      </label>
+    </div>
+
+    <div class="option-card">
+      <input type="radio" name="flightOption" id="flight2" value="Flight Option 2 — Most Economical ($1,035)" onchange="updateTotal()">
+      <label for="flight2">
+        <span class="opt-price">$1,035</span>
+        <div class="opt-title">Option 2 — Most Economical</div>
+        <div class="opt-details">
+          <p><strong>Outbound</strong> Mon, Sept 21 · Depart Houston Hobby 7:05 AM → Arrive Orlando 3:20 PM (7h 15m, 1 stop in Washington, D.C., 1h 55m layover)</p>
+          <p><strong>Return</strong> Thu, Sept 24 · Depart Orlando 8:55 PM → Arrive Houston Hobby 10:25 PM (2h 30m, nonstop)</p>
+          <p>Saves $925 over the nonstop Choice Fare. The tradeoff is a longer outbound day with one connection — you'll still land in the afternoon with the evening ahead of you.</p>
+          <p style="margin-top:8px;">First checked bag is $90 per passenger, not included.</p>
+        </div>
+      </label>
+    </div>
+  </section>
+
+  <section id="hotel">
+    <h2>Your Resort — Disney's All-Star Movies Resort</h2>
+    <div class="hotel-card">
+      <img src="https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/560/316/75/dam/wdpro-assets/places-to-stay/all-star-movies/all-star-movies-resort-01.jpg?1781687269842" alt="Sorcerer Mickey statue overlooking the Fantasia pool at Disney's All-Star Movies Resort">
+      <div class="hotel-body">
+        <div class="opt-title">Preferred Room <span class="opt-price" style="float:right;">$3,367.59</span></div>
+        <p style="color:var(--text-muted);font-size:0.9rem;">3 nights · Sept 21–24, 2026 · Total for 2 adults, 3 children</p>
+
+        <p style="margin-top:12px;">All-Star Movies is Disney's largest-scale value resort, built around oversized icons from <em>101 Dalmatians</em>, <em>Toy Story</em>, and <em>Fantasia</em> — the pool courtyard is anchored by a two-story Sorcerer Mickey pulling water duty over the Fantasia pool. A Preferred Room puts you in the building closest to the main lobby, food court, and bus stop, which matters most on the mornings you're moving a 2-, 4-, and 5-year-old out the door before rope drop.</p>
+
+        <ul class="includes-list">
+          <li>3-night stay in a Preferred Room</li>
+          <li>3-Day Park Hopper tickets</li>
+          <li>Disney Dining Plan — includes both table-service (full-service, sit-down) and quick-service meal credits per night, plus snacks (children ages 3–9 receive the Dining Plan free with this offer — already reflected in the total)</li>
+        </ul>
+
+        <div class="not-included" style="background:var(--pale-teal);color:var(--text);">
+          <strong>Disney Dining Plan — per person, per night of stay:</strong>
+          <ul style="margin:8px 0 0 18px;padding:0;">
+            <li>1 Table-Service meal credit (entrée, dessert on lunch/dinner, and a beverage — or one full buffet/family-style meal)</li>
+            <li>1 Quick-Service meal credit (entrée + beverage)</li>
+            <li>1 snack or non-alcoholic drink credit</li>
+            <li>1 resort-refillable drink mug, good at any Disney Resort hotel for the length of your stay</li>
+          </ul>
+          <div style="margin-top:8px;font-size:0.85rem;">Credits are per person, pool for the whole stay, and can be used in any order on any day. Disney's Dining Plan applies to guests ages 3 and up — your 2-year-old isn't counted toward dining plan credits or its cost.</div>
+        </div>
+
+        <div class="not-included">
+          Not included: airport transportation, resort parking (if driving), gratuities, and anything outside the Dining Plan's meal/snack credits.
+        </div>
+
+        <div class="amenities-grid">
+          <div><strong>Location:</strong> Near Disney's Animal Kingdom park (not staying at Animal Kingdom Lodge) — motorcoach transport to all four theme parks</div>
+          <div><strong>Dining:</strong> World Premiere Food Court on-site (quick-service) — your Dining Plan's table-service credits are used at full-service restaurants throughout the parks and resorts</div>
+          <div><strong>Pools:</strong> Fantasia pool + Duck Pond pool, kiddie pool and splash area</div>
+          <div><strong>Category:</strong> Value Resort — budget-forward, high energy, walkable within the resort footprint</div>
+        </div>
+
+        <div class="addon-note">
+          <strong>Optional add-on:</strong> Memory Maker (unlimited digital downloads of your Disney PhotoPass photos) can be added to this package. Current pricing isn't locked in yet — ask your advisor and we'll get you a number before you book.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="payment-schedule">
+    <h2>Payment Schedule</h2>
+    <div class="hotel-card">
+      <div class="hotel-body">
+        <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+          <tbody>
+            <tr style="border-bottom:1px solid var(--cream);">
+              <td style="padding:10px 0;">Airfare — due in full at time of booking</td>
+              <td style="padding:10px 0;text-align:right;font-weight:700;color:var(--teal-dark);" id="airfareDueDisplay">$1,960.00</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--cream);">
+              <td style="padding:10px 0;">Disney package — deposit due at time of booking</td>
+              <td style="padding:10px 0;text-align:right;font-weight:700;color:var(--teal-dark);">$200.00</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 0;">Disney package — final payment due <strong>August 22, 2026</strong></td>
+              <td style="padding:10px 0;text-align:right;font-weight:700;color:var(--teal-dark);">$3,167.59</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="not-included" style="margin-top:14px;">
+          Airfare is paid in full when booked — airlines don't hold seats on a deposit. The Disney portion only requires $200 down today, with the $3,167.59 balance due by August 22, 2026.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="commitment pricing-note">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+  </div>
+  <div class="disclaimer-small">
+    Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.
+  </div>
+
+  <div class="commitment">
+    What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+
+  <section id="contact">
+    <h2>Ready to Move Forward?</h2>
+    <div class="form-section">
+      <div id="formError"></div>
+      <form id="quoteForm">
+        <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+        <input type="hidden" name="subject" value="Quote Response — Maria Villereal | Walt Disney World">
+        <input type="hidden" name="from_name" value="Maria Villereal Quote — Point Me to Paradise">
+        <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="selected_flight" id="selectedFlightHidden" value="Flight Option 1 — Best Nonstop ($1,960)">
+        <input type="hidden" name="estimated_total" id="estimatedTotalHidden" value="">
+
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="optionInterest">Which flight are you leaning toward?</label>
+          <select id="optionInterest" name="option_interest">
+            <option value="Flight Option 1 — Best Nonstop ($1,960)">Option 1 — Best Nonstop ($1,960)</option>
+            <option value="Flight Option 2 — Most Economical ($1,035)">Option 2 — Most Economical ($1,035)</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="insurance">Travel Insurance</label>
+          <select id="insurance" name="travel_insurance">
+            <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+            <option value="No — not interested">No — not interested</option>
+            <option value="Already have coverage">Already have coverage</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Questions, requests, anything we should know..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send to Andrea</button>
+      </form>
+      <div id="formSuccess">
+        <h3>Thank you, we've got it!</h3>
+        <p>Your message is on its way to your advisor. Expect a reply soon.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="sticky-total">
+  <span class="label">Estimated Total (flight + resort)</span>
+  <span class="amount" id="totalDisplay">Est. $5,327.59</span>
+</div>
+
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div>Point Me to Paradise Travel</div>
+  <div><a href="#" id="emailLink">Email your advisor</a> · (409) 789-3579</div>
+  <div class="disclaimer">
+    Individual hotels, transfers, and tours in your quote are priced at publicly available rates — and in many cases lower than what you'd find on your own. You don't have to worry about overpaying for a piece of your trip. What you're paying for is the rest: the right rooms at the right property, operators we've used for years, the trip app, and a human who answers when something doesn't go to plan. Deposit: $200–$500 low deposit, pay balance closer to travel date. Prices and availability are subject to change until time of booking.
+  </div>
+</footer>
+
+<script>
+  // Assemble agent email at runtime to avoid Cloudflare scraping-scramble
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var link = document.getElementById('emailLink');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+  })();
+
+  var HOTEL_PRICE = 3367.59;
+
+  function updateTotal(){
+    var selected = document.querySelector('input[name="flightOption"]:checked');
+    var flightPrice = 0;
+    var flightLabel = '';
+    document.querySelectorAll('.option-card').forEach(function(card){
+      card.classList.remove('selected');
+    });
+    if(selected){
+      flightLabel = selected.value;
+      selected.closest('.option-card').classList.add('selected');
+      if(selected.id === 'flight1'){ flightPrice = 1960; }
+      if(selected.id === 'flight2'){ flightPrice = 1035; }
+    }
+    var total = flightPrice + HOTEL_PRICE;
+    document.getElementById('totalDisplay').textContent = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+    document.getElementById('selectedFlightHidden').value = flightLabel;
+    document.getElementById('estimatedTotalHidden').value = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+    document.getElementById('airfareDueDisplay').textContent = '$' + flightPrice.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  }
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var errorDiv = document.getElementById('formError');
+    errorDiv.style.display = 'none';
+
+    var form = e.target;
+    var formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(function(response){ return response.json(); })
+    .then(function(data){
+      if(data.success){
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        errorDiv.textContent = "Something didn't go through. Please try again or call/text (409) 789-3579.";
+        errorDiv.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      errorDiv.textContent = "Something didn't go through. Please try again or call/text (409) 789-3579.";
+      errorDiv.style.display = 'block';
+    });
+  });
+
+  updateTotal();
+</script>
+
+</body>
+</html>
