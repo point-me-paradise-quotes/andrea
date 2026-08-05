@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramona Ortiz — Travel Quote | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text-primary:#3D3D3D;
+    --text-secondary:#606060;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--text-primary);
+    line-height:1.6;
+    padding-bottom:110px;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--teal-dark);}
+  .accent{font-family:'Cormorant Garamond',serif;font-style:italic;}
+  a{color:var(--teal-dark);}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:420px;
+    display:flex;
+    align-items:flex-end;
+    background-image:linear-gradient(180deg, rgba(79,138,140,0.35) 0%, rgba(61,61,61,0.75) 100%), url('https://images.unsplash.com/photo-1759676015346-a2ea5f4a3caa?fm=jpg&q=80&w=2000&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    color:var(--paper-pure);
+    padding:40px 0;
+  }
+  .hero-inner{padding:20px;}
+  .hero .eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--cream);margin-bottom:6px;}
+  .hero h1{color:var(--paper-pure);font-size:2.4rem;margin-bottom:10px;}
+  .hero .meta{font-size:1rem;color:var(--cream-light);}
+
+  /* COMMITMENT CALLOUTS */
+  .callout{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:22px 24px;
+    border-radius:10px;
+    margin:24px 0;
+    font-size:1.02rem;
+  }
+  .callout.gold{background:var(--cream-light);color:var(--text-primary);border:1px solid var(--gold);}
+  .callout small{display:block;margin-top:8px;color:var(--text-secondary);font-size:0.85rem;}
+
+  section{margin:40px 0;}
+  .section-title{font-size:1.6rem;margin-bottom:6px;}
+  .section-sub{color:var(--text-secondary);margin-bottom:20px;}
+
+  /* FLIGHT CARDS */
+  .flight-block{
+    background:var(--paper-pure);
+    border:1px solid var(--pale-teal);
+    border-radius:12px;
+    padding:22px;
+    margin-bottom:18px;
+  }
+  .flight-block h3{font-size:1.25rem;margin-bottom:4px;}
+  .flight-route{color:var(--text-secondary);font-size:0.95rem;margin-bottom:14px;}
+  .airline-group{margin-bottom:18px;}
+  .airline-group h4{font-size:1rem;color:var(--text-primary);font-family:'DM Sans',sans-serif;font-weight:700;margin-bottom:10px;}
+  .fare-option{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    padding:14px;
+    border:1px solid var(--pale-teal);
+    border-radius:8px;
+    margin-bottom:10px;
+    cursor:pointer;
+    background:var(--paper);
+  }
+  .fare-option:hover{border-color:var(--teal);}
+  .fare-option input[type="radio"]{
+    width:20px;height:20px;min-width:20px;margin-top:2px;accent-color:var(--teal-dark);
+  }
+  .fare-option .fare-name{font-weight:600;color:var(--teal-dark);}
+  .fare-option .fare-price{font-weight:700;float:right;color:var(--text-primary);}
+  .fare-option ul{margin:8px 0 0 18px;font-size:0.88rem;color:var(--text-secondary);}
+  .flight-schedule{
+    background:var(--cream-light);
+    border-radius:8px;
+    padding:14px 16px;
+    font-size:0.9rem;
+    margin-top:12px;
+  }
+  .flight-schedule .leg{margin-bottom:8px;}
+  .flight-note{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text-secondary);margin-top:12px;font-size:1.05rem;}
+
+  /* DESTINATION SECTION */
+  .destination-header{
+    background:var(--cream);
+    border-radius:10px;
+    padding:18px 22px;
+    margin-bottom:20px;
+  }
+  .destination-header h2{margin-bottom:4px;}
+
+  /* RESORT CARDS */
+  .resort-card{
+    background:var(--paper-pure);
+    border:1px solid var(--pale-teal);
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:24px;
+  }
+  .resort-photos{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:3px;
+    height:260px;
+    overflow:hidden;
+  }
+  .resort-photos img{width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;display:block;}
+  .resort-photos img:first-child{grid-row:1/3;}
+  .resort-body{padding:22px;}
+  .resort-body h3{font-size:1.35rem;margin-bottom:2px;}
+  .resort-tag{
+    display:inline-block;
+    background:var(--pale-teal);
+    color:var(--teal-dark);
+    font-size:0.75rem;
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:20px;
+    margin:8px 0 12px;
+  }
+  .resort-desc{margin-bottom:14px;}
+  .resort-facts{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 20px;
+    font-size:0.9rem;
+    color:var(--text-secondary);
+    margin-bottom:16px;
+    padding:14px;
+    background:var(--paper);
+    border-radius:8px;
+  }
+  .resort-facts strong{color:var(--text-primary);}
+  .resort-select{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:16px;
+    border:2px solid var(--pale-teal);
+    border-radius:10px;
+    cursor:pointer;
+    background:var(--cream-light);
+  }
+  .resort-select input[type="radio"]{width:22px;height:22px;min-width:22px;accent-color:var(--teal-dark);}
+  .resort-select .room-name{font-weight:700;color:var(--teal-dark);}
+  .resort-select .room-price{font-weight:700;font-size:1.15rem;margin-left:auto;color:var(--text-primary);white-space:nowrap;}
+  .transfer-note{font-size:0.85rem;color:var(--text-secondary);margin-top:12px;font-style:italic;font-family:'Cormorant Garamond',serif;}
+  .image-flag{font-size:0.72rem;color:var(--gold-dark);margin-top:6px;}
+
+  /* STICKY TOTAL BAR */
+  .total-bar{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    z-index:100;
+    box-shadow:0 -4px 14px rgba(0,0,0,0.15);
+  }
+  .total-bar .label{font-size:0.8rem;color:var(--cream-light);}
+  .total-bar .amount{font-family:'Playfair Display',serif;font-size:1.5rem;}
+  .total-bar a{
+    background:var(--gold);
+    color:var(--text-primary);
+    padding:12px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:700;
+    min-height:44px;
+    display:flex;
+    align-items:center;
+  }
+
+  /* CONTACT FORM */
+  .contact-section{background:var(--cream-light);border-radius:14px;padding:30px 24px;}
+  .contact-section h2{margin-bottom:8px;}
+  .form-group{margin-bottom:16px;}
+  .form-group label{display:block;font-weight:600;margin-bottom:6px;font-size:0.9rem;}
+  .form-group input,.form-group select,.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid var(--pale-teal);
+    border-radius:8px;
+    font-size:16px;
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper-pure);
+    color:var(--text-primary);
+    min-height:44px;
+  }
+  .form-group textarea{min-height:90px;resize:vertical;}
+  .submit-btn{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    border:none;
+    padding:14px 28px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    min-height:44px;
+    width:100%;
+  }
+  .submit-btn:hover{background:var(--teal);}
+  .form-error{background:#F8E9E9;color:#8a3a3a;padding:12px;border-radius:8px;margin-bottom:14px;display:none;font-size:0.9rem;}
+  .thank-you{display:none;text-align:center;padding:30px;}
+  .thank-you h3{margin-bottom:10px;}
+
+  footer{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    text-align:center;
+    padding:30px 20px;
+    margin-top:50px;
+    font-size:0.88rem;
+  }
+  footer .agent-name{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:6px;}
+  footer a{color:var(--cream-light);}
+  footer .disclaimer{margin-top:14px;color:var(--pale-teal);font-size:0.78rem;}
+
+  @media(max-width:540px){
+    .hero{min-height:320px;}
+    .hero h1{font-size:1.7rem;}
+    .resort-photos{grid-template-columns:1fr;grid-template-rows:auto;height:auto;}
+    .resort-photos img{height:160px;}
+    .resort-photos img:first-child{grid-row:auto;}
+    .resort-facts{grid-template-columns:1fr;}
+    .total-bar{flex-direction:column;gap:8px;align-items:stretch;text-align:center;}
+    .total-bar a{justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">A Point Me to Paradise Travel Quote</div>
+    <h1>Ramona Ortiz — Your Trip Options</h1>
+    <div class="meta">2 Adults &nbsp;•&nbsp; November 30 – December 5, 2026 &nbsp;•&nbsp; 5 Nights</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="callout">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+
+  <section>
+    <p class="section-title" style="font-size:1.1rem; color:var(--text-secondary); font-family:'DM Sans',sans-serif; font-weight:600;">Two directions, two very different trips</p>
+    <p>This quote lays out two ways to spend your five nights: Punta Cana on the Dominican Republic's east coast, or Los Cabos on the tip of the Baja peninsula. Flights and resort picks are grouped by destination below so you can compare each trip as a whole — not mix pieces from two different itineraries.</p>
+  </section>
+
+  <!-- ============ FLIGHTS ============ -->
+  <section>
+    <h2 class="section-title">Flights</h2>
+    <p class="section-sub">Choose the fare that fits how you like to fly. Prices shown are the total for 2 adults, round trip.</p>
+
+    <!-- FLIGHT OPTION 1: PUNTA CANA -->
+    <div class="flight-block">
+      <h3>Houston → Punta Cana</h3>
+      <div class="flight-route">Nov 30 – Dec 5 &nbsp;|&nbsp; Punta Cana trip (Lopesan Serenity Bay &amp; Punta Cana Princess)</div>
+
+      <div class="airline-group">
+        <h4>American Airlines — IAH ⇄ PUJ</h4>
+        <label class="fare-option">
+          <input type="radio" name="flightFare" value="1168" data-label="Punta Cana — American Basic Economy">
+          <div>
+            <div><span class="fare-name">Basic Economy</span><span class="fare-price">$1,168</span></div>
+            <ul>
+              <li>One free carry-on per person</li>
+              <li>Seat selection available for a fee</li>
+              <li>No ticket changes</li>
+              <li>Checked bags additional</li>
+            </ul>
+          </div>
+        </label>
+        <label class="fare-option">
+          <input type="radio" name="flightFare" value="1408" data-label="Punta Cana — American Main Cabin">
+          <div>
+            <div><span class="fare-name">Main Cabin</span><span class="fare-price">$1,408</span></div>
+            <ul>
+              <li>Free seat selection</li>
+              <li>Changes allowed (fare difference may apply)</li>
+              <li>One free carry-on per person</li>
+              <li>Checked bags additional</li>
+            </ul>
+          </div>
+        </label>
+        <div class="flight-schedule">
+          <div class="leg"><strong>Outbound — Mon, Nov 30:</strong> IAH → PUJ, 7:10 AM – 3:49 PM, 1 stop in Miami (1h 31m). Total travel time 6h 39m.</div>
+          <div class="leg"><strong>Return — Sat, Dec 5:</strong> PUJ → IAH, 4:40 PM – 12:22 AM (+1 day), 1 stop in Charlotte (2h 53m). Total travel time 9h 42m.</div>
+        </div>
+      </div>
+
+      <div class="airline-group">
+        <h4>Southwest Airlines — HOU ⇄ PUJ</h4>
+        <label class="fare-option">
+          <input type="radio" name="flightFare" value="1286" data-label="Punta Cana — Southwest Basic">
+          <div>
+            <div><span class="fare-name">Basic</span><span class="fare-price">$1,286</span></div>
+            <ul>
+              <li>One free carry-on per person</li>
+              <li>Seat selection available</li>
+              <li>No ticket changes, no refunds</li>
+              <li>Checked bags additional</li>
+            </ul>
+          </div>
+        </label>
+        <label class="fare-option">
+          <input type="radio" name="flightFare" value="1446" data-label="Punta Cana — Southwest Choice">
+          <div>
+            <div><span class="fare-name">Choice</span><span class="fare-price">$1,446</span></div>
+            <ul>
+              <li>Free seat selection</li>
+              <li>Changes allowed (fare difference may apply)</li>
+              <li>One free carry-on per person</li>
+              <li>Checked bags additional</li>
+            </ul>
+          </div>
+        </label>
+        <div class="flight-schedule">
+          <div class="leg"><strong>Outbound — Mon, Nov 30:</strong> HOU → PUJ, 7:25 AM – 3:50 PM, 1 stop in Orlando (1h 30m). Total travel time 6h 25m.</div>
+          <div class="leg"><strong>Return — Sat, Dec 5:</strong> PUJ → HOU, 3:35 PM – 9:20 PM, 1 stop in Orlando (2h 5m). Total travel time 7h 45m.</div>
+        </div>
+      </div>
+      <p class="flight-note">American runs the lower price of the two; Southwest trades a bit more for a shorter return day and the option to fly out of Hobby.</p>
+    </div>
+
+    <!-- FLIGHT OPTION 2: LOS CABOS -->
+    <div class="flight-block">
+      <h3>Houston Hobby → San José del Cabo</h3>
+      <div class="flight-route">Nov 30 – Dec 5 &nbsp;|&nbsp; Los Cabos trip (Pueblo Bonito Rosé &amp; Pueblo Bonito Pacifica)</div>
+
+      <div class="airline-group">
+        <h4>Southwest Airlines — Nonstop Round Trip, HOU ⇄ SJD</h4>
+        <label class="fare-option">
+          <input type="radio" name="flightFare" value="1147" data-label="Los Cabos — Southwest Basic">
+          <div>
+            <div><span class="fare-name">Basic</span><span class="fare-price">$1,147</span></div>
+            <ul>
+              <li>One free carry-on per person</li>
+              <li>Seat selection available for a fee; extra-legroom seats available for a fee</li>
+              <li>No ticket changes, no refunds</li>
+              <li>First checked bag: $90/person round trip</li>
+            </ul>
+          </div>
+        </label>
+        <label class="fare-option">
+          <input type="radio" name="flightFare" value="1287" data-label="Los Cabos — Southwest Choice">
+          <div>
+            <div><span class="fare-name">Choice</span><span class="fare-price">$1,287</span></div>
+            <ul>
+              <li>One free carry-on per person, free seat selection</li>
+              <li>Changes allowed (fare difference may apply)</li>
+              <li>No refunds</li>
+              <li>First checked bag: $90/person round trip</li>
+            </ul>
+          </div>
+        </label>
+        <label class="fare-option">
+          <input type="radio" name="flightFare" value="1567" data-label="Los Cabos — Southwest Choice Preferred">
+          <div>
+            <div><span class="fare-name">Choice Preferred</span><span class="fare-price">$1,567</span></div>
+            <ul>
+              <li>One free carry-on per person, free seat selection</li>
+              <li>Changes allowed (fare difference may apply)</li>
+              <li>Fully refundable</li>
+              <li>First checked bag: $90/person round trip</li>
+            </ul>
+          </div>
+        </label>
+        <label class="fare-option">
+          <input type="radio" name="flightFare" value="1867" data-label="Los Cabos — Southwest Choice Extra">
+          <div>
+            <div><span class="fare-name">Choice Extra</span><span class="fare-price">$1,867</span></div>
+            <ul>
+              <li>One free carry-on per person, free seat selection, extra-legroom seating</li>
+              <li>Changes allowed (fare difference may apply)</li>
+              <li>Fully refundable</li>
+              <li>Two free checked bags per person</li>
+            </ul>
+          </div>
+        </label>
+        <div class="flight-schedule">
+          <div class="leg"><strong>Outbound — Mon, Nov 30:</strong> HOU → SJD, 8:40 AM – 10:30 AM, nonstop, 2h 50m.</div>
+          <div class="leg"><strong>Return — Sat, Dec 5:</strong> SJD → HOU, 2:45 PM – 6:10 PM, nonstop, 2h 25m.</div>
+        </div>
+      </div>
+      <p class="flight-note">Both legs are nonstop, the outbound lands before lunch, and the return gets you home to Houston at a reasonable hour.</p>
+    </div>
+  </section>
+
+  <div class="callout gold">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+    <small>Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</small>
+  </div>
+
+  <!-- ============ PUNTA CANA ============ -->
+  <section>
+    <div class="destination-header">
+      <h2>Punta Cana, Dominican Republic</h2>
+      <p>Bávaro's east-facing coastline, warm water year-round, and two adults-only resorts that take very different approaches to a five-night stay.</p>
+    </div>
+
+    <div class="resort-card">
+      <div class="resort-photos">
+        <img src="https://img.cdnpth.com/media/651499/dc0649c23251f129d4410a121dfbc8eebdeab541eba69280de3c1b9be99298ba_main.png" alt="Lopesan Serenity Bay Resort exterior">
+        <img src="https://img.cdnpth.com/media/651499/5893b0eb1d0d11f86e8839fb4844dd1a49d85a5382ed90b51e92a19b396845c6.png" alt="Lopesan Serenity Bay Resort suite">
+        <img src="https://img.cdnpth.com/media/651499/9bbc09fdee4d41af33489b3037be53513306decc8eb9528040b5b39e82f9f682.png" alt="Lopesan Serenity Bay Resort pool">
+      </div>
+      <div class="resort-body">
+        <h3>Lopesan Serenity Bay Resort, Spa &amp; Casino</h3>
+        <span class="resort-tag">Adults Only</span>
+        <p class="resort-desc">This one leans toward full-resort infrastructure — several restaurants, a casino floor, a full spa, and pools laid out for people who want options within the property rather than a quiet single stretch of beach. Suites run larger than the Cabo comparisons in this quote.</p>
+        <div class="resort-facts">
+          <div><strong>Check-in:</strong> Mon, Nov 30 — 3:00 PM</div>
+          <div><strong>Check-out:</strong> Sat, Dec 5 — 12:00 PM</div>
+          <div><strong>Meal plan:</strong> All-Inclusive</div>
+          <div><strong>Final payment due:</strong> Nov 24, 2026</div>
+          <div><strong>Deposit due today:</strong> None</div>
+          <div><strong>Cancellation:</strong> Free through Nov 26, 2026</div>
+        </div>
+        <label class="resort-select">
+          <input type="radio" name="resortChoice" value="2043.35" data-label="Lopesan Serenity Bay — Adults Junior Suite Tropical View, King Bed">
+          <div>
+            <div class="room-name">Adults Junior Suite Tropical View — King Bed</div>
+          </div>
+          <div class="room-price">$2,043.35</div>
+        </label>
+        <p class="transfer-note">Private transfer can be added once flights are booked — ask your advisor for pricing.</p>
+        <p class="image-flag">Photos sourced from supplier media CDN — visual confirmation pending.</p>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <div class="resort-photos">
+        <img src="https://img.cdnpth.com/media/103988/eb2c2563-ba39-45b4-b5b4-8c1789b22dc1_main.jpg" alt="Punta Cana Princess resort exterior">
+        <img src="https://img.cdnpth.com/media/103988/2225363-ff9b596f_z.jpg" alt="Punta Cana Princess suite">
+        <img src="https://img.cdnpth.com/media/103988/4f74c8de-52f8-4723-ae46-8b9a9046b568.jpg" alt="Punta Cana Princess beach">
+      </div>
+      <div class="resort-body">
+        <h3>Punta Cana Princess Adults Only</h3>
+        <span class="resort-tag">Adults Only</span>
+        <p class="resort-desc">Set directly on Bávaro Beach with a calmer pace than the resort above. The Deluxe Suite comes with cross-access to the neighboring Caribe Deluxe and Tropical Deluxe Princess properties, so dining and pool options widen out even though the room itself is on the simpler side. At under $625 per person for five nights all-inclusive, it's the value play of this quote.</p>
+        <div class="resort-facts">
+          <div><strong>Check-in:</strong> Mon, Nov 30 — 3:00 PM–11:59 PM</div>
+          <div><strong>Check-out:</strong> Sat, Dec 5 — 12:00 PM</div>
+          <div><strong>Meal plan:</strong> All-Inclusive</div>
+          <div><strong>Final payment due:</strong> Nov 26, 2026</div>
+          <div><strong>Deposit due today:</strong> None</div>
+          <div><strong>Taxes:</strong> Included</div>
+        </div>
+        <label class="resort-select">
+          <input type="radio" name="resortChoice" value="1245.15" data-label="Punta Cana Princess — Deluxe Suite">
+          <div>
+            <div class="room-name">Deluxe Suite (incl. access to Caribe &amp; Tropical Deluxe Princess amenities)</div>
+          </div>
+          <div class="room-price">$1,245.15</div>
+        </label>
+        <p class="transfer-note">Private transfer can be added once airline tickets are purchased — ask your advisor for pricing.</p>
+        <p class="image-flag">Photos sourced from supplier media CDN — visual confirmation pending.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOS CABOS ============ -->
+  <section>
+    <div class="destination-header">
+      <h2>Los Cabos, Mexico</h2>
+      <p>Desert meets the Sea of Cortez here — a drier climate than the Caribbean, dramatic rock coastline, and two Pueblo Bonito properties at different price points.</p>
+    </div>
+
+    <div class="resort-card">
+      <div class="resort-photos">
+        <img src="https://img.cdnpth.com/media/100486/6a348a92-fcb5-48a9-b007-a30865e1f845.jpg" alt="Pueblo Bonito Rose Resort exterior">
+        <img src="https://img.cdnpth.com/media/100486/d774e26b-7c59-4193-9c8b-72e9d55ead54.jpg" alt="Pueblo Bonito Rose suite">
+        <img src="https://img.cdnpth.com/media/100486/a464592b-66c7-481f-95f1-fb78d32e22f5.jpg" alt="Pueblo Bonito Rose pool">
+      </div>
+      <div class="resort-body">
+        <h3>Pueblo Bonito Rosé Resort &amp; Spa</h3>
+        <span class="resort-tag">All-Inclusive</span>
+        <p class="resort-desc">Beachfront and close to downtown Cabo and the marina, so this is the pick if you want restaurants and nightlife outside the resort within easy reach rather than staying fully self-contained. The Junior Suite includes a balcony.</p>
+        <div class="resort-facts">
+          <div><strong>Nights:</strong> 5 (Nov 30 – Dec 5, 2026)</div>
+          <div><strong>Meal plan:</strong> All-Inclusive</div>
+          <div><strong>Final payment due:</strong> Nov 25, 2026</div>
+          <div><strong>Deposit due today:</strong> None — book now, pay later</div>
+          <div><strong>Taxes:</strong> Included</div>
+        </div>
+        <label class="resort-select">
+          <input type="radio" name="resortChoice" value="2230.05" data-label="Pueblo Bonito Rosé — Junior Suite with Balcony">
+          <div>
+            <div class="room-name">Junior Suite with Balcony</div>
+          </div>
+          <div class="room-price">$2,230.05</div>
+        </label>
+        <p class="transfer-note">Private transfer can be set up after flights are booked — ask your advisor for pricing.</p>
+        <p class="image-flag">Photos sourced from supplier media CDN — visual confirmation pending.</p>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <div class="resort-photos">
+        <img src="https://images.trvl-media.com/lodging/1000000/410000/400800/400787/8d3645e7.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Pueblo Bonito Pacifica Golf and Spa Resort exterior">
+        <img src="https://images.trvl-media.com/lodging/1000000/410000/400800/400787/c507c8af.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Pueblo Bonito Pacifica ocean view suite">
+        <img src="https://images.trvl-media.com/lodging/1000000/410000/400800/400787/8fbbc52d.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Pueblo Bonito Pacifica pool">
+      </div>
+      <div class="resort-body">
+        <h3>Pueblo Bonito Pacifica Golf &amp; Spa Resort</h3>
+        <span class="resort-tag">Adults Only</span>
+        <p class="resort-desc">The quieter of the two Cabo properties in this quote — set apart from downtown on a stretch of beach built around the resort itself, with golf access, a spa, and ocean-view rooms across the board. The Luxury Suite is the top room category here.</p>
+        <div class="resort-facts">
+          <div><strong>Nights:</strong> 5 (Nov 30 – Dec 5, 2026)</div>
+          <div><strong>Meal plan:</strong> All-Inclusive</div>
+          <div><strong>Final payment due:</strong> Nov 21, 2026</div>
+          <div><strong>Deposit due today:</strong> None — book now, pay later</div>
+          <div><strong>Cancellation:</strong> Fully refundable through Nov 28, 2026 (up to 100% fee after)</div>
+        </div>
+        <label class="resort-select">
+          <input type="radio" name="resortChoice" value="2531.80" data-label="Pueblo Bonito Pacifica — Luxury Suite, Ocean View">
+          <div>
+            <div class="room-name">Luxury Suite — Ocean View</div>
+          </div>
+          <div class="room-price">$2,531.80</div>
+        </label>
+        <p class="transfer-note">Airport transfers can be added once flights are booked — ask your advisor for pricing.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="callout">
+    What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+
+  <!-- ============ CONTACT FORM ============ -->
+  <section class="contact-section" id="contactSection">
+    <div id="formContainer">
+      <h2>Ready to move forward?</h2>
+      <p style="margin-bottom:20px; color:var(--text-secondary);">Tell us which option you're leaning toward and we'll follow up to lock it in.</p>
+      <div class="form-error" id="formError">Something went wrong sending your message. Please try again or call us directly.</div>
+      <form id="quoteForm">
+        <input type="hidden" name="access_key" value="74894b5d-f463-481b-b081-b874086b15fc">
+        <input type="hidden" name="subject" value="Quote Response — Ramona Ortiz | Punta Cana / Los Cabos">
+        <input type="hidden" name="from_name" value="Ramona Ortiz Quote — Point Me to Paradise">
+        <input type="hidden" name="redirect" value="false">
+
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="optionInterest">Which option interests you most?</label>
+          <select id="optionInterest" name="option_interest">
+            <option value="">Select an option</option>
+            <option value="Lopesan Serenity Bay Resort, Spa & Casino">Lopesan Serenity Bay Resort, Spa &amp; Casino (Punta Cana)</option>
+            <option value="Punta Cana Princess Adults Only">Punta Cana Princess Adults Only (Punta Cana)</option>
+            <option value="Pueblo Bonito Rosé Resort & Spa">Pueblo Bonito Rosé Resort &amp; Spa (Los Cabos)</option>
+            <option value="Pueblo Bonito Pacifica Golf & Spa Resort">Pueblo Bonito Pacifica Golf &amp; Spa Resort (Los Cabos)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="insurance">Travel insurance</label>
+          <select id="insurance" name="travel_insurance">
+            <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+            <option value="No — not interested">No — not interested</option>
+            <option value="Already have coverage">Already have coverage</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Questions, preferred dates flexibility, anything else we should know..."></textarea>
+        </div>
+        <input type="hidden" name="selected_flight" id="selectedFlightField" value="None selected">
+        <input type="hidden" name="selected_resort" id="selectedResortField" value="None selected">
+        <input type="hidden" name="estimated_total" id="estimatedTotalField" value="$0">
+        <button type="submit" class="submit-btn">Send My Response</button>
+      </form>
+    </div>
+    <div class="thank-you" id="thankYou">
+      <h3>Thanks, Ramona!</h3>
+      <p>Your response is in. We'll follow up shortly to get everything locked in.</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="total-bar">
+  <div>
+    <div class="label">Estimated Total</div>
+    <div class="amount" id="totalDisplay">Est. $0</div>
+  </div>
+  <a href="#contactSection">Continue</a>
+</div>
+
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div>Point Me to Paradise Travel</div>
+  <div style="margin-top:8px;">
+    <a href="tel:4097893579">409-789-3579</a> &nbsp;•&nbsp;
+    <a id="emailLink" href="#"></a>
+  </div>
+  <div class="disclaimer">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<script>
+  // Assemble email at runtime to avoid Cloudflare scrambling
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var link = document.getElementById('emailLink');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+  })();
+
+  // Running total
+  function updateTotal(){
+    var flight = document.querySelector('input[name="flightFare"]:checked');
+    var resort = document.querySelector('input[name="resortChoice"]:checked');
+    var flightVal = flight ? parseFloat(flight.value) : 0;
+    var resortVal = resort ? parseFloat(resort.value) : 0;
+    var total = flightVal + resortVal;
+    document.getElementById('totalDisplay').textContent = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits: total % 1 === 0 ? 0 : 2, maximumFractionDigits: 2});
+    document.getElementById('selectedFlightField').value = flight ? flight.getAttribute('data-label') + ' ($' + flightVal.toLocaleString() + ')' : 'None selected';
+    document.getElementById('selectedResortField').value = resort ? resort.getAttribute('data-label') + ' ($' + resortVal.toLocaleString() + ')' : 'None selected';
+    document.getElementById('estimatedTotalField').value = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  }
+  document.querySelectorAll('input[name="flightFare"], input[name="resortChoice"]').forEach(function(el){
+    el.addEventListener('change', function(){ setTimeout(updateTotal, 0); });
+  });
+
+  // Form submission via fetch (never native POST)
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var errorDiv = document.getElementById('formError');
+    errorDiv.style.display = 'none';
+    var formData = new FormData(form);
+    var submitBtn = form.querySelector('.submit-btn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Accept': 'application/json'},
+      body: formData
+    })
+    .then(function(response){ return response.json(); })
+    .then(function(data){
+      if(data.success){
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorDiv.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send My Response';
+      }
+    })
+    .catch(function(){
+      errorDiv.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send My Response';
+    });
+  });
+</script>
+
+</body>
+</html>
