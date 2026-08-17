@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Esther Guerra — Cancún Christmas Getaway 2026 | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text-primary:#3D3D3D;
+    --text-secondary:#606060;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'DM Sans', sans-serif;
+    background:var(--paper);
+    color:var(--text-primary);
+    line-height:1.6;
+    padding-bottom:90px;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display', serif; color:var(--teal-dark); font-weight:600;}
+  .advisor-voice{font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.15rem; color:var(--text-primary); line-height:1.7;}
+  a{color:var(--teal-dark);}
+  img{max-width:100%; display:block;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:60vh;
+    background-image: linear-gradient(180deg, rgba(20,20,20,0.15) 0%, rgba(20,20,20,0.55) 100%), url('https://res.cloudinary.com/dtljonz0f/image/upload/c_auto,ar_4:3,w_3840,g_auto/f_auto/q_auto/v1/gc-v1/cancun/shutterstock_2005698047%20edit?_a=BAVAZGDY0');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:flex-end;
+    padding:40px 24px;
+  }
+  .hero-inner{max-width:900px; margin:0 auto; width:100%; color:#fff;}
+  .hero-eyebrow{font-family:'DM Sans'; text-transform:uppercase; letter-spacing:2px; font-size:0.8rem; color:var(--cream); margin-bottom:10px;}
+  .hero h1{color:#fff; font-size:2.4rem; margin-bottom:10px;}
+  .hero-meta{font-size:1.05rem; color:var(--cream-light);}
+
+  .wrap{max-width:900px; margin:0 auto; padding:0 24px;}
+
+  /* Commitment callouts */
+  .commitment-block{
+    background:var(--teal-dark);
+    color:#fff;
+    padding:20px 24px;
+    border-radius:10px;
+    font-size:1rem;
+    margin:28px auto;
+    max-width:900px;
+  }
+  .commitment-block.top{margin-top:-30px; position:relative; z-index:2;}
+
+  .pricing-note{
+    background:var(--cream-light);
+    border-left:4px solid var(--gold-dark);
+    padding:14px 18px;
+    border-radius:6px;
+    font-size:0.95rem;
+    margin:16px 0;
+    color:var(--text-primary);
+  }
+  .disclaimer-note{
+    font-size:0.82rem;
+    color:var(--text-secondary);
+    margin:8px 0 0 0;
+  }
+
+  section{padding:36px 0;}
+  section h2{font-size:1.6rem; margin-bottom:6px;}
+  .section-sub{color:var(--text-secondary); margin-bottom:24px; font-size:0.98rem;}
+
+  /* Resort option cards */
+  .option-card{
+    background:var(--paper-pure);
+    border:2px solid var(--pale-teal);
+    border-radius:14px;
+    margin-bottom:22px;
+    overflow:hidden;
+    transition:border-color .2s, box-shadow .2s;
+  }
+  .option-card.selected{
+    border-color:var(--teal-dark);
+    box-shadow:0 4px 18px rgba(79,138,140,0.18);
+  }
+  .option-card label{display:block; cursor:pointer;}
+  .option-header{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:18px 20px;
+    background:var(--cream-light);
+  }
+  .option-header input[type="radio"]{
+    width:22px; height:22px; min-width:22px; min-height:22px; accent-color:var(--teal-dark);
+  }
+  .option-header-text h3{font-size:1.25rem; margin-bottom:2px;}
+  .option-header-text .loc{font-size:0.9rem; color:var(--text-secondary);}
+  .option-price-tag{
+    margin-left:auto;
+    text-align:right;
+    font-family:'Playfair Display';
+    font-size:1.3rem;
+    color:var(--teal-dark);
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .option-price-tag span{display:block; font-family:'DM Sans'; font-size:0.72rem; color:var(--text-secondary); font-weight:400;}
+
+  .option-body{padding:20px;}
+  .photo-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:6px;
+    margin-bottom:18px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .photo-grid img{width:100%; height:100%; object-fit:cover;}
+  .photo-grid .main-photo{grid-row:1 / 3;}
+  .photo-grid img{height:150px;}
+  .photo-grid .main-photo{height:100%;}
+
+  .room-detail-row{
+    display:flex; flex-wrap:wrap; gap:10px 24px;
+    font-size:0.92rem; color:var(--text-secondary);
+    margin-bottom:16px;
+    padding-bottom:16px;
+    border-bottom:1px solid var(--cream);
+  }
+  .room-detail-row strong{color:var(--text-primary);}
+
+  .price-breakdown{
+    background:var(--cream-light);
+    border-radius:8px;
+    padding:14px 16px;
+    margin-bottom:16px;
+    font-size:0.95rem;
+  }
+  .price-breakdown .row{display:flex; justify-content:space-between; padding:4px 0;}
+  .price-breakdown .row.total{
+    border-top:1px solid var(--gold-dark);
+    margin-top:6px; padding-top:8px;
+    font-weight:700; font-size:1.05rem; color:var(--teal-dark);
+  }
+  .due-date{font-size:0.88rem; color:var(--text-secondary); margin-top:6px;}
+
+  /* Comparison table */
+  .compare-table-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+  table.compare{
+    width:100%; border-collapse:collapse; min-width:640px; background:var(--paper-pure);
+    border-radius:10px; overflow:hidden; font-size:0.92rem;
+  }
+  table.compare th, table.compare td{padding:12px 14px; text-align:left; border-bottom:1px solid var(--cream);}
+  table.compare th{background:var(--teal-dark); color:#fff; font-family:'Playfair Display'; font-weight:600;}
+  table.compare tr:last-child td{border-bottom:none;}
+  table.compare td.num{font-weight:600; color:var(--teal-dark);}
+
+  /* Sticky total bar */
+  .sticky-bar{
+    position:fixed; bottom:0; left:0; right:0;
+    background:var(--teal-dark);
+    color:#fff;
+    padding:14px 20px;
+    display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:8px;
+    box-shadow:0 -4px 16px rgba(0,0,0,0.15);
+    z-index:100;
+  }
+  .sticky-bar .label{font-size:0.85rem; color:var(--cream-light);}
+  .sticky-bar .amount{font-family:'Playfair Display'; font-size:1.5rem; font-weight:700;}
+  .sticky-bar .cta-btn{
+    background:var(--gold);
+    color:var(--text-primary);
+    border:none;
+    padding:12px 22px;
+    border-radius:30px;
+    font-weight:600;
+    font-size:0.95rem;
+    cursor:pointer;
+    min-height:44px;
+  }
+
+  /* Contact form */
+  .contact-section{background:var(--cream-light); border-radius:14px; padding:28px 24px;}
+  .form-row{margin-bottom:16px;}
+  .form-row label{display:block; font-size:0.9rem; font-weight:600; margin-bottom:6px; color:var(--text-primary);}
+  .form-row input, .form-row select, .form-row textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid var(--pale-teal);
+    border-radius:8px;
+    font-size:16px;
+    font-family:'DM Sans';
+    background:var(--paper-pure);
+    min-height:44px;
+  }
+  .form-row textarea{min-height:90px; resize:vertical;}
+  .submit-btn{
+    background:var(--teal-dark);
+    color:#fff;
+    border:none;
+    padding:14px 26px;
+    border-radius:30px;
+    font-weight:600;
+    font-size:1rem;
+    cursor:pointer;
+    min-height:44px;
+    width:100%;
+  }
+  .submit-btn:hover{background:var(--teal);}
+  #formError{
+    display:none;
+    background:#F5EFDF;
+    border-left:4px solid var(--gold-dark);
+    color:var(--text-primary);
+    padding:12px 14px;
+    border-radius:6px;
+    margin-bottom:16px;
+    font-size:0.9rem;
+  }
+  #thankYou{
+    display:none;
+    text-align:center;
+    padding:20px;
+  }
+  #thankYou h3{margin-bottom:8px;}
+
+  footer{
+    background:var(--teal-dark);
+    color:#fff;
+    padding:32px 24px;
+    text-align:center;
+    margin-top:36px;
+  }
+  footer .agent-name{font-family:'Playfair Display'; font-size:1.15rem; margin-bottom:6px;}
+  footer .agent-contact{font-size:0.92rem; color:var(--cream-light); margin-bottom:14px;}
+  footer .disclaimer{font-size:0.78rem; color:var(--pale-teal); max-width:560px; margin:0 auto;}
+
+  @media (max-width:540px){
+    .hero h1{font-size:1.7rem;}
+    .option-price-tag{font-size:1.05rem;}
+    .photo-grid img, .photo-grid .main-photo{height:110px;}
+    table.compare{min-width:560px;}
+    .sticky-bar{padding:12px 14px;}
+    .sticky-bar .amount{font-size:1.2rem;}
+    section{padding:26px 0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Point Me to Paradise Travel · Christmas Getaway</div>
+    <h1>Esther Guerra — Cancún, Mexico</h1>
+    <div class="hero-meta">December 24–28, 2026 · 4 Nights · 2 Adults + 2 Children</div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="commitment-block top">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+
+  <section id="intro">
+    <h2>Four resorts, one Christmas week</h2>
+    <p class="section-sub">All four options below land you in Cancún for the same four nights — December 24–28, 2026 — with the same all-inclusive meal plan and room for your family of four. What changes is location within the Hotel Zone, resort feel, and what you're paying for a confirmed room versus a Run of House assignment. Pick a resort, then review the details before we lock it in.</p>
+  </section>
+
+  <section id="options">
+    <h2>Resort options</h2>
+    <p class="section-sub">Select one to see it reflected in your running total below.</p>
+
+    <form id="quoteForm">
+
+    <!-- OPTION 1: Fiesta Americana Condesa -->
+    <div class="option-card" id="card-fiesta">
+      <label>
+        <div class="option-header">
+          <input type="radio" name="resort" value="fiesta" onclick="updateTotal()" checked>
+          <div class="option-header-text">
+            <h3>Fiesta Americana Condesa Cancún</h3>
+            <div class="loc">Cancún Hotel Zone · All Inclusive</div>
+          </div>
+          <div class="option-price-tag">$3,304<span>est. trip total</span></div>
+        </div>
+        <div class="option-body">
+          <div class="photo-grid">
+            <img class="main-photo" src="https://images.trvl-media.com/lodging/1000000/10000/1200/1112/3c4e50a9.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Fiesta Americana Condesa Cancún room view">
+            <img src="https://image-tc.galaxy.tf/wijpeg-6c99xqn5vexi7y3z1vy5qqukt/vistapanoramica2-result.jpg" alt="Fiesta Americana Condesa Cancún panoramic view">
+            <img src="https://storage.googleapis.com/cloudaio/images/hotel/80303b6a-4f98-4471-858c-148ec2663a37/6623/251018FACC_PREMIUM_OCEAN_VIEW_DOBLE.jpg" alt="Fiesta Americana Condesa Cancún Premium Garden View room">
+          </div>
+          <div class="room-detail-row">
+            <div><strong>Room:</strong> Premium Garden View – 2 Double Beds</div>
+            <div><strong>Meal Plan:</strong> All Inclusive</div>
+            <div><strong>Check-in:</strong> Dec 24, 3:00 PM</div>
+            <div><strong>Check-out:</strong> Dec 28, 12:00 PM</div>
+          </div>
+          <p class="advisor-voice">This one's a strong match for what you're after: an all-inclusive resort right in the Cancún Hotel Zone with a swimmable beach, a wide spread of dining, activities, and evening entertainment — and a short transfer once you land. The private round-trip transfer runs about $100 for the whole family, not per person.</p>
+          <div class="price-breakdown">
+            <div class="row"><span>Resort total, taxes included</span><span>$3,160.23</span></div>
+            <div class="row"><span>Resort fee (paid directly to the hotel)</span><span>$44.00</span></div>
+            <div class="row"><span>Private round-trip airport transfer (est.)</span><span>$100.00</span></div>
+            <div class="row total"><span>Estimated trip total</span><span>$3,304.23</span></div>
+          </div>
+          <div class="due-date">Book now, pay in full by <strong>December 7, 2026</strong>.</div>
+        </div>
+      </label>
+    </div>
+
+    <!-- OPTION 2: Dreams Sands -->
+    <div class="option-card" id="card-dreams">
+      <label>
+        <div class="option-header">
+          <input type="radio" name="resort" value="dreams" onclick="updateTotal()">
+          <div class="option-header-text">
+            <h3>Dreams Sands Cancún Resort &amp; Spa</h3>
+            <div class="loc">Cancún · All Inclusive</div>
+          </div>
+          <div class="option-price-tag">$2,949<span>est. trip total</span></div>
+        </div>
+        <div class="option-body">
+          <div class="photo-grid">
+            <img class="main-photo" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/ac/92/9c/aerial-view-of-dreams.jpg?w=900&h=500&s=1" alt="Dreams Sands Cancún aerial view">
+            <img src="https://images.trvl-media.com/lodging/9000000/8400000/8393400/8393330/635c90d4.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Dreams Sands Cancún resort grounds">
+            <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2023/05/24/1507/DRESC-P0057-Preferred-Club-Oceanfront-Double.jpg/DRESC-P0057-Preferred-Club-Oceanfront-Double.16x9.jpg?imwidth=1280" alt="Dreams Sands Cancún oceanfront double room">
+          </div>
+          <div class="room-detail-row">
+            <div><strong>Room:</strong> Run of House</div>
+            <div><strong>Meal Plan:</strong> All Inclusive</div>
+            <div><strong>Check-in:</strong> Dec 24, 3:00 PM</div>
+            <div><strong>Check-out:</strong> Dec 28, 12:00 PM</div>
+          </div>
+          <p class="advisor-voice">Run of House means you're assigned a room that fits your family of four — but not a specific category, view, or location. The resort assigns what's available on arrival. You could land something better than a base room, but I'd go in expecting one of the more basic categories. The trade you're making is control over room type for a genuinely good rate: $2,848.65 for four people over Christmas week is attractive for this property. If a particular view, balcony, or bed configuration matters to you, I'd price a specific room category instead. Private round-trip transfer runs about $100 for the family.</p>
+          <div class="price-breakdown">
+            <div class="row"><span>Resort total, taxes included</span><span>$2,848.65</span></div>
+            <div class="row"><span>Private round-trip airport transfer (est.)</span><span>$100.00</span></div>
+            <div class="row total"><span>Estimated trip total</span><span>$2,948.65</span></div>
+          </div>
+          <div class="due-date">Book now, pay in full by <strong>December 17, 2026</strong>.</div>
+        </div>
+      </label>
+    </div>
+
+    <!-- OPTION 3: Seadust -->
+    <div class="option-card" id="card-seadust">
+      <label>
+        <div class="option-header">
+          <input type="radio" name="resort" value="seadust" onclick="updateTotal()">
+          <div class="option-header-text">
+            <h3>Seadust Cancún Beach Resort</h3>
+            <div class="loc">Cancún · All Inclusive</div>
+          </div>
+          <div class="option-price-tag">$2,707<span>est. trip total</span></div>
+        </div>
+        <div class="option-body">
+          <div class="photo-grid">
+            <img class="main-photo" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/bf/76/20/seadust-cancun-family.jpg?w=900&h=500&s=1" alt="Seadust Cancún Beach Resort family area">
+            <img src="https://images.trvl-media.com/lodging/2000000/1580000/1579700/1579645/f3f2685d.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Seadust Cancún Beach Resort grounds">
+            <img src="https://images.mirai.com/INFOROOMS/100380367/rYckhIPjP3BgqDbVW7IH/rYckhIPjP3BgqDbVW7IH_large.jpg" alt="Seadust Cancún Standard Suite room">
+          </div>
+          <div class="room-detail-row">
+            <div><strong>Room:</strong> Standard Suite – 2 Double Beds</div>
+            <div><strong>Meal Plan:</strong> All Inclusive</div>
+            <div><strong>Check-in:</strong> Dec 24, 3:00 PM</div>
+            <div><strong>Check-out:</strong> Dec 28, 12:00 PM</div>
+          </div>
+          <p class="advisor-voice">Seadust is a strong value play for a family over Christmas — a beachfront all-inclusive with plenty of dining, family activities, pools, a water park, and evening entertainment, plus a confirmed Standard Suite with two double beds rather than a Run of House assignment. The trade-off against Fiesta Americana Condesa is polish — Seadust isn't as updated overall. But at this price, you're getting a lot included, with more room left in the budget for excursions. Private round-trip transfer adds about $100.</p>
+          <div class="price-breakdown">
+            <div class="row"><span>Resort total, taxes included</span><span>$2,586.89</span></div>
+            <div class="row"><span>Mandatory hotel tax (paid directly at resort)</span><span>$20.00</span></div>
+            <div class="row"><span>Private round-trip airport transfer (est.)</span><span>$100.00</span></div>
+            <div class="row total"><span>Estimated trip total</span><span>$2,706.89</span></div>
+          </div>
+          <div class="due-date">Book now, pay in full by <strong>November 21, 2026</strong>.</div>
+        </div>
+      </label>
+    </div>
+
+    <!-- OPTION 4: Paradisus Cancun -->
+    <div class="option-card" id="card-paradisus">
+      <label>
+        <div class="option-header">
+          <input type="radio" name="resort" value="paradisus" onclick="updateTotal()">
+          <div class="option-header-text">
+            <h3>Paradisus Cancun All Inclusive</h3>
+            <div class="loc">Cancún Hotel Zone · All Inclusive</div>
+          </div>
+          <div class="option-price-tag">$3,777<span>est. trip total</span></div>
+        </div>
+        <div class="option-body">
+          <div class="photo-grid">
+            <img class="main-photo" src="https://www.paradisuscancun.com/images/slides/slide-118.jpg" alt="Paradisus Cancun resort grounds">
+            <img src="https://www.luxurylink.com/images/sho_67fd588b/2402_816-945/image-2402_816.jpg" alt="Paradisus Cancun Junior Suite">
+            <img src="https://www.paradisuscancun.com/images/slides/slide-108.jpg" alt="Paradisus Cancun property view">
+          </div>
+          <div class="room-detail-row">
+            <div><strong>Room:</strong> Junior Suite – Sunset View</div>
+            <div><strong>Meal Plan:</strong> All Inclusive</div>
+            <div><strong>Check-in:</strong> Dec 24, 3:00 PM</div>
+            <div><strong>Check-out:</strong> Dec 28, 12:00 PM</div>
+          </div>
+          <p class="advisor-voice">Paradisus Cancun is a step up in overall resort feel from the other three — a beachfront property in the Hotel Zone with several included restaurants, large pools, family activities, and evening entertainment. The pyramid-shaped design and interior give it a different character from a standard hotel block. The Junior Suite Sunset View faces the lagoon side rather than the open Caribbean, but you get a spacious room for less than the ocean-view categories cost. It's the most expensive of the four, but if a more polished overall stay matters more than a few hundred dollars, this is the strongest contender.</p>
+          <div class="price-breakdown">
+            <div class="row"><span>Resort total</span><span>$3,677.40</span></div>
+            <div class="row"><span>Private round-trip airport transfer (est.)</span><span>$100.00</span></div>
+            <div class="row total"><span>Estimated trip total</span><span>$3,777.40</span></div>
+          </div>
+          <div class="due-date">Book now, pay in full by <strong>November 30, 2026</strong>.</div>
+        </div>
+      </label>
+    </div>
+
+    </form>
+  </section>
+
+  <section id="compare">
+    <h2>Side by side</h2>
+    <p class="section-sub">The same four nights, four ways.</p>
+    <div class="compare-table-wrap">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th>Resort</th>
+            <th>Room</th>
+            <th>Resort Total</th>
+            <th>Transfer</th>
+            <th>Trip Total</th>
+            <th>Payment Due</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fiesta Americana Condesa</td>
+            <td>Premium Garden View</td>
+            <td class="num">$3,160.23 <span style="font-weight:400;color:var(--text-secondary);">+ $44 fee</span></td>
+            <td>$100</td>
+            <td class="num">$3,304.23</td>
+            <td>Dec 7, 2026</td>
+          </tr>
+          <tr>
+            <td>Dreams Sands</td>
+            <td>Run of House</td>
+            <td class="num">$2,848.65</td>
+            <td>$100</td>
+            <td class="num">$2,948.65</td>
+            <td>Dec 17, 2026</td>
+          </tr>
+          <tr>
+            <td>Seadust</td>
+            <td>Standard Suite</td>
+            <td class="num">$2,586.89 <span style="font-weight:400;color:var(--text-secondary);">+ $20 tax</span></td>
+            <td>$100</td>
+            <td class="num">$2,706.89</td>
+            <td>Nov 21, 2026</td>
+          </tr>
+          <tr>
+            <td>Paradisus Cancun</td>
+            <td>Junior Suite Sunset View</td>
+            <td class="num">$3,677.40</td>
+            <td>$100</td>
+            <td class="num">$3,777.40</td>
+            <td>Nov 30, 2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="andreas-take">
+    <h2>Andrea's Take</h2>
+    <p class="advisor-voice">If price is the deciding factor, Seadust gets you a confirmed suite over Christmas for under $2,750 all in, and it still delivers on beach, pools, and entertainment. If you want a stronger resort feel and don't mind spending more, Paradisus is the one I'd point you toward. Dreams Sands sits in between on price but asks you to give up control of your room assignment. Fiesta Americana Condesa is the balance point — a well-located, well-reviewed resort with a confirmed room, right in the middle of the pack on price.</p>
+  </section>
+
+  <div class="pricing-note">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+    <div class="disclaimer-note">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+  </div>
+
+  <div class="commitment-block">
+    What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+
+  <section id="contact" class="contact-section">
+    <h2>Ready to move forward?</h2>
+    <p class="section-sub">Tell us which resort you're leaning toward and any questions — we'll follow up to lock in details and get your booking started.</p>
+
+    <div id="formError">There was a problem submitting the form. Please try again, or reach out directly using the contact info in the footer below.</div>
+
+    <form id="contactForm">
+      <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+      <input type="hidden" name="subject" value="Quote Response — Esther Guerra | Cancún All Inclusive">
+      <input type="hidden" name="from_name" value="Esther Guerra Quote — Point Me to Paradise">
+      <input type="hidden" name="redirect" value="false">
+
+      <div class="form-row">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-row">
+        <label for="option_interest">Which resort are you leaning toward?</label>
+        <select id="option_interest" name="option_interest">
+          <option value="">Select one</option>
+          <option value="Fiesta Americana Condesa Cancún">Fiesta Americana Condesa Cancún</option>
+          <option value="Dreams Sands Cancún Resort & Spa">Dreams Sands Cancún Resort &amp; Spa</option>
+          <option value="Seadust Cancún Beach Resort">Seadust Cancún Beach Resort</option>
+          <option value="Paradisus Cancun All Inclusive">Paradisus Cancun All Inclusive</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="insurance">Travel insurance?</label>
+        <select id="insurance" name="insurance">
+          <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+          <option value="No — not interested">No — not interested</option>
+          <option value="Already have coverage">Already have coverage</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="message">Message (optional)</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+      <button type="submit" class="submit-btn" id="submitBtn">Send to Andrea</button>
+    </form>
+
+    <div id="thankYou">
+      <h3>Thanks, Esther!</h3>
+      <p>Your message is on its way. We'll follow up shortly to get your Cancún trip locked in.</p>
+    </div>
+  </section>
+</div>
+
+<div class="sticky-bar">
+  <div>
+    <div class="label">Estimated trip total</div>
+    <div class="amount" id="stickyTotal">$3,304.23</div>
+  </div>
+  <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Get Started</button>
+</div>
+
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div class="agent-contact">
+    <span id="footerEmail"></span> · 409-789-3579<br>
+    Point Me to Paradise Travel · Certified Autism Travel Planner
+  </div>
+  <div class="disclaimer">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<script>
+  var resortTotals = {
+    fiesta: 3304.23,
+    dreams: 2948.65,
+    seadust: 2706.89,
+    paradisus: 3777.40
+  };
+
+  function updateTotal(){
+    var selected = document.querySelector('input[name="resort"]:checked');
+    var total = selected ? resortTotals[selected.value] : resortTotals.fiesta;
+    document.getElementById('stickyTotal').textContent = '$' + total.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+
+    document.querySelectorAll('.option-card').forEach(function(card){ card.classList.remove('selected'); });
+    if (selected) {
+      var card = document.getElementById('card-' + selected.value);
+      if (card) card.classList.add('selected');
+    }
+  }
+  updateTotal();
+
+  // Assemble agent email at runtime (avoids Cloudflare scrambling)
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var el = document.getElementById('footerEmail');
+    el.textContent = addr;
+  })();
+
+  // Web3Forms submission via fetch — never native POST
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var errorDiv = document.getElementById('formError');
+    var submitBtn = document.getElementById('submitBtn');
+    errorDiv.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    var formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(function(response){ return response.json(); })
+    .then(function(data){
+      if (data.success) {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorDiv.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send to Andrea';
+      }
+    })
+    .catch(function(){
+      errorDiv.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send to Andrea';
+    });
+  });
+</script>
+
+</body>
+</html>
