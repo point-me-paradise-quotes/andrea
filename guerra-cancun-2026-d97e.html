@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esther Guerra — Cancún Family Getaway, December 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text:#3D3D3D;
+    --text-muted:#606060;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--text);
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{
+    font-family:'Playfair Display',serif;
+    color:var(--teal-dark);
+    margin:0 0 .4em 0;
+    font-weight:600;
+  }
+  .accent{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--teal-dark);
+  }
+  a{color:var(--teal-dark);}
+  img{max-width:100%;display:block;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:420px;
+    display:flex;
+    align-items:flex-end;
+    background-image:
+      linear-gradient(180deg, rgba(46,66,66,.35) 0%, rgba(30,45,45,.75) 100%),
+      url('https://res.cloudinary.com/dtljonz0f/image/upload/c_auto,ar_4:3,w_3840,g_auto/f_auto/q_auto/v1/gc-v1/cancun/shutterstock_2005698047%20edit?_a=BAVAZGDY0');
+    background-size:cover;
+    background-position:center;
+    padding:60px 24px 32px;
+  }
+  .hero-inner{max-width:900px;margin:0 auto;width:100%;}
+  .hero-eyebrow{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--cream-light);
+    font-size:1.15rem;
+    margin-bottom:6px;
+  }
+  .hero h1{color:#fff;font-size:2.1rem;margin-bottom:.25em;}
+  .hero-meta{color:var(--cream-light);font-size:.95rem;}
+
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px;}
+
+  /* COMMITMENT BLOCKS */
+  .commitment{
+    background:var(--teal-dark);
+    color:#fff;
+    padding:18px 24px;
+    border-radius:10px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.15rem;
+    text-align:center;
+    line-height:1.5;
+  }
+  .commitment.top{margin:24px auto -6px;}
+  .commitment.pricing{margin:18px 0;font-size:1.05rem;}
+  .commitment.bottom{margin:36px 0 20px;}
+
+  section.intro{padding:28px 0 8px;}
+  .intro p{color:var(--text);font-size:1.02rem;}
+  .credential-badge{
+    background:var(--cream-light);
+    border-left:4px solid var(--gold-dark);
+    border-radius:8px;
+    padding:12px 16px;
+    margin-top:14px;
+  }
+  .credential-badge strong{
+    display:block;
+    font-family:'Playfair Display',serif;
+    color:var(--teal-dark);
+    font-size:1rem;
+    margin-bottom:4px;
+  }
+  .credential-badge span{
+    font-size:.9rem;
+    color:var(--text-muted);
+  }
+
+  /* STICKY TOTAL */
+  .total-bar{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--paper-pure);
+    border-bottom:2px solid var(--pale-teal);
+    padding:12px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:6px;
+    box-shadow:0 2px 8px rgba(79,138,140,.12);
+  }
+  .total-bar .label{font-family:'Playfair Display',serif;color:var(--teal-dark);font-size:1rem;}
+  .total-bar .amount{font-family:'Playfair Display',serif;color:var(--teal-dark);font-size:1.5rem;font-weight:700;}
+  .total-bar .sub{font-size:.78rem;color:var(--text-muted);width:100%;}
+
+  /* OPTIONS */
+  .options-heading{padding:28px 0 6px;}
+  .options-heading p{color:var(--text-muted);font-size:.95rem;}
+
+  .resort-card{
+    background:var(--paper-pure);
+    border:2px solid var(--pale-teal);
+    border-radius:14px;
+    margin:18px 0;
+    overflow:hidden;
+    transition:border-color .2s ease, box-shadow .2s ease;
+    cursor:pointer;
+  }
+  .resort-card.selected{
+    border-color:var(--teal-dark);
+    box-shadow:0 4px 16px rgba(79,138,140,.2);
+  }
+  .resort-card .select-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:16px 18px 0;
+  }
+  .resort-card input[type="radio"]{
+    width:22px;height:22px;
+    accent-color:var(--teal-dark);
+    min-height:44px;min-width:44px;
+    flex-shrink:0;
+    display:flex;
+  }
+  .resort-card .select-row label{
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+    color:var(--teal-dark);
+    font-size:1.05rem;
+    cursor:pointer;
+  }
+  .gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:2px;
+    margin:14px 0;
+  }
+  .gallery img{width:100%;height:150px;object-fit:cover;}
+  .card-body{padding:0 18px 18px;}
+  .location-line{color:var(--text-muted);font-size:.88rem;margin-bottom:10px;}
+  .room-badge{
+    display:inline-block;
+    background:var(--cream-light);
+    color:var(--teal-dark);
+    font-size:.8rem;
+    padding:4px 10px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .teaser{font-size:.98rem;margin-bottom:10px;}
+  .price-block{
+    background:var(--cream-light);
+    border-radius:8px;
+    padding:12px 14px;
+    margin:10px 0;
+    font-size:.92rem;
+  }
+  .price-block .line{display:flex;justify-content:space-between;padding:2px 0;}
+  .price-block .line.total{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    color:var(--teal-dark);
+    border-top:1px solid var(--pale-teal);
+    margin-top:6px;
+    padding-top:8px;
+    font-size:1.05rem;
+  }
+  .due{font-size:.82rem;color:var(--text-muted);margin-top:4px;}
+
+  .full-details{
+    margin-top:16px;
+    border-top:1px solid var(--pale-teal);
+    padding-top:16px;
+  }
+  .full-details .full-heading{
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+    color:var(--teal-dark);
+    font-size:1rem;
+    margin-bottom:10px;
+  }
+  .detail-section{margin-bottom:14px;}
+  .detail-section h4{font-size:.98rem;margin-bottom:.3em;}
+  .detail-section p{font-size:.94rem;color:var(--text);margin:.25em 0;}
+
+  /* COMPARISON */
+  .compare-section{margin:30px 0 10px;}
+  .compare-lead{color:var(--text-muted);font-size:.95rem;margin-top:0;}
+  .compare-scroll{
+    overflow-x:auto;
+    border-radius:10px;
+    border:1px solid var(--pale-teal);
+    -webkit-overflow-scrolling:touch;
+  }
+  table.compare-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--paper-pure);
+    min-width:640px;
+    font-size:.88rem;
+  }
+  table.compare-table th{
+    font-family:'Playfair Display',serif;
+    background:var(--teal-dark);
+    color:#fff;
+    text-align:left;
+    padding:12px 14px;
+    font-weight:600;
+    font-size:.85rem;
+  }
+  table.compare-table td{
+    padding:12px 14px;
+    border-top:1px solid var(--pale-teal);
+    vertical-align:top;
+  }
+  table.compare-table td[data-label="Resort"]{
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+    color:var(--teal-dark);
+    white-space:nowrap;
+  }
+  table.compare-table td[data-label="Total"]{
+    font-weight:700;
+    color:var(--teal-dark);
+    white-space:nowrap;
+  }
+  .compare-notes{
+    background:var(--cream-light);
+    border-radius:10px;
+    padding:16px 18px;
+    margin-top:14px;
+  }
+  .compare-notes p{
+    font-size:.92rem;
+    margin:.5em 0;
+  }
+  .compare-notes strong{color:var(--teal-dark);}
+
+  /* FORM */
+  .contact-section{
+    background:var(--cream-light);
+    border-radius:14px;
+    padding:26px 22px;
+    margin:20px 0 32px;
+  }
+  .contact-section h2{margin-bottom:.2em;}
+  .contact-section p.lead{color:var(--text-muted);font-size:.95rem;margin-top:0;}
+  form .field{margin-bottom:14px;}
+  form label{display:block;font-size:.88rem;font-weight:600;color:var(--teal-dark);margin-bottom:5px;}
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form select,
+  form textarea{
+    width:100%;
+    font-size:16px;
+    padding:12px 12px;
+    min-height:44px;
+    border:1px solid var(--pale-teal);
+    border-radius:8px;
+    font-family:'DM Sans',sans-serif;
+    color:var(--text);
+    background:var(--paper-pure);
+  }
+  form textarea{min-height:90px;resize:vertical;}
+  form button{
+    width:100%;
+    min-height:48px;
+    background:var(--teal-dark);
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-family:'Playfair Display',serif;
+    font-size:1.05rem;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:6px;
+  }
+  form button:hover{background:var(--teal);}
+  #formError{
+    display:none;
+    background:#fde8e8;
+    color:#8a2c2c;
+    border-radius:8px;
+    padding:10px 14px;
+    font-size:.88rem;
+    margin-bottom:12px;
+  }
+  #thankYou{
+    display:none;
+    text-align:center;
+    padding:20px 10px;
+  }
+  #thankYou h3{margin-bottom:.3em;}
+
+  footer{
+    background:var(--teal-dark);
+    color:var(--cream-light);
+    padding:26px 20px;
+    text-align:center;
+    font-size:.88rem;
+  }
+  footer .agent-name{
+    font-family:'Playfair Display',serif;
+    font-size:1.1rem;
+    color:#fff;
+    margin-bottom:4px;
+  }
+  footer a{color:var(--cream-light);text-decoration:underline;}
+  footer .disclaimer{
+    margin-top:14px;
+    font-size:.78rem;
+    color:var(--pale-teal);
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  @media (max-width:540px){
+    .gallery{grid-template-columns:1fr 1fr 1fr;}
+    .gallery img{height:90px;}
+    .hero h1{font-size:1.6rem;}
+    .total-bar .amount{font-size:1.25rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">A Family Christmas in Cancún</div>
+    <h1>Esther Guerra's Cancún Getaway</h1>
+    <div class="hero-meta">December 24–28, 2026 · 4 Nights · 2 Adults, 1 Teen (15), 1 Child (4)</div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="commitment top">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+
+  <section class="intro">
+    <p>Five resorts, five different takes on a Christmas week in the Cancún/Riviera Maya area — each chosen with your family's mix of ages, food priorities, beach preferences, and sensory needs in mind. Read through each one, pick the resort that fits, and I'll take it from there.</p>
+    <div class="credential-badge">
+      <strong>Andrea Gunter — Certified Autism Travel Planner</strong>
+      <span>Every option below was reviewed with your 4-year-old's sensory needs in mind, including each resort's autism certification status.</span>
+    </div>
+  </section>
+</div>
+
+<div class="total-bar" id="totalBar">
+  <span class="label">Est. Total</span>
+  <span class="amount" id="totalAmount">Select a resort below</span>
+  <span class="sub">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</span>
+</div>
+
+<div class="wrap">
+  <div class="commitment pricing">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+  </div>
+
+  <div class="options-heading">
+    <h2>Your Five Resort Options</h2>
+    <p>Select one to see it reflected in your running total above.</p>
+  </div>
+
+  <!-- RESORT 1 -->
+  <div class="resort-card" data-total="4600.47" data-label="Margaritaville Island Reserve Riviera Cancún">
+    <div class="select-row">
+      <input type="radio" name="resortSelect" id="resort1" value="Margaritaville Island Reserve Riviera Cancún">
+      <label for="resort1">Option 1 — Margaritaville Island Reserve Riviera Cancún by Karisma</label>
+    </div>
+    <div class="gallery">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/af/67/f7/irrc-arch-aerial.jpg?w=900&h=-1&s=1" alt="Margaritaville Island Reserve Riviera Cancún aerial view">
+      <img src="https://images.trvl-media.com/lodging/79000000/78790000/78784600/78784531/0be246c4.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Margaritaville Island Reserve Riviera Cancún room">
+      <img src="https://www.islandrivieracancun.com/images/slides/slide-12.jpg" alt="Margaritaville Island Reserve Riviera Cancún resort grounds">
+    </div>
+    <div class="card-body">
+      <div class="location-line">Puerto Morelos, Riviera Maya, Mexico</div>
+      <div class="room-badge">Paradise Junior Suite · All-Inclusive</div>
+      <p class="teaser">The smaller, easier-to-navigate option — Autism Double-Checked certified, with a fresh Caribbean-modern room, four pools, and enough going on for the 15-year-old without the entire resort feeling built around toddlers. The trade-off is the beach, which is nice but not the area's best.</p>
+      <div class="price-block">
+        <div class="line"><span>Resort &amp; taxes</span><span>$4,491.47</span></div>
+        <div class="line"><span>Private round-trip airport transfer</span><span>$109.00</span></div>
+        <div class="line total"><span>Total</span><span>$4,600.47</span></div>
+      </div>
+      <div class="due">Book now, pay later — payment due December 7, 2026</div>
+
+      <div class="full-details">
+        <div class="full-heading">Full Details — Margaritaville Island Reserve Riviera Cancún</div>
+        <div class="detail-section">
+          <h4>Why I Chose This Resort for Your Family</h4>
+          <p>Margaritaville Island Reserve Riviera Cancún offers a nice balance between a fun family resort and a relaxing tropical getaway. It is smaller and easier to navigate than many of Cancun's large all-inclusive resorts, while still offering plenty for both children and adults.</p>
+          <p>An additional benefit for your family is that Margaritaville Island Reserve Riviera Cancún is Autism Double-Checked certified, with autism-awareness training and resources designed to help make travel more comfortable for families with autistic travelers.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Your Room</h4>
+          <p>The Paradise Junior Suite offers approximately 463 square feet of space with two queen beds, a sitting area, furnished terrace and a spacious bathroom with a rainfall shower and freestanding tub.</p>
+          <p>The rooms have a fresh, modern Caribbean feel and provide the updated, comfortable accommodations you are looking for without moving into the ultra-luxury price range.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Food &amp; Restaurants</h4>
+          <p>Since good food is high on your wish list, this was an important consideration when choosing this resort.</p>
+          <p>Your all-inclusive stay includes meals, snacks and alcoholic and non-alcoholic beverages. The resort offers several dining experiences ranging from sit-down restaurants to casual poolside options, snacks and coffee.</p>
+          <p>Having different styles of dining also gives you flexibility if the 4-year-old isn't in the mood for a longer sit-down meal.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Pools &amp; Activities</h4>
+          <p>The resort has four swimming pools, including two oceanfront pools, along with activities throughout the day.</p>
+          <p>You'll also find non-motorized water activities such as kayaking and snorkeling.</p>
+          <p>There is enough going on to keep the kids entertained without the entire resort feeling like a giant water park. Because the property is smaller, it is also relatively easy to return to your room for some downtime when needed.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Something for the Adults &amp; Teenager Too</h4>
+          <p>One reason I like Margaritaville for your family is that it doesn't feel like a resort designed exclusively for younger children.</p>
+          <p>The adults can enjoy the pools, beach, tropical drinks, spa, fitness center and relaxed resort atmosphere, while your 15-year-old still has pools, water activities, games, music and activities to enjoy.</p>
+          <p>You do not need to use a kids club or teen club to take advantage of the family activities at the resort.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Evening Entertainment</h4>
+          <p>There are activities and entertainment throughout the week, which may include live music, karaoke, trivia, games, dance activities and other scheduled entertainment.</p>
+          <p>This gives you options for something to do together after dinner without needing to leave the resort every evening.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Beach</h4>
+          <p>The resort is directly beachfront, so you'll have easy access to the sand and Caribbean throughout your stay.</p>
+          <p>I do want to be transparent about the beach because I know this is important to you. The beach here is nice, but I would not rank it among the very best beaches in Cancun.</p>
+          <p>This section of the Riviera Cancun/Puerto Morelos coastline can experience varying water clarity and occasional seaweed. Conditions change throughout the year and even from day to day.</p>
+          <p>If having the absolute best turquoise-water beach is your highest priority, another resort may be a better match. If you're looking for a good overall combination of beach, pools, food, activities and a more manageable resort environment, Margaritaville has a lot going for it.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Autism &amp; Sensory Considerations</h4>
+          <p>This is one of the reasons Margaritaville stood out to me for your family.</p>
+          <p>The resort has autism-focused training and resources, and its smaller size can make it easier to navigate than a very large, busy resort.</p>
+          <p>We can also request a quieter room location away from elevators, entertainment areas and other high-traffic locations. While special requests can never be guaranteed, I think having an easy place to retreat and decompress when needed is an important consideration when choosing your resort.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Airport Transportation</h4>
+          <p>The resort is relatively close to Cancun International Airport, which helps avoid spending a large portion of your arrival and departure days in a vehicle.</p>
+          <p>I've included private round-trip airport transportation for $109.</p>
+          <p>Your family will have private transportation directly between Cancun International Airport and the resort rather than using a shared shuttle that may make multiple resort stops.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Overall Fit for Your Family</h4>
+          <p>I think Margaritaville is especially worth considering if your priorities are good food, comfortable updated accommodations, a manageable resort size, pools and activities for the kids, entertainment for your teenager, relaxation for the adults and a shorter airport transfer.</p>
+          <p>The biggest compromise is the beach. The biggest advantages are the smaller resort atmosphere, autism-friendly features, dining, family/adult balance and convenient location.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESORT 2 -->
+  <div class="resort-card" data-total="4003.18" data-label="Catalonia Grand Costa Mujeres All Suites & Spa">
+    <div class="select-row">
+      <input type="radio" name="resortSelect" id="resort2" value="Catalonia Grand Costa Mujeres All Suites & Spa">
+      <label for="resort2">Option 2 — Catalonia Grand Costa Mujeres All Suites &amp; Spa</label>
+    </div>
+    <div class="gallery">
+      <img src="https://images.trvl-media.com/lodging/40000000/39140000/39132600/39132531/f653acc5.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Catalonia Grand Costa Mujeres room">
+      <img src="https://www.cataloniaplayamujeres.com/images/gallery/gallery-1.jpg" alt="Catalonia Grand Costa Mujeres resort grounds">
+      <img src="https://www.cataloniaplayamujeres.com/images/slides/slide-51.jpg" alt="Catalonia Grand Costa Mujeres pool area">
+    </div>
+    <div class="card-body">
+      <div class="location-line">Costa Mujeres, Mexico</div>
+      <div class="room-badge">Family Suite Superior · All-Inclusive</div>
+      <p class="teaser">The best beach of the four, an all-suite layout built for families, AAA Four Diamond–rated, and the widest dining variety in this price range. The trade-off: it's the farthest from the airport, at roughly 35–45 minutes.</p>
+      <div class="price-block">
+        <div class="line"><span>Resort &amp; taxes</span><span>$3,903.18</span></div>
+        <div class="line"><span>Private round-trip airport transfer</span><span>$100.00</span></div>
+        <div class="line total"><span>Total</span><span>$4,003.18</span></div>
+      </div>
+      <div class="due">Book now, pay later — payment due December 16, 2026</div>
+
+      <div class="full-details">
+        <div class="full-heading">Full Details — Catalonia Grand Costa Mujeres All Suites &amp; Spa</div>
+        <div class="detail-section">
+          <h4>Why I Chose This Resort for Your Family</h4>
+          <p>Catalonia Grand Costa Mujeres is a really strong value for Christmas week, especially considering that it is an all-suite resort with a beautiful beachfront location, several dining choices, large pools and activities that appeal to younger children, teenagers and adults.</p>
+          <p>It has a modern, upscale feel without moving into the ultra-luxury price range. The property has also received a AAA Four Diamond rating, which recognizes its overall level of design, comfort, service and amenities.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Your Room</h4>
+          <p>The Family Suite Superior gives your family more space than a traditional hotel room and is designed specifically with families in mind.</p>
+          <p>The resort itself is relatively new and features modern suites with a terrace or balcony, so this is a good option if clean, updated accommodations are important to you.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Food &amp; Restaurants</h4>
+          <p>This is one of the reasons Catalonia stands out in its price range.</p>
+          <p>The resort has a good variety of dining options located throughout the property, including buffet dining, themed à la carte restaurants, casual food courts and other quick options. The central Quinta Avenida area is home to several restaurants, bars and food venues, making it easy to find something different without leaving the resort.</p>
+          <p>There are choices ranging from international and Mexican cuisine to Asian-inspired dining and more casual meals, which gives you considerably more variety than a smaller all-inclusive resort.</p>
+          <p>For a family traveling with both a 4-year-old and a 15-year-old, I especially like having casual dining available alongside sit-down restaurants. It gives you flexibility without having to structure every meal around a formal dinner reservation.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Pools &amp; Fun for the 4-Year-Old</h4>
+          <p>Catalonia has two large swimming pools with swim-up bars. One pool is geared more toward activities and family fun, while the other has a more relaxed atmosphere. There is also a children's pool area.</p>
+          <p>That setup is nice because you aren't limited to one busy main pool. Your family can spend time around the activity pool when everyone wants more going on and move to a calmer area when you want a different atmosphere.</p>
+          <p>The resort does have children's and teen clubs, but you certainly do not need to use them. There are pools, beach time, games and resort activities that you can enjoy together as a family.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Something for the Adults &amp; 15-Year-Old Too</h4>
+          <p>This is another area where I think Catalonia fits your family well.</p>
+          <p>The Quinta Avenida area runs through the heart of the resort and includes restaurants, bars, food courts, shops and both daytime and evening activities. This gives your 15-year-old somewhere to walk around and explore with the family while still providing plenty for the adults to enjoy.</p>
+          <p>The resort offers a combination of active areas and more relaxed spaces, so it doesn't feel like the entire property revolves around small children.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Evening Entertainment &amp; Family Activities</h4>
+          <p>There are daytime and nighttime activities throughout the resort, particularly around Quinta Avenida and the entertainment areas.</p>
+          <p>This gives you something to do together after dinner without needing to leave the property every night. The exact entertainment schedule changes during the week, but you can expect a mix of resort activities and evening entertainment.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Beach</h4>
+          <p>The beach is one of Catalonia's biggest advantages.</p>
+          <p>Catalonia describes the resort as being located on one of the best beaches north of Cancun, directly across from Isla Mujeres. Costa Mujeres is known for white sand, clear Caribbean water, relatively shallow water and generally gentler waves.</p>
+          <p>Of the resorts we're comparing in this price range, I would consider this one of the stronger options if having a pretty, swimmable beach is important to you.</p>
+          <p>As with any Caribbean beach, daily water and seaweed conditions can change, so I would never guarantee perfect beach conditions. But overall, I like the Costa Mujeres beach location considerably more than many of the resorts farther south along the Riviera Cancun coastline.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Autism &amp; Sensory Considerations</h4>
+          <p>Catalonia is a larger and more active resort than Margaritaville, so I would be a little more strategic about room location for your family.</p>
+          <p>I would request a quieter room away from Quinta Avenida, the entertainment areas and the busiest pool sections so you have an easier place to return to if your 4-year-old needs some downtime.</p>
+          <p>One benefit is having two different pool environments and a large resort with different areas. You can choose how much activity you want to be around rather than spending the entire day in one high-energy location.</p>
+          <p>Unlike Margaritaville, this is not the option I would choose specifically for autism-focused certification. Its strengths for your family are the room space, beach, dining variety and ability to choose between active and quieter areas.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Airport Distance</h4>
+          <p>Costa Mujeres is north of Cancun and farther from Cancun International Airport than Margaritaville or the resorts directly in the Hotel Zone.</p>
+          <p>Cancun International Airport is approximately 30 kilometers from the Costa Mujeres area.</p>
+          <p>I would plan on approximately 35–45 minutes for a private transfer depending on traffic. It isn't an especially long transfer, but it is one of the trade-offs for getting the nicer Costa Mujeres beach.</p>
+          <p>Private round-trip airport transportation can be added so your family can travel directly between Cancun International Airport and the resort without making multiple hotel stops.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Overall Fit for Your Family</h4>
+          <p>I think this is a very strong option if your priorities are a nice beach, lots of dining choices, modern accommodations, pools for the kids, activities for your teenager and a resort that still offers relaxing spaces for the adults.</p>
+          <p>Compared with Margaritaville, Catalonia gives you a better beach, more dining variety and more going on around the resort for your 15-year-old. Margaritaville has the advantage for the shorter airport transfer, smaller resort layout and autism-focused features.</p>
+          <p>At $3,903.18 for four nights over Christmas, Catalonia Grand Costa Mujeres offers a lot for the price and comes much closer to your original resort budget than some of the higher-end Cancun options.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESORT 3 -->
+  <div class="resort-card" data-total="5443.54" data-label="Dreams Natura Resort & Spa">
+    <div class="select-row">
+      <input type="radio" name="resortSelect" id="resort3" value="Dreams Natura Resort & Spa">
+      <label for="resort3">Option 3 — Dreams Natura Resort &amp; Spa</label>
+    </div>
+    <div class="gallery">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/bc/28/bb/three-main-pools-a-children.jpg?w=900&h=500&s=1" alt="Dreams Natura Resort pools and children's area">
+      <img src="https://www.naturaparkresort.com/images/slides/slide-3.jpg" alt="Dreams Natura Resort grounds">
+      <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2022/03/09/1657/DRENA-P0016-Junior-Suite-Tropical-View-Double.jpg/DRENA-P0016-Junior-Suite-Tropical-View-Double.16x9.jpg?imwidth=1280" alt="Dreams Natura Preferred Club Junior Suite Ocean View room">
+    </div>
+    <div class="card-body">
+      <div class="location-line">Puerto Morelos, Riviera Maya, Mexico</div>
+      <div class="room-badge">Preferred Club Junior Suite Ocean View Double · All-Inclusive</div>
+      <p class="teaser">The "fun higher-end" option — multiple pools, a lazy river, and a children's splash area, plus Preferred Club amenities and one of the shortest airport transfers in the group. Not autism-certified, and the beach doesn't match Catalonia's or Paradisus's.</p>
+      <div class="price-block">
+        <div class="line"><span>Resort stay including taxes</span><span>$5,318.54</span></div>
+        <div class="line"><span>Private round-trip airport transfer</span><span>$125.00</span></div>
+        <div class="line total"><span>Total</span><span>$5,443.54</span></div>
+      </div>
+      <div class="due">Book now, pay later — payment due November 21, 2026</div>
+
+      <div class="full-details">
+        <div class="full-heading">Full Details — Dreams Natura Resort &amp; Spa</div>
+        <div class="detail-section">
+          <h4>Why I Chose This Resort for Your Family</h4>
+          <p>Dreams Natura is a strong higher-end family option if you want a resort with a lot built in for both children and teens while still giving the adults a polished, relaxing resort experience.</p>
+          <p>This property has a strong "there is always something to do" feel, so it may appeal especially to your 15-year-old and 4-year-old. It also has a very convenient location close to Cancun International Airport, which is a major plus if you want to avoid a long transfer.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Your Room – Preferred Club Junior Suite Ocean View Double</h4>
+          <p>The Preferred Club Junior Suite Ocean View Double gives your family two double beds, an upgraded room category and an ocean view.</p>
+          <p>You also receive Preferred Club benefits, which include upgraded amenities, personalized concierge service and access to the Preferred Club lounge.</p>
+          <p>For your family, I would request a quieter room location away from elevators, evening entertainment and the busiest pool areas. While requests cannot be guaranteed, having a calmer room location could be especially helpful when your 4-year-old needs some downtime.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Food &amp; Restaurants</h4>
+          <p>Dreams Natura offers a good variety of dining, with multiple restaurants and bars throughout the resort.</p>
+          <p>You will find a mix of international cuisine, Mexican, Italian, Asian-inspired dining, seafood, casual options and snacks.</p>
+          <p>Your all-inclusive stay also includes beverages and room service, giving you flexibility if your 4-year-old is not up for a sit-down restaurant one evening.</p>
+          <p>For a family that considers food an important part of the trip, Dreams Natura gives you significantly more variety than many value-oriented family resorts.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Pools &amp; Fun for Your 4-Year-Old</h4>
+          <p>This is one of Dreams Natura's biggest strengths.</p>
+          <p>The resort has multiple pools, a children's splash area, water features and a lazy river, along with plenty of scheduled activities.</p>
+          <p>There is a lot to enjoy together as a family without needing to use the kids club.</p>
+          <p>This is a more active resort than Margaritaville, so there will be more stimulation overall, but there are also different areas of the property where you can change pace during the day.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Something for the Adults &amp; 15-Year-Old Too</h4>
+          <p>Dreams Natura works well for families with a wide age range.</p>
+          <p>Your 15-year-old has pools, water activities, resort games and entertainment, while the adults still get a more upscale atmosphere, restaurants, bars, spa services and areas to relax.</p>
+          <p>It does a good job of giving the kids plenty to do without making the entire resort feel like it was built only for younger children.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Evening Entertainment &amp; Family Activities</h4>
+          <p>There are scheduled daytime and evening activities throughout the week, including live entertainment, games, music and themed events.</p>
+          <p>Because your stay falls over Christmas, there may also be special holiday programming during your visit.</p>
+          <p>This gives you plenty of options for things to do together after dinner without leaving the resort.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Beach</h4>
+          <p>Dreams Natura is directly beachfront, so you will have easy beach access throughout your stay.</p>
+          <p>I do want to be transparent about the beach because this is one of the trade-offs.</p>
+          <p>The Riviera Cancun/Puerto Morelos coastline does not consistently have the same bright turquoise water and powder-white sand found in Cancun's Hotel Zone or Costa Mujeres. Water clarity and seaweed can vary.</p>
+          <p>If having the prettiest beach is your number-one priority, I would rank Catalonia or Paradisus higher.</p>
+          <p>If pools, activities and the overall family resort experience are more important, Dreams Natura is very strong.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Autism &amp; Sensory Considerations</h4>
+          <p>Dreams Natura is not autism-certified.</p>
+          <p>It is also a more active and stimulating resort than Margaritaville, so I would be intentional about room location and daily pacing.</p>
+          <p>I would request a quiet Preferred Club room away from the main entertainment areas and busiest pool sections.</p>
+          <p>One nice benefit is having enough different activity areas that you do not have to spend the entire day in one crowded central location. You can move between pools, beach areas and quieter spaces depending on how your 4-year-old is doing.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Airport Distance</h4>
+          <p>Dreams Natura is one of the most convenient resorts in this comparison for airport access.</p>
+          <p>The resort is relatively close to Cancun International Airport, so you can expect a much shorter transfer than Costa Mujeres.</p>
+          <p>Plan on approximately 15–20 minutes by private transportation depending on traffic.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Overall Fit for Your Family</h4>
+          <p>Dreams Natura is a great choice if your priority is having lots of activities, pools and built-in entertainment while still staying at a nicer, more upscale family resort.</p>
+          <p>Compared with Margaritaville, it offers more activities and a larger resort experience, while Margaritaville still has the advantage for autism-focused certification and a smaller, easier-to-navigate layout.</p>
+          <p>Compared with Paradisus, Dreams Natura has the advantage for kid-focused activities and airport convenience, while Paradisus has the stronger beach and more refined overall feel.</p>
+          <p>For your family, I would consider this the "fun higher-end" option.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESORT 4 -->
+  <div class="resort-card" data-total="4934.10" data-label="Paradisus Cancun All Inclusive">
+    <div class="select-row">
+      <input type="radio" name="resortSelect" id="resort4" value="Paradisus Cancun All Inclusive">
+      <label for="resort4">Option 4 — Paradisus Cancun All Inclusive</label>
+    </div>
+    <div class="gallery">
+      <img src="https://images.trvl-media.com/lodging/1000000/530000/525800/525789/0e30339f.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Paradisus Cancun room">
+      <img src="https://www.paradisuscancun.com/images/slides/slide-113.jpg" alt="Paradisus Cancun resort view">
+      <img src="https://www.paradisuscancun.com/images/slides/slide-11.jpg" alt="Paradisus Cancun pool and beach area">
+    </div>
+    <div class="card-body">
+      <div class="location-line">Cancún Hotel Zone, Mexico</div>
+      <div class="room-badge">Family Concierge Junior Suite – Ocean View · All-Inclusive</div>
+      <p class="teaser">The most upscale pick — newly renovated for 2026, a genuine Hotel Zone beach, a dedicated kids' water-play area, and Family Concierge service. It's the second-highest total of the four, with a short 20–25 minute transfer and the most polished overall stay.</p>
+      <div class="price-block">
+        <div class="line"><span>Resort stay including taxes</span><span>$4,834.10</span></div>
+        <div class="line"><span>Approx. private round-trip airport transfer</span><span>$100.00</span></div>
+        <div class="line total"><span>Estimated total</span><span>$4,934.10</span></div>
+      </div>
+      <div class="due">Book now, pay later — payment due November 30, 2026. Transportation pricing is approximate and confirmed at booking.</div>
+
+      <div class="full-details">
+        <div class="full-heading">Full Details — Paradisus Cancun All Inclusive</div>
+        <div class="detail-section">
+          <h4>Why I Chose This Resort for Your Family</h4>
+          <p>Paradisus Cancun is my higher-end option for your family and offers a noticeable step up in the overall resort experience while still keeping the price relatively close to the other options.</p>
+          <p>The resort recently underwent an extensive renovation and reopened in 2026 with redesigned accommodations, refreshed resort spaces, updated dining concepts and new family amenities.</p>
+          <p>You get the beautiful Cancun Hotel Zone location, a great beach, updated accommodations, plenty of dining choices and a resort that feels upscale without being overly formal.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Your Room – Family Concierge Junior Suite Ocean View</h4>
+          <p>I specifically chose the Family Concierge Junior Suite Ocean View rather than a standard room because I think the added family benefits are worth considering for your trip.</p>
+          <p>You'll have a newly redesigned suite with an ocean view along with the additional amenities and personalized services that come with the Family Concierge experience.</p>
+          <p>For your 4-year-old, I would also request a quieter room location away from elevators, evening entertainment and other high-traffic areas. While requests can't be guaranteed, having a comfortable place to retreat when some downtime is needed could be very helpful.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Food &amp; Restaurants</h4>
+          <p>This is one of Paradisus Cancun's strongest areas and an important reason I selected it for you.</p>
+          <p>The resort offers a large selection of restaurants and bars with different cuisines and dining styles. You'll find choices ranging from Mexican and international cuisine to Asian-inspired dishes, seafood, steak and more casual options.</p>
+          <p>Your all-inclusive stay includes meals, snacks and beverages, giving you plenty of choices without having to leave the resort.</p>
+          <p>Having both casual and more upscale dining is also helpful when traveling with a 4-year-old. You can enjoy a nicer dinner when everyone is up for it without feeling like every meal has to be a lengthy sit-down experience.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Pools &amp; Fun for Your 4-Year-Old</h4>
+          <p>The renovation added an Aquazone water-play area designed specifically for younger guests, which is a great addition for your 4-year-old.</p>
+          <p>You'll also have multiple swimming pools and easy access to the beach, along with scheduled activities throughout the resort.</p>
+          <p>Although children's programming is available, you don't need to use a kids club to take advantage of the family amenities. There is plenty to enjoy together.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Something for the Adults &amp; 15-Year-Old Too</h4>
+          <p>This is one of the reasons Paradisus really stands out.</p>
+          <p>It's family friendly without feeling like a children's resort.</p>
+          <p>Your 15-year-old has the beach, pools, activities and entertainment, while the adults get a more upscale resort atmosphere with beautiful common areas, restaurants, bars, pools and spa services.</p>
+          <p>It gives everyone something to enjoy without making the adults feel like they spent Christmas at a giant water park!</p>
+        </div>
+        <div class="detail-section">
+          <h4>Evening Entertainment &amp; Family Activities</h4>
+          <p>Paradisus offers scheduled daytime and evening entertainment, live music, activities and special programming throughout the week.</p>
+          <p>Because you'll be traveling over Christmas, there may also be special holiday activities and entertainment offered during your stay.</p>
+          <p>You'll have options for things to do together after dinner without needing to leave the resort every evening.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Beach</h4>
+          <p>The beach is a major advantage of Paradisus Cancun.</p>
+          <p>The resort sits directly on the beach in Cancun's Hotel Zone, giving you the beautiful white sand and turquoise Caribbean water Cancun is known for.</p>
+          <p>Of the resorts we're comparing, I consider Paradisus one of the stronger choices if having a beautiful beach is important to you.</p>
+          <p>The ocean along the Hotel Zone can occasionally have stronger waves depending on daily conditions, so perfectly calm water can't be guaranteed, but the overall beach setting is one of this resort's biggest selling points.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Autism &amp; Sensory Considerations</h4>
+          <p>Paradisus is not the autism-certified option in this comparison, so I want to be transparent about that.</p>
+          <p>What I do like is the combination of Family Concierge service, upgraded accommodations and the ability to request a quieter room location.</p>
+          <p>The resort has plenty going on without being completely centered around high-energy children's activities. This may make it easier to balance fun family time with quieter periods during the day.</p>
+          <p>Family Concierge also provides an additional level of personalized assistance during your stay, which may be helpful with dining arrangements, activities or other resort needs.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Airport Distance &amp; Private Transportation</h4>
+          <p>Another big advantage is the location.</p>
+          <p>Paradisus is located in Cancun's Hotel Zone, approximately 20–25 minutes from Cancun International Airport depending on traffic.</p>
+          <p>I've estimated approximately $100 for private round-trip airport transportation.</p>
+          <p>Private transportation means your family will have your own vehicle directly between Cancun International Airport and the resort rather than waiting for a shared shuttle or making stops at multiple resorts.</p>
+          <p>This gives you the combination of a great Hotel Zone beach and a relatively short airport transfer.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Overall Fit for Your Family</h4>
+          <p>This is my higher-end choice if you'd like to spend a little more for an upgraded overall experience.</p>
+          <p>Compared with Catalonia, you're getting a shorter airport transfer, Family Concierge experience, newly renovated resort and a more upscale atmosphere.</p>
+          <p>Compared with Margaritaville, Paradisus gives you the stronger beach, more dining variety and a more upscale overall experience. Margaritaville still has the advantage of being smaller and having autism-focused certification.</p>
+          <p>Compared with Dreams Natura, I give Paradisus the edge because of the newly renovated resort, Family Concierge room and Cancun Hotel Zone beach.</p>
+          <p>For only a few hundred dollars more than some of the other choices, I think this one provides a noticeable upgrade and is definitely worth considering.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESORT 5 -->
+  <div class="resort-card" data-total="7391.60" data-label="Nickelodeon Hotels & Resorts Riviera Maya">
+    <div class="select-row">
+      <input type="radio" name="resortSelect" id="resort5" value="Nickelodeon Hotels & Resorts Riviera Maya">
+      <label for="resort5">Option 5 — Nickelodeon Hotels &amp; Resorts Riviera Maya by Karisma</label>
+    </div>
+    <div class="gallery">
+      <img src="https://admin.karismahotels.com/sites/default/files/styles/hero_desktop/public/2024-03/Aqua%20Nick%20Architecture%20Nick%20Riviera%20Maya.jpeg?itok=2MKfkG4J" alt="Aqua Nick water park at Nickelodeon Hotels & Resorts Riviera Maya">
+      <img src="https://www.karismahotels.com/_next/image?url=https%3A%2F%2Fadmin.karismahotels.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fhero_desktop%2Fpublic%2F2024-03%2Foverview_nick_riviera_maya_7.jpg%3Fitok%3DGZHkSa7k&w=3840&q=75" alt="Nickelodeon Hotels & Resorts Riviera Maya resort overview">
+      <img src="https://admin.karismahotels.com/sites/default/files/styles/hero_desktop/public/2024-03/Penthouse%20Swim-Up%20Oceanfront%20Queen%20Suite%20Rooms%20Nick%20Riviera%20Maya.jpg?itok=X3CJXNOS" alt="Nickelodeon Hotels & Resorts Riviera Maya Swim-Up Oceanfront Queen Suite">
+    </div>
+    <div class="card-body">
+      <div class="location-line">Riviera Maya, Mexico</div>
+      <div class="room-badge">Swim-Up Oceanfront Queen Suite · All-Inclusive</div>
+      <p class="teaser">The splurge option — Aqua Nick water park, Nickelodeon character experiences, an oceanfront swim-up suite, and Autism Double-Checked certification. It's the highest total of the five by a wide margin, with a more stimulating atmosphere and a beach that isn't the group's strongest.</p>
+      <div class="price-block">
+        <div class="line"><span>Resort stay including taxes</span><span>$7,266.60</span></div>
+        <div class="line"><span>Private round-trip airport transfer</span><span>$125.00</span></div>
+        <div class="line total"><span>Total</span><span>$7,391.60</span></div>
+      </div>
+      <div class="due">Book now, pay later — payment due November 21, 2026</div>
+
+      <div class="full-details">
+        <div class="full-heading">Full Details — Nickelodeon Hotels &amp; Resorts Riviera Maya</div>
+        <div class="detail-section">
+          <h4>Why I Chose This Resort for Your Family</h4>
+          <p>Nickelodeon Hotels &amp; Resorts Riviera Maya is the splurge option in this comparison, but it offers something very different from the other resorts.</p>
+          <p>This is an extremely family-focused all-inclusive with an impressive water park, character experiences, entertainment, activities and oversized suites. It is also Autism Double-Checked certified, making it one of the resorts I specifically wanted you to see because of your 4-year-old's sensory needs.</p>
+          <p>The biggest question with Nickelodeon isn't whether there is enough to do—there is a LOT to do. It's whether your family would take advantage of enough of those extras to make the additional cost worthwhile.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Your Room – Swim-Up Oceanfront Queen Suite</h4>
+          <p>This is a major upgrade from a typical all-inclusive hotel room.</p>
+          <p>Your Swim-Up Oceanfront Queen Suite gives you an oceanfront location and direct access to a shared swim-up pool from your terrace.</p>
+          <p>The suite is spacious and designed for families, giving you considerably more room than a traditional hotel room.</p>
+          <p>The swim-up feature can also be convenient if your 4-year-old needs a break from the busier areas of the resort but still wants some pool time.</p>
+          <p>One consideration with a 4-year-old is that you will have water directly outside your room. I would only choose a swim-up room if you are completely comfortable with that setup and the additional supervision it requires.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Food &amp; Restaurants</h4>
+          <p>Nickelodeon offers a good variety of dining choices as part of the all-inclusive experience.</p>
+          <p>You'll find sit-down restaurants, casual dining, snacks and kid-friendly options, with enough variety that you aren't relying on the same buffet for every meal.</p>
+          <p>Meals, snacks and alcoholic and non-alcoholic beverages are included.</p>
+          <p>The dining is designed to work for families while still giving adults choices beyond traditional children's food.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Pools &amp; Fun for Your 4-Year-Old</h4>
+          <p>This is where Nickelodeon absolutely shines.</p>
+          <p>Aqua Nick is one of the biggest attractions and includes water slides, splash areas, water features and activities designed for different ages.</p>
+          <p>There are also pools, beach activities, Nickelodeon character experiences and scheduled family activities.</p>
+          <p>You certainly do not need to drop your 4-year-old at a kids club to take advantage of what this resort offers. Most of the major attractions are designed to be enjoyed together as a family.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Something for the Adults &amp; 15-Year-Old Too</h4>
+          <p>Your 15-year-old will have considerably more to do here than at many traditional all-inclusive resorts.</p>
+          <p>Between Aqua Nick, water slides, pools, activities, entertainment and the beach, there is plenty for an older child or teenager.</p>
+          <p>For the adults, you'll still have restaurants, bars, spa services, pools and your oceanfront swim-up suite.</p>
+          <p>The trade-off is that this is unapologetically a family resort. If the adults are looking for a quiet, sophisticated tropical atmosphere, Paradisus or Margaritaville would be stronger choices.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Evening Entertainment &amp; Family Activities</h4>
+          <p>There are scheduled activities and entertainment throughout the resort, including Nickelodeon-themed experiences, character appearances, family activities and evening entertainment.</p>
+          <p>This is one of the strongest choices if having plenty to do together throughout the entire four-night stay is a priority.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Beach</h4>
+          <p>Nickelodeon is directly beachfront, and your suite is in an oceanfront category.</p>
+          <p>However, I would not choose Nickelodeon specifically for the beach.</p>
+          <p>This section of Riviera Maya can experience changing water clarity and seaweed conditions. The beach is certainly available to enjoy, but it does not consistently offer the same turquoise-water experience found along Cancun's Hotel Zone or Costa Mujeres.</p>
+          <p>For this resort, Aqua Nick, the family activities, suite and autism-focused features are the bigger selling points.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Autism &amp; Sensory Considerations</h4>
+          <p>This is one of the most important reasons Nickelodeon is included in the comparison.</p>
+          <p>Nickelodeon Hotels &amp; Resorts Riviera Maya has participated in the Autism Double-Checked program, which includes autism awareness and training designed to better prepare staff for autistic guests and their families.</p>
+          <p>That said, certification does not automatically mean the resort will be the least stimulating option.</p>
+          <p>Nickelodeon has a LOT happening—water slides, music, characters, children, activities and entertainment. Depending on your 4-year-old's preferences, that could be incredibly exciting or occasionally overwhelming.</p>
+          <p>The advantage is having a spacious suite to return to when a break is needed. I would also request a quieter suite location as much as possible and discuss sensory needs with the resort before arrival.</p>
+          <p>Between the two autism-focused options we're considering, Margaritaville would be my choice for a calmer, smaller environment. Nickelodeon would be my choice for a child who enjoys lots of activities and stimulation but benefits from staff who have additional autism awareness training.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Airport Distance &amp; Private Transportation</h4>
+          <p>Nickelodeon is farther south than Margaritaville and the Cancun Hotel Zone resorts.</p>
+          <p>Plan on approximately 30–40 minutes from Cancun International Airport depending on traffic.</p>
+          <p>I've included private round-trip airport transportation for $125.</p>
+          <p>Your family will have your own vehicle directly between Cancun International Airport and the resort rather than using a shared shuttle that makes multiple hotel stops.</p>
+        </div>
+        <div class="detail-section">
+          <h4>Overall Fit for Your Family</h4>
+          <p>Nickelodeon is the ultimate "fun" option in this comparison.</p>
+          <p>You are paying considerably more, but you're also getting an oceanfront swim-up suite, Aqua Nick water park, extensive family activities, Nickelodeon experiences and an autism-focused resort program.</p>
+          <p>For your 4-year-old, the combination of autism-aware staff and an enormous amount of kid-friendly entertainment is unique.</p>
+          <p>For your 15-year-old, Aqua Nick and the additional activities give this resort an advantage over quieter family properties.</p>
+          <p>The biggest compromises are the higher price, the more stimulating atmosphere and a beach that isn't as impressive as the best Cancun Hotel Zone or Costa Mujeres beaches.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="compare-section">
+    <h2>Side by Side</h2>
+    <p class="compare-lead">A quick way to weigh all five against each other before you decide.</p>
+    <div class="compare-scroll">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Resort</th>
+            <th>Total</th>
+            <th>Beach</th>
+            <th>Airport Transfer</th>
+            <th>Autism Certification</th>
+            <th>Standout</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Resort">Margaritaville Island Reserve</td>
+            <td data-label="Total">$4,600.47</td>
+            <td data-label="Beach">Fair — variable clarity, occasional seaweed</td>
+            <td data-label="Airport Transfer">Relatively close to the airport (exact time not specified)</td>
+            <td data-label="Autism Certification">Autism Double-Checked certified</td>
+            <td data-label="Standout">Smallest, easiest resort to navigate</td>
+          </tr>
+          <tr>
+            <td data-label="Resort">Catalonia Grand Costa Mujeres</td>
+            <td data-label="Total">$4,003.18</td>
+            <td data-label="Beach">Strongest of the five — white sand, clear water</td>
+            <td data-label="Airport Transfer">35–45 min, longest of the five</td>
+            <td data-label="Autism Certification">Not certified; has distinct active vs. quiet zones</td>
+            <td data-label="Standout">Best value, widest dining variety</td>
+          </tr>
+          <tr>
+            <td data-label="Resort">Dreams Natura Resort &amp; Spa</td>
+            <td data-label="Total">$5,443.54</td>
+            <td data-label="Beach">Fair — variable clarity, similar to other Puerto Morelos properties</td>
+            <td data-label="Airport Transfer">~15–20 min, shortest of the five</td>
+            <td data-label="Autism Certification">Not certified; more active/stimulating than Margaritaville, but has distinct pool/activity zones</td>
+            <td data-label="Standout">Lazy river, splash area, most activity-packed of the value/mid-tier resorts</td>
+          </tr>
+          <tr>
+            <td data-label="Resort">Paradisus Cancun</td>
+            <td data-label="Total">$4,934.10</td>
+            <td data-label="Beach">Strong Hotel Zone beach, occasional stronger waves</td>
+            <td data-label="Airport Transfer">~20–25 min</td>
+            <td data-label="Autism Certification">Not certified; Family Concierge service available</td>
+            <td data-label="Standout">Newest renovation, most upscale overall (excluding splurge tier)</td>
+          </tr>
+          <tr>
+            <td data-label="Resort">Nickelodeon Riviera Maya</td>
+            <td data-label="Total">$7,391.60</td>
+            <td data-label="Beach">Fair — variable clarity, similar to Margaritaville/Dreams Natura</td>
+            <td data-label="Airport Transfer">~30–40 min</td>
+            <td data-label="Autism Certification">Autism Double-Checked certified</td>
+            <td data-label="Standout">Aqua Nick water park, oceanfront swim-up suite, most activities of the five</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="compare-notes">
+      <p><strong>Andrea is a Certified Autism Travel Planner,</strong> and every option here was chosen with your 4-year-old's sensory needs in mind — the certification status below is the same rating used to select these resorts in the first place.</p>
+      <p><strong>If sensory needs are the top priority:</strong> Margaritaville and Nickelodeon are the only two Autism Double-Checked certified options. Margaritaville is the calmer, smaller environment; Nickelodeon has far more going on but offers staff with additional autism awareness training if your 4-year-old thrives on stimulation.</p>
+      <p><strong>If the beach matters most:</strong> Catalonia has the clearest edge, with the trade-off of the longest airport transfer.</p>
+      <p><strong>If budget is the deciding factor:</strong> Catalonia is the lowest total by roughly $600–$3,390 against the other four.</p>
+      <p><strong>If you want the most polished, newest resort without the splurge price:</strong> Paradisus is the most recently renovated and third-lowest total of the five, with a 20–25 minute transfer.</p>
+      <p><strong>If budget allows for a true splurge:</strong> Nickelodeon is the highest total by a wide margin, but it's the only resort with a full water park, character experiences, and an oceanfront swim-up suite alongside the autism certification.</p>
+    </div>
+  </div>
+
+  <div class="commitment bottom">
+    What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+
+  <div class="contact-section">
+    <h2>Ready to Move Forward?</h2>
+    <p class="lead">Tell me which option you're leaning toward and I'll get your reservation started.</p>
+
+    <div id="formError">Something went wrong sending your message. Please try again, or email us directly.</div>
+
+    <form id="quoteForm">
+      <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+      <input type="hidden" name="subject" value="Quote Response — Esther Guerra | Cancún All-Inclusive">
+      <input type="hidden" name="from_name" value="Esther Guerra Quote — Point Me to Paradise">
+      <input type="hidden" name="redirect" value="false">
+
+      <div class="field">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="field">
+        <label for="optionInterest">Which option interests you?</label>
+        <select id="optionInterest" name="option_interest">
+          <option value="">Select one</option>
+          <option value="Option 1 — Margaritaville Island Reserve Riviera Cancún">Option 1 — Margaritaville Island Reserve Riviera Cancún</option>
+          <option value="Option 2 — Catalonia Grand Costa Mujeres All Suites & Spa">Option 2 — Catalonia Grand Costa Mujeres All Suites &amp; Spa</option>
+          <option value="Option 3 — Dreams Natura Resort & Spa">Option 3 — Dreams Natura Resort &amp; Spa</option>
+          <option value="Option 4 — Paradisus Cancun All Inclusive">Option 4 — Paradisus Cancun All Inclusive</option>
+          <option value="Option 5 — Nickelodeon Hotels & Resorts Riviera Maya">Option 5 — Nickelodeon Hotels &amp; Resorts Riviera Maya</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="insurance">Travel insurance</label>
+        <select id="insurance" name="insurance">
+          <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+          <option value="No — not interested">No — not interested</option>
+          <option value="Already have coverage">Already have coverage</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Questions, preferences, anything I should know..."></textarea>
+      </div>
+      <button type="submit">Send My Response</button>
+    </form>
+
+    <div id="thankYou">
+      <h3>Thanks, Esther!</h3>
+      <p>Your message is on its way. I'll follow up shortly to get things moving.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div style="font-size:.85rem;color:var(--pale-teal);margin-bottom:2px;">Certified Autism Travel Planner</div>
+  <div>Point Me to Paradise Travel</div>
+  <div><a href="tel:4097893579">(409) 789-3579</a> · <a id="emailLink" href="#"></a></div>
+  <div class="disclaimer">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<script>
+  // Assemble advisor email at runtime to avoid Cloudflare scrambling
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var link = document.getElementById('emailLink');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+  })();
+
+  // Resort selection + running total
+  var cards = document.querySelectorAll('.resort-card');
+  var totalAmount = document.getElementById('totalAmount');
+
+  function updateTotal(){
+    var selected = document.querySelector('input[name="resortSelect"]:checked');
+    cards.forEach(function(card){
+      card.classList.remove('selected');
+    });
+    if(selected){
+      var card = selected.closest('.resort-card');
+      card.classList.add('selected');
+      var total = parseFloat(card.getAttribute('data-total'));
+      totalAmount.textContent = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+
+      var optionSelect = document.getElementById('optionInterest');
+      var label = card.getAttribute('data-label');
+      for(var i=0; i<optionSelect.options.length; i++){
+        if(optionSelect.options[i].value.indexOf(label) !== -1){
+          optionSelect.selectedIndex = i;
+          break;
+        }
+      }
+    } else {
+      totalAmount.textContent = 'Select a resort below';
+    }
+  }
+
+  cards.forEach(function(card){
+    card.addEventListener('click', function(e){
+      if(e.target.tagName === 'SUMMARY' || e.target.closest('details')) return;
+      var radio = card.querySelector('input[type="radio"]');
+      radio.checked = true;
+      setTimeout(updateTotal, 0);
+    });
+  });
+
+  document.querySelectorAll('input[name="resortSelect"]').forEach(function(radio){
+    radio.addEventListener('click', function(e){ e.stopPropagation(); });
+    radio.addEventListener('change', function(){ setTimeout(updateTotal, 0); });
+  });
+
+  // Form submission via fetch — never native POST
+  var form = document.getElementById('quoteForm');
+  var errorDiv = document.getElementById('formError');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorDiv.style.display = 'none';
+    var formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Accept': 'application/json'},
+      body: formData
+    })
+    .then(function(response){ return response.json(); })
+    .then(function(data){
+      if(data.success){
+        document.querySelector('.contact-section form').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorDiv.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      errorDiv.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
