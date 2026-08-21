@@ -494,6 +494,9 @@
         <input type="hidden" name="subject" value="Quote Response — Friends and Family Celebrating Leelan's 5-0! | Hawaii (Pride of America)">
         <input type="hidden" name="from_name" value="Friends and Family Celebrating Leelan's 5-0! Quote — Point Me to Paradise">
         <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="selected_package" id="q_selected_package" value="Option 1 — Cruise Fare Only">
+        <input type="hidden" name="selected_gratuity" id="q_selected_gratuity" value="Prepaid">
+        <input type="hidden" name="selected_estimated_total" id="q_selected_total" value="Est. $6,923.20">
 
         <div class="two-col">
           <div class="field">
@@ -555,6 +558,9 @@
         <input type="hidden" name="subject" value="Booking Request — Friends and Family Celebrating Leelan's 5-0! | Hawaii (Pride of America)">
         <input type="hidden" name="from_name" value="Friends and Family Celebrating Leelan's 5-0! Booking — Point Me to Paradise">
         <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="selected_package" id="b_selected_package" value="Option 1 — Cruise Fare Only">
+        <input type="hidden" name="selected_gratuity" id="b_selected_gratuity" value="Prepaid">
+        <input type="hidden" name="selected_estimated_total" id="b_selected_total" value="Est. $6,923.20">
 
         <div class="traveler-label">Traveler 1</div>
         <div class="two-col">
@@ -643,6 +649,14 @@
     opt1: { prepaid: 6923.20, onboard: 6631.24 },
     opt2: { prepaid: 7442.20, onboard: 7150.24 }
   };
+  var packageLabels = {
+    opt1: 'Option 1 — Cruise Fare Only',
+    opt2: 'Option 2 — With Free at Sea'
+  };
+  var gratuityLabels = {
+    prepaid: 'Prepaid',
+    onboard: 'Charged onboard instead'
+  };
   function formatCurrency(n){
     return '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
   }
@@ -653,6 +667,22 @@
     var text = 'Est. ' + formatCurrency(total);
     document.getElementById('totalDisplay').textContent = text;
     document.getElementById('stickyTotal').textContent = text;
+
+    // Push the current selection into both forms' hidden fields so it's captured on submit
+    var pkgLabel = packageLabels[pkg];
+    var gratLabel = gratuityLabels[grat];
+    ['q_selected_package', 'b_selected_package'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.value = pkgLabel;
+    });
+    ['q_selected_gratuity', 'b_selected_gratuity'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.value = gratLabel;
+    });
+    ['q_selected_total', 'b_selected_total'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.value = text;
+    });
   }
   updateTotal();
 
