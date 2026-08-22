@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esther Guerra — Cancún/Riviera Maya Christmas Getaway | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text-primary:#3D3D3D;
+    --text-secondary:#606060;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--text-primary);
+    line-height:1.6;
+    padding-bottom:90px;
+  }
+  h1,h2,h3{font-family:'Playfair Display',serif;color:var(--teal-dark);}
+  .voice{font-family:'Cormorant Garamond',serif;font-style:italic;}
+  a{color:var(--teal-dark);}
+  img{max-width:100%;display:block;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:340px;
+    background-image:
+      linear-gradient(180deg, rgba(79,138,140,0.55) 0%, rgba(61,61,61,0.65) 100%),
+      url('https://expertvagabond.com/wp-content/uploads/cancun-things-to-do-guide.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:48px 20px;
+  }
+  .hero-inner{max-width:720px;}
+  .hero h1{color:#FFFFFF;font-size:2.2rem;margin-bottom:10px;}
+  .hero p{color:var(--paper);font-size:1.05rem;}
+  .hero .dates{
+    display:inline-block;margin-top:14px;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.4);
+    padding:8px 18px;border-radius:30px;
+    color:#FFFFFF;font-size:0.95rem;
+  }
+
+  .container{max-width:900px;margin:0 auto;padding:0 20px;}
+
+  /* COMMITMENT CALLOUTS */
+  .commitment{
+    background:var(--cream-light);
+    border-left:4px solid var(--gold-dark);
+    padding:18px 20px;
+    margin:24px auto;
+    max-width:860px;
+    border-radius:6px;
+    font-size:0.98rem;
+    color:var(--text-primary);
+  }
+  .commitment.top{margin-top:-30px;position:relative;z-index:2;background:var(--paper-pure);box-shadow:0 4px 16px rgba(0,0,0,0.08);}
+
+  .section-title{text-align:center;margin:36px 0 8px;font-size:1.6rem;}
+  .section-sub{text-align:center;color:var(--text-secondary);margin-bottom:28px;font-size:0.95rem;}
+
+  /* STICKY TOTAL BAR */
+  .total-bar{
+    position:sticky;top:0;z-index:50;
+    background:var(--teal-dark);
+    color:#FFFFFF;
+    padding:14px 20px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+  }
+  .total-bar .label{font-family:'Playfair Display',serif;font-size:1.1rem;}
+  .total-bar .amount{font-size:1.4rem;font-weight:700;}
+  .total-bar .resort-name{font-size:0.85rem;opacity:0.9;display:block;}
+
+  .pricing-note{
+    text-align:center;font-size:0.85rem;color:var(--text-secondary);
+    padding:10px 20px;max-width:700px;margin:0 auto 10px;
+  }
+
+  /* RESORT CARDS */
+  .resort-card{
+    background:var(--paper-pure);
+    border:2px solid var(--pale-teal);
+    border-radius:14px;
+    margin:22px 0;
+    overflow:hidden;
+    transition:border-color .2s, box-shadow .2s;
+    cursor:pointer;
+  }
+  .resort-card.selected{
+    border-color:var(--teal-dark);
+    box-shadow:0 6px 20px rgba(79,138,140,0.25);
+  }
+  .resort-card input[type="radio"]{
+    position:absolute;opacity:0;width:1px;height:1px;
+  }
+  .resort-head{
+    padding:20px 22px 8px;
+    display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;
+  }
+  .resort-head h3{font-size:1.3rem;}
+  .resort-head .location{color:var(--text-secondary);font-size:0.9rem;}
+  .radio-visual{
+    width:26px;height:26px;border-radius:50%;
+    border:2px solid var(--teal-dark);
+    flex-shrink:0;position:relative;
+    margin-top:4px;
+  }
+  .resort-card.selected .radio-visual::after{
+    content:'';position:absolute;top:4px;left:4px;right:4px;bottom:4px;
+    border-radius:50%;background:var(--teal-dark);
+  }
+  .vibe{padding:0 22px 14px;font-size:1rem;}
+  .vibe p{margin-bottom:0;}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 22px 16px;}
+  .gallery img{height:130px;width:100%;object-fit:cover;border-radius:8px;}
+  .room-info{
+    padding:0 22px 16px;
+    font-size:0.95rem;
+  }
+  .room-info .room-name{font-weight:600;color:var(--teal-dark);}
+  .details-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;
+    padding:14px 22px;background:var(--cream-light);
+    font-size:0.9rem;
+  }
+  .details-grid div span{display:block;color:var(--text-secondary);font-size:0.8rem;}
+  .price-breakdown{
+    padding:16px 22px;border-top:1px dashed var(--pale-teal);
+  }
+  .price-row{display:flex;justify-content:space-between;font-size:0.92rem;padding:3px 0;}
+  .price-row.discount{color:var(--gold-dark);}
+  .price-row.total{
+    font-weight:700;font-size:1.15rem;color:var(--teal-dark);
+    border-top:1px solid var(--pale-teal);margin-top:8px;padding-top:10px;
+  }
+  .price-fine{font-size:0.78rem;color:var(--text-secondary);margin-top:8px;}
+  .booking-terms{
+    padding:10px 22px 20px;font-size:0.85rem;color:var(--text-secondary);
+  }
+
+  /* CONTACT FORM */
+  .contact-section{
+    background:var(--cream-light);
+    border-radius:14px;
+    padding:28px 24px;
+    margin:36px 0;
+  }
+  .contact-section h2{text-align:center;margin-bottom:6px;}
+  .contact-section .sub{text-align:center;color:var(--text-secondary);margin-bottom:20px;font-size:0.95rem;}
+  form{max-width:520px;margin:0 auto;}
+  .form-group{margin-bottom:16px;}
+  label{display:block;font-size:0.9rem;margin-bottom:6px;color:var(--text-primary);font-weight:500;}
+  input[type="text"],input[type="email"],input[type="tel"],select,textarea{
+    width:100%;
+    padding:12px 14px;
+    font-size:16px;
+    border:1px solid var(--pale-teal);
+    border-radius:8px;
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper-pure);
+    color:var(--text-primary);
+    min-height:44px;
+  }
+  textarea{min-height:90px;resize:vertical;}
+  .submit-btn{
+    width:100%;
+    background:var(--teal-dark);
+    color:#FFFFFF;
+    border:none;
+    padding:14px;
+    font-size:16px;
+    font-weight:600;
+    border-radius:8px;
+    cursor:pointer;
+    min-height:44px;
+  }
+  .submit-btn:hover{background:var(--teal);}
+  .form-error{
+    display:none;background:#F5EFDF;border:1px solid var(--gold-dark);
+    color:var(--text-primary);padding:12px;border-radius:8px;margin-bottom:14px;font-size:0.9rem;
+  }
+  .thank-you{
+    display:none;text-align:center;padding:30px 10px;
+  }
+  .thank-you h3{margin-bottom:10px;}
+
+  .bottom-commitment{
+    text-align:center;
+  }
+
+  footer{
+    background:var(--teal-dark);
+    color:#FFFFFF;
+    text-align:center;
+    padding:26px 20px;
+    margin-top:30px;
+    font-size:0.88rem;
+  }
+  footer .agent-name{font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:4px;}
+  footer a{color:#FFFFFF;text-decoration:underline;}
+  footer .disclaimer{margin-top:12px;font-size:0.78rem;opacity:0.85;}
+
+  @media (max-width:540px){
+    .gallery{grid-template-columns:repeat(3,1fr);}
+    .details-grid{grid-template-columns:1fr;}
+    .total-bar{flex-direction:column;align-items:flex-start;}
+  }
+  @media (min-width:375px) and (max-width:540px){
+    .gallery img{height:90px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="voice" style="color:#FFFFFF;font-size:1.1rem;">Mexi-Merry Christmas 🎄🌴</p>
+    <h1>Esther Guerra's Cancún &amp; Riviera Maya Getaway</h1>
+    <p>A family Christmas trip for 2 adults and 2 kids — three resorts to choose from.</p>
+    <span class="dates">December 24 – 28, 2026 · 4 Nights</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="commitment top">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+</div>
+
+<div class="total-bar" id="totalBar">
+  <div>
+    <span class="label">Est. Total</span>
+    <span class="resort-name" id="selectedResortLabel">Dreams Natura Resort &amp; Spa</span>
+  </div>
+  <div class="amount" id="totalAmount">$4,940.69</div>
+</div>
+
+<div class="pricing-note">
+  Estimate reflects the resort currently selected below. Final pricing is confirmed by your advisor before booking.
+</div>
+
+<div class="container">
+  <div class="commitment">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+  </div>
+  <p class="commitment" style="border-left-color:var(--teal-dark);background:var(--paper-pure);font-size:0.85rem;">
+    Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.
+  </p>
+
+  <h2 class="section-title">Choose Your Resort</h2>
+  <p class="section-sub">Tap a card to select it — the total above updates automatically.</p>
+
+  <!-- RESORT 1 -->
+  <label class="resort-card selected" id="card-0" onclick="selectResort(0)">
+    <input type="radio" name="resort_choice" value="0" checked>
+    <div class="resort-head">
+      <div>
+        <h3>Dreams Natura Resort &amp; Spa</h3>
+        <div class="location">Puerto Morelos, Riviera Maya</div>
+      </div>
+      <div class="radio-visual"></div>
+    </div>
+    <div class="vibe">
+      <p>Puerto Morelos sits quieter than the Cancún Hotel Zone — a working fishing village a short drive south, with a barrier reef close enough to snorkel from the beach. Dreams Natura leans into that setting: low-rise buildings tucked into mangrove and jungle rather than a tower on the strip. Good fit if your family wants all-inclusive convenience without the density of the Zone.</p>
+    </div>
+    <div class="gallery">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMaBlxy5ZD1b3YTTqVBPenzEamwPB_5UQx88SU6y6mp1tfKyB4sgfP8lwk&s=10" alt="Dreams Natura Resort pool area" loading="lazy">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/bc/28/bb/three-main-pools-a-children.jpg?w=900&h=500&s=1" alt="Dreams Natura Resort family pools" loading="lazy">
+      <img src="https://dreamsnatura.com/wp-content/uploads/2026/04/preferred-club-master-suite-ocean-view-king-bed-dreams-natura-1200x800.webp" alt="Dreams Natura Junior Suite" loading="lazy">
+    </div>
+    <div class="room-info">
+      <span class="room-name">Junior Suite Tropical View Double</span> — All-Inclusive: unlimited dining, drinks, snacks, resort activities, pools, and entertainment.
+    </div>
+    <div class="details-grid">
+      <div>Arrival<span>Thu, Dec 24, 2026</span></div>
+      <div>Departure<span>Mon, Dec 28, 2026</span></div>
+      <div>Transfer<span>Private Nissan Urvan NV350 or similar, CUN → Dreams Natura</span></div>
+      <div>Payment Due<span>November 21, 2026</span></div>
+    </div>
+    <div class="price-breakdown">
+      <div class="price-row"><span>Regular Price</span><span>$6,165.00</span></div>
+      <div class="price-row discount"><span>Discount</span><span>-$1,850.00</span></div>
+      <div class="price-row"><span>Resort Stay (4 nights, family of 4)</span><span>$4,815.69</span></div>
+      <div class="price-row"><span>Private Roundtrip Airport Transfer</span><span>$125.00</span></div>
+      <div class="price-row total"><span>Est. Total</span><span>$4,940.69</span></div>
+      <p class="price-fine">Taxes included in resort stay pricing.</p>
+    </div>
+    <div class="booking-terms">Book Now &amp; Pay Later — payment due November 21, 2026.</div>
+  </label>
+
+  <!-- RESORT 2 -->
+  <label class="resort-card" id="card-1" onclick="selectResort(1)">
+    <input type="radio" name="resort_choice" value="1">
+    <div class="resort-head">
+      <div>
+        <h3>Grand Fiesta Americana Coral Beach</h3>
+        <div class="location">Cancún Hotel Zone, Mexico</div>
+      </div>
+      <div class="radio-visual"></div>
+    </div>
+    <div class="vibe">
+      <p>This one sits inside the Hotel Zone proper — beach out front, restaurants and nightlife a short walk or cab ride away. It's the more upscale pick of the three, with an ocean-view suite and multiple dining rooms on property. Good fit if the family wants resort polish plus easy access to everything the Zone has going on.</p>
+    </div>
+    <div class="gallery">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/31/9b/ae/3e/resort-view.jpg" alt="Grand Fiesta Americana Coral Beach resort view" loading="lazy">
+      <img src="https://d25wybtmjgh8lz.cloudfront.net/sites/default/files/styles/iprefer/public/property/img-mastheads/cunfa_5.jpg" alt="Grand Fiesta Americana Coral Beach property" loading="lazy">
+      <img src="https://www.coralbeachcancun.com/images/slides/slide-7.jpg" alt="Grand Fiesta Americana Coral Beach suite" loading="lazy">
+    </div>
+    <div class="room-info">
+      <span class="room-name">Ocean View Suite Double</span> — 2 Queen Beds, All-Inclusive.
+    </div>
+    <div class="details-grid">
+      <div>Arrival<span>Thu, Dec 24, 2026</span></div>
+      <div>Departure<span>Mon, Dec 28, 2026</span></div>
+      <div>Transfer<span>Private Roundtrip, CUN ↔ Grand Fiesta Americana Coral Beach</span></div>
+      <div>Payment Due<span>December 7, 2026</span></div>
+    </div>
+    <div class="price-breakdown">
+      <div class="price-row"><span>Resort Stay (4 nights, family of 4)</span><span>$5,638.18</span></div>
+      <div class="price-row"><span>Resort Fee <em style="font-style:normal;color:var(--text-secondary);">(paid directly to resort at arrival)</em></span><span>$56.00</span></div>
+      <div class="price-row"><span>Private Roundtrip Airport Transfers</span><span>$100.00</span></div>
+      <div class="price-row total"><span>Est. Total</span><span>$5,794.18</span></div>
+      <p class="price-fine">Taxes included in resort stay pricing.</p>
+    </div>
+    <div class="booking-terms">Book Now &amp; Pay Later — payment due December 7, 2026.</div>
+  </label>
+
+  <!-- RESORT 3 -->
+  <label class="resort-card" id="card-2" onclick="selectResort(2)">
+    <input type="radio" name="resort_choice" value="2">
+    <div class="resort-head">
+      <div>
+        <h3>Hilton Cancún Mar Caribe All-Inclusive Resort</h3>
+        <div class="location">Cancún Hotel Zone, Mexico</div>
+      </div>
+      <div class="radio-visual"></div>
+    </div>
+    <div class="vibe">
+      <p>The middle ground of the three — Hotel Zone beachfront like the Grand Fiesta Americana, but priced lower and set up around family entertainment and pool time rather than an upscale dining scene. Straightforward all-inclusive, and it's the only one of the three that's fully refundable through November 9 if plans change.</p>
+    </div>
+    <div class="gallery">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/33/f6/52/4f/caption.jpg" alt="Hilton Cancun Mar Caribe resort" loading="lazy">
+      <img src="https://images.trvl-media.com/lodging/42000000/41500000/41491100/41491098/628cd6db.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Hilton Cancun Mar Caribe pool" loading="lazy">
+      <img src="https://www.hilton.com/im/en/CUNMCHH/20227607/cunmc-enclave-guest-room-bedroom-q2efr.jpg?impolicy=crop&cw=4800&ch=2872&gravity=NorthWest&xposition=0&yposition=163&rw=528&rh=316" alt="Hilton Cancun Mar Caribe Resort View Room" loading="lazy">
+    </div>
+    <div class="room-info">
+      <span class="room-name">Resort View Room</span> — 2 Queen Beds, All-Inclusive.
+    </div>
+    <div class="details-grid">
+      <div>Arrival<span>Thu, Dec 24, 2026</span></div>
+      <div>Departure<span>Mon, Dec 28, 2026</span></div>
+      <div>Transfer<span>Private Roundtrip, CUN ↔ Hilton Cancún Mar Caribe</span></div>
+      <div>Payment Due<span>November 2, 2026</span></div>
+    </div>
+    <div class="price-breakdown">
+      <div class="price-row"><span>Resort Stay (4 nights, family of 4)</span><span>$4,731.23</span></div>
+      <div class="price-row"><span>Private Roundtrip Airport Transfers</span><span>$120.00</span></div>
+      <div class="price-row total"><span>Est. Total</span><span>$4,851.23</span></div>
+      <p class="price-fine">Taxes included in resort stay pricing.</p>
+    </div>
+    <div class="booking-terms">Book Now &amp; Pay Later — payment due November 2, 2026. Fully refundable until November 9, 2026, 11:59 PM property local time.</div>
+  </label>
+
+</div>
+
+<div class="container bottom-commitment">
+  <div class="commitment" style="text-align:left;">
+    What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+</div>
+
+<div class="container">
+  <div class="contact-section">
+    <h2>Ready to Move Forward?</h2>
+    <p class="sub">Tell us which resort works and we'll get the reservation moving.</p>
+
+    <div class="form-error" id="formError">Something went wrong sending your message. Please try again, or call/text (409) 789-3579.</div>
+
+    <form id="quoteForm">
+      <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+      <input type="hidden" name="subject" value="Quote Response — Esther Guerra | Cancun/Riviera Maya">
+      <input type="hidden" name="from_name" value="Esther Guerra Quote — Point Me to Paradise">
+      <input type="hidden" name="redirect" value="false">
+      <input type="hidden" name="selected_resort" id="hiddenResort" value="Dreams Natura Resort & Spa">
+
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="option_interest">Which resort are you most interested in?</label>
+        <select id="option_interest" name="option_interest">
+          <option value="Dreams Natura Resort & Spa">Dreams Natura Resort &amp; Spa — $4,940.69</option>
+          <option value="Grand Fiesta Americana Coral Beach">Grand Fiesta Americana Coral Beach — $5,794.18</option>
+          <option value="Hilton Cancun Mar Caribe">Hilton Cancún Mar Caribe — $4,851.23</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="insurance">Travel Insurance</label>
+        <select id="insurance" name="insurance">
+          <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+          <option value="No — not interested">No — not interested</option>
+          <option value="Already have coverage">Already have coverage</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Questions, preferences, anything we should know..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send My Response</button>
+    </form>
+
+    <div class="thank-you" id="thankYou">
+      <h3>Thank you, we've got it!</h3>
+      <p>We'll follow up shortly to lock in the details. In the meantime, feel free to call or text with questions.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="section-title">Resort Comparison</h2>
+  <p class="section-sub">A side-by-side look at all three, beyond price.</p>
+  <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;background:var(--paper-pure);border-radius:10px;overflow:hidden;min-width:600px;">
+      <thead>
+        <tr style="background:var(--teal-dark);color:#FFFFFF;">
+          <th style="text-align:left;padding:12px 14px;font-family:'Playfair Display',serif;font-weight:500;">&nbsp;</th>
+          <th style="text-align:left;padding:12px 14px;font-family:'Playfair Display',serif;font-weight:500;">Dreams Natura Resort &amp; Spa</th>
+          <th style="text-align:left;padding:12px 14px;font-family:'Playfair Display',serif;font-weight:500;">Grand Fiesta Americana Coral Beach</th>
+          <th style="text-align:left;padding:12px 14px;font-family:'Playfair Display',serif;font-weight:500;">Hilton Cancún Mar Caribe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--pale-teal);">
+          <td style="padding:12px 14px;font-weight:600;color:var(--teal-dark);background:var(--cream-light);">Airport Ride</td>
+          <td style="padding:12px 14px;">About 15–20 min from CUN (roughly 10 miles). Puerto Morelos sits south of the Hotel Zone, so it's a slightly longer, quieter drive.</td>
+          <td style="padding:12px 14px;">About 20–25 min from CUN (roughly 15 miles), inside the Hotel Zone.</td>
+          <td style="padding:12px 14px;">About 20 min from CUN (roughly 13 miles), inside the Hotel Zone.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--pale-teal);">
+          <td style="padding:12px 14px;font-weight:600;color:var(--teal-dark);background:var(--cream-light);">Pools</td>
+          <td style="padding:12px 14px;">4 outdoor pools plus a water park and lazy river — geared toward families.</td>
+          <td style="padding:12px 14px;">4 outdoor pools, oceanfront, with swim-up bars.</td>
+          <td style="padding:12px 14px;">13 outdoor pools across the property, including a dedicated adults-only sundeck section — the most pool variety of the three.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--pale-teal);">
+          <td style="padding:12px 14px;font-weight:600;color:var(--teal-dark);background:var(--cream-light);">Dining</td>
+          <td style="padding:12px 14px;">9 restaurants and 6 bars/lounges — à la carte, buffet, grill, and café options, no reservations required.</td>
+          <td style="padding:12px 14px;">10 restaurants spanning Mexican, international, Asian, and Mediterranean cuisine, plus oceanfront bars.</td>
+          <td style="padding:12px 14px;">8 restaurants plus additional bars (12 dining and bar venues in total), including a steakhouse and live-cooking stations.</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--pale-teal);">
+          <td style="padding:12px 14px;font-weight:600;color:var(--teal-dark);background:var(--cream-light);">Beach</td>
+          <td style="padding:12px 14px;">White-sand beachfront on Bahia Petempich with calm, swimmable water — less foot traffic than the Hotel Zone strip.</td>
+          <td style="padding:12px 14px;">Hotel Zone beachfront with calm, clear water; close to the reef, good for snorkeling day trips.</td>
+          <td style="padding:12px 14px;">Hotel Zone beachfront with direct beach access and calm water, right along the main strip.</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 14px;font-weight:600;color:var(--teal-dark);background:var(--cream-light);">Nighttime Family Entertainment</td>
+          <td style="padding:12px 14px;">Nightly themed shows in the outdoor theater followed by live lobby music. Explorer's Club runs supervised evening programming for kids 3–12; Core Zone covers teens.</td>
+          <td style="padding:12px 14px;">Rotating themed and dinner shows (fire, acrobatics, Vegas-style productions). Coral KidZ Club offers evening sessions, plus a separate evening "Camping" program for ages 6–12.</td>
+          <td style="padding:12px 14px;">A different live show each night on the rooftop terrace (circus acts, tribute performances, fire shows, themed parties). Beach Bunch kids club and Sandbar Social teens club run evening options, with family movie nights and story time in the Family Room.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div>Point Me to Paradise Travel</div>
+  <div><a href="#" id="emailLink"></a> · <a href="tel:4097893579">(409) 789-3579</a></div>
+  <div>Certified Autism Travel Planner</div>
+  <div class="disclaimer">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<script>
+  var resorts = [
+    { name: "Dreams Natura Resort & Spa", total: "$4,940.69" },
+    { name: "Grand Fiesta Americana Coral Beach", total: "$5,794.18" },
+    { name: "Hilton Cancun Mar Caribe", total: "$4,851.23" }
+  ];
+
+  function selectResort(idx){
+    for(var i=0;i<resorts.length;i++){
+      document.getElementById('card-'+i).classList.remove('selected');
+    }
+    document.getElementById('card-'+idx).classList.add('selected');
+    document.querySelector('input[name="resort_choice"][value="'+idx+'"]').checked = true;
+
+    document.getElementById('selectedResortLabel').textContent = resorts[idx].name;
+    document.getElementById('totalAmount').textContent = resorts[idx].total;
+
+    // Push selection into every Web3Forms hidden field on the page
+    var hiddenFields = document.querySelectorAll('#hiddenResort');
+    hiddenFields.forEach(function(f){ f.value = resorts[idx].name; });
+
+    // Keep the option_interest select in sync with the visual selection
+    var select = document.getElementById('option_interest');
+    if(select){ select.value = resorts[idx].name; }
+  }
+
+  // Keep hidden field in sync if the client instead uses the dropdown directly
+  document.getElementById('option_interest').addEventListener('change', function(){
+    document.getElementById('hiddenResort').value = this.value;
+    var idx = resorts.findIndex(function(r){ return r.name === document.getElementById('option_interest').value; });
+    if(idx > -1){ selectResort(idx); }
+  });
+
+  // Assemble agent email at runtime (avoids Cloudflare scrambling)
+  var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+  var emailLink = document.getElementById('emailLink');
+  emailLink.href = 'mailto:' + addr;
+  emailLink.textContent = addr;
+
+  // Web3Forms submission — fetch only, never native POST
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var errorBox = document.getElementById('formError');
+    errorBox.style.display = 'none';
+    var formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(function(response){ return response.json(); })
+    .then(function(data){
+      if(data.success){
+        form.style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorBox.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      errorBox.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
