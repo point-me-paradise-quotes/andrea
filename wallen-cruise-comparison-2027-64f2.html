@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cruise Comparison for Carol Wallen | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text-primary:#3D3D3D;
+    --text-secondary:#606060;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'DM Sans',sans-serif;
+    color:var(--text-primary);
+    background:var(--paper);
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--teal-dark);line-height:1.25;}
+  .advisor-note{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text-primary);font-size:1.15rem;}
+  a{color:var(--teal-dark);}
+  img{max-width:100%;display:block;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:340px;
+    background-image:linear-gradient(180deg, rgba(38,58,58,0.55) 0%, rgba(38,58,58,0.72) 100%), url('https://images.pexels.com/photos/6044244/pexels-photo-6044244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:48px 20px;
+  }
+  .hero h1{color:var(--paper-pure);font-size:2.1rem;margin-bottom:10px;}
+  .hero p{color:var(--cream-light);font-size:1.05rem;max-width:560px;}
+  .hero .badge{
+    display:inline-block;margin-top:16px;background:var(--gold);color:var(--text-primary);
+    font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.8rem;letter-spacing:0.04em;
+    padding:6px 14px;border-radius:20px;text-transform:uppercase;
+  }
+
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px;}
+
+  /* COMMITMENT CALLOUTS */
+  .commitment{
+    background:var(--cream-light);
+    border-left:4px solid var(--teal);
+    padding:18px 22px;
+    margin:28px 0;
+    border-radius:6px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--text-primary);
+  }
+
+  /* STICKY TOTAL BAR */
+  .total-bar{
+    position:sticky;top:0;z-index:50;
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:14px 20px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.12);
+  }
+  .total-bar .amount{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;}
+  .total-bar .sub{font-size:0.82rem;color:var(--cream-light);margin-top:2px;}
+  .rate-note{
+    background:var(--paper-pure);
+    border:1px solid var(--pale-teal);
+    padding:14px 18px;
+    border-radius:8px;
+    margin:20px 0;
+    font-size:0.95rem;
+    color:var(--text-primary);
+  }
+  .disclaimer-small{font-size:0.8rem;color:var(--text-secondary);margin-top:8px;}
+
+  /* SAILING SECTIONS */
+  .sailing{
+    background:var(--paper-pure);
+    border:1px solid var(--pale-teal);
+    border-radius:12px;
+    padding:26px;
+    margin:34px 0;
+  }
+  .sailing-header{margin-bottom:14px;}
+  .sailing-header h2{font-size:1.5rem;}
+  .sailing-meta{color:var(--text-secondary);font-size:0.95rem;margin-top:4px;}
+  .sailing-meta strong{color:var(--text-primary);}
+  .intro-copy{margin:14px 0;}
+
+  .itinerary{
+    background:var(--cream-light);
+    border-radius:8px;
+    padding:14px 18px;
+    margin:16px 0;
+    font-size:0.92rem;
+  }
+  .itinerary h4{font-size:0.95rem;text-transform:uppercase;letter-spacing:0.03em;margin-bottom:8px;color:var(--teal-dark);}
+  .itinerary ul{list-style:none;}
+  .itinerary li{padding:3px 0;border-bottom:1px dashed var(--pale-teal);}
+  .itinerary li:last-child{border-bottom:none;}
+
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+  .gallery img{border-radius:8px;height:170px;width:100%;object-fit:cover;}
+
+  .option-card{
+    border:2px solid var(--pale-teal);
+    border-radius:10px;
+    padding:16px 18px;
+    margin:14px 0;
+    cursor:pointer;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .option-card:has(input:checked){
+    border-color:var(--teal-dark);
+    background:var(--cream-light);
+  }
+  .option-card label{display:flex;align-items:flex-start;gap:12px;cursor:pointer;}
+  .option-card input[type="radio"]{
+    margin-top:4px;
+    width:20px;height:20px;
+    min-width:20px;
+    accent-color:var(--teal-dark);
+  }
+  .option-title{font-family:'Playfair Display',serif;font-weight:600;font-size:1.05rem;color:var(--text-primary);}
+  .option-price{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--teal-dark);font-weight:700;margin:4px 0;}
+  .option-detail{font-size:0.9rem;color:var(--text-secondary);margin-top:6px;}
+  .option-detail ul{margin:6px 0 0 18px;}
+  .option-diff{
+    background:var(--cream);
+    border-radius:6px;
+    padding:8px 12px;
+    font-size:0.88rem;
+    margin-top:10px;
+    display:inline-block;
+  }
+
+  /* CONTACT FORM */
+  .contact-section{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    border-radius:12px;
+    padding:30px 26px;
+    margin:34px 0;
+  }
+  .contact-section h2{color:var(--paper-pure);}
+  .contact-section p.lead{color:var(--cream-light);margin:8px 0 20px;}
+  .form-group{margin-bottom:16px;}
+  .form-group label{display:block;font-weight:600;font-size:0.9rem;margin-bottom:6px;color:var(--paper-pure);}
+  .form-group input,
+  .form-group select,
+  .form-group textarea{
+    width:100%;
+    font-size:16px;
+    padding:12px 14px;
+    border-radius:8px;
+    border:none;
+    font-family:'DM Sans',sans-serif;
+    min-height:44px;
+    background:var(--paper-pure);
+    color:var(--text-primary);
+  }
+  .form-group textarea{min-height:90px;resize:vertical;}
+  .passenger-block{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:10px;
+    padding:16px;
+    margin:18px 0;
+  }
+  .passenger-block h3{color:var(--paper-pure);font-size:1.05rem;margin-bottom:10px;}
+  .passenger-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .section-note{font-size:0.85rem;color:var(--cream-light);margin-bottom:10px;}
+  .btn{
+    background:var(--gold);
+    color:var(--text-primary);
+    border:none;
+    font-weight:700;
+    font-size:1rem;
+    padding:14px 26px;
+    border-radius:8px;
+    min-height:44px;
+    cursor:pointer;
+    width:100%;
+    font-family:'DM Sans',sans-serif;
+  }
+  .btn:hover{background:var(--gold-dark);}
+  #formError{
+    display:none;background:#fff3f0;color:#7a2e1f;border:1px solid #e0a58f;
+    padding:12px 14px;border-radius:8px;margin-bottom:14px;font-size:0.9rem;
+  }
+  #thankYou{
+    display:none;text-align:center;padding:30px 10px;
+  }
+  #thankYou h3{color:var(--paper-pure);}
+  #thankYou p{color:var(--cream-light);margin-top:8px;}
+
+  /* FOOTER */
+  footer{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    text-align:center;
+    padding:30px 20px 40px;
+    margin-top:30px;
+  }
+  footer .agent-name{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:6px;}
+  footer .contact-line{font-size:0.92rem;color:var(--cream-light);margin:4px 0;}
+  footer .cred-badge{
+    display:inline-block;margin-top:14px;
+    border:1px solid var(--gold);color:var(--gold);
+    font-size:0.75rem;letter-spacing:0.04em;text-transform:uppercase;
+    padding:5px 12px;border-radius:16px;
+  }
+  footer .fine-print{font-size:0.78rem;color:var(--pale-teal);margin-top:18px;max-width:520px;margin-left:auto;margin-right:auto;}
+
+  @media (max-width:540px){
+    .gallery{grid-template-columns:1fr;}
+    .passenger-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:1.6rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>A Cruise Comparison for Carol Wallen</h1>
+  <p>Four sailings, side by side, for two travelers &mdash; June through August 2027.</p>
+</div>
+
+<div class="wrap">
+
+  <div class="commitment">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing &mdash; already done.
+  </div>
+
+  <div class="rate-note">
+    Flights, pre- or post-cruise stays, transfers, and excursions can be added to any of these four sailings &mdash; just let us know once you've picked a favorite and we'll build those into your final quote.
+  </div>
+
+</div>
+
+<div class="total-bar" id="totalBar">
+  <div class="amount" id="totalAmount">Est. $0</div>
+  <div class="sub" id="totalLabel">Select an option below to see pricing here</div>
+</div>
+
+<div class="wrap">
+
+  <div class="rate-note">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience &mdash; you're paying for the rest of what we do.
+    <div class="disclaimer-small">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</div>
+  </div>
+
+  <!-- SAILING A -->
+  <div class="sailing">
+    <div class="sailing-header">
+      <h2>Sailing A &mdash; South Pacific to Hawaii</h2>
+      <div class="sailing-meta"><strong>Norwegian Spirit</strong> &middot; 12 nights &middot; June 17&ndash;29, 2027 &middot; Papeete, Tahiti &rarr; Honolulu, Hawaii</div>
+    </div>
+    <p class="intro-copy">Four French Polynesian islands &mdash; Tahiti, Moorea, Raiatea, and Bora Bora &mdash; followed by five sea days and a run through Hawaii that includes an overnight in Kauai. It's a long sail, and the two regions feel genuinely different from the rail: volcanic peaks and lagoons early on, then the greener, cooler air of the Hawaiian islands by the second week.</p>
+
+    <div class="itinerary">
+      <h4>Itinerary</h4>
+      <ul>
+        <li>June 17 &mdash; Papeete, Tahiti</li>
+        <li>June 18 &mdash; Moorea</li>
+        <li>June 19 &mdash; Raiatea</li>
+        <li>June 20 &mdash; Bora Bora</li>
+        <li>June 21&ndash;25 &mdash; At Sea</li>
+        <li>June 26 &mdash; Hilo, Hawaii</li>
+        <li>June 27 &mdash; Kauai (overnight)</li>
+        <li>June 28 &mdash; Kauai</li>
+        <li>June 29 &mdash; Honolulu</li>
+      </ul>
+    </div>
+
+    <div class="gallery">
+      <img src="https://cruiseweb.com/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fnorwegian-spirit-cruise-ship-exterior.jpg&w=1920&q=50" alt="Norwegian Spirit exterior">
+      <img src="https://d23n7ahjfnjotp.cloudfront.net/imgs/iphone/cabins/new/165/b3xl.jpg" alt="Norwegian Spirit cabin">
+    </div>
+
+    <div class="option-card">
+      <label>
+        <input type="radio" name="package_choice" value="A1" data-price="6732.04" data-label="Sailing A – Norwegian Spirit – Without Free at Sea">
+        <div>
+          <div class="option-title">Option 1 &mdash; Without Free at Sea</div>
+          <div class="option-price">$6,732.04 total for 2 adults</div>
+          <div class="option-detail">Includes cruise fare, taxes, and prepaid gratuities. Deposit: $250 total. Final payment $6,482.04 due February 17, 2027.</div>
+        </div>
+      </label>
+    </div>
+
+    <div class="option-card">
+      <label>
+        <input type="radio" name="package_choice" value="A2" data-price="7576.04" data-label="Sailing A – Norwegian Spirit – With Free at Sea">
+        <div>
+          <div class="option-title">Option 2 &mdash; With Free at Sea</div>
+          <div class="option-price">$7,576.04 total for 2 adults</div>
+          <div class="option-detail">Includes cruise fare, taxes, prepaid gratuities, and the Free at Sea package:
+            <ul>
+              <li>Unlimited open bar for both guests</li>
+              <li>Specialty dining package</li>
+              <li>Wi-Fi minutes for each guest</li>
+              <li>$50 shore excursion credit per eligible port for Guest 1 on qualifying Norwegian excursions</li>
+            </ul>
+            Deposit: $250 total. Final payment $7,326.04 due February 17, 2027.
+            <div class="option-diff">Difference to add Free at Sea: $844 total for both guests across the 12 nights.</div>
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <p class="advisor-note">I'd personally lean toward Free at Sea on a cruise this long &mdash; for roughly $35 per person per day more, you're covering drinks, specialty dining, Wi-Fi, and the shore excursion credit.</p>
+  </div>
+
+  <!-- SAILING B -->
+  <div class="sailing">
+    <div class="sailing-header">
+      <h2>Sailing B &mdash; Aruba, Bonaire &amp; Cura&ccedil;ao</h2>
+      <div class="sailing-meta"><strong>Celebrity Beyond</strong> &middot; 8 nights &middot; June 5&ndash;13, 2027 &middot; Roundtrip Miami</div>
+    </div>
+    <p class="intro-copy">All three ABC islands on one sailing, with four sea days built in for pool time and slower mornings. Aruba gets the longest port day at 15 hours, so there's real time to get off the ship and explore beyond the pier.</p>
+
+    <div class="itinerary">
+      <h4>Itinerary</h4>
+      <ul>
+        <li>June 5 &mdash; Miami, Florida</li>
+        <li>June 6&ndash;7 &mdash; At Sea</li>
+        <li>June 8 &mdash; Aruba, 8:00 AM&ndash;11:00 PM</li>
+        <li>June 9 &mdash; Bonaire, 8:00 AM&ndash;6:00 PM</li>
+        <li>June 10 &mdash; Cura&ccedil;ao, 8:00 AM&ndash;4:00 PM</li>
+        <li>June 11&ndash;12 &mdash; At Sea</li>
+        <li>June 13 &mdash; Miami, arrive 7:00 AM</li>
+      </ul>
+    </div>
+
+    <div class="gallery">
+      <img src="https://assets.dm.rccl.com/is/image/RoyalCaribbeanCruises/celebrity/new-images/black-friday-cyber-monday-2023/CEL_BY_Aerial_2.jpg?$5x4-small$" alt="Celebrity Beyond aerial view">
+      <img src="https://d23n7ahjfnjotp.cloudfront.net/imgs/iphone/cabins/new/709/p2xl.jpg" alt="Deluxe Porthole View Stateroom with Veranda">
+    </div>
+
+    <div class="option-card">
+      <label>
+        <input type="radio" name="package_choice" value="B1" data-price="4337.82" data-label="Sailing B – Celebrity Beyond – Cruise Only">
+        <div>
+          <div class="option-title">Option 1 &mdash; Cruise Only</div>
+          <div class="option-price">$4,337.82 total for 2 adults</div>
+          <div class="option-detail">Deluxe Porthole View Stateroom with Veranda. Cruise total without gratuities: $4,025.82; prepaid gratuities $312 already included above. Deposit: $500 total. Final payment due March 7, 2027.</div>
+        </div>
+      </label>
+    </div>
+
+    <div class="option-card">
+      <label>
+        <input type="radio" name="package_choice" value="B2" data-price="5537.82" data-label="Sailing B – Celebrity Beyond – All Included">
+        <div>
+          <div class="option-title">Option 2 &mdash; All Included</div>
+          <div class="option-price">$5,537.82 total for 2 adults</div>
+          <div class="option-detail">Same Deluxe Porthole View Stateroom with Veranda, with Celebrity's All Included package added:
+            <ul>
+              <li>Classic Drink Package for both guests &mdash; cocktails, spirits, beer, wine by the glass, frozen drinks, bottled water, sodas, premium coffee and tea</li>
+              <li>Unlimited Basic Wi-Fi for both guests (browsing, email, messaging &mdash; not streaming or video calls)</li>
+            </ul>
+            Beverage package gratuities are built into the package; the $312 stateroom gratuities are already included in both totals above. Deposit: $500 total. Final payment due March 7, 2027.
+            <div class="option-diff">Difference to add All Included: $1,200 total for both guests.</div>
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <p class="advisor-note">On an 8-night sailing, All Included works out to about $75 more per person per day. If you know you'll be drinking through the week and want Wi-Fi sorted, it can make onboard budgeting a lot simpler.</p>
+  </div>
+
+  <!-- SAILING C -->
+  <div class="sailing">
+    <div class="sailing-header">
+      <h2>Sailing C &mdash; Hawaii Inter-Island</h2>
+      <div class="sailing-meta"><strong>Norwegian Pride of America</strong> &middot; 7 nights &middot; June 19&ndash;26, 2027 &middot; Roundtrip Honolulu</div>
+    </div>
+    <p class="intro-copy">This one covers four Hawaiian islands without a single flight or hotel change in between. You get a full day and a half in Maui, a stop each in Hilo and Kona on the Big Island, two days in Kauai, and scenic cruising along the Na Pali Coast on the way out.</p>
+
+    <div class="itinerary">
+      <h4>Itinerary</h4>
+      <ul>
+        <li>June 19 &mdash; Honolulu, Oahu</li>
+        <li>June 20&ndash;21 &mdash; Maui</li>
+        <li>June 22 &mdash; Hilo, Big Island, 8:00 AM&ndash;6:00 PM</li>
+        <li>June 23 &mdash; Kona, Big Island, 7:00 AM&ndash;5:30 PM</li>
+        <li>June 24&ndash;25 &mdash; Kauai, with scenic cruising along the Na Pali Coast</li>
+        <li>June 26 &mdash; Honolulu, arrive 7:00 AM</li>
+      </ul>
+    </div>
+
+    <div class="gallery">
+      <img src="https://www.ncl.com/adobe/dynamicmedia/deliver/dm-aid--adc6543d-2ddd-4257-9e9f-97bc57c90d03/ncl-poa-cruise-hero-mobile.jpg?preferwebp=true&quality=85" alt="Pride of America hero image">
+      <img src="https://www.ncl.com/adobe/dynamicmedia/deliver/dm-aid--ad27f9fd-db3f-46a4-94f3-00cbd2d343ef/NCL-Stateroom-Pride-of-America-Balcony-Sail-Away-Balcony-BX-Bedroom-----jpeg.webp?width=915&quality=100&preferwebp=true" alt="Pride of America balcony stateroom">
+    </div>
+
+    <div class="option-card">
+      <label>
+        <input type="radio" name="package_choice" value="C1" data-price="8709.42" data-label="Sailing C – Pride of America – Without Free at Sea">
+        <div>
+          <div class="option-title">Option 1 &mdash; Without Free at Sea</div>
+          <div class="option-price">$8,709.42 total for 2 adults</div>
+          <div class="option-detail">Includes cruise fare, taxes, and prepaid gratuities. Deposit: $250 total. Final payment $8,459.42 due February 19, 2027.</div>
+        </div>
+      </label>
+    </div>
+
+    <div class="option-card">
+      <label>
+        <input type="radio" name="package_choice" value="C2" data-price="9228.42" data-label="Sailing C – Pride of America – With Free at Sea">
+        <div>
+          <div class="option-title">Option 2 &mdash; With Free at Sea</div>
+          <div class="option-price">$9,228.42 total for 2 adults</div>
+          <div class="option-detail">Includes cruise fare, taxes, prepaid gratuities, and the Free at Sea package:
+            <ul>
+              <li>Beverage package for both guests</li>
+              <li>Specialty dining package</li>
+              <li>Wi-Fi minutes</li>
+              <li>$50 shore excursion credit per eligible port for Guest 1 on qualifying Norwegian excursions</li>
+            </ul>
+            Deposit: $250 total. Final payment $8,978.42 due February 19, 2027.
+            <div class="option-diff">Difference to add Free at Sea: $519 total for both guests.</div>
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <p class="advisor-note">At about $37 per person per day more, Free at Sea holds up well here if you plan on drinks, specialty dining, Wi-Fi, and Norwegian's shore excursions. We can also tack on a pre- or post-cruise stay in Hawaii if you'd like more time on Oahu or another island.</p>
+  </div>
+
+  <!-- SAILING D -->
+  <div class="sailing">
+    <div class="sailing-header">
+      <h2>Sailing D &mdash; Voyage of the Glaciers, Grand Adventure</h2>
+      <div class="sailing-meta"><strong>Discovery Princess</strong> &middot; 14 nights &middot; July 24&ndash;August 7, 2027 &middot; Roundtrip Vancouver</div>
+    </div>
+    <p class="intro-copy">Two full weeks in Alaska, with Glacier Bay visited twice plus College Fjord and Hubbard Glacier. Late July into early August is when salmon runs are active in a lot of areas, which tends to bring bears in closer to rivers and streams, and it's also solid timing for whale activity &mdash; with the long daylight hours Alaska is known for in summer. Wildlife sightings are never guaranteed, but the timing works in your favor here compared with earlier sailings.</p>
+
+    <div class="itinerary">
+      <h4>Itinerary</h4>
+      <ul>
+        <li>July 24 &mdash; Vancouver, depart 4:00 PM</li>
+        <li>July 25 &mdash; At Sea</li>
+        <li>July 26 &mdash; Ketchikan, 6:00 AM&ndash;2:00 PM</li>
+        <li>July 27 &mdash; Juneau, 8:00 AM&ndash;9:15 PM</li>
+        <li>July 28 &mdash; Skagway, 7:00 AM&ndash;8:30 PM</li>
+        <li>July 29 &mdash; Glacier Bay National Park, scenic cruising</li>
+        <li>July 30 &mdash; College Fjord, scenic cruising</li>
+        <li>July 31 &mdash; Anchorage/Whittier, 12:30 AM&ndash;8:30 PM</li>
+        <li>August 1 &mdash; Hubbard Glacier, scenic cruising</li>
+        <li>August 2 &mdash; Glacier Bay National Park, scenic cruising</li>
+        <li>August 3 &mdash; Icy Strait Point, 6:00 AM&ndash;7:00 PM</li>
+        <li>August 4 &mdash; Juneau, 6:30 AM&ndash;4:15 PM</li>
+        <li>August 5 &mdash; Ketchikan, 10:00 AM&ndash;5:00 PM</li>
+        <li>August 6 &mdash; At Sea</li>
+        <li>August 7 &mdash; Vancouver, arrive 7:30 AM</li>
+      </ul>
+    </div>
+
+    <div class="gallery">
+      <img src="https://assets.princess.com/is/image/princesscruises/skagway-aerial-discovery-princess-alaska%3A4x5-Portrait?ts=1698950041527" alt="Discovery Princess in Skagway, Alaska">
+      <img src="https://d23n7ahjfnjotp.cloudfront.net/imgs/iphone/cabins/new/692/dbxl.jpg" alt="Discovery Princess stateroom">
+    </div>
+
+    <div class="option-card">
+      <label>
+        <input type="radio" name="package_choice" value="D1" data-price="9504" data-label="Sailing D – Discovery Princess – Princess Standard">
+        <div>
+          <div class="option-title">Option 1 &mdash; Princess Standard</div>
+          <div class="option-price">$9,504 total for 2 adults</div>
+          <div class="option-detail">Accommodations, main dining rooms, buffet and complimentary dining, entertainment, shows, pools, fitness center, and included onboard activities. Drinks, Wi-Fi, crew gratuities, and specialty/casual dining upgrades are separate. Deposit: $198 total. Final payment $9,306 due March 26, 2027.</div>
+        </div>
+      </label>
+    </div>
+
+    <div class="option-card">
+      <label>
+        <input type="radio" name="package_choice" value="D2" data-price="11624" data-label="Sailing D – Discovery Princess – Princess Plus">
+        <div>
+          <div class="option-title">Option 2 &mdash; Princess Plus</div>
+          <div class="option-price">$11,624 total for 2 adults</div>
+          <div class="option-detail">
+            <ul>
+              <li>Beverage package (cocktails, wine, beer, spirits, specialty coffee, tea, soda, and qualifying beverages up to $15 each)</li>
+              <li>MedallionNet Max Wi-Fi, 1 device per guest</li>
+              <li>Crew appreciation/gratuities included</li>
+              <li>4 casual dining meals per guest</li>
+              <li>OceanNow delivery fees waived, room service included</li>
+            </ul>
+            Deposit: $198 total. Final payment $11,426 due March 26, 2027.
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <div class="option-card">
+      <label>
+        <input type="radio" name="package_choice" value="D3" data-price="12604" data-label="Sailing D – Discovery Princess – Princess Premier">
+        <div>
+          <div class="option-title">Option 3 &mdash; Princess Premier</div>
+          <div class="option-price">$12,604 total for 2 adults</div>
+          <div class="option-detail">
+            <ul>
+              <li>Premium beverage package, qualifying drinks up to $20 each</li>
+              <li>Unlimited casual and specialty dining</li>
+              <li>MedallionNet Max Wi-Fi, up to 4 devices per guest</li>
+              <li>Crew appreciation/gratuities included</li>
+              <li>OceanNow delivery fees waived, room service included</li>
+              <li>Shore excursion credit up to $300 per guest, depending on voyage length</li>
+              <li>Unlimited digital photos plus 3 printed photos</li>
+              <li>Reserved theater seating in the Premier section</li>
+            </ul>
+            Deposit: $198 total. Final payment $12,406 due March 26, 2027.
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <p class="advisor-note">Of everything we've compared, this is the one I'd point you toward first if wildlife is a priority &mdash; the late-July start lines up with active salmon runs and whale activity, and two full weeks gets you Glacier Bay twice, plus Hubbard Glacier, College Fjord, and Icy Strait Point, without repacking or changing hotels along the way. Premier makes the most sense on a 14-night sailing given the unlimited dining, drinks, Wi-Fi, and included gratuities.</p>
+  </div>
+
+  <div class="commitment">
+    What's coming after this quote: a destination guide built for your trip &mdash; PDF or interactive in-app, with Google Maps links to every place we send you &mdash; a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+
+</div>
+
+<div class="wrap">
+  <div class="contact-section">
+    <h2>Ready to Move Forward?</h2>
+    <p class="lead">Tell us which sailing you like, and if you've already got your favorite, add both travelers' details below so we can start the hold.</p>
+
+    <div id="formError"></div>
+
+    <form id="quoteForm">
+      <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+      <input type="hidden" name="subject" value="Quote Response — Carol Wallen | Cruise Suggestions">
+      <input type="hidden" name="from_name" value="Carol Wallen Quote — Point Me to Paradise">
+      <input type="hidden" name="redirect" value="false">
+      <input type="hidden" name="selected_package" id="selectedPackageHidden" value="">
+
+      <div class="form-group">
+        <label for="clientName">Your Name *</label>
+        <input type="text" id="clientName" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="clientEmail">Your Email *</label>
+        <input type="email" id="clientEmail" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="clientPhone">Your Phone</label>
+        <input type="tel" id="clientPhone" name="phone">
+      </div>
+
+      <div class="form-group">
+        <label for="optionInterest">Which option are you most interested in?</label>
+        <select id="optionInterest" name="option_interest">
+          <option value="">Still comparing / not sure yet</option>
+          <option value="Sailing A – Norwegian Spirit – Without Free at Sea">Sailing A &ndash; Norwegian Spirit &ndash; Without Free at Sea ($6,732.04)</option>
+          <option value="Sailing A – Norwegian Spirit – With Free at Sea">Sailing A &ndash; Norwegian Spirit &ndash; With Free at Sea ($7,576.04)</option>
+          <option value="Sailing B – Celebrity Beyond – Cruise Only">Sailing B &ndash; Celebrity Beyond &ndash; Cruise Only ($4,337.82)</option>
+          <option value="Sailing B – Celebrity Beyond – All Included">Sailing B &ndash; Celebrity Beyond &ndash; All Included ($5,537.82)</option>
+          <option value="Sailing C – Pride of America – Without Free at Sea">Sailing C &ndash; Pride of America &ndash; Without Free at Sea ($8,709.42)</option>
+          <option value="Sailing C – Pride of America – With Free at Sea">Sailing C &ndash; Pride of America &ndash; With Free at Sea ($9,228.42)</option>
+          <option value="Sailing D – Discovery Princess – Princess Standard">Sailing D &ndash; Discovery Princess &ndash; Princess Standard ($9,504)</option>
+          <option value="Sailing D – Discovery Princess – Princess Plus">Sailing D &ndash; Discovery Princess &ndash; Princess Plus ($11,624)</option>
+          <option value="Sailing D – Discovery Princess – Princess Premier">Sailing D &ndash; Discovery Princess &ndash; Princess Premier ($12,604)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="insurance">Travel Insurance</label>
+        <select id="insurance" name="travel_insurance">
+          <option value="Yes — I'd like a quote">Yes &mdash; I'd like a quote</option>
+          <option value="No — not interested">No &mdash; not interested</option>
+          <option value="Already have coverage">Already have coverage</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Questions, preferred cabin type, anything else we should know..."></textarea>
+      </div>
+
+      <div class="passenger-block">
+        <h3>Passenger Details</h3>
+        <p class="section-note">If you've found your favorite, fill this in so we can start the hold &mdash; otherwise feel free to leave it blank for now.</p>
+
+        <div class="passenger-grid">
+          <div class="form-group">
+            <label for="p1Name">Passenger 1 &mdash; Full Name</label>
+            <input type="text" id="p1Name" name="passenger1_name">
+          </div>
+          <div class="form-group">
+            <label for="p1Dob">Passenger 1 &mdash; Date of Birth</label>
+            <input type="date" id="p1Dob" name="passenger1_dob">
+          </div>
+          <div class="form-group">
+            <label for="p1Email">Passenger 1 &mdash; Email</label>
+            <input type="email" id="p1Email" name="passenger1_email">
+          </div>
+          <div class="form-group">
+            <label for="p1Phone">Passenger 1 &mdash; Phone</label>
+            <input type="tel" id="p1Phone" name="passenger1_phone">
+          </div>
+        </div>
+
+        <div class="passenger-grid">
+          <div class="form-group">
+            <label for="p2Name">Passenger 2 &mdash; Full Name</label>
+            <input type="text" id="p2Name" name="passenger2_name">
+          </div>
+          <div class="form-group">
+            <label for="p2Dob">Passenger 2 &mdash; Date of Birth</label>
+            <input type="date" id="p2Dob" name="passenger2_dob">
+          </div>
+          <div class="form-group">
+            <label for="p2Email">Passenger 2 &mdash; Email</label>
+            <input type="email" id="p2Email" name="passenger2_email">
+          </div>
+          <div class="form-group">
+            <label for="p2Phone">Passenger 2 &mdash; Phone</label>
+            <input type="tel" id="p2Phone" name="passenger2_phone">
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn" id="submitBtn">Send My Info</button>
+    </form>
+
+    <div id="thankYou">
+      <h3>Thank you!</h3>
+      <p>Your information has been sent. We'll be in touch shortly.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div class="contact-line" id="footerEmail"></div>
+  <div class="contact-line">409-789-3579</div>
+  <div class="contact-line">Point Me to Paradise Travel</div>
+  <div class="fine-print">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<script>
+  // Assemble agent email at runtime to avoid Cloudflare scraping
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var el = document.getElementById('footerEmail');
+    el.textContent = addr;
+    var link = document.createElement('a');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+    link.style.color = 'inherit';
+    el.innerHTML = '';
+    el.appendChild(link);
+  })();
+
+  // Running total + hidden field sync from package radios (radios live outside the form)
+  var radios = document.querySelectorAll('input[name="package_choice"]');
+  var totalAmount = document.getElementById('totalAmount');
+  var totalLabel = document.getElementById('totalLabel');
+  var selectedPackageHidden = document.getElementById('selectedPackageHidden');
+  var optionInterestSelect = document.getElementById('optionInterest');
+
+  function formatUSD(num){
+    return '$' + num.toLocaleString('en-US', {minimumFractionDigits: num % 1 === 0 ? 0 : 2, maximumFractionDigits: 2});
+  }
+
+  radios.forEach(function(radio){
+    radio.addEventListener('change', function(){
+      if(radio.checked){
+        var price = parseFloat(radio.getAttribute('data-price'));
+        var label = radio.getAttribute('data-label');
+        totalAmount.textContent = 'Est. ' + formatUSD(price);
+        totalLabel.textContent = label;
+        selectedPackageHidden.value = label + ' — ' + formatUSD(price);
+        // keep the option-interest dropdown in sync, but leave it editable afterward
+        if(optionInterestSelect){
+          for(var i=0;i<optionInterestSelect.options.length;i++){
+            if(optionInterestSelect.options[i].value === label){
+              optionInterestSelect.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+    });
+  });
+
+  // Web3Forms submission via fetch — never native POST
+  var form = document.getElementById('quoteForm');
+  var formError = document.getElementById('formError');
+  var thankYou = document.getElementById('thankYou');
+  var submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    formError.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    var formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(function(response){ return response.json(); })
+    .then(function(data){
+      if(data.success){
+        form.style.display = 'none';
+        thankYou.style.display = 'block';
+      } else {
+        formError.textContent = 'Something went wrong sending your info. Please try again, or call us directly at 409-789-3579.';
+        formError.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send My Info';
+      }
+    })
+    .catch(function(){
+      formError.textContent = 'Something went wrong sending your info. Please try again, or call us directly at 409-789-3579.';
+      formError.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send My Info';
+    });
+  });
+</script>
+
+</body>
+</html>
