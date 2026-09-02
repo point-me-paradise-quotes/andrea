@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quinney Family Reunion — Cruise Options</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text:#3D3D3D;
+    --text-muted:#606060;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--paper);
+    color:var(--text);
+    line-height:1.55;
+    padding-bottom:90px;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--teal-dark);}
+  .italic-voice{font-family:'Cormorant Garamond',serif;font-style:italic;}
+  a{color:var(--teal-dark);}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:420px;
+    background-image:linear-gradient(180deg, rgba(38,66,67,0.55) 0%, rgba(38,66,67,0.78) 100%), url('https://www.royalcaribbean.com/media-assets/pmc/content/dam/shore-x/castries-slu/y78d-st-lucia-by-double-decker-bus/Y78D-St-Lucia-by-Double-Decker-Bus-Pigeon-Island-National-Park.jpg?w=1920');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
+  }
+  .hero-inner{max-width:760px;}
+  .hero h1{color:#fff;font-size:2.4rem;margin-bottom:12px;}
+  .hero p.sub{color:var(--pale-teal);font-size:1.1rem;font-weight:500;}
+  .hero p.prepared{color:var(--cream-light);margin-top:14px;font-size:0.95rem;}
+
+  /* CALLOUT */
+  .callout{
+    background:var(--teal-dark);
+    color:#fff;
+    padding:22px 20px;
+    text-align:center;
+  }
+  .callout p{max-width:760px;margin:0 auto;font-size:1.05rem;font-family:'Playfair Display',serif;font-weight:500;}
+
+  .intro{padding:36px 0 10px;}
+  .intro h2{font-size:1.5rem;margin-bottom:10px;}
+  .intro p{color:var(--text-muted);max-width:760px;}
+
+  /* COMPARISON TABLE */
+  .compare-section{padding:36px 0;}
+  .compare-section h2{font-size:1.5rem;margin-bottom:14px;}
+  .table-scroll{overflow-x:auto;border-radius:10px;border:1px solid var(--pale-teal);}
+  table.compare{border-collapse:collapse;width:100%;min-width:760px;background:var(--paper-pure);}
+  table.compare th, table.compare td{
+    padding:12px 14px;
+    text-align:left;
+    border-bottom:1px solid var(--pale-teal);
+    font-size:0.92rem;
+    vertical-align:top;
+  }
+  table.compare th{
+    background:var(--cream-light);
+    color:var(--teal-dark);
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+    white-space:nowrap;
+  }
+  table.compare td.label-col{font-weight:600;color:var(--teal-dark);white-space:nowrap;background:var(--cream-light);}
+  table.compare td.price{font-weight:700;color:var(--teal-dark);}
+
+  /* SAILING CARDS */
+  .sailings{padding:20px 0 10px;}
+  .sailings h2{font-size:1.5rem;margin-bottom:18px;}
+  .sail-card{
+    background:var(--paper-pure);
+    border:2px solid var(--pale-teal);
+    border-radius:14px;
+    padding:24px;
+    margin-bottom:26px;
+    transition:border-color 0.2s, box-shadow 0.2s;
+  }
+  .sail-card.selected{
+    border-color:var(--gold-dark);
+    box-shadow:0 0 0 3px rgba(218,195,150,0.35);
+  }
+  .sail-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px;}
+  .sail-head h3{font-size:1.3rem;margin-bottom:4px;}
+  .sail-head .line-ship{color:var(--text-muted);font-size:0.95rem;}
+  .sail-price-tag{
+    background:var(--cream-light);
+    border-radius:8px;
+    padding:8px 14px;
+    text-align:right;
+  }
+  .sail-price-tag .amt{font-family:'Playfair Display',serif;font-weight:700;color:var(--teal-dark);font-size:1.3rem;}
+  .sail-price-tag .note{font-size:0.75rem;color:var(--text-muted);}
+
+  .photo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0;}
+  .photo-row img{width:100%;height:150px;object-fit:cover;border-radius:8px;}
+
+  .sail-body{display:grid;grid-template-columns:1.3fr 1fr;gap:22px;margin-top:10px;}
+  .sail-copy p{margin-bottom:10px;color:var(--text);}
+  .sail-copy .voice{color:var(--text-muted);}
+
+  .itinerary{background:var(--cream-light);border-radius:10px;padding:14px 16px;}
+  .itinerary h4{font-size:1rem;margin-bottom:8px;}
+  .itinerary ul{list-style:none;font-size:0.88rem;}
+  .itinerary li{padding:4px 0;border-bottom:1px dashed var(--pale-teal);color:var(--text);}
+  .itinerary li:last-child{border-bottom:none;}
+  .itinerary li .day{font-weight:600;color:var(--teal-dark);}
+
+  .pricing-box{background:var(--paper);border:1px solid var(--pale-teal);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:0.9rem;}
+  .pricing-box .row{display:flex;justify-content:space-between;padding:3px 0;}
+  .pricing-box .row.total{font-weight:700;color:var(--teal-dark);border-top:1px solid var(--pale-teal);margin-top:6px;padding-top:8px;}
+  .pricing-box .terms{margin-top:10px;color:var(--text-muted);font-size:0.83rem;}
+
+  .vote-btn{
+    margin-top:16px;
+    width:100%;
+    min-height:48px;
+    background:var(--teal);
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-family:'DM Sans',sans-serif;
+    font-weight:600;
+    font-size:1rem;
+    cursor:pointer;
+    transition:background 0.2s;
+  }
+  .vote-btn:hover{background:var(--teal-dark);}
+  .sail-card.selected .vote-btn{background:var(--gold-dark);}
+  .sail-card.selected .vote-btn::after{content:" ✓ Selected";}
+
+  /* STICKY BAR */
+  .sticky-bar{
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:var(--teal-dark);
+    color:#fff;
+    padding:12px 20px;
+    z-index:50;
+    box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+  }
+  .sticky-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;}
+  .sticky-inner .pick-label{font-family:'Playfair Display',serif;font-weight:600;font-size:1.05rem;}
+  .sticky-inner .pick-sub{font-size:0.78rem;color:var(--pale-teal);max-width:600px;}
+
+  /* BOTTOM CALLOUT */
+  .bottom-callout{background:var(--cream-light);padding:30px 0;margin-top:20px;}
+  .bottom-callout .box{
+    max-width:760px;margin:0 auto;text-align:center;
+    border:1px solid var(--gold-dark);border-radius:12px;padding:24px;background:var(--paper-pure);
+  }
+  .bottom-callout p{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--teal-dark);}
+
+  /* FORM */
+  .form-section{padding:36px 0 60px;}
+  .form-section h2{font-size:1.5rem;margin-bottom:6px;}
+  .form-section .lead{color:var(--text-muted);margin-bottom:20px;max-width:640px;}
+  .vote-form{
+    background:var(--paper-pure);
+    border:1px solid var(--pale-teal);
+    border-radius:14px;
+    padding:26px;
+    max-width:640px;
+  }
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-weight:600;margin-bottom:6px;font-size:0.92rem;color:var(--teal-dark);}
+  .field input, .field select, .field textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid var(--pale-teal);
+    border-radius:8px;
+    font-family:'DM Sans',sans-serif;
+    font-size:16px;
+    color:var(--text);
+    background:var(--paper);
+  }
+  .field textarea{min-height:90px;resize:vertical;}
+  .submit-btn{
+    min-height:48px;
+    width:100%;
+    background:var(--gold-dark);
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .submit-btn:hover{opacity:0.92;}
+  .error-msg{display:none;background:#F7E4DE;color:#8a3b2b;border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:0.9rem;}
+  .thankyou{display:none;text-align:center;padding:30px 10px;}
+  .thankyou h3{margin-bottom:8px;}
+
+  footer{background:var(--teal-dark);color:#fff;padding:30px 20px;text-align:center;margin-bottom:60px;}
+  footer .agent{font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:6px;}
+  footer .contact{font-size:0.9rem;color:var(--pale-teal);margin-bottom:14px;}
+  footer .disclaimer{font-size:0.78rem;color:var(--pale-teal);max-width:520px;margin:0 auto;}
+
+  @media (max-width:760px){
+    .sail-body{grid-template-columns:1fr;}
+    .photo-row{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:540px){
+    .photo-row{grid-template-columns:1fr;}
+    .sail-head{flex-direction:column;}
+    .sail-price-tag{text-align:left;}
+    table.compare{min-width:640px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>The Quinney Family Reunion</h1>
+    <p class="sub">Comparing five sailings from Galveston · September–October 2027</p>
+    <p class="prepared">Prepared for Terrell Quinney</p>
+  </div>
+</div>
+
+<div class="callout">
+  <p>We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.</p>
+</div>
+
+<div class="wrap intro">
+  <h2>How this works</h2>
+  <p>This page is for comparing, not booking. Below are five real sailing options for the family reunion — two on Royal Caribbean's Icon of the Seas, two on Carnival Jubilee, and one on MSC Seascape — all round-trip from Galveston, all priced for an interior stateroom for two guests. Every price shown is a real, bookable rate as of today, not a placeholder.</p>
+  <p>Look through the comparison table and the details on each sailing, then use the form at the bottom to tell us which one your family is leaning toward. Once we hear back from everyone, we'll lock in the group's pick and move into the actual booking process.</p>
+  <p><strong>A note on the prices below:</strong> every price shown is the lowest available rate — an interior stateroom for two — meant as a starting point for comparing sailings against each other. Once the family lands on a cruise, we'll share the full range of room types (ocean view, balcony, suite) and pricing for each, so everyone can pick what fits their group and budget.</p>
+</div>
+
+<div class="wrap compare-section">
+  <h2>Side-by-side comparison</h2>
+  <div class="table-scroll">
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>A — Icon of the Seas<br><span style="font-weight:400;color:var(--text-muted);">8 Nights</span></th>
+          <th>B — Icon of the Seas<br><span style="font-weight:400;color:var(--text-muted);">6 Nights</span></th>
+          <th>C — Carnival Jubilee<br><span style="font-weight:400;color:var(--text-muted);">8 Nights</span></th>
+          <th>D — Carnival Jubilee<br><span style="font-weight:400;color:var(--text-muted);">6 Nights</span></th>
+          <th>E — MSC Seascape<br><span style="font-weight:400;color:var(--text-muted);">7 Nights</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label-col">Sail dates</td>
+          <td>Sept 25 – Oct 3, 2027</td>
+          <td>Sept 5 – 11, 2027</td>
+          <td>Oct 2 – 10, 2027</td>
+          <td>Oct 10 – 16, 2027</td>
+          <td>Oct 3 – 10, 2027</td>
+        </tr>
+        <tr>
+          <td class="label-col">Ports of call</td>
+          <td>Cozumel, Costa Maya, Perfect Day at CocoCay</td>
+          <td>Costa Maya, Roatán, Cozumel</td>
+          <td>Celebration Key, RelaxAway (Half Moon Cay), Nassau</td>
+          <td>Cozumel, Roatán</td>
+          <td>Costa Maya, Roatán, Cozumel</td>
+        </tr>
+        <tr>
+          <td class="label-col">Sea days</td>
+          <td>4</td>
+          <td>2</td>
+          <td>4</td>
+          <td>3</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td class="label-col">Ship atmosphere</td>
+          <td>The largest ship in the world — eight neighborhoods, a full waterpark, and enough onboard activity that the ship itself is a big part of the trip.</td>
+          <td>Same ship as Option A, shorter format — a way to try Icon of the Seas without committing to a full week.</td>
+          <td>Carnival's newest Galveston ship — a roller coaster at sea, a large aqua park, and a louder, more casual family energy.</td>
+          <td>Same ship as Option C, shorter and more budget-friendly.</td>
+          <td>A quieter, more European-styled ship — an infinity pool over the stern and a more understated pace than the RC or Carnival ships.</td>
+        </tr>
+        <tr>
+          <td class="label-col">Starting price for 2<br><span style="font-weight:400;color:var(--text-muted);font-size:0.78rem;">interior stateroom</span></td>
+          <td class="price">$2,579.92</td>
+          <td class="price">$1,874.92</td>
+          <td class="price">$2,062.00</td>
+          <td class="price">$1,434.00</td>
+          <td class="price">$1,367.58</td>
+        </tr>
+        <tr>
+          <td class="label-col">Deposit</td>
+          <td>$500</td>
+          <td>$500</td>
+          <td>$198</td>
+          <td>$198</td>
+          <td>$398</td>
+        </tr>
+        <tr>
+          <td class="label-col">Final payment</td>
+          <td>June 27, 2027</td>
+          <td>June 7, 2027</td>
+          <td>July 4, 2027</td>
+          <td>July 12, 2027</td>
+          <td>Not yet specified</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="wrap sailings">
+  <h2>The five sailings</h2>
+
+  <!-- SAILING A -->
+  <div class="sail-card" id="card-A">
+    <div class="sail-head">
+      <div>
+        <h3>A. 8-Night Perfect Day at CocoCay &amp; Western Caribbean</h3>
+        <div class="line-ship">Royal Caribbean · Icon of the Seas · Interior Stateroom</div>
+      </div>
+      <div class="sail-price-tag">
+        <div class="amt">$2,579.92</div>
+        <div class="note">starting price · interior stateroom · 2 guests</div>
+      </div>
+    </div>
+    <div class="photo-row">
+      <img src="https://i.imgur.com/5bGVDrz.jpg" alt="Icon of the Seas">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_Pg0RdUuDdY_BQPA4OAlaXymTz3VcDJ3IYNKIRnu3MSRrN8ufDzUI1bti&s=10" alt="Icon of the Seas">
+      <img src="https://martinaquatic.com/wp-content/uploads/2025/01/Icon-of-the-seas-aerial-Thrill-Island-and-Surfside.webp" alt="Icon of the Seas aerial view">
+    </div>
+    <div class="sail-body">
+      <div class="sail-copy">
+        <p>Two popular Western Caribbean ports plus Royal Caribbean's private destination, Perfect Day at CocoCay, with four sea days built in to enjoy Icon of the Seas itself. On a ship this size, the ship is genuinely part of the vacation.</p>
+        <p class="voice italic-voice">Cozumel brings beach clubs, snorkeling, and shopping; Costa Maya is a good fit for beach time or the Mayan ruins; CocoCay adds a full day of beaches, pools, and waterslides on Royal Caribbean's private island.</p>
+      </div>
+      <div class="itinerary">
+        <h4>Itinerary</h4>
+        <ul>
+          <li><span class="day">Sept 25</span> — Depart Galveston, 4:30 PM</li>
+          <li><span class="day">Sept 26</span> — Cruising</li>
+          <li><span class="day">Sept 27</span> — Cozumel, 8:00 AM–6:00 PM</li>
+          <li><span class="day">Sept 28</span> — Puerto Costa Maya, 8:00 AM–5:00 PM</li>
+          <li><span class="day">Sept 29</span> — Cruising</li>
+          <li><span class="day">Sept 30</span> — Perfect Day at CocoCay, 8:30 AM–5:00 PM</li>
+          <li><span class="day">Oct 1–2</span> — Cruising</li>
+          <li><span class="day">Oct 3</span> — Arrive Galveston, 6:00 AM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pricing-box">
+      <div class="row"><span>Cruise fare &amp; taxes</span><span>$2,283.92</span></div>
+      <div class="row"><span>Prepaid gratuities</span><span>$296.00</span></div>
+      <div class="row total"><span>Total (2 guests)</span><span>$2,579.92</span></div>
+      <div class="terms">Deposit: $500 · Final payment due June 27, 2027</div>
+    </div>
+    <button type="button" class="vote-btn" onclick="selectSailing('A','8-Night Perfect Day at CocoCay & Western Caribbean — Icon of the Seas','$2,579.92')">Vote for this sailing</button>
+  </div>
+
+  <!-- SAILING B -->
+  <div class="sail-card" id="card-B">
+    <div class="sail-head">
+      <div>
+        <h3>B. 6-Night Western Caribbean</h3>
+        <div class="line-ship">Royal Caribbean · Icon of the Seas · Interior Stateroom</div>
+      </div>
+      <div class="sail-price-tag">
+        <div class="amt">$1,874.92</div>
+        <div class="note">starting price · interior stateroom · 2 guests</div>
+      </div>
+    </div>
+    <div class="photo-row">
+      <img src="https://i.imgur.com/5bGVDrz.jpg" alt="Icon of the Seas">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_Pg0RdUuDdY_BQPA4OAlaXymTz3VcDJ3IYNKIRnu3MSRrN8ufDzUI1bti&s=10" alt="Icon of the Seas">
+      <img src="https://martinaquatic.com/wp-content/uploads/2025/01/Icon-of-the-seas-aerial-Thrill-Island-and-Surfside.webp" alt="Icon of the Seas aerial view">
+    </div>
+    <div class="sail-body">
+      <div class="sail-copy">
+        <p>Three Western Caribbean ports in six nights — Costa Maya, Roatán, and Cozumel — with two full sea days to enjoy Icon of the Seas.</p>
+        <p class="voice italic-voice">Roatán is a strong stop if beaches, snorkeling, or marine life are the priority. Cozumel offers plenty of beach clubs and excursions, and Costa Maya is an easy, relaxed beach day or a chance to see the Mayan ruins. A shorter way to try Icon of the Seas from Galveston.</p>
+      </div>
+      <div class="itinerary">
+        <h4>Itinerary</h4>
+        <ul>
+          <li><span class="day">Sept 5</span> — Depart Galveston, 4:30 PM</li>
+          <li><span class="day">Sept 6</span> — Cruising</li>
+          <li><span class="day">Sept 7</span> — Puerto Costa Maya, 12:30 PM–7:00 PM</li>
+          <li><span class="day">Sept 8</span> — Roatán, 7:00 AM–3:00 PM</li>
+          <li><span class="day">Sept 9</span> — Cozumel, 7:00 AM–5:00 PM</li>
+          <li><span class="day">Sept 10</span> — Cruising</li>
+          <li><span class="day">Sept 11</span> — Arrive Galveston, 6:00 AM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pricing-box">
+      <div class="row"><span>Cruise fare &amp; taxes</span><span>$1,652.92</span></div>
+      <div class="row"><span>Prepaid gratuities</span><span>$222.00</span></div>
+      <div class="row total"><span>Total (2 guests)</span><span>$1,874.92</span></div>
+      <div class="terms">Deposit: $500 · Final payment due June 7, 2027</div>
+    </div>
+    <button type="button" class="vote-btn" onclick="selectSailing('B','6-Night Western Caribbean — Icon of the Seas','$1,874.92')">Vote for this sailing</button>
+  </div>
+
+  <!-- SAILING C -->
+  <div class="sail-card" id="card-C">
+    <div class="sail-head">
+      <div>
+        <h3>C. 8-Night Bahamas</h3>
+        <div class="line-ship">Carnival Cruise Line · Carnival Jubilee · Interior Stateroom, Category 4A</div>
+      </div>
+      <div class="sail-price-tag">
+        <div class="amt">$2,062.00</div>
+        <div class="note">starting price · interior stateroom · 2 guests</div>
+      </div>
+    </div>
+    <div class="photo-row">
+      <img src="https://www.carnival.com/-/media/Images/Ships/JB/carnival-jubilee/heros/carnival-jubilee-ships-aerial-hero-mobile.jpg" alt="Carnival Jubilee">
+      <img src="https://cruises.priceline.com/images/web/1/1204/pub/1204-carnivalwaterworks.jpg" alt="Carnival Jubilee WaterWorks">
+      <img src="https://eatsleepcruise.com/wp-content/uploads/2024/03/IMG_3803-scaled.jpeg.optimal.jpeg" alt="Carnival Jubilee onboard">
+    </div>
+    <div class="sail-body">
+      <div class="sail-copy">
+        <p>A different shape of trip than the Western Caribbean sailings — this one heads to the Bahamas instead, with three distinct port days and four full sea days on Carnival Jubilee.</p>
+        <p class="voice italic-voice">Celebration Key is Carnival's new private destination, RelaxAway at Half Moon Cay is known for its beach and clear water, and Nassau rounds it out with a very different port day than anything the other four sailings offer.</p>
+      </div>
+      <div class="itinerary">
+        <h4>Itinerary</h4>
+        <ul>
+          <li><span class="day">Oct 2</span> — Depart Galveston, 3:30 PM</li>
+          <li><span class="day">Oct 3–4</span> — Fun Day at Sea</li>
+          <li><span class="day">Oct 5</span> — Celebration Key, 8:00 AM–4:00 PM</li>
+          <li><span class="day">Oct 6</span> — RelaxAway, Half Moon Cay, 8:00 AM–5:00 PM</li>
+          <li><span class="day">Oct 7</span> — Nassau, 7:00 AM–4:00 PM</li>
+          <li><span class="day">Oct 8–9</span> — Fun Day at Sea</li>
+          <li><span class="day">Oct 10</span> — Arrive Galveston</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pricing-box">
+      <div class="row"><span>Cruise fare, fees &amp; taxes</span><span>$1,790.00</span></div>
+      <div class="row"><span>Prepaid gratuities</span><span>$272.00</span></div>
+      <div class="row total"><span>Total (2 guests)</span><span>$2,062.00</span></div>
+      <div class="terms">Deposit: $198, due Sept 4, 2026 · Final payment due July 4, 2027 · Current promotion includes $50 onboard credit per cabin and price protection.</div>
+    </div>
+    <button type="button" class="vote-btn" onclick="selectSailing('C','8-Night Bahamas — Carnival Jubilee','$2,062.00')">Vote for this sailing</button>
+  </div>
+
+  <!-- SAILING D -->
+  <div class="sail-card" id="card-D">
+    <div class="sail-head">
+      <div>
+        <h3>D. 6-Night Western Caribbean</h3>
+        <div class="line-ship">Carnival Cruise Line · Carnival Jubilee · Interior Stateroom, Category 4A</div>
+      </div>
+      <div class="sail-price-tag">
+        <div class="amt">$1,434.00</div>
+        <div class="note">starting price · interior stateroom · 2 guests</div>
+      </div>
+    </div>
+    <div class="photo-row">
+      <img src="https://www.carnival.com/-/media/Images/Ships/JB/carnival-jubilee/heros/carnival-jubilee-ships-aerial-hero-mobile.jpg" alt="Carnival Jubilee">
+      <img src="https://cruises.priceline.com/images/web/1/1204/pub/1204-carnivalwaterworks.jpg" alt="Carnival Jubilee WaterWorks">
+      <img src="https://eatsleepcruise.com/wp-content/uploads/2024/03/IMG_3803-scaled.jpeg.optimal.jpeg" alt="Carnival Jubilee onboard">
+    </div>
+    <div class="sail-body">
+      <div class="sail-copy">
+        <p>The most affordable of the five — Carnival Jubilee from Galveston with two solid Western Caribbean ports and three full sea days.</p>
+        <p class="voice italic-voice">Cozumel brings beach clubs, snorkeling, shopping, and excursions; Roatán is a favorite for clear water, snorkeling, diving, and wildlife. A nice mix of port time and ship time on Carnival's newest Galveston ship.</p>
+      </div>
+      <div class="itinerary">
+        <h4>Itinerary</h4>
+        <ul>
+          <li><span class="day">Oct 10</span> — Depart Galveston, 3:30 PM</li>
+          <li><span class="day">Oct 11</span> — Fun Day at Sea</li>
+          <li><span class="day">Oct 12</span> — Puerta Maya, Cozumel, 9:00 AM–5:00 PM</li>
+          <li><span class="day">Oct 13</span> — Isla Tropicale, Roatán, 9:00 AM–6:00 PM</li>
+          <li><span class="day">Oct 14–15</span> — Fun Day at Sea</li>
+          <li><span class="day">Oct 16</span> — Arrive Galveston, 8:00 AM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pricing-box">
+      <div class="row"><span>Cruise fare, fees &amp; taxes</span><span>$1,230.00</span></div>
+      <div class="row"><span>Prepaid gratuities</span><span>$204.00</span></div>
+      <div class="row total"><span>Total (2 guests)</span><span>$1,434.00</span></div>
+      <div class="terms">Deposit: $198, due Sept 4, 2026 · Final payment due July 12, 2027 · Promotion includes $50 onboard credit per cabin, price protection, and choice of room location. Deposit is non-refundable and non-transferable; a $50-per-person fee applies to ship or sail-date changes made before final payment.</div>
+    </div>
+    <button type="button" class="vote-btn" onclick="selectSailing('D','6-Night Western Caribbean — Carnival Jubilee','$1,434.00')">Vote for this sailing</button>
+  </div>
+
+  <!-- SAILING E -->
+  <div class="sail-card" id="card-E">
+    <div class="sail-head">
+      <div>
+        <h3>E. 7-Night Western Caribbean</h3>
+        <div class="line-ship">MSC Cruises · MSC Seascape · Interior Bella Stateroom</div>
+      </div>
+      <div class="sail-price-tag">
+        <div class="amt">$1,367.58</div>
+        <div class="note">starting price · interior stateroom · 2 guests</div>
+      </div>
+    </div>
+    <div class="photo-row">
+      <img src="https://eatsleepcruise.com/wp-content/uploads/2022/12/MSC-Seascape-Cruise-Ship-Scorecard-feature.jpg.optimal.jpg" alt="MSC Seascape">
+      <img src="https://travelingcanucks.com/wp-content/uploads/2025/11/MSC-Seacsape-cruise-ship-135.jpg" alt="MSC Seascape">
+      <img src="https://www.msccruises.com/int/-/media/global-contents/ships/fleet/seascape/public-area/sc_main_pool.jpg?bc=transparent&as=1&mh=720&mw=980&hash=ABFEB790C49936A4E9638C86C4EDDDB4" alt="MSC Seascape main pool">
+    </div>
+    <div class="sail-body">
+      <div class="sail-copy">
+        <p>The classic three-port Western Caribbean run — Costa Maya, Roatán, and Cozumel — on the lowest-priced ship of the five, with three sea days and three port days.</p>
+        <p class="voice italic-voice">Roatán stands out for beaches, snorkeling, and wildlife; Cozumel and Costa Maya both bring plenty of beach club and excursion choices. MSC Seascape carries a different feel than the RC or Carnival ships — more European in its design and pace.</p>
+      </div>
+      <div class="itinerary">
+        <h4>Itinerary</h4>
+        <ul>
+          <li><span class="day">Oct 3</span> — Depart Galveston, 4:00 PM</li>
+          <li><span class="day">Oct 4–5</span> — At Sea</li>
+          <li><span class="day">Oct 6</span> — Costa Maya, 8:00 AM–6:00 PM</li>
+          <li><span class="day">Oct 7</span> — Isla de Roatán, 8:00 AM–4:00 PM</li>
+          <li><span class="day">Oct 8</span> — Cozumel, 8:00 AM–4:00 PM</li>
+          <li><span class="day">Oct 9</span> — At Sea</li>
+          <li><span class="day">Oct 10</span> — Arrive Galveston, 6:30 AM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pricing-box">
+      <div class="row"><span>Cruise fare, taxes &amp; fees</span><span>$1,129.58</span></div>
+      <div class="row"><span>Gratuities ($119 pp)</span><span>$238.00</span></div>
+      <div class="row total"><span>Total (2 guests)</span><span>$1,367.58</span></div>
+      <div class="terms">Deposit: $398 · Final payment date not yet specified — we'll confirm before booking.</div>
+    </div>
+    <button type="button" class="vote-btn" onclick="selectSailing('E','7-Night Western Caribbean — MSC Seascape','$1,367.58')">Vote for this sailing</button>
+  </div>
+
+</div>
+
+<div class="bottom-callout">
+  <div class="wrap">
+    <div class="box">
+      <p>What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap form-section">
+  <h2>Cast your vote</h2>
+  <p class="lead">We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
+  <p class="lead" style="font-size:0.85rem;margin-top:-10px;">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
+  <p class="lead" style="font-size:0.85rem;">Prices shown throughout are starting rates for an interior stateroom, meant for comparing sailings. Once a cruise is chosen, we'll follow up with pricing for other room types.</p>
+
+  <form id="voteForm" class="vote-form" onsubmit="return submitVote(event)">
+    <div class="error-msg" id="errorMsg">Something went wrong submitting your vote — please try again, or text Andrea directly.</div>
+
+    <div id="formFields">
+      <div class="field">
+        <label for="voterName">Your name *</label>
+        <input type="text" id="voterName" name="name" required>
+      </div>
+      <div class="field">
+        <label for="voterEmail">Email *</label>
+        <input type="email" id="voterEmail" name="email" required>
+      </div>
+      <div class="field">
+        <label for="voterPhone">Phone (optional)</label>
+        <input type="tel" id="voterPhone" name="phone">
+      </div>
+      <div class="field">
+        <label for="sailingVote">Which sailing is your pick? *</label>
+        <select id="sailingVote" name="sailing_vote" required>
+          <option value="">Select a sailing</option>
+          <option value="A — 8-Night Perfect Day at CocoCay & Western Caribbean (Icon of the Seas) — $2,579.92">A — 8-Night Perfect Day at CocoCay &amp; Western Caribbean (Icon of the Seas) — $2,579.92</option>
+          <option value="B — 6-Night Western Caribbean (Icon of the Seas) — $1,874.92">B — 6-Night Western Caribbean (Icon of the Seas) — $1,874.92</option>
+          <option value="C — 8-Night Bahamas (Carnival Jubilee) — $2,062.00">C — 8-Night Bahamas (Carnival Jubilee) — $2,062.00</option>
+          <option value="D — 6-Night Western Caribbean (Carnival Jubilee) — $1,434.00">D — 6-Night Western Caribbean (Carnival Jubilee) — $1,434.00</option>
+          <option value="E — 7-Night Western Caribbean (MSC Seascape) — $1,367.58">E — 7-Night Western Caribbean (MSC Seascape) — $1,367.58</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="voterMessage">Anything else you want us to know? (optional)</label>
+        <textarea id="voterMessage" name="message"></textarea>
+      </div>
+
+      <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+      <input type="hidden" name="subject" value="Cruise Vote — Quinney Family Reunion">
+      <input type="hidden" name="from_name" value="Quinney Family Reunion Vote — Point Me to Paradise">
+      <input type="hidden" name="redirect" value="false">
+
+      <button type="submit" class="submit-btn">Submit my vote</button>
+    </div>
+
+    <div class="thankyou" id="thankYou">
+      <h3>Thanks — your vote is in!</h3>
+      <p>We'll tally up everyone's picks and follow up once the family lands on a favorite.</p>
+    </div>
+  </form>
+</div>
+
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-inner">
+    <div>
+      <div class="pick-label" id="pickLabel">No sailing selected yet</div>
+      <div class="pick-sub">Tap "Vote for this sailing" on any card above, or choose one from the form.</div>
+    </div>
+    <div id="pickPrice" style="font-family:'Playfair Display',serif;font-weight:700;font-size:1.2rem;"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="agent">Andrea Gunter</div>
+  <div class="contact">
+    <span id="footerPhone">409-789-3579</span> ·
+    <a href="#" id="emailLink">Loading...</a>
+  </div>
+  <div class="disclaimer">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<script>
+  // Assemble agent email at runtime so it never appears as a literal string in the HTML
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var link = document.getElementById('emailLink');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+  })();
+
+  function selectSailing(id, label, price){
+    // update card highlighting
+    document.querySelectorAll('.sail-card').forEach(function(card){
+      card.classList.remove('selected');
+    });
+    document.getElementById('card-' + id).classList.add('selected');
+
+    // update the select field inside the form (single source of truth for submission)
+    var select = document.getElementById('sailingVote');
+    for (var i = 0; i < select.options.length; i++){
+      if (select.options[i].value.indexOf(id + ' —') === 0){
+        select.selectedIndex = i;
+        break;
+      }
+    }
+
+    // update sticky bar
+    document.getElementById('pickLabel').textContent = 'Your pick: ' + label;
+    document.getElementById('pickPrice').textContent = price + ' for 2';
+  }
+
+  // keep card highlighting in sync if the visitor picks directly from the dropdown
+  document.getElementById('sailingVote').addEventListener('change', function(){
+    var val = this.value;
+    if (!val) {
+      document.querySelectorAll('.sail-card').forEach(function(card){ card.classList.remove('selected'); });
+      document.getElementById('pickLabel').textContent = 'No sailing selected yet';
+      document.getElementById('pickPrice').textContent = '';
+      return;
+    }
+    var id = val.charAt(0);
+    var priceMatch = val.match(/\$[\d,]+\.\d{2}/);
+    document.querySelectorAll('.sail-card').forEach(function(card){ card.classList.remove('selected'); });
+    var card = document.getElementById('card-' + id);
+    if (card) card.classList.add('selected');
+    document.getElementById('pickLabel').textContent = 'Your pick: ' + val.split(' — ').slice(1).join(' — ');
+    document.getElementById('pickPrice').textContent = priceMatch ? priceMatch[0] + ' for 2' : '';
+  });
+
+  function submitVote(e){
+    e.preventDefault();
+    var form = document.getElementById('voteForm');
+    var errorMsg = document.getElementById('errorMsg');
+    errorMsg.style.display = 'none';
+
+    var formData = new FormData(form);
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(function(response){ return response.json(); })
+    .then(function(data){
+      if (data.success){
+        document.getElementById('formFields').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      errorMsg.style.display = 'block';
+    });
+
+    return false;
+  }
+</script>
+
+</body>
+</html>
