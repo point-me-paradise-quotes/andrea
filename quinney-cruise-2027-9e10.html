@@ -583,7 +583,7 @@
         <input type="tel" id="voterPhone" name="phone">
       </div>
       <div class="field">
-        <label for="sailingVote">Which sailing is your pick? *</label>
+        <label for="sailingVote">Which sailing is your first choice? *</label>
         <select id="sailingVote" name="sailing_vote" required>
           <option value="">Select a sailing</option>
           <option value="A — 8-Night Perfect Day at CocoCay & Western Caribbean (Icon of the Seas) — $2,579.92">A — 8-Night Perfect Day at CocoCay &amp; Western Caribbean (Icon of the Seas) — $2,579.92</option>
@@ -594,10 +594,36 @@
         </select>
       </div>
       <div class="field">
+        <label for="sailingVoteSecond">Second choice (optional)</label>
+        <select id="sailingVoteSecond" name="sailing_vote_second">
+          <option value="No second choice">No second choice</option>
+          <option value="A — 8-Night Perfect Day at CocoCay & Western Caribbean (Icon of the Seas) — $2,579.92">A — 8-Night Perfect Day at CocoCay &amp; Western Caribbean (Icon of the Seas) — $2,579.92</option>
+          <option value="B — 6-Night Western Caribbean (Icon of the Seas) — $1,874.92">B — 6-Night Western Caribbean (Icon of the Seas) — $1,874.92</option>
+          <option value="C — 8-Night Bahamas (Carnival Jubilee) — $2,062.00">C — 8-Night Bahamas (Carnival Jubilee) — $2,062.00</option>
+          <option value="D — 6-Night Western Caribbean (Carnival Jubilee) — $1,434.00">D — 6-Night Western Caribbean (Carnival Jubilee) — $1,434.00</option>
+          <option value="E — 7-Night Western Caribbean (MSC Seascape) — $1,367.58">E — 7-Night Western Caribbean (MSC Seascape) — $1,367.58</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="travelerCount">Number of travelers this vote represents *</label>
+        <input type="number" id="travelerCount" name="traveler_count" min="1" step="1" required placeholder="e.g. 4">
+      </div>
+      <div class="field">
+        <label>Dates you can't make (check any that apply)</label>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+          <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:var(--text);"><input type="checkbox" class="blackout-check" data-label="A — Sept 25–Oct 3" style="width:auto;"> A — Sept 25–Oct 3 (Icon of the Seas, 8 nights)</label>
+          <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:var(--text);"><input type="checkbox" class="blackout-check" data-label="B — Sept 5–11" style="width:auto;"> B — Sept 5–11 (Icon of the Seas, 6 nights)</label>
+          <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:var(--text);"><input type="checkbox" class="blackout-check" data-label="C — Oct 2–10" style="width:auto;"> C — Oct 2–10 (Carnival Jubilee, 8 nights)</label>
+          <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:var(--text);"><input type="checkbox" class="blackout-check" data-label="D — Oct 10–16" style="width:auto;"> D — Oct 10–16 (Carnival Jubilee, 6 nights)</label>
+          <label style="display:flex;align-items:center;gap:8px;font-weight:400;font-size:0.9rem;color:var(--text);"><input type="checkbox" class="blackout-check" data-label="E — Oct 3–10" style="width:auto;"> E — Oct 3–10 (MSC Seascape, 7 nights)</label>
+        </div>
+      </div>
+      <div class="field">
         <label for="voterMessage">Anything else you want us to know? (optional)</label>
         <textarea id="voterMessage" name="message"></textarea>
       </div>
 
+      <input type="hidden" id="blackoutDatesField" name="cannot_attend_dates" value="None selected">
       <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
       <input type="hidden" name="subject" value="Cruise Vote — Quinney Family Reunion">
       <input type="hidden" name="from_name" value="Quinney Family Reunion Vote — Point Me to Paradise">
@@ -680,12 +706,32 @@
     document.getElementById('pickPrice').textContent = priceMatch ? priceMatch[0] + ' for 2' : '';
   });
 
+  // assemble checked blackout dates into a single hidden field for a readable email
+  function updateBlackoutField(){
+    var checked = document.querySelectorAll('.blackout-check:checked');
+    var labels = Array.prototype.map.call(checked, function(el){ return el.getAttribute('data-label'); });
+    document.getElementById('blackoutDatesField').value = labels.length ? labels.join('; ') : 'None selected';
+  }
+  document.querySelectorAll('.blackout-check').forEach(function(cb){
+    cb.addEventListener('change', updateBlackoutField);
+  });
+
   function submitVote(e){
     e.preventDefault();
     var form = document.getElementById('voteForm');
     var errorMsg = document.getElementById('errorMsg');
     errorMsg.style.display = 'none';
 
+    var first = document.getElementById('sailingVote').value;
+    var second = document.getElementById('sailingVoteSecond').value;
+    if (second !== 'No second choice' && second.charAt(0) === first.charAt(0)){
+      errorMsg.textContent = 'Your second choice should be different from your first choice.';
+      errorMsg.style.display = 'block';
+      return false;
+    }
+    errorMsg.textContent = 'Something went wrong submitting your vote — please try again, or text Andrea directly.';
+
+    updateBlackoutField();
     var formData = new FormData(form);
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
