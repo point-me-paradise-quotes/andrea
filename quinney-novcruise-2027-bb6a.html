@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terrell Quinney — November Cruise Comparison</title>
+<meta name="description" content="Three Galveston sailings compared for Terrell Quinney — November 2027.">
+<meta property="og:title" content="Terrell Quinney — November Cruise Comparison">
+<meta property="og:description" content="Three Galveston sailings compared for Terrell Quinney — November 2027.">
+<meta property="og:image" content="https://images.trvl-media.com/place/3000652683/219aebe8-48eb-47bc-8ae9-f94634f53063.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1; --teal-dark:#4F8A8C; --pale-teal:#C4E4E1;
+    --gold:#DAC396; --gold-dark:#B89E6A; --cream:#E9DEC0; --cream-light:#F5EFDF;
+    --paper:#FBF9F4; --paper-pure:#FFFFFF;
+    --text:#3D3D3D; --text-muted:#606060;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--text); font-family:'DM Sans',sans-serif; font-size:16px; line-height:1.6;}
+  h1,h2,h3{font-family:'Playfair Display',serif; color:var(--teal-dark); margin:0 0 .4em;}
+  .voice{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15em; color:var(--text);}
+  .wrap{max-width:960px; margin:0 auto; padding:0 20px;}
+  .hero{position:relative; background-image:linear-gradient(180deg, rgba(41,58,58,.35), rgba(41,58,58,.75)), url('https://images.trvl-media.com/place/3000652683/219aebe8-48eb-47bc-8ae9-f94634f53063.jpg'); background-size:cover; background-position:center; color:#fff; padding:70px 20px 50px;}
+  .hero .wrap{text-align:center;}
+  .hero h1{color:#fff; font-size:2.1em;}
+  .hero p{margin:.3em 0 0; font-size:1.05em;}
+  .callout{background:var(--cream-light); border-left:4px solid var(--gold-dark); border-radius:8px; padding:18px 20px; margin:24px 0;}
+  .section{padding:34px 0;}
+  .note{background:var(--paper-pure); border:1px solid var(--pale-teal); border-radius:10px; padding:16px 18px; margin:18px 0; font-size:.96em; color:var(--text-muted);}
+  table.compare{width:100%; border-collapse:collapse; margin:20px 0; font-size:.94em;}
+  table.compare th, table.compare td{border:1px solid var(--pale-teal); padding:10px 12px; text-align:left; vertical-align:top;}
+  table.compare th{background:var(--teal); color:#fff; font-family:'Playfair Display',serif; font-weight:600;}
+  table.compare tr:nth-child(even) td{background:var(--cream-light);}
+  .card{background:var(--paper-pure); border:1px solid var(--pale-teal); border-radius:14px; padding:26px; margin:26px 0;}
+  .card .kicker{color:var(--teal-dark); font-weight:600; letter-spacing:.02em; text-transform:uppercase; font-size:.8em;}
+  .price-big{font-family:'Playfair Display',serif; font-size:1.8em; color:var(--teal-dark); margin:6px 0 0;}
+  .price-sub{color:var(--text-muted); font-size:.9em; margin-bottom:14px;}
+  .imgs{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0;}
+  .imgs img{width:calc(50% - 5px); min-width:150px; flex:1 1 220px; height:170px; object-fit:cover; border-radius:8px;}
+  ul.itin{list-style:none; margin:10px 0; padding:0;}
+  ul.itin li{padding:6px 0 6px 14px; border-left:2px solid var(--pale-teal); margin-bottom:2px;}
+  .pricebox{background:var(--cream-light); border-radius:10px; padding:16px 18px; margin:16px 0; font-size:.96em;}
+  .pricebox .row{display:flex; justify-content:space-between; padding:4px 0;}
+  .pricebox .total{font-weight:700; border-top:1px solid var(--gold-dark); margin-top:6px; padding-top:8px;}
+  .flag{color:var(--teal-dark); font-weight:600; font-size:.85em;}
+  .notincluded{color:var(--text-muted); font-weight:700; font-size:.85em;}
+  .table-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+  .btn{display:inline-block; background:var(--teal-dark); color:#fff; border:none; border-radius:8px; padding:12px 22px; font-size:16px; font-weight:600; cursor:pointer; min-height:44px; text-decoration:none;}
+  .btn:hover{background:var(--teal);}
+  .btn.chosen{background:var(--gold-dark);}
+  form{background:var(--paper-pure); border:1px solid var(--pale-teal); border-radius:14px; padding:26px;}
+  label{display:block; font-weight:600; margin:14px 0 6px;}
+  input[type=text], input[type=email], input[type=tel], input[type=number], select, textarea{
+    width:100%; font-size:16px; padding:10px 12px; border:1px solid var(--pale-teal); border-radius:8px; font-family:'DM Sans',sans-serif; background:var(--paper);
+  }
+  textarea{min-height:90px;}
+  .checks label{font-weight:400; display:flex; align-items:center; gap:8px; margin:8px 0;}
+  .checks input{width:auto;}
+  .err{display:none; background:#fdeee0; border:1px solid var(--gold-dark); color:var(--text); padding:12px 14px; border-radius:8px; margin-bottom:14px;}
+  .thankyou{display:none; text-align:center; padding:30px 10px;}
+  footer{background:var(--teal-dark); color:#fff; padding:28px 20px; text-align:center; font-size:.9em;}
+  footer a{color:#fff;}
+  .fineprint{font-size:.82em; color:var(--text-muted); margin-top:10px;}
+  @media (max-width:540px){
+    table.compare{font-size:.82em;}
+    .imgs img{width:100%;}
+    .hero h1{font-size:1.6em;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Terrell Quinney — November Cruise Comparison</h1>
+    <p>Three sailings from Galveston, side by side · November–December 2027</p>
+  </div>
+</div>
+
+<div class="wrap section">
+  <div class="callout">
+    <p style="margin:0;">We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.</p>
+  </div>
+
+  <h2>How this works</h2>
+  <p>Below are three real sailing options from Galveston — two on Carnival Jubilee and one on MSC Seascape — each priced here for the lowest available interior stateroom for two guests. Every price shown is a real, bookable rate as of today, not a placeholder.</p>
+  <p>Look through the comparison table and the details on each sailing, then use the form at the bottom to tell us which one you're leaning toward. This isn't a booking — it just tells us where things stand.</p>
+
+  <div class="note">
+    <strong>A note on the prices below:</strong> every price shown is the lowest available rate — an interior stateroom for two — meant as a starting point for comparing sailings. Once you land on a cruise, we'll follow up with pricing for other room types and can adjust the numbers for however many travelers end up going.
+  </div>
+
+  <h2>Side-by-side comparison</h2>
+  <div class="table-scroll">
+  <table class="compare">
+    <tr>
+      <th></th>
+      <th>A — Carnival Jubilee<br>8 Nights, Bahamas</th>
+      <th>B — Carnival Jubilee<br>6 Nights, Western Caribbean</th>
+      <th>C — MSC Seascape<br>7 Nights, Western Caribbean</th>
+    </tr>
+    <tr><td><strong>Sail dates</strong></td><td>Nov 13–21, 2027</td><td>Nov 7–13, 2027</td><td>Nov 28–Dec 5, 2027</td></tr>
+    <tr><td><strong>Ports of call</strong></td><td>Nassau, RelaxAway (Half Moon Cay), Celebration Key</td><td>Cozumel, Isla Tropicale (Roatán)</td><td>Costa Maya, Isla de Roatán, Cozumel</td></tr>
+    <tr><td><strong>Sea days</strong></td><td>4</td><td>3</td><td>3</td></tr>
+    <tr><td><strong>Starting price, 2 guests, interior</strong></td><td>$1,750.00</td><td>$1,190.00</td><td>$1,317.58</td></tr>
+    <tr><td><strong>Gratuities</strong></td><td>Not included — $136/guest if added</td><td>Not included — $102/guest if added</td><td>Included in total</td></tr>
+    <tr><td><strong>Deposit</strong></td><td>$250, due within 3 days of booking</td><td>$250, due within 3 days of booking</td><td>$398 total ($199 pp), due within 3 days of booking</td></tr>
+    <tr><td><strong>Final payment</strong></td><td>August 15, 2027</td><td>August 9, 2027</td><td>Confirmed by your advisor</td></tr>
+  </table>
+  </div>
+
+  <p style="font-size:.92em; color:var(--text-muted);">Lowest total of the three as priced here, for two guests in an interior cabin, is Sailing B at $1,190.00. Sailing C runs a little higher at $1,317.58 but already has gratuities built into that total, so it's the closer comparison to Sailing A once you account for what's included.</p>
+
+  <!-- SAILING A -->
+  <div class="card" id="card-A">
+    <span class="kicker">Sailing A · Carnival Jubilee · Interior Stateroom, Category 4A</span>
+    <h3>8-Day Bahamas Cruise</h3>
+    <div class="price-big">$1,750.00</div>
+    <div class="price-sub">starting price · interior stateroom · 2 guests</div>
+    <div class="imgs">
+      <img src="https://www.carnival.com/-/media/Images/Ships/JB/carnival-jubilee/heros/carnival-jubilee-ships-aerial-hero-mobile.jpg" alt="Carnival Jubilee aerial view">
+      <img src="https://www.cruisewise.com/images/web/1/1204/pub/1204-carnivalwaterworks.jpg" alt="Carnival Jubilee WaterWorks">
+    </div>
+    <p>Three separate Bahamas stops on this one — Nassau's harbor and shopping streets, the beach at RelaxAway on Half Moon Cay, and Celebration Key, Carnival's newer stop on Grand Bahama with its lagoons and beach areas. Four sea days built in on either side to actually use the ship.</p>
+    <h4>Itinerary</h4>
+    <ul class="itin">
+      <li>Sat, Nov 13 — Depart Galveston, 3:30 PM</li>
+      <li>Sun, Nov 14 — Fun Day at Sea</li>
+      <li>Mon, Nov 15 — Fun Day at Sea</li>
+      <li>Tue, Nov 16 — Nassau, Bahamas, 8:00 AM–5:00 PM</li>
+      <li>Wed, Nov 17 — RelaxAway, Half Moon Cay, 8:00 AM–5:00 PM</li>
+      <li>Thu, Nov 18 — Celebration Key, Bahamas, 8:00 AM–4:00 PM</li>
+      <li>Fri, Nov 19 — Fun Day at Sea</li>
+      <li>Sat, Nov 20 — Fun Day at Sea</li>
+      <li>Sun, Nov 21 — Arrive Galveston</li>
+    </ul>
+    <div class="pricebox">
+      <div class="row"><span>Total cruise price (2 guests)</span><span><strong>$1,750.00</strong></span></div>
+      <div class="row"><span>Includes cruise fare, required cruise fees, government taxes/fees</span></div>
+      <div class="row"><span>Gratuities</span><span class="notincluded">Not included — $136/guest if added</span></div>
+      <div class="row"><span>Deposit</span><span>$250, due within 3 days of booking</span></div>
+      <div class="row"><span>Final payment due</span><span>August 15, 2027</span></div>
+      <div class="row"><span>Bonus</span><span>$50 onboard credit per stateroom</span></div>
+    </div>
+    <p class="fineprint">Based on Carnival's Plan On Fun Early Saver Bonus Sale, which includes price protection and your choice of stateroom location. Deposit is non-refundable and non-transferable; a $50-per-person fee applies to ship or sail-date changes made before final payment.</p>
+    <p class="voice">A good pick if you'd rather skip the usual Cozumel/Costa Maya/Roatán run — three different Bahamas stops, including both Half Moon Cay and Celebration Key, without flying anywhere to start the cruise.</p>
+    <button class="btn" type="button" onclick="pickSailing('A')">Vote for this sailing</button>
+  </div>
+
+  <!-- SAILING B -->
+  <div class="card" id="card-B">
+    <span class="kicker">Sailing B · Carnival Jubilee · Interior Stateroom, Category 4A</span>
+    <h3>6-Day Western Caribbean Cruise</h3>
+    <div class="price-big">$1,190.00</div>
+    <div class="price-sub">starting price · interior stateroom · 2 guests</div>
+    <div class="imgs">
+      <img src="https://www.carnival.com/-/media/Images/Ships/JB/carnival-jubilee/heros/carnival-jubilee-ships-aerial-hero-mobile.jpg" alt="Carnival Jubilee aerial view">
+      <img src="https://www.cruisewise.com/images/web/1/1204/pub/1204-carnivalwaterworks.jpg" alt="Carnival Jubilee WaterWorks">
+    </div>
+    <p>A shorter run on the same ship — Cozumel for beach clubs and snorkeling, Isla Tropicale on Roatán for clear water and wildlife, with three sea days to actually enjoy Jubilee itself instead of getting on and off the ship every day.</p>
+    <h4>Itinerary</h4>
+    <ul class="itin">
+      <li>Sun, Nov 7 — Depart Galveston, 3:30 PM</li>
+      <li>Mon, Nov 8 — Fun Day at Sea</li>
+      <li>Tue, Nov 9 — Cozumel, Mexico, 9:00 AM–5:00 PM</li>
+      <li>Wed, Nov 10 — Isla Tropicale, Roatán, 9:00 AM–6:00 PM</li>
+      <li>Thu, Nov 11 — Fun Day at Sea</li>
+      <li>Fri, Nov 12 — Fun Day at Sea</li>
+      <li>Sat, Nov 13 — Arrive Galveston, 8:00 AM</li>
+    </ul>
+    <div class="pricebox">
+      <div class="row"><span>Total cruise price (2 guests)</span><span><strong>$1,190.00</strong></span></div>
+      <div class="row"><span>Includes cruise fare, required cruise fees, government taxes/fees</span></div>
+      <div class="row"><span>Gratuities</span><span class="notincluded">Not included — $102/guest if added</span></div>
+      <div class="row"><span>Deposit</span><span>$250, due within 3 days of booking</span></div>
+      <div class="row"><span>Final payment due</span><span>August 9, 2027</span></div>
+      <div class="row"><span>Bonus</span><span>$50 onboard credit per stateroom</span></div>
+    </div>
+    <p class="fineprint">Based on Carnival's Plan On Fun Early Saver Bonus Sale, which includes price protection and your choice of stateroom location. Deposit is non-refundable and non-transferable; a $50-per-person fee applies to ship or sail-date changes made before final payment.</p>
+    <p class="voice">The value pick of the three — two Caribbean ports, three sea days, and the lowest total price here for two guests.</p>
+    <button class="btn" type="button" onclick="pickSailing('B')">Vote for this sailing</button>
+  </div>
+
+  <!-- SAILING C -->
+  <div class="card" id="card-C">
+    <span class="kicker">Sailing C · MSC Seascape · Deluxe Interior Stateroom, Fantastica Experience</span>
+    <h3>7-Night Western Caribbean Cruise</h3>
+    <div class="price-big">$1,317.58</div>
+    <div class="price-sub">starting price · interior stateroom · 2 adults · gratuities included</div>
+    <div class="imgs">
+      <img src="https://www.cruisemapper.com/images/ships/2144-832d2b22786.jpg" alt="MSC Seascape">
+      <img src="https://travelingcanucks.com/wp-content/uploads/2025/11/MSC-Seacsape-cruise-ship-135.jpg" alt="MSC Seascape">
+    </div>
+    <p>A full week from Galveston — Costa Maya, Roatán, and Cozumel, with three sea days on a quieter, more European-styled ship than the two Carnival sailings above. Fantastica lets you pick your own stateroom rather than have it assigned.</p>
+    <h4>Itinerary</h4>
+    <ul class="itin">
+      <li>Sun, Nov 28 — Depart Galveston, 4:00 PM</li>
+      <li>Mon, Nov 29 — At Sea</li>
+      <li>Tue, Nov 30 — At Sea</li>
+      <li>Wed, Dec 1 — Costa Maya, Mexico, 8:00 AM–6:00 PM</li>
+      <li>Thu, Dec 2 — Isla de Roatán, Honduras, 8:00 AM–4:00 PM</li>
+      <li>Fri, Dec 3 — Cozumel, Mexico, 8:00 AM–4:00 PM</li>
+      <li>Sat, Dec 4 — At Sea</li>
+      <li>Sun, Dec 5 — Arrive Galveston</li>
+    </ul>
+    <div class="pricebox">
+      <div class="row"><span>Cruise fare</span><span>$1,079.58</span></div>
+      <div class="row"><span>Prepaid gratuities</span><span class="flag">Included</span><span>$238.00</span></div>
+      <div class="row total"><span>Total vacation price (2 adults)</span><span>$1,317.58</span></div>
+      <div class="row"><span>Deposit</span><span>$398 total ($199 per person), due within 3 days of booking</span></div>
+      <div class="row"><span>Final payment due</span><span>Confirmed by your advisor</span></div>
+    </div>
+    <p class="fineprint">Cancellation and refund terms not yet confirmed for this sailing — we'll share those once available.</p>
+    <p class="voice">For a full week-long cruise for two, this comes in only a little above the 6-day Carnival option — and it's the only one of the three with gratuities already built into the total.</p>
+    <button class="btn" type="button" onclick="pickSailing('C')">Vote for this sailing</button>
+  </div>
+
+  <div class="note">
+    <strong>Once you decide:</strong> we'll follow up with pricing for other room types — ocean view, balcony, suite — on whichever sailing you land on, and adjust everything for your actual number of travelers.
+  </div>
+
+  <div class="callout">
+    <p style="margin:0;">We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
+    <p class="fineprint" style="margin:8px 0 0;">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
+  </div>
+
+  <div class="callout">
+    <p style="margin:0;">What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+  </div>
+
+  <h2>Cast your vote</h2>
+  <p style="font-size:.92em; color:var(--text-muted);">Voting is non-binding. This doesn't book anything, take payment, or hold anything — it just tells us which sailing to move forward on. Pricing and availability are confirmed by your advisor afterward.</p>
+
+  <form id="quoteForm">
+    <div class="err" id="formErr">Something went wrong submitting your vote — please try again, or text Andrea directly.</div>
+
+    <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+    <input type="hidden" name="subject" value="Quote Response — Terrell Quinney | November Cruise Comparison">
+    <input type="hidden" name="from_name" value="Terrell Quinney Quote — Point Me to Paradise">
+    <input type="hidden" name="redirect" value="false">
+
+    <label for="name">Your name *</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone (optional)</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="first_choice">Which sailing is your first choice? *</label>
+    <select id="first_choice" name="first_choice" required>
+      <option value="">Select a sailing</option>
+      <option value="A — 8-Night Bahamas (Carnival Jubilee) — $1,750.00">A — 8-Night Bahamas (Carnival Jubilee) — $1,750.00</option>
+      <option value="B — 6-Night Western Caribbean (Carnival Jubilee) — $1,190.00">B — 6-Night Western Caribbean (Carnival Jubilee) — $1,190.00</option>
+      <option value="C — 7-Night Western Caribbean (MSC Seascape) — $1,317.58">C — 7-Night Western Caribbean (MSC Seascape) — $1,317.58</option>
+    </select>
+
+    <label for="second_choice">Second choice (optional)</label>
+    <select id="second_choice" name="second_choice">
+      <option value="No second choice">No second choice</option>
+      <option value="A — 8-Night Bahamas (Carnival Jubilee) — $1,750.00">A — 8-Night Bahamas (Carnival Jubilee) — $1,750.00</option>
+      <option value="B — 6-Night Western Caribbean (Carnival Jubilee) — $1,190.00">B — 6-Night Western Caribbean (Carnival Jubilee) — $1,190.00</option>
+      <option value="C — 7-Night Western Caribbean (MSC Seascape) — $1,317.58">C — 7-Night Western Caribbean (MSC Seascape) — $1,317.58</option>
+    </select>
+
+    <label for="family_count">How many family members does this vote represent? *</label>
+    <input type="number" id="family_count" name="family_count" min="1" step="1" required>
+
+    <label for="insurance">Travel insurance</label>
+    <select id="insurance" name="insurance">
+      <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+      <option value="No — not interested">No — not interested</option>
+      <option value="Already have coverage">Already have coverage</option>
+    </select>
+
+    <label for="message">Anything else you want us to know? (optional)</label>
+    <textarea id="message" name="message"></textarea>
+
+    <div style="margin-top:18px;">
+      <button type="submit" class="btn">Submit my vote</button>
+    </div>
+    <p class="fineprint">Casting a vote doesn't require a deposit or commit you financially — deposits only come into play once a sailing is chosen and we move into booking.</p>
+  </form>
+
+  <div class="thankyou" id="thankyou">
+    <h3>Thanks — your vote is in!</h3>
+    <p>We'll tally up everyone's picks and follow up once the group lands on a favorite.</p>
+  </div>
+</div>
+
+<footer>
+  <div id="agentInfo">Andrea Gunter</div>
+  <div>409-789-3579 · <a href="#" id="emailLink">Loading...</a></div>
+  <p class="fineprint" style="color:#fff;">Prices and availability are subject to change until time of booking.</p>
+</footer>
+
+<script>
+  // Assemble agent email at runtime to avoid Cloudflare scrambling
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var link = document.getElementById('emailLink');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+  })();
+
+  function pickSailing(letter){
+    var labels = {
+      A: "A — 8-Night Bahamas (Carnival Jubilee) — $1,750.00",
+      B: "B — 6-Night Western Caribbean (Carnival Jubilee) — $1,190.00",
+      C: "C — 7-Night Western Caribbean (MSC Seascape) — $1,317.58"
+    };
+    document.getElementById('first_choice').value = labels[letter];
+    ['A','B','C'].forEach(function(l){
+      var btn = document.querySelector('#card-'+l+' .btn');
+      if(l === letter){ btn.classList.add('chosen'); btn.textContent = '✓ My choice'; }
+      else { btn.classList.remove('chosen'); btn.textContent = 'Vote for this sailing'; }
+    });
+    document.getElementById('quoteForm').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = e.target;
+    var errBox = document.getElementById('formErr');
+    errBox.style.display = 'none';
+    var data = new FormData(form);
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data,
+      redirect: 'follow'
+    }).then(function(res){ return res.json(); })
+      .then(function(json){
+        if(json.success){
+          form.style.display = 'none';
+          document.getElementById('thankyou').style.display = 'block';
+        } else {
+          errBox.style.display = 'block';
+        }
+      })
+      .catch(function(){
+        errBox.style.display = 'block';
+      });
+  });
+</script>
+
+</body>
+</html>
