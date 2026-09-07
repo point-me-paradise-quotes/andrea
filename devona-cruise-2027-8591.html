@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jimmy Devona — Western Caribbean Cruise, March 2027</title>
+
+<meta name="description" content="5-night Western Caribbean cruise on Liberty of the Seas, round trip from Galveston, March 6–11, 2027.">
+<meta property="og:title" content="Jimmy Devona — Western Caribbean Cruise, March 2027">
+<meta property="og:description" content="5-night Western Caribbean cruise on Liberty of the Seas, round trip from Galveston, March 6–11, 2027.">
+<meta property="og:image" content="https://assets.dm.rccl.com/is/image/RoyalCaribbeanCruises/royal/ships/royal-amplified/liberty-of-the-seas-drone-sunset.jpg?$1440x600$">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --teal: #75AFB1;
+    --teal-dark: #4F8A8C;
+    --pale-teal: #C4E4E1;
+    --gold: #DAC396;
+    --gold-dark: #B89E6A;
+    --cream: #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper: #FBF9F4;
+    --paper-pure: #FFFFFF;
+    --text-body: #3D3D3D;
+    --text-muted: #606060;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-body);
+    background: var(--paper);
+    line-height: 1.6;
+  }
+  h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--teal-dark); margin: 0 0 .5em; }
+  .advisor-take {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--teal-dark);
+  }
+  a { color: var(--teal-dark); }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 420px;
+    background-image: linear-gradient(180deg, rgba(30,50,50,0.55), rgba(30,50,50,0.75)), url('https://assets.dm.rccl.com/is/image/RoyalCaribbeanCruises/royal/ships/royal-amplified/liberty-of-the-seas-drone-sunset.jpg?$1440x600$');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .hero-inner { color: #fff; max-width: 720px; }
+  .hero-inner h1 { color: #fff; font-size: 2.1rem; margin-bottom: .3em; }
+  .hero-inner p { font-size: 1.05rem; margin: 0.2em 0; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: .85rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  /* Callout blocks */
+  .callout {
+    background: var(--cream-light);
+    border-left: 4px solid var(--gold-dark);
+    padding: 18px 22px;
+    margin: 28px 0;
+    border-radius: 6px;
+    font-size: .98rem;
+  }
+  .callout.top { margin-top: -40px; position: relative; z-index: 2; background: var(--paper-pure); box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+
+  section { padding: 34px 0; }
+  .section-title { text-align: center; margin-bottom: 6px; }
+  .section-sub { text-align: center; color: var(--text-muted); margin-bottom: 28px; }
+
+  /* Itinerary */
+  .itinerary { display: grid; gap: 10px; }
+  .itin-row {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 14px;
+    align-items: center;
+    background: var(--paper-pure);
+    border: 1px solid var(--pale-teal);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .itin-day { font-family: 'Playfair Display', serif; color: var(--teal-dark); font-weight: 600; }
+  .itin-port { font-weight: 600; }
+  .itin-time { color: var(--text-muted); font-size: .92rem; text-align: right; }
+
+  /* Gallery */
+  .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0; }
+  .gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
+  .gallery figcaption { font-size: .82rem; color: var(--text-muted); margin-top: 4px; }
+
+  /* Option cards */
+  .option-card {
+    background: var(--paper-pure);
+    border: 2px solid var(--pale-teal);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: border-color .15s ease;
+  }
+  .option-card.selected { border-color: var(--teal-dark); box-shadow: 0 4px 16px rgba(79,138,140,0.15); }
+  .option-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    cursor: pointer;
+  }
+  .option-head input[type="radio"] {
+    width: 22px; height: 22px; margin-top: 4px; accent-color: var(--teal-dark); flex-shrink: 0;
+  }
+  .option-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--teal-dark); margin: 0; }
+  .option-price { font-weight: 700; color: var(--teal-dark); font-size: 1.15rem; }
+  .option-sub { color: var(--text-muted); font-size: .92rem; margin-top: 2px; }
+  .option-photo { width: 100%; max-width: 320px; border-radius: 8px; margin-top: 14px; display: block; }
+  .price-breakdown { margin-top: 14px; font-size: .95rem; }
+  .price-breakdown div { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed var(--pale-teal); }
+  .price-breakdown div:last-child { border-bottom: none; font-weight: 700; color: var(--teal-dark); padding-top: 8px; }
+
+  /* Gratuity toggle */
+  .gratuity-box {
+    background: var(--cream-light);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 18px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .gratuity-box input[type="checkbox"] {
+    width: 22px; height: 22px; margin-top: 3px; accent-color: var(--teal-dark); flex-shrink: 0;
+  }
+  .gratuity-box label { font-weight: 500; }
+  .gratuity-note { font-size: .85rem; color: var(--text-muted); margin-top: 4px; }
+
+  /* Sticky total bar */
+  .total-bar {
+    position: sticky;
+    bottom: 0;
+    background: var(--teal-dark);
+    color: #fff;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    z-index: 50;
+    box-shadow: 0 -4px 14px rgba(0,0,0,0.15);
+  }
+  .total-bar .label { font-size: .85rem; opacity: .9; }
+  .total-bar .amount { font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+  .total-bar .fine { font-size: .75rem; opacity: .85; width: 100%; }
+
+  /* Payment schedule */
+  .pay-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .pay-table td, .pay-table th { padding: 10px 12px; border-bottom: 1px solid var(--pale-teal); text-align: left; font-size: .95rem; }
+  .pay-table th { color: var(--teal-dark); font-family: 'Playfair Display', serif; font-weight: 600; }
+
+  /* Form */
+  .form-card {
+    background: var(--paper-pure);
+    border-radius: 12px;
+    padding: 26px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+  }
+  .selection-summary {
+    background: var(--cream-light);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: .95rem;
+    margin: 0 0 18px;
+  }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-weight: 600; margin-bottom: 6px; font-size: .92rem; }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 14px;
+    border: 1px solid var(--pale-teal);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 44px;
+    background: var(--paper);
+  }
+  .field textarea { min-height: 90px; resize: vertical; }
+  .btn {
+    background: var(--teal-dark);
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    min-height: 44px;
+    width: 100%;
+  }
+  .btn:hover { background: var(--teal); }
+  .form-error {
+    display: none;
+    background: var(--cream-light);
+    border-left: 4px solid var(--gold-dark);
+    color: var(--text-body);
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+    font-size: .92rem;
+  }
+  .thankyou { display: none; text-align: center; padding: 30px 10px; }
+  .thankyou h3 { margin-bottom: 8px; }
+
+  footer {
+    background: var(--teal-dark);
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: .9rem;
+  }
+  footer a { color: #fff; text-decoration: underline; }
+  .footer-fine { font-size: .78rem; opacity: .85; margin-top: 14px; }
+
+  @media (max-width: 540px) {
+    .gallery { grid-template-columns: 1fr; }
+    .itin-row { grid-template-columns: 70px 1fr; }
+    .itin-time { text-align: left; grid-column: 1 / -1; }
+    .total-bar { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">Royal Caribbean · Liberty of the Seas</span>
+    <h1>Jimmy Devona's Western Caribbean Cruise</h1>
+    <p>March 6–11, 2027 · 5 nights, round trip from Galveston, Texas</p>
+    <p>2 guests</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="callout top">
+    <p style="margin:0;">We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.</p>
+  </div>
+
+  <section>
+    <h2 class="section-title">Your Sailing</h2>
+    <p class="section-sub">Five nights out of Galveston, no flying required to get to the ship.</p>
+    <p>Liberty of the Seas has been through a full refresh — reworked pool deck, a new lineup of restaurants, and an expanded casino — and Galveston puts it within driving distance for a Gulf Coast getaway that doesn't eat up a travel day on either end.</p>
+
+    <div class="gallery">
+      <figure style="margin:0;">
+        <img src="https://www.royalcaribbeanincentives.com/content/uploads/RCI_LB_Liberty_AP_0100_4S-scaled.jpg" alt="Liberty of the Seas pool deck">
+        <figcaption>Liberty of the Seas — pool deck</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img src="https://cruiseweb.com/_next/image?url=https%3A%2F%2Fwww.signaturetravelnetwork.com%2Fproduct%2Fcruise%2Fship_builder%2Fship_images%2F%2Fcontent%2Fimages%2FCruise%2F8%2F1093%2FGallery%2FPool_Parties.jpg&w=1920&q=50" alt="Onboard pool deck activity">
+        <figcaption>Onboard pool deck</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Itinerary</h2>
+    <div class="itinerary">
+      <div class="itin-row">
+        <div class="itin-day">Mar 6</div>
+        <div class="itin-port">Galveston, Texas — Embarkation</div>
+        <div class="itin-time">Depart 4:00 PM</div>
+      </div>
+      <div class="itin-row">
+        <div class="itin-day">Mar 7</div>
+        <div class="itin-port">At Sea</div>
+        <div class="itin-time">—</div>
+      </div>
+      <div class="itin-row">
+        <div class="itin-day">Mar 8</div>
+        <div class="itin-port">Costa Maya, Mexico</div>
+        <div class="itin-time">11:59 AM – 7:00 PM</div>
+      </div>
+      <div class="itin-row">
+        <div class="itin-day">Mar 9</div>
+        <div class="itin-port">Cozumel, Mexico</div>
+        <div class="itin-time">7:00 AM – 5:00 PM</div>
+      </div>
+      <div class="itin-row">
+        <div class="itin-day">Mar 10</div>
+        <div class="itin-port">At Sea</div>
+        <div class="itin-time">—</div>
+      </div>
+      <div class="itin-row">
+        <div class="itin-day">Mar 11</div>
+        <div class="itin-port">Galveston, Texas — Disembarkation</div>
+        <div class="itin-time">Arrive 7:00 AM</div>
+      </div>
+    </div>
+    <p class="gratuity-note" style="margin-top:12px;">Shore excursions in Costa Maya and Cozumel are not included in the cruise fare below — your advisor can help you pick and book those separately once your stateroom is set.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Choose Your Stateroom</h2>
+    <p class="section-sub">Fare, taxes, and prepaid gratuities shown for 2 guests. Pick a room type below — the total at the bottom updates as you go.</p>
+
+    <div class="option-card selected" id="card-oceanview">
+      <div class="option-head" onclick="document.getElementById('radio-oceanview').checked = true; updateTotal();">
+        <input type="radio" name="stateroom" id="radio-oceanview" value="Ocean View Stateroom" checked onchange="updateTotal()">
+        <div style="flex:1;">
+          <p class="option-title">Ocean View Stateroom</p>
+          <p class="option-sub">A window to the water, no balcony — the lower-priced way to have natural light in the room.</p>
+        </div>
+      </div>
+      <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/RCI_HM_StudioOceanViewR.webp" alt="Ocean View Stateroom">
+      <div class="price-breakdown">
+        <div><span>Cruise fare and taxes</span><span>$1,827.32</span></div>
+        <div><span>Prepaid gratuities</span><span>$185.00</span></div>
+        <div><span>Total for 2 guests</span><span>$2,012.32</span></div>
+      </div>
+    </div>
+
+    <div class="option-card" id="card-balcony">
+      <div class="option-head" onclick="document.getElementById('radio-balcony').checked = true; updateTotal();">
+        <input type="radio" name="stateroom" id="radio-balcony" value="Ocean View Balcony – Category 2D" onchange="updateTotal()">
+        <div style="flex:1;">
+          <p class="option-title">Ocean View Balcony — Category 2D</p>
+          <p class="option-sub">Your own private balcony for morning coffee at sea or watching the ship pull into port.</p>
+        </div>
+      </div>
+      <img class="option-photo" src="https://assets.dm.rccl.com/is/image/RoyalCaribbeanCruises/royal/content/accommodations/interior/harmony-interior-virtual-balcony.JPG?$440x440$" alt="Ocean View Balcony Stateroom">
+      <div class="price-breakdown">
+        <div><span>Cruise fare and taxes</span><span>$2,317.32</span></div>
+        <div><span>Prepaid gratuities</span><span>$185.00</span></div>
+        <div><span>Total for 2 guests</span><span>$2,502.32</span></div>
+      </div>
+    </div>
+
+    <div class="gratuity-box">
+      <input type="checkbox" id="gratuityToggle" checked onchange="updateTotal()">
+      <div>
+        <label for="gratuityToggle">Prepay gratuities now ($185.00 for 2 guests)</label>
+        <p class="gratuity-note">Checked: gratuities are paid upfront and included in the total below. Unchecked: gratuities are paid onboard instead, and the total below drops by $185.00. Point Me to Paradise doesn't collect this amount either way — it's paid to Royal Caribbean directly, prepaid or onboard.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p style="margin:0;">We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Payment Schedule</h2>
+    <table class="pay-table">
+      <tr><th>Deposit due within 3 days of booking</th><td>$200.00 total</td></tr>
+      <tr><th>Balance</th><td id="balanceCell">$1,812.32</td></tr>
+      <tr><th>Final payment due</th><td>December 6, 2026</td></tr>
+    </table>
+    <p class="gratuity-note" style="margin-top:10px;">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
+  </section>
+
+  <div class="callout">
+    <p style="margin:0;">What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+  </div>
+
+  <section>
+    <h2 class="section-title">Ready to Book?</h2>
+    <p class="section-sub">If you know which room you want, send us your details below and we'll get your reservation moving.</p>
+    <div class="form-card">
+      <p class="selection-summary">Your current selection: <strong id="bookingSelectionDisplay">Ocean View Stateroom — Est. $2,012.32</strong></p>
+      <div id="bookFormError" class="form-error">Something went wrong sending your booking request. Please try again, or call us directly.</div>
+      <form id="bookingForm">
+        <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+        <input type="hidden" name="subject" value="READY TO BOOK — Jimmy Devona | Western Caribbean Cruise">
+        <input type="hidden" name="from_name" value="Jimmy Devona Booking Request — Point Me to Paradise">
+        <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="stateroom_selection" id="hiddenStateroomBook" value="Ocean View Stateroom">
+        <input type="hidden" name="gratuity_choice" id="hiddenGratuityBook" value="Prepay now">
+        <input type="hidden" name="estimated_total" id="hiddenTotalBook" value="$2,012.32">
+
+        <div class="field">
+          <label for="traveler1">Traveler 1 — full name, as it appears on ID</label>
+          <input type="text" id="traveler1" name="traveler1" required>
+        </div>
+        <div class="field">
+          <label for="traveler1_dob">Traveler 1 — date of birth</label>
+          <input type="date" id="traveler1_dob" name="traveler1_dob" required>
+        </div>
+        <div class="field">
+          <label for="traveler1_can">Traveler 1 — Crown &amp; Anchor number (if you have one)</label>
+          <input type="text" id="traveler1_can" name="traveler1_crown_anchor_number">
+        </div>
+        <div class="field">
+          <label for="traveler2">Traveler 2 — full name, as it appears on ID</label>
+          <input type="text" id="traveler2" name="traveler2" required>
+        </div>
+        <div class="field">
+          <label for="traveler2_dob">Traveler 2 — date of birth</label>
+          <input type="date" id="traveler2_dob" name="traveler2_dob" required>
+        </div>
+        <div class="field">
+          <label for="traveler2_can">Traveler 2 — Crown &amp; Anchor number (if you have one)</label>
+          <input type="text" id="traveler2_can" name="traveler2_crown_anchor_number">
+        </div>
+        <div class="field">
+          <label for="book_email">Email</label>
+          <input type="email" id="book_email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="book_phone">Best phone number to reach you</label>
+          <input type="tel" id="book_phone" name="phone" required>
+        </div>
+        <div class="field">
+          <label for="book_insurance">Travel insurance</label>
+          <select id="book_insurance" name="insurance">
+            <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+            <option value="No — not interested">No — not interested</option>
+            <option value="Already have coverage">Already have coverage</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="book_message">Anything else we should know? (optional)</label>
+          <textarea id="book_message" name="message" placeholder="Payment preference, timing, special requests"></textarea>
+        </div>
+        <div class="gratuity-box" style="margin-bottom: 18px;">
+          <input type="checkbox" id="depositAck" name="deposit_acknowledged" required>
+          <div>
+            <label for="depositAck">I understand a $200 deposit is due within 3 days of booking to hold this reservation, with the balance due by December 6, 2026.</label>
+          </div>
+        </div>
+        <button type="submit" class="btn">Send Booking Request to Andrea</button>
+      </form>
+      <div id="bookThankYou" class="thankyou">
+        <h3>Thank you!</h3>
+        <p>Your booking request is on its way. Andrea will reach out shortly to confirm details and collect your deposit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Have Questions First?</h2>
+    <p class="section-sub">Not ready to book yet? Send us a note and we'll help you figure out the details.</p>
+    <div class="form-card">
+      <div id="formError" class="form-error">Something went wrong sending your message. Please try again, or call us directly.</div>
+      <form id="quoteForm">
+        <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+        <input type="hidden" name="subject" value="Quote Response — Jimmy Devona | Western Caribbean Cruise">
+        <input type="hidden" name="from_name" value="Jimmy Devona Quote — Point Me to Paradise">
+        <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="stateroom_selection" id="hiddenStateroom" value="Ocean View Stateroom">
+        <input type="hidden" name="gratuity_choice" id="hiddenGratuity" value="Prepay now">
+
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="field">
+          <label for="option_interest">Which room are you interested in?</label>
+          <select id="option_interest" name="option_interest">
+            <option value="Ocean View Stateroom">Ocean View Stateroom</option>
+            <option value="Ocean View Balcony – Category 2D">Ocean View Balcony — Category 2D</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="insurance">Travel insurance</label>
+          <select id="insurance" name="insurance">
+            <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+            <option value="No — not interested">No — not interested</option>
+            <option value="Already have coverage">Already have coverage</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" placeholder="Questions, preferences, anything else we should know"></textarea>
+        </div>
+        <button type="submit" class="btn">Send to Andrea</button>
+      </form>
+      <div id="thankYou" class="thankyou">
+        <h3>Thank you!</h3>
+        <p>Your message is on its way. Andrea will be in touch shortly to confirm details and next steps.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="total-bar">
+  <div>
+    <div class="label">Estimated total for 2 guests</div>
+    <div class="amount" id="stickyTotal">Est. $2,012.32</div>
+  </div>
+  <div class="fine">Final pricing confirmed by your advisor before booking.</div>
+</div>
+
+<footer>
+  <p id="agentLine"></p>
+  <p><a id="emailLink" href="#"></a></p>
+  <p class="footer-fine">Prices and availability are subject to change until time of booking.</p>
+</footer>
+
+<script>
+  var prices = {
+    "Ocean View Stateroom": { fare: 1827.32, label: "Ocean View Stateroom" },
+    "Ocean View Balcony – Category 2D": { fare: 2317.32, label: "Ocean View Balcony — Category 2D" }
+  };
+  var gratuityAmount = 185.00;
+  var deposit = 200.00;
+
+  function updateTotal() {
+    var selected = document.querySelector('input[name="stateroom"]:checked').value;
+    var includeGratuity = document.getElementById('gratuityToggle').checked;
+    var fare = prices[selected].fare;
+    var total = fare + (includeGratuity ? gratuityAmount : 0);
+    var balance = total - deposit;
+
+    document.getElementById('stickyTotal').textContent = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    document.getElementById('balanceCell').textContent = '$' + balance.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+    document.getElementById('card-oceanview').classList.toggle('selected', selected === 'Ocean View Stateroom');
+    document.getElementById('card-balcony').classList.toggle('selected', selected === 'Ocean View Balcony – Category 2D');
+
+    var displayLabel = prices[selected].label;
+    var totalText = 'Est. $' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+    // push into hidden fields for every Web3Forms form on the page
+    var hiddenStateroom = document.getElementById('hiddenStateroom');
+    var hiddenGratuity = document.getElementById('hiddenGratuity');
+    if (hiddenStateroom) hiddenStateroom.value = selected;
+    if (hiddenGratuity) hiddenGratuity.value = includeGratuity ? 'Prepay now' : 'Pay onboard instead';
+
+    var hiddenStateroomBook = document.getElementById('hiddenStateroomBook');
+    var hiddenGratuityBook = document.getElementById('hiddenGratuityBook');
+    var hiddenTotalBook = document.getElementById('hiddenTotalBook');
+    if (hiddenStateroomBook) hiddenStateroomBook.value = selected;
+    if (hiddenGratuityBook) hiddenGratuityBook.value = includeGratuity ? 'Prepay now' : 'Pay onboard instead';
+    if (hiddenTotalBook) hiddenTotalBook.value = totalText;
+
+    var bookingDisplay = document.getElementById('bookingSelectionDisplay');
+    if (bookingDisplay) bookingDisplay.textContent = displayLabel + ' — ' + totalText;
+
+    // keep the dropdown in sync with the visual radio selection
+    var optionSelect = document.getElementById('option_interest');
+    if (optionSelect) optionSelect.value = selected;
+  }
+
+  // keep radio selection in sync if the client uses the dropdown instead
+  document.addEventListener('DOMContentLoaded', function () {
+    var optionSelect = document.getElementById('option_interest');
+    if (optionSelect) {
+      optionSelect.addEventListener('change', function () {
+        var val = optionSelect.value;
+        if (val === 'Ocean View Stateroom') {
+          document.getElementById('radio-oceanview').checked = true;
+        } else {
+          document.getElementById('radio-balcony').checked = true;
+        }
+        updateTotal();
+      });
+    }
+    updateTotal();
+
+    // assemble agent email/phone at runtime, never hardcoded
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var emailEl = document.getElementById('emailLink');
+    emailEl.href = 'mailto:' + addr;
+    emailEl.textContent = addr;
+    document.getElementById('agentLine').textContent = 'Andrea Gunter · Point Me to Paradise Travel · 409-789-3579';
+  });
+
+  // Web3Forms submission — shared handler for both forms on the page
+  function wireWeb3Form(formId, errorId, thankYouId) {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var errorDiv = document.getElementById(errorId);
+      errorDiv.style.display = 'none';
+
+      var formData = new FormData(form);
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(function (response) { return response.json(); })
+      .then(function (result) {
+        if (result.success) {
+          form.style.display = 'none';
+          document.getElementById(thankYouId).style.display = 'block';
+        } else {
+          errorDiv.style.display = 'block';
+        }
+      })
+      .catch(function () {
+        errorDiv.style.display = 'block';
+      });
+    });
+  }
+
+  wireWeb3Form('quoteForm', 'formError', 'thankYou');
+  wireWeb3Form('bookingForm', 'bookFormError', 'bookThankYou');
+</script>
+
+</body>
+</html>
