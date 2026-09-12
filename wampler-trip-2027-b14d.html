@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cabo San Lucas Birthday Getaway, April 2027</title>
+<meta name="description" content="A 5-night all-inclusive Cabo San Lucas getaway, April 11–16, 2027 — choose from three resorts.">
+<meta property="og:title" content="Cabo San Lucas Birthday Getaway, April 2027">
+<meta property="og:description" content="A 5-night all-inclusive Cabo San Lucas getaway, April 11–16, 2027 — choose from three resorts.">
+<meta property="og:image" content="https://images.trvl-media.com/place/180032/f37a9f94-96b8-438c-98db-7d4dc99d5c62/cabo-san-lucas-marina-medano-beach-mount-solmar-view-baja-california-sur-mexico.jpg?impolicy=fcrop&w=450&h=280&q=medium">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1; --teal-dark:#4F8A8C; --pale-teal:#C4E4E1;
+    --gold:#DAC396; --gold-dark:#B89E6A;
+    --cream:#E9DEC0; --cream-light:#F5EFDF;
+    --paper:#FBF9F4; --paper-pure:#FFFFFF;
+    --text:#3D3D3D; --text-muted:#606060;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:'DM Sans', sans-serif; color:var(--text); background:var(--paper); line-height:1.6;}
+  h1,h2,h3,h4{font-family:'Playfair Display', serif; color:var(--teal-dark); margin:0 0 12px;}
+  .italic-accent{font-family:'Cormorant Garamond', serif; font-style:italic; color:var(--teal-dark);}
+  a{color:var(--teal-dark);}
+  .wrap{max-width:920px; margin:0 auto; padding:0 20px;}
+
+  /* HERO */
+  .hero{
+    position:relative; min-height:340px; display:flex; align-items:flex-end;
+    background-image: linear-gradient(180deg, rgba(79,138,140,0.35) 0%, rgba(61,61,61,0.75) 100%), url('https://images.trvl-media.com/place/180032/f37a9f94-96b8-438c-98db-7d4dc99d5c62/cabo-san-lucas-marina-medano-beach-mount-solmar-view-baja-california-sur-mexico.jpg?impolicy=fcrop&w=450&h=280&q=medium');
+    background-size:cover; background-position:center; padding:40px 0 30px;
+  }
+  .hero-inner{color:#FFFFFF; width:100%;}
+  .hero h1{color:#FFFFFF; font-size:2rem; margin-bottom:8px;}
+  .hero p{margin:0; font-size:1.05rem;}
+
+  /* COMMITMENT CALLOUTS */
+  .callout{
+    background:var(--pale-teal); border-radius:10px; padding:18px 20px; margin:24px 0;
+    font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.15rem; color:var(--text);
+  }
+  .callout.gold{background:var(--cream-light); border:1px solid var(--gold);}
+
+  section{padding:30px 0;}
+  .section-title{text-align:center; margin-bottom:6px;}
+  .section-sub{text-align:center; color:var(--text-muted); margin-bottom:26px;}
+
+  /* STICKY TOTAL BAR */
+  .total-bar{
+    position:sticky; top:0; z-index:50; background:var(--teal-dark); color:#FFFFFF;
+    padding:12px 20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;
+  }
+  .total-bar .amount{font-family:'Playfair Display', serif; font-size:1.3rem; font-weight:600;}
+  .total-bar small{display:block; font-size:0.72rem; opacity:0.9; font-weight:400;}
+
+  /* RESORT CARDS */
+  .resort-card{
+    background:var(--paper-pure); border:2px solid var(--pale-teal); border-radius:14px;
+    padding:22px; margin-bottom:24px; transition:border-color .15s;
+  }
+  .resort-card.selected{border-color:var(--gold-dark); box-shadow:0 2px 14px rgba(184,158,106,0.25);}
+  .resort-pick{display:flex; align-items:flex-start; gap:12px; cursor:pointer;}
+  .resort-pick input[type=radio]{margin-top:6px; width:20px; height:20px; accent-color:var(--teal-dark);}
+  .resort-name{font-size:1.35rem; margin-bottom:2px;}
+  .resort-tag{font-size:0.85rem; color:var(--text-muted); margin-bottom:14px;}
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:16px 0;}
+  .gallery img{width:100%; height:130px; object-fit:cover; border-radius:8px; min-height:0; min-width:0; display:block;}
+  .gallery{overflow:hidden;}
+  .resort-body p{margin:0 0 12px;}
+  .facts{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0;}
+  .fact-pill{background:var(--cream-light); border-radius:20px; padding:6px 14px; font-size:0.85rem; color:var(--text);}
+  .price-box{background:var(--cream-light); border-radius:10px; padding:16px; margin:16px 0;}
+  .price-row{display:flex; justify-content:space-between; padding:4px 0; font-size:0.95rem;}
+  .price-row.total{font-weight:700; border-top:1px solid var(--gold); margin-top:6px; padding-top:10px;}
+  .not-included{color:var(--teal-dark); font-weight:600; font-size:0.82rem;}
+  .birthday-note{
+    font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.08rem; color:var(--text);
+    margin:14px 0; background:var(--cream-light); border-left:4px solid var(--gold-dark);
+    border-radius:6px; padding:10px 16px; display:flex; align-items:center; gap:10px;
+  }
+  .birthday-note .icon{font-style:normal; font-size:1.2rem; flex-shrink:0;}
+  .hero-badge{
+    display:inline-block; background:var(--gold); color:var(--text); font-family:'DM Sans', sans-serif;
+    font-weight:600; font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase;
+    padding:6px 16px; border-radius:20px; margin-bottom:14px;
+  }
+  .hero p.sub{margin-top:6px; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.15rem;}
+  .advisor-note{font-size:0.85rem; color:var(--text-muted); font-style:italic;}
+
+  /* COMPARISON TABLE */
+  .compare-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+  table.compare{width:100%; border-collapse:collapse; background:var(--paper-pure); border-radius:10px; overflow:hidden; min-width:640px;}
+  table.compare th, table.compare td{padding:12px 14px; text-align:left; border-bottom:1px solid var(--pale-teal); font-size:0.92rem; vertical-align:top;}
+  table.compare th{background:var(--teal-dark); color:#FFFFFF; font-family:'Playfair Display', serif; font-weight:600;}
+  table.compare tr:last-child td{border-bottom:none;}
+  table.compare td:first-child{font-weight:600; color:var(--teal-dark); white-space:nowrap;}
+
+  .dates-note{background:var(--paper-pure); border:1px dashed var(--gold-dark); border-radius:10px; padding:16px 18px; margin:20px 0; font-size:0.95rem;}
+
+  /* FORM */
+  .form-card{background:var(--paper-pure); border-radius:14px; padding:26px; border:2px solid var(--pale-teal);}
+  label{display:block; font-weight:600; margin:14px 0 6px; font-size:0.92rem;}
+  input[type=text], input[type=email], input[type=tel], select, textarea{
+    width:100%; padding:12px; border:1px solid var(--pale-teal); border-radius:8px;
+    font-size:16px; font-family:'DM Sans', sans-serif; color:var(--text); background:var(--paper);
+  }
+  textarea{min-height:100px; resize:vertical;}
+  .btn{
+    background:var(--teal-dark); color:#FFFFFF; border:none; border-radius:30px;
+    padding:14px 28px; font-size:1rem; font-weight:600; font-family:'DM Sans', sans-serif;
+    cursor:pointer; min-height:44px; margin-top:18px; width:100%;
+  }
+  .btn:hover{background:#3f7476;}
+  #formError{display:none; background:#F5EFDF; border:1px solid var(--gold-dark); color:var(--text); padding:12px; border-radius:8px; margin-top:14px; font-size:0.9rem;}
+  #thankYou{display:none; text-align:center; padding:30px 10px;}
+  #thankYou h3{color:var(--teal-dark);}
+
+  footer{background:var(--teal-dark); color:#FFFFFF; text-align:center; padding:30px 20px; margin-top:20px;}
+  footer a{color:#FFFFFF; text-decoration:underline;}
+  footer .fine{font-size:0.8rem; opacity:0.85; margin-top:14px;}
+
+  @media (max-width:540px){
+    .gallery{grid-template-columns:1fr 1fr;}
+    .gallery img{height:110px;}
+    .total-bar{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <span class="hero-badge">Birthday Getaway</span>
+    <h1>A Cabo San Lucas Birthday Getaway</h1>
+    <p>5 nights · April 11–16, 2027 · Baja California Sur, Mexico</p>
+    <p class="sub">Five nights in Cabo, timed around your husband's birthday on April 12.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="callout">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+
+  <section>
+    <h2 class="section-title">Three resorts, one birthday trip to plan</h2>
+    <p class="section-sub">Pick the resort that fits — every option below is priced for the same 5 nights, April 11–16, 2027, 2 adults, 1 room, and lands you in Cabo right in time to celebrate on April 12.</p>
+
+    <!-- RESORT 1: BREATHLESS -->
+    <div class="resort-card" id="card-breathless">
+      <label class="resort-pick">
+        <input type="radio" name="resortRadio" value="breathless" data-price="3047.51" data-label="Breathless Cabo San Lucas" checked>
+        <div>
+          <div class="resort-name">Breathless Cabo San Lucas</div>
+          <div class="resort-tag">Adults Only · All-Inclusive · Right on the Marina</div>
+        </div>
+      </label>
+      <div class="gallery">
+        <img src="https://images.trvl-media.com/lodging/12000000/11840000/11838000/11837973/5083a5ca.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Breathless Cabo San Lucas suite" loading="lazy">
+        <img src="https://images.trvl-media.com/lodging/12000000/11840000/11838000/11837973/5ea9a954.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Breathless Cabo San Lucas suite view" loading="lazy">
+        <img src="https://images.trvl-media.com/lodging/12000000/11840000/11838000/11837973/13643a1e.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Breathless Cabo San Lucas suite interior" loading="lazy">
+      </div>
+      <div class="resort-body">
+        <p>Breathless sits right on the Cabo San Lucas Marina, an easy walk from Medano Beach and downtown. It's the liveliest of the three — pool parties, a rooftop bar, and dining and drinks that run all day as part of the all-inclusive plan. If your group wants to be in the middle of things without hopping in a car every night, this is the one.</p>
+        <div class="facts">
+          <span class="fact-pill">✈ ~35–45 min from the airport</span>
+          <span class="fact-pill">🚶 Marina &amp; downtown: walking distance</span>
+          <span class="fact-pill">🏖 Medano Beach — swimmable</span>
+        </div>
+        <p><strong>Room:</strong> Allure Suite King – Marina View</p>
+        <div class="price-box">
+          <div class="price-row"><span>Resort stay</span><span>$2,499.38</span></div>
+          <div class="price-row"><span>Taxes</span><span>$524.13</span></div>
+          <div class="price-row total"><span>Total due for resort</span><span>$3,023.51</span></div>
+          <div class="price-row"><span>Resort fee <span class="not-included">Paid at the property</span></span><span>~$24.00</span></div>
+          <div class="price-row total"><span>Estimated total</span><span>$3,047.51</span></div>
+        </div>
+        <p class="not-included">Airport transfers: not included in the price above — private transfers can be added once flights are booked.</p>
+        <p class="birthday-note"><span class="icon">🎉</span> These dates land you in Cabo for your husband's birthday on April 12 — worth raising a glass to.</p>
+        <p>Book now, pay later is available for this resort — payment isn't due until April 1, 2027.</p>
+      </div>
+    </div>
+
+    <!-- RESORT 2: HARD ROCK -->
+    <div class="resort-card" id="card-hardrock">
+      <label class="resort-pick">
+        <input type="radio" name="resortRadio" value="hardrock" data-price="3805.96" data-label="Hard Rock Hotel Los Cabos">
+        <div>
+          <div class="resort-name">Hard Rock Hotel Los Cabos</div>
+          <div class="resort-tag">All-Inclusive · Diamante, Pacific Side</div>
+        </div>
+      </label>
+      <div class="gallery">
+        <img src="https://images.trvl-media.com/lodging/35000000/34190000/34183500/34183472/ad24c89b.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Hard Rock Hotel Los Cabos room" loading="lazy">
+        <img src="https://images.trvl-media.com/lodging/35000000/34190000/34183500/34183472/5f2f1122.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Hard Rock Hotel Los Cabos room view" loading="lazy">
+        <img src="https://images.trvl-media.com/lodging/35000000/34190000/34183500/34183472/46a19952.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Hard Rock Hotel Los Cabos property" loading="lazy">
+      </div>
+      <div class="resort-body">
+        <p>Hard Rock brings its own energy — multiple pools, a full lineup of restaurants and bars (including a bowling-alley lounge), and entertainment that runs day into night, all part of the all-inclusive plan. It sits on the Pacific side in the Diamante development, which means more privacy and less foot traffic, but also more distance from the marina if you want to go into town.</p>
+        <div class="facts">
+          <span class="fact-pill">✈ ~45–55 min from the airport</span>
+          <span class="fact-pill">🚗 ~15–20 min drive to the marina</span>
+          <span class="fact-pill">🏖 Beach for walking — not swimmable</span>
+        </div>
+        <p><strong>Room:</strong> Deluxe Room, 1 King Bed with Sofa Bed – Gold</p>
+        <div class="price-box">
+          <div class="price-row"><span>Resort stay</span><span>$3,151.43</span></div>
+          <div class="price-row"><span>Taxes</span><span>$654.53</span></div>
+          <div class="price-row total"><span>Total</span><span>$3,805.96</span></div>
+        </div>
+        <p class="not-included">Airport transfers: not included in the price above — private transfers can be added once flights are booked.</p>
+        <p class="birthday-note"><span class="icon">🎉</span> These dates land you in Cabo for your husband's birthday on April 12 — worth raising a glass to.</p>
+        <p>Book now, pay later is available for this resort — payment isn't due until April 1, 2027.</p>
+      </div>
+    </div>
+
+    <!-- RESORT 3: PARADISUS -->
+    <div class="resort-card" id="card-paradisus">
+      <label class="resort-pick">
+        <input type="radio" name="resortRadio" value="paradisus" data-price="3725.22" data-label="Paradisus Los Cabos">
+        <div>
+          <div class="resort-name">Paradisus Los Cabos</div>
+          <div class="resort-tag">Adults Only · All-Inclusive · The Leading Hotels of the World</div>
+        </div>
+      </label>
+      <div class="gallery">
+        <img src="https://images.trvl-media.com/lodging/1000000/30000/24900/24807/55027969.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Paradisus Los Cabos suite" loading="lazy">
+        <img src="https://images.trvl-media.com/lodging/1000000/30000/24900/24807/w4300h2864x0y5-1c665851.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Paradisus Los Cabos suite view" loading="lazy">
+        <img src="https://images.trvl-media.com/lodging/1000000/30000/24900/24807/84aabda3.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Paradisus Los Cabos property" loading="lazy">
+      </div>
+      <div class="resort-body">
+        <p>Paradisus is the calmer, more upscale pick of the three — a swimmable cove beach, beach and pool drink service, 24-hour room service, and evening entertainment that doesn't try to be a nightclub. The Reserve Suite adds a private lounge, a dedicated beach and pool area, and priority reservations on top of the standard all-inclusive plan. It's also the closest of the three to the airport, which shortens the first and last day of the trip.</p>
+        <div class="facts">
+          <span class="fact-pill">✈ ~20–25 min from the airport (closest)</span>
+          <span class="fact-pill">🚗 ~20 min drive to the marina</span>
+          <span class="fact-pill">🏖 Swimmable cove beach</span>
+        </div>
+        <p><strong>Room:</strong> The Reserve Suite Garden View King</p>
+        <div class="price-box">
+          <div class="price-row"><span>Resort stay</span><span>$3,062.87</span></div>
+          <div class="price-row"><span>Taxes</span><span>$638.10</span></div>
+          <div class="price-row total"><span>Total due for resort</span><span>$3,700.97</span></div>
+          <div class="price-row"><span>Resort fee <span class="not-included">Paid at the property</span></span><span>$24.25</span></div>
+          <div class="price-row total"><span>Estimated total</span><span>$3,725.22</span></div>
+        </div>
+        <p class="not-included">Airport transfers: not included in the price above — private transfers can be added once flights are booked.</p>
+        <p class="birthday-note"><span class="icon">🎉</span> These dates land you in Cabo for your husband's birthday on April 12 — worth raising a glass to.</p>
+        <p>Book now, pay later is available for this resort — payment isn't due until April 1, 2027.</p>
+      </div>
+    </div>
+
+    <div class="dates-note">
+      <strong>Worth knowing:</strong> the week of April 18–23 may come in cheaper on some of these resorts. If you'd like, we're happy to check that week too and compare it against April 11–16 — happy to shift dates around to find the best combination of price and timing for you.
+    </div>
+
+    <div class="dates-note">
+      <strong>Flights:</strong> we'll put together flight options closer to your travel dates and let you know the best window to buy — airfare typically moves around more than resort pricing, so waiting a bit works in your favor. Once flights are booked, private transfers to and from the resort can be added to your quote.
+    </div>
+  </section>
+
+  <div class="callout gold">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+  </div>
+
+  <div class="total-bar" id="totalBar">
+    <div><strong id="totalResortName">Breathless Cabo San Lucas</strong><small>Estimated total for 2 adults, 5 nights</small></div>
+    <div class="amount" id="totalAmount">Est. $3,047.51</div>
+  </div>
+  <p style="text-align:center; font-size:0.82rem; color:var(--text-muted); margin-top:8px;">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
+
+  <section>
+    <h2 class="section-title">How the three compare</h2>
+    <p class="section-sub">Same dates, same trip length — here's what actually differs.</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Resort</th><th>Breathless</th><th>Hard Rock</th><th>Paradisus</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Vibe</td><td>Liveliest — pool parties, rooftop bar</td><td>Lively, resort-contained nightlife</td><td>Upscale, relaxed</td></tr>
+          <tr><td>Airport drive</td><td>~35–45 min</td><td>~45–55 min (farthest)</td><td>~20–25 min (closest)</td></tr>
+          <tr><td>Marina / downtown</td><td>Walking distance</td><td>~15–20 min drive</td><td>~20 min drive</td></tr>
+          <tr><td>Beach</td><td>Medano Beach — swimmable</td><td>Walking only, not swimmable</td><td>Swimmable cove beach</td></tr>
+          <tr><td>Estimated total</td><td>$3,047.51</td><td>$3,805.96</td><td>$3,725.22</td></tr>
+          <tr><td>Best for</td><td>Wanting to be in the middle of it all, no car needed</td><td>Resort-based fun with more privacy</td><td>A quieter, more upscale birthday trip</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="callout">
+    What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+
+  <section>
+    <h2 class="section-title">Let's get the birthday trip on the books</h2>
+    <p class="section-sub">Tell us which resort you're leaning toward and any questions — we'll follow up with next steps.</p>
+    <div class="form-card">
+      <form id="quoteForm">
+        <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+        <input type="hidden" name="subject" value="Quote Response — Jacey Wampler | Cabo San Lucas">
+        <input type="hidden" name="from_name" value="Jacey Wampler Quote — Point Me to Paradise">
+        <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="selected_resort" id="selectedResortField" value="Breathless Cabo San Lucas">
+
+        <label for="fname">Name *</label>
+        <input type="text" id="fname" name="name" required>
+
+        <label for="femail">Email *</label>
+        <input type="email" id="femail" name="email" required>
+
+        <label for="fphone">Phone</label>
+        <input type="tel" id="fphone" name="phone">
+
+        <label for="fresort">Which resort interests you most?</label>
+        <select id="fresort" name="option_interest">
+          <option value="Breathless Cabo San Lucas" selected>Breathless Cabo San Lucas</option>
+          <option value="Hard Rock Hotel Los Cabos">Hard Rock Hotel Los Cabos</option>
+          <option value="Paradisus Los Cabos">Paradisus Los Cabos</option>
+        </select>
+
+        <label for="finsurance">Travel insurance</label>
+        <select id="finsurance" name="travel_insurance">
+          <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+          <option value="No — not interested">No — not interested</option>
+          <option value="Already have coverage">Already have coverage</option>
+        </select>
+
+        <label for="fmessage">Message</label>
+        <textarea id="fmessage" name="message" placeholder="Questions, preferences, or anything else we should know"></textarea>
+
+        <button type="submit" class="btn">Send my questions / preferences</button>
+        <div id="formError"></div>
+      </form>
+      <div id="thankYou">
+        <h3>Thanks, Jacey!</h3>
+        <p>We've got your message and will follow up shortly.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div>Andrea Gunter · Point Me to Paradise Travel</div>
+  <div><a href="#" id="emailLink"></a> · 409-789-3579</div>
+  <div class="fine">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<script>
+  // Assemble advisor email at runtime to avoid Cloudflare scrambling
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var el = document.getElementById('emailLink');
+    el.href = 'mailto:' + addr;
+    el.textContent = addr;
+  })();
+
+  // Resort selection -> update total bar, hidden field, card highlight
+  var radios = document.querySelectorAll('input[name="resortRadio"]');
+  var totalAmount = document.getElementById('totalAmount');
+  var totalResortName = document.getElementById('totalResortName');
+  var selectedResortField = document.getElementById('selectedResortField');
+  var fresortSelect = document.getElementById('fresort');
+  var cards = {
+    breathless: document.getElementById('card-breathless'),
+    hardrock: document.getElementById('card-hardrock'),
+    paradisus: document.getElementById('card-paradisus')
+  };
+
+  function updateTotal(){
+    var checked = document.querySelector('input[name="resortRadio"]:checked');
+    if(!checked) return;
+    var price = parseFloat(checked.getAttribute('data-price')).toFixed(2);
+    var label = checked.getAttribute('data-label');
+    totalAmount.textContent = 'Est. $' + Number(price).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+    totalResortName.textContent = label;
+    selectedResortField.value = label;
+    if(fresortSelect) fresortSelect.value = label;
+    Object.keys(cards).forEach(function(key){
+      cards[key].classList.toggle('selected', checked.value === key);
+    });
+  }
+  radios.forEach(function(r){ r.addEventListener('change', function(){ setTimeout(updateTotal, 0); }); });
+  updateTotal();
+
+  // Keep the dropdown and radios in sync if the client changes the dropdown instead
+  if(fresortSelect){
+    fresortSelect.addEventListener('change', function(){
+      var val = fresortSelect.value;
+      radios.forEach(function(r){
+        if(r.getAttribute('data-label') === val){ r.checked = true; }
+      });
+      setTimeout(updateTotal, 0);
+    });
+  }
+
+  // Web3Forms submission via fetch — never native POST
+  var form = document.getElementById('quoteForm');
+  var errorDiv = document.getElementById('formError');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorDiv.style.display = 'none';
+    var formData = new FormData(form);
+    var payload = Object.fromEntries(formData.entries());
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(payload)
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if(data.success){
+        document.querySelector('.form-card').querySelector('#quoteForm').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorDiv.textContent = 'Something went wrong sending your message. Please try again or call/text 409-789-3579.';
+        errorDiv.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      errorDiv.textContent = 'Something went wrong sending your message. Please try again or call/text 409-789-3579.';
+      errorDiv.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
