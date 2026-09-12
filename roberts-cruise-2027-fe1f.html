@@ -145,6 +145,29 @@
     display:block;
   }
 
+  .party-toggle{
+    display:flex;
+    gap:10px;
+    margin:14px 0 20px;
+  }
+  .party-btn{
+    font-family:'DM Sans',sans-serif;
+    font-size:.9rem;
+    font-weight:600;
+    padding:10px 18px;
+    min-height:44px;
+    border-radius:24px;
+    border:2px solid var(--pale-teal);
+    background:var(--paper-pure);
+    color:var(--teal-dark);
+    cursor:pointer;
+  }
+  .party-btn.active{
+    background:var(--teal-dark);
+    border-color:var(--teal-dark);
+    color:var(--paper-pure);
+  }
+
   /* Stateroom cards */
   .options-grid{
     display:grid;
@@ -430,10 +453,10 @@
 <section class="overview">
   <div class="wrap">
     <h2>The trip</h2>
-    <p>Five nights out of Port Canaveral aboard Explorer of the Seas, calling on Nassau and Perfect Day at CocoCay, March 19–24, 2027, for four travelers sharing one stateroom. Every price below is split evenly across all four of you and already includes prepaid gratuities — no separate line item to work out later, and no one has to be the person who paid for everyone else up front.</p>
+    <p>Five nights out of Port Canaveral aboard Explorer of the Seas, calling on Nassau and Perfect Day at CocoCay, March 19–24, 2027. Priced below for either two or four travelers sharing one stateroom — every price already includes prepaid gratuities split evenly across everyone traveling, so what you see per person is what it actually costs, no separate line item to work out later.</p>
 
     <div class="note-box">
-      <strong>Ocean View and Balcony categories are booked as "Guarantee" staterooms</strong> — Royal Caribbean assigns your exact room within that category rather than you choosing the specific location. That's part of how these come in below the price of a choose-your-own room.
+      <strong>"Guarantee" staterooms</strong> mean Royal Caribbean assigns your exact room within that category rather than you choosing the specific location — that's part of how those come in below the price of a choose-your-own room.
     </div>
 
     <div class="note-box">
@@ -480,79 +503,182 @@
 <section>
   <div class="wrap">
     <h2>Stateroom options</h2>
-    <form class="options-grid" id="stateroomForm" onsubmit="return false;">
 
-      <div class="option-card selected" data-price="2567.88" data-label="Interior Stateroom">
-        <label>
-          <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/fr-lb-v-interior-living.webp" alt="Interior stateroom aboard Explorer of the Seas">
-          <div class="option-body">
-            <h3>Interior Stateroom</h3>
-            <div class="price-pp">$641.97<small>per person, incl. prepaid gratuities</small></div>
-            <p class="price-detail">
-              Total for all 4: $2,567.88<br>
-              Deposit: $400 total / $100 per person<br>
-              Balance due: $2,167.88<br>
-              Final payment: December 19, 2026
-            </p>
-            <div class="radio-row">
-              <input type="radio" name="stateroom" value="Interior Stateroom" checked>
-              <span>Select this option</span>
+    <div class="party-toggle">
+      <button type="button" class="party-btn active" data-party="4">4 Travelers</button>
+      <button type="button" class="party-btn" data-party="2">2 Travelers</button>
+    </div>
+
+    <div class="options-panel" data-panel="4">
+      <div class="options-grid">
+
+        <div class="option-card selected" data-price="2567.88" data-label="Interior Stateroom" data-count="4">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/fr-lb-v-interior-living.webp" alt="Interior stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Interior Stateroom</h3>
+              <div class="price-pp">$641.97<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Total for all 4: $2,567.88<br>
+                Deposit: $400 total / $100 per person<br>
+                Balance due: $2,167.88<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom4" value="Interior Stateroom" checked>
+                <span>Select this option</span>
+              </div>
             </div>
-          </div>
-        </label>
+          </label>
+        </div>
+
+        <div class="option-card" data-price="2758.88" data-label="Ocean View Guarantee (Category YQ)" data-count="4">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/FR-Oceanview-CatF.webp" alt="Ocean view stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Ocean View Guarantee</h3>
+              <span class="option-cat">Category YQ</span>
+              <div class="price-pp">$689.72<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Total for all 4: $2,758.88<br>
+                Deposit: $400 total / $100 per person<br>
+                Balance due: $2,358.88<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom4" value="Ocean View Guarantee (Category YQ)">
+                <span>Select this option</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="option-card" data-price="3267.88" data-label="Balcony Guarantee (Category XQ)" data-count="4">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/RCI_EX_balcony-Oceanview_SR.webp" alt="Balcony stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Balcony Guarantee</h3>
+              <span class="option-cat">Category XQ</span>
+              <div class="price-pp">$816.97<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Total for all 4: $3,267.88<br>
+                Deposit: $400 total / $100 per person<br>
+                Balance due: $2,867.88<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom4" value="Balcony Guarantee (Category XQ)">
+                <span>Select this option</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
       </div>
 
-      <div class="option-card" data-price="2758.88" data-label="Ocean View Guarantee (Category YQ)">
-        <label>
-          <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/FR-Oceanview-CatF.webp" alt="Ocean view stateroom aboard Explorer of the Seas">
-          <div class="option-body">
-            <h3>Ocean View Guarantee</h3>
-            <span class="option-cat">Category YQ</span>
-            <div class="price-pp">$689.72<small>per person, incl. prepaid gratuities</small></div>
-            <p class="price-detail">
-              Total for all 4: $2,758.88<br>
-              Deposit: $400 total / $100 per person<br>
-              Balance due: $2,358.88<br>
-              Final payment: December 19, 2026
-            </p>
-            <div class="radio-row">
-              <input type="radio" name="stateroom" value="Ocean View Guarantee (Category YQ)">
-              <span>Select this option</span>
+      <div class="andreas-take">
+        <span class="label">Andrea's Take</span>
+        <p class="advisor-voice">For about $48 more per person than the interior, I'd point you toward the Ocean View — a small step up for five nights at sea. The Balcony runs about $175 more per person than the Interior; worth it if a private outdoor space matters to the group, but the Ocean View is the value sweet spot here.</p>
+      </div>
+    </div>
+
+    <div class="options-panel" data-panel="2" style="display:none;">
+      <div class="options-grid">
+
+        <div class="option-card" data-price="980.94" data-label="Interior Stateroom Guarantee" data-count="2">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/fr-lb-v-interior-living.webp" alt="Interior stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Interior Stateroom Guarantee</h3>
+              <div class="price-pp">$490.47<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Cruise fare &amp; taxes: $795.94 · Gratuities: $185.00<br>
+                Grand total: $980.94<br>
+                Deposit: $200 total / $100 per person<br>
+                Balance due: $780.94<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom2" value="Interior Stateroom Guarantee" checked>
+                <span>Select this option</span>
+              </div>
             </div>
-          </div>
-        </label>
+          </label>
+        </div>
+
+        <div class="option-card" data-price="1091.94" data-label="Interior Stateroom – Choose Your Room" data-count="2">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/fr-lb-v-interior-living.webp" alt="Interior stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Interior — Choose Your Room</h3>
+              <div class="price-pp">$545.97<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Cruise fare &amp; taxes: $906.94 · Gratuities: $185.00<br>
+                Grand total: $1,091.94<br>
+                Deposit: $200 total / $100 per person<br>
+                Balance due: $891.94<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom2" value="Interior Stateroom – Choose Your Room">
+                <span>Select this option</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="option-card" data-price="1134.94" data-label="Ocean View Stateroom" data-count="2">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/FR-Oceanview-CatF.webp" alt="Ocean view stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Ocean View Stateroom</h3>
+              <div class="price-pp">$567.47<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Cruise fare &amp; taxes: $949.94 · Gratuities: $185.00<br>
+                Grand total: $1,134.94<br>
+                Deposit: $200 total / $100 per person<br>
+                Balance due: $934.94<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom2" value="Ocean View Stateroom">
+                <span>Select this option</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="option-card" data-price="1429.56" data-label="Ocean View Balcony Stateroom" data-count="2">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/RCI_EX_balcony-Oceanview_SR.webp" alt="Balcony stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Ocean View Balcony</h3>
+              <div class="price-pp">$714.78<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Cruise fare &amp; taxes: $1,244.56 · Gratuities: $185.00<br>
+                Grand total: $1,429.56<br>
+                Deposit: $200 total / $100 per person<br>
+                Balance due: $1,229.56<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom2" value="Ocean View Balcony Stateroom">
+                <span>Select this option</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
       </div>
 
-      <div class="option-card" data-price="3267.88" data-label="Balcony Guarantee (Category XQ)">
-        <label>
-          <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/RCI_EX_balcony-Oceanview_SR.webp" alt="Balcony stateroom aboard Explorer of the Seas">
-          <div class="option-body">
-            <h3>Balcony Guarantee</h3>
-            <span class="option-cat">Category XQ</span>
-            <div class="price-pp">$816.97<small>per person, incl. prepaid gratuities</small></div>
-            <p class="price-detail">
-              Total for all 4: $3,267.88<br>
-              Deposit: $400 total / $100 per person<br>
-              Balance due: $2,867.88<br>
-              Final payment: December 19, 2026
-            </p>
-            <div class="radio-row">
-              <input type="radio" name="stateroom" value="Balcony Guarantee (Category XQ)">
-              <span>Select this option</span>
-            </div>
-          </div>
-        </label>
+      <div class="andreas-take">
+        <span class="label">Andrea's Take</span>
+        <p class="advisor-voice">For just $21.50 more per person than the standard Interior, the Ocean View is the sweet spot here. If the goal is the lowest possible price, the Interior Guarantee is hard to beat.</p>
       </div>
-
-    </form>
-
-    <div class="andreas-take">
-      <span class="label">Andrea's Take</span>
-      <p class="advisor-voice">For about $48 more per person than the interior, I'd point you toward the Ocean View — a small step up for five nights at sea. The Balcony runs about $175 more per person than the Interior; worth it if a private outdoor space matters to the group, but the Ocean View is the value sweet spot here.</p>
     </div>
 
     <div class="pricing-note">
-      <p>Each price above includes your cruise fare and prepaid gratuities, split evenly across all four travelers. We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
+      <p>Each price above includes your cruise fare and prepaid gratuities, split evenly across everyone traveling. We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
       <p>Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
     </div>
   </div>
@@ -590,6 +716,7 @@
         <input type="hidden" name="redirect" value="false">
         <input type="hidden" name="selected_stateroom" id="hiddenStateroom" value="Interior Stateroom">
         <input type="hidden" name="estimated_total" id="hiddenTotal" value="$2,567.88">
+        <input type="hidden" name="party_size" id="hiddenPartySize" value="4">
 
         <div class="form-row">
           <label for="name">Name *</label>
@@ -658,9 +785,17 @@
         <div class="form-row">
           <label for="optionInterest">Which stateroom are you leaning toward?</label>
           <select id="optionInterest" name="option_interest">
-            <option value="Interior Stateroom">Interior Stateroom</option>
-            <option value="Ocean View Guarantee (Category YQ)">Ocean View Guarantee (Category YQ)</option>
-            <option value="Balcony Guarantee (Category XQ)">Balcony Guarantee (Category XQ)</option>
+            <optgroup label="4 Travelers">
+              <option value="Interior Stateroom">Interior Stateroom</option>
+              <option value="Ocean View Guarantee (Category YQ)">Ocean View Guarantee (Category YQ)</option>
+              <option value="Balcony Guarantee (Category XQ)">Balcony Guarantee (Category XQ)</option>
+            </optgroup>
+            <optgroup label="2 Travelers">
+              <option value="Interior Stateroom Guarantee">Interior Stateroom Guarantee</option>
+              <option value="Interior Stateroom – Choose Your Room">Interior Stateroom – Choose Your Room</option>
+              <option value="Ocean View Stateroom">Ocean View Stateroom</option>
+              <option value="Ocean View Balcony Stateroom">Ocean View Balcony Stateroom</option>
+            </optgroup>
           </select>
         </div>
         <div class="form-row">
@@ -706,13 +841,16 @@
   })();
 
   // Stateroom selection -> running total + hidden fields
-  var radios = document.querySelectorAll('input[name="stateroom"]');
   var cards = document.querySelectorAll('.option-card');
   var estTotal = document.getElementById('estTotal');
   var estSub = document.getElementById('estSub');
   var hiddenStateroom = document.getElementById('hiddenStateroom');
   var hiddenTotal = document.getElementById('hiddenTotal');
+  var hiddenPartySize = document.getElementById('hiddenPartySize');
   var optionInterest = document.getElementById('optionInterest');
+  var partyButtons = document.querySelectorAll('.party-btn');
+  var panels = document.querySelectorAll('.options-panel');
+  var activeParty = '4';
 
   function fmtMoney(v){
     return '$' + v.toLocaleString('en-US', {minimumFractionDigits:0, maximumFractionDigits:0});
@@ -722,27 +860,42 @@
   }
 
   function updateTotal(){
-    var checked = document.querySelector('input[name="stateroom"]:checked');
+    var checked = document.querySelector('input[name="stateroom' + activeParty + '"]:checked');
     if(!checked) return;
     var card = checked.closest('.option-card');
     var price = parseFloat(card.getAttribute('data-price'));
     var label = card.getAttribute('data-label');
+    var count = card.getAttribute('data-count');
 
     cards.forEach(function(c){ c.classList.remove('selected'); });
     card.classList.add('selected');
 
     estTotal.textContent = 'Est. ' + fmtMoney(price);
-    estSub.textContent = label + ' — 4 travelers';
+    estSub.textContent = label + ' — ' + count + ' travelers';
 
     hiddenStateroom.value = label;
     hiddenTotal.value = fmtMoneyCents(price);
+    hiddenPartySize.value = count;
 
     if(optionInterest){ optionInterest.value = label; }
   }
 
-  radios.forEach(function(r){
+  document.querySelectorAll('input[name="stateroom4"], input[name="stateroom2"]').forEach(function(r){
     r.addEventListener('change', function(){ setTimeout(updateTotal, 0); });
   });
+
+  partyButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      activeParty = btn.getAttribute('data-party');
+      partyButtons.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      panels.forEach(function(p){
+        p.style.display = (p.getAttribute('data-panel') === activeParty) ? '' : 'none';
+      });
+      updateTotal();
+    });
+  });
+
   updateTotal();
 
   // Web3Forms submission via fetch — never native POST
