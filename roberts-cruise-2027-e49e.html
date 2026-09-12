@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ellyse Roberts — Bahamas & Perfect Day, March 2027</title>
+
+<meta property="og:title" content="Ellyse Roberts — Bahamas & Perfect Day, March 2027">
+<meta property="og:description" content="5-night Bahamas sailing, March 19–24, 2027, out of Port Canaveral aboard Explorer of the Seas, calling on Nassau and Perfect Day at CocoCay.">
+<meta property="og:image" content="https://www.royalcaribbeanincentives.com/content/uploads/RCI_Explorer_ExteriorSide_2.webp">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="5-night Bahamas sailing, March 19–24, 2027, out of Port Canaveral aboard Explorer of the Seas, calling on Nassau and Perfect Day at CocoCay.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --teal:#75AFB1;
+    --teal-dark:#4F8A8C;
+    --pale-teal:#C4E4E1;
+    --gold:#DAC396;
+    --gold-dark:#B89E6A;
+    --cream:#E9DEC0;
+    --cream-light:#F5EFDF;
+    --paper:#FBF9F4;
+    --paper-pure:#FFFFFF;
+    --text:#3D3D3D;
+    --text-muted:#606060;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text);
+    font-family:'DM Sans', sans-serif;
+    font-weight:400;
+    line-height:1.55;
+  }
+  h1,h2,h3{
+    font-family:'Playfair Display', serif;
+    color:var(--teal-dark);
+    margin:0 0 .4em 0;
+  }
+  .advisor-voice{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--text);
+  }
+  a{color:var(--teal-dark);}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    min-height:340px;
+    background-image:
+      linear-gradient(180deg, rgba(38,58,58,.55) 0%, rgba(38,58,58,.72) 100%),
+      url('https://www.royalcaribbeanincentives.com/content/uploads/RCI_Explorer_ExteriorSide_2.webp');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:flex-end;
+    padding:32px 0;
+  }
+  .hero-inner h1{color:var(--paper-pure);font-size:2rem;}
+  .hero-inner p{color:var(--cream-light);margin:0;font-size:1.05rem;}
+
+  /* Top commitment */
+  .commitment-top{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    text-align:center;
+    padding:16px 20px;
+    font-size:.98rem;
+  }
+
+  section{padding:34px 0;}
+  .overview{padding-bottom:10px;}
+  .overview p{max-width:70ch;}
+
+  .note-box{
+    background:var(--cream-light);
+    border-left:4px solid var(--gold-dark);
+    padding:14px 18px;
+    border-radius:4px;
+    font-size:.95rem;
+    color:var(--text);
+    margin:18px 0;
+  }
+
+  .itinerary-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-top:18px;
+  }
+  @media(min-width:700px){
+    .itinerary-grid{grid-template-columns:repeat(3,1fr);}
+  }
+  .itin-day{
+    background:var(--paper-pure);
+    border:1px solid var(--pale-teal);
+    border-radius:8px;
+    padding:14px 16px;
+  }
+  .itin-day .itin-date{
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--teal-dark);
+    font-weight:700;
+    margin-bottom:4px;
+  }
+  .itin-day h4{
+    font-family:'Playfair Display',serif;
+    color:var(--text);
+    font-size:1.05rem;
+    margin:0 0 4px;
+  }
+  .itin-day p{
+    font-size:.85rem;
+    color:var(--text-muted);
+    margin:0;
+  }
+
+  .andreas-take{
+    background:var(--pale-teal);
+    border-radius:8px;
+    padding:20px 24px;
+    margin:20px 0;
+  }
+  .andreas-take .label{
+    font-family:'DM Sans',sans-serif;
+    font-style:normal;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    font-size:.78rem;
+    color:var(--teal-dark);
+    margin-bottom:8px;
+    display:block;
+  }
+
+  .party-toggle{
+    display:flex;
+    gap:10px;
+    margin:14px 0 20px;
+  }
+  .party-btn{
+    font-family:'DM Sans',sans-serif;
+    font-size:.9rem;
+    font-weight:600;
+    padding:10px 18px;
+    min-height:44px;
+    border-radius:24px;
+    border:2px solid var(--pale-teal);
+    background:var(--paper-pure);
+    color:var(--teal-dark);
+    cursor:pointer;
+  }
+  .party-btn.active{
+    background:var(--teal-dark);
+    border-color:var(--teal-dark);
+    color:var(--paper-pure);
+  }
+
+  /* Stateroom cards */
+  .options-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  @media(min-width:700px){
+    .options-grid{grid-template-columns:1fr 1fr 1fr;}
+  }
+  .option-card{
+    background:var(--paper-pure);
+    border:2px solid var(--pale-teal);
+    border-radius:10px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:border-color .15s ease;
+  }
+  .option-card.selected{
+    border-color:var(--gold-dark);
+  }
+  .option-card label{
+    display:block;
+    cursor:pointer;
+    height:100%;
+  }
+  .option-photo{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    display:block;
+    min-height:0;
+    min-width:0;
+    background:var(--pale-teal);
+  }
+  .option-photo-placeholder{
+    width:100%;
+    aspect-ratio:4/3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--cream);
+    color:var(--text-muted);
+    font-size:.85rem;
+    text-align:center;
+    padding:12px;
+  }
+  .option-body{
+    padding:16px 16px 18px;
+    background:var(--paper-pure);
+  }
+  .option-body h3{font-size:1.15rem;margin-bottom:4px;}
+  .option-cat{
+    display:inline-block;
+    font-size:.75rem;
+    color:var(--teal-dark);
+    background:var(--cream-light);
+    padding:2px 8px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .price-pp{
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--teal-dark);
+    font-family:'Playfair Display',serif;
+  }
+  .price-pp small{
+    font-family:'DM Sans',sans-serif;
+    font-weight:400;
+    font-size:.72rem;
+    color:var(--text-muted);
+    display:block;
+  }
+  .price-detail{
+    font-size:.85rem;
+    color:var(--text-muted);
+    margin:8px 0 0;
+    line-height:1.5;
+  }
+  .radio-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:12px;
+    font-size:.85rem;
+    color:var(--text);
+  }
+  .radio-row input[type="radio"]{
+    width:20px;height:20px;
+    accent-color:var(--teal-dark);
+    min-height:20px;
+  }
+
+  /* Sticky total bar */
+  .total-bar{
+    position:sticky;
+    bottom:0;
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:14px 0;
+    z-index:20;
+    box-shadow:0 -2px 10px rgba(0,0,0,.15);
+  }
+  .total-bar .wrap{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+  }
+  .total-bar .est{
+    font-family:'Playfair Display',serif;
+    font-size:1.3rem;
+  }
+  .total-bar .sub{
+    font-size:.78rem;
+    color:var(--cream-light);
+  }
+
+  .pricing-note{
+    background:var(--cream-light);
+    padding:16px 18px;
+    border-radius:6px;
+    margin-top:22px;
+    font-size:.92rem;
+  }
+  .pricing-note p{margin:0 0 8px;}
+  .pricing-note p:last-child{margin-bottom:0;font-size:.82rem;color:var(--text-muted);}
+
+  .commitment-bottom{
+    background:var(--cream);
+    border-radius:8px;
+    padding:22px 24px;
+    margin:30px 0;
+    font-size:1rem;
+  }
+
+  /* Form */
+  .form-section{background:var(--pale-teal);padding:36px 0;}
+  .form-card{
+    background:var(--paper-pure);
+    border-radius:10px;
+    padding:26px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .form-card h2{margin-bottom:6px;}
+  .form-row{margin-bottom:16px;}
+  .form-row label{
+    display:block;
+    font-size:.85rem;
+    font-weight:600;
+    margin-bottom:6px;
+    color:var(--text);
+  }
+  .form-row input[type="text"],
+  .form-row input[type="email"],
+  .form-row input[type="tel"],
+  .form-row select,
+  .form-row textarea{
+    width:100%;
+    padding:12px 14px;
+    font-size:16px;
+    border:1px solid var(--pale-teal);
+    border-radius:6px;
+    font-family:'DM Sans',sans-serif;
+    color:var(--text);
+    background:var(--paper);
+    min-height:44px;
+  }
+  .form-row textarea{min-height:100px;resize:vertical;}
+  .traveler-section{
+    background:var(--cream-light);
+    border-radius:8px;
+    padding:16px 16px 4px;
+    margin-bottom:20px;
+  }
+  .traveler-section h3{
+    font-family:'Playfair Display',serif;
+    color:var(--teal-dark);
+    font-size:1.05rem;
+    margin:0 0 4px;
+  }
+  .traveler-section .traveler-note{
+    font-size:.85rem;
+    color:var(--text-muted);
+    margin:0 0 14px;
+  }
+  .traveler-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  @media(min-width:600px){
+    .traveler-grid{grid-template-columns:1fr 1fr;}
+  }
+  .traveler-block{
+    background:var(--paper-pure);
+    border:1px solid var(--pale-teal);
+    border-radius:6px;
+    padding:12px 14px 14px;
+  }
+  .traveler-block .traveler-label{
+    font-size:.78rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--teal-dark);
+    margin-bottom:8px;
+    display:block;
+  }
+  .traveler-block .form-row{margin-bottom:10px;}
+  .traveler-block .form-row:last-child{margin-bottom:0;}
+
+  .submit-btn{
+    width:100%;
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    border:none;
+    border-radius:6px;
+    padding:14px 20px;
+    font-size:16px;
+    font-weight:700;
+    min-height:44px;
+    cursor:pointer;
+    font-family:'DM Sans',sans-serif;
+  }
+  .submit-btn:hover{background:var(--teal);}
+  .error-box{
+    display:none;
+    background:#F7E6E1;
+    color:#8A3B2A;
+    border-radius:6px;
+    padding:12px 14px;
+    margin-bottom:14px;
+    font-size:.9rem;
+  }
+  .thankyou{
+    display:none;
+    text-align:center;
+    padding:20px 0;
+  }
+  .thankyou h3{margin-bottom:8px;}
+
+  footer{
+    background:var(--teal-dark);
+    color:var(--paper-pure);
+    padding:28px 0 100px;
+    text-align:center;
+    font-size:.88rem;
+  }
+  footer .agent-name{font-weight:700;font-size:1rem;margin-bottom:4px;}
+  footer a{color:var(--cream-light);}
+  footer .disclaimer{
+    margin-top:16px;
+    font-size:.78rem;
+    color:var(--pale-teal);
+    max-width:60ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  @media(max-width:540px){
+    .hero-inner h1{font-size:1.5rem;}
+    section{padding:26px 0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <h1>Ellyse Roberts — Bahamas & Perfect Day</h1>
+    <p>March 19–24, 2027 &nbsp;·&nbsp; 5 nights aboard Explorer of the Seas &nbsp;·&nbsp; Port Canaveral</p>
+  </div>
+</div>
+
+<div class="commitment-top">
+  We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+</div>
+
+<section class="overview">
+  <div class="wrap">
+    <h2>The trip</h2>
+    <p>Five nights out of Port Canaveral aboard Explorer of the Seas, calling on Nassau and Perfect Day at CocoCay, March 19–24, 2027. Priced below for either two or four travelers sharing one stateroom — every price already includes prepaid gratuities split evenly across everyone traveling, so what you see per person is what it actually costs, no separate line item to work out later.</p>
+
+    <div class="note-box">
+      <strong>"Guarantee" staterooms</strong> mean Royal Caribbean assigns your exact room within that category rather than you choosing the specific location — that's part of how those come in below the price of a choose-your-own room.
+    </div>
+
+    <div class="note-box">
+      Royal Caribbean requires that at least one guest staying in the stateroom meet the line's minimum age requirement for this sailing. Your advisor can confirm the exact age before you book.
+    </div>
+
+    <h2 style="margin-top:30px;">Itinerary</h2>
+    <div class="itinerary-grid">
+      <div class="itin-day">
+        <div class="itin-date">Day 1 · Fri, Mar 19</div>
+        <h4>Port Canaveral, FL</h4>
+        <p>Board Explorer of the Seas. Ship departs 4:00 PM.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-date">Day 2 · Sat, Mar 20</div>
+        <h4>Day at Sea</h4>
+        <p>A full day on the ship — pools, dining, and everything Explorer of the Seas has on board.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-date">Day 3 · Sun, Mar 21</div>
+        <h4>Nassau, Bahamas</h4>
+        <p>Arrive 7:30 AM, depart 5:30 PM.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-date">Day 4 · Mon, Mar 22</div>
+        <h4>Perfect Day at CocoCay</h4>
+        <p>Arrive 7:00 AM, depart 5:00 PM — Royal Caribbean's private island.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-date">Day 5 · Tue, Mar 23</div>
+        <h4>Day at Sea</h4>
+        <p>Last full day on board before heading back to Port Canaveral.</p>
+      </div>
+      <div class="itin-day">
+        <div class="itin-date">Day 6 · Wed, Mar 24</div>
+        <h4>Port Canaveral, FL</h4>
+        <p>Arrive 7:00 AM. Disembarkation.</p>
+      </div>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-muted);margin-top:10px;">Times shown are scheduled arrival and departure — Royal Caribbean can adjust them for weather or operational reasons, and your advisor will confirm the final itinerary closer to sailing.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Stateroom options</h2>
+
+    <div class="party-toggle">
+      <button type="button" class="party-btn active" data-party="4">4 Travelers</button>
+      <button type="button" class="party-btn" data-party="2">2 Travelers</button>
+    </div>
+
+    <div class="options-panel" data-panel="4">
+      <div class="options-grid">
+
+        <div class="option-card selected" data-price="2567.88" data-label="Interior Stateroom" data-count="4">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/fr-lb-v-interior-living.webp" alt="Interior stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Interior Stateroom</h3>
+              <div class="price-pp">$641.97<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Total for all 4: $2,567.88<br>
+                Deposit: $400 total / $100 per person<br>
+                Balance due: $2,167.88<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom4" value="Interior Stateroom" checked>
+                <span>Select this option</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="option-card" data-price="2758.88" data-label="Ocean View Guarantee (Category YQ)" data-count="4">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/FR-Oceanview-CatF.webp" alt="Ocean view stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Ocean View Guarantee</h3>
+              <span class="option-cat">Category YQ</span>
+              <div class="price-pp">$689.72<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Total for all 4: $2,758.88<br>
+                Deposit: $400 total / $100 per person<br>
+                Balance due: $2,358.88<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom4" value="Ocean View Guarantee (Category YQ)">
+                <span>Select this option</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="option-card" data-price="3267.88" data-label="Balcony Guarantee (Category XQ)" data-count="4">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/RCI_EX_balcony-Oceanview_SR.webp" alt="Balcony stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Balcony Guarantee</h3>
+              <span class="option-cat">Category XQ</span>
+              <div class="price-pp">$816.97<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Total for all 4: $3,267.88<br>
+                Deposit: $400 total / $100 per person<br>
+                Balance due: $2,867.88<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom4" value="Balcony Guarantee (Category XQ)">
+                <span>Select this option</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+      </div>
+
+      <div class="andreas-take">
+        <span class="label">Andrea's Take</span>
+        <p class="advisor-voice">For about $48 more per person than the interior, I'd point you toward the Ocean View — a small step up for five nights at sea. The Balcony runs about $175 more per person than the Interior; worth it if a private outdoor space matters to the group, but the Ocean View is the value sweet spot here.</p>
+      </div>
+    </div>
+
+    <div class="options-panel" data-panel="2" style="display:none;">
+      <div class="options-grid">
+
+        <div class="option-card" data-price="980.94" data-label="Interior Stateroom Guarantee" data-count="2">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/fr-lb-v-interior-living.webp" alt="Interior stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Interior Stateroom Guarantee</h3>
+              <div class="price-pp">$490.47<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Cruise fare &amp; taxes: $795.94 · Gratuities: $185.00<br>
+                Grand total: $980.94<br>
+                Deposit: $200 total / $100 per person<br>
+                Balance due: $780.94<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom2" value="Interior Stateroom Guarantee" checked>
+                <span>Select this option</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="option-card" data-price="1091.94" data-label="Interior Stateroom – Choose Your Room" data-count="2">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/fr-lb-v-interior-living.webp" alt="Interior stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Interior — Choose Your Room</h3>
+              <div class="price-pp">$545.97<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Cruise fare &amp; taxes: $906.94 · Gratuities: $185.00<br>
+                Grand total: $1,091.94<br>
+                Deposit: $200 total / $100 per person<br>
+                Balance due: $891.94<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom2" value="Interior Stateroom – Choose Your Room">
+                <span>Select this option</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="option-card" data-price="1134.94" data-label="Ocean View Stateroom" data-count="2">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/FR-Oceanview-CatF.webp" alt="Ocean view stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Ocean View Stateroom</h3>
+              <div class="price-pp">$567.47<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Cruise fare &amp; taxes: $949.94 · Gratuities: $185.00<br>
+                Grand total: $1,134.94<br>
+                Deposit: $200 total / $100 per person<br>
+                Balance due: $934.94<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom2" value="Ocean View Stateroom">
+                <span>Select this option</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="option-card" data-price="1429.56" data-label="Ocean View Balcony Stateroom" data-count="2">
+          <label>
+            <img class="option-photo" src="https://www.royalcaribbeanincentives.com/content/uploads/RCI_EX_balcony-Oceanview_SR.webp" alt="Balcony stateroom aboard Explorer of the Seas">
+            <div class="option-body">
+              <h3>Ocean View Balcony</h3>
+              <div class="price-pp">$714.78<small>per person, incl. prepaid gratuities</small></div>
+              <p class="price-detail">
+                Cruise fare &amp; taxes: $1,244.56 · Gratuities: $185.00<br>
+                Grand total: $1,429.56<br>
+                Deposit: $200 total / $100 per person<br>
+                Balance due: $1,229.56<br>
+                Final payment: December 19, 2026
+              </p>
+              <div class="radio-row">
+                <input type="radio" name="stateroom2" value="Ocean View Balcony Stateroom">
+                <span>Select this option</span>
+              </div>
+            </div>
+          </label>
+        </div>
+
+      </div>
+
+      <div class="andreas-take">
+        <span class="label">Andrea's Take</span>
+        <p class="advisor-voice">For just $21.50 more per person than the standard Interior, the Ocean View is the sweet spot here. If the goal is the lowest possible price, the Interior Guarantee is hard to beat.</p>
+      </div>
+    </div>
+
+    <div class="pricing-note">
+      <p>Each price above includes your cruise fare and prepaid gratuities, split evenly across everyone traveling. We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
+      <p>Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
+    </div>
+  </div>
+</section>
+
+<div class="total-bar">
+  <div class="wrap">
+    <div>
+      <div class="est" id="estTotal">Est. $2,568</div>
+      <div class="sub" id="estSub">Interior Stateroom — 4 travelers</div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="commitment-bottom">
+      <p>What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+    </div>
+  </div>
+</section>
+
+<div class="form-section">
+  <div class="wrap">
+    <div class="form-card">
+      <h2>Ready to move forward?</h2>
+      <p style="color:var(--text-muted);font-size:.92rem;">Let us know which stateroom you're leaning toward and we'll get the deposit and paperwork moving.</p>
+
+      <div class="error-box" id="errorBox">Something didn't go through — please try again, or reach out directly.</div>
+
+      <form id="quoteForm">
+        <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+        <input type="hidden" name="subject" value="Quote Response — Ellyse Roberts | Bahamas & Perfect Day – Explorer of the Seas">
+        <input type="hidden" name="from_name" value="Ellyse Roberts Quote — Point Me to Paradise">
+        <input type="hidden" name="redirect" value="false">
+        <input type="hidden" name="selected_stateroom" id="hiddenStateroom" value="Interior Stateroom">
+        <input type="hidden" name="estimated_total" id="hiddenTotal" value="$2,567.88">
+        <input type="hidden" name="party_size" id="hiddenPartySize" value="4">
+
+        <div class="form-row">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div class="traveler-section">
+          <h3>Want us to hold your room?</h3>
+          <p class="traveler-note">Give us each traveler's name as it appears on a government ID, and date of birth if you have it handy — this is what we'll use to place a courtesy hold with Royal Caribbean. Not required to send this quote.</p>
+          <div class="traveler-grid">
+            <div class="traveler-block">
+              <span class="traveler-label">Traveler 1</span>
+              <div class="form-row">
+                <label for="t1name">Full name</label>
+                <input type="text" id="t1name" name="traveler1_name">
+              </div>
+              <div class="form-row">
+                <label for="t1dob">Date of birth</label>
+                <input type="text" id="t1dob" name="traveler1_dob" placeholder="MM/DD/YYYY">
+              </div>
+            </div>
+            <div class="traveler-block">
+              <span class="traveler-label">Traveler 2</span>
+              <div class="form-row">
+                <label for="t2name">Full name</label>
+                <input type="text" id="t2name" name="traveler2_name">
+              </div>
+              <div class="form-row">
+                <label for="t2dob">Date of birth</label>
+                <input type="text" id="t2dob" name="traveler2_dob" placeholder="MM/DD/YYYY">
+              </div>
+            </div>
+            <div class="traveler-block">
+              <span class="traveler-label">Traveler 3</span>
+              <div class="form-row">
+                <label for="t3name">Full name</label>
+                <input type="text" id="t3name" name="traveler3_name">
+              </div>
+              <div class="form-row">
+                <label for="t3dob">Date of birth</label>
+                <input type="text" id="t3dob" name="traveler3_dob" placeholder="MM/DD/YYYY">
+              </div>
+            </div>
+            <div class="traveler-block">
+              <span class="traveler-label">Traveler 4</span>
+              <div class="form-row">
+                <label for="t4name">Full name</label>
+                <input type="text" id="t4name" name="traveler4_name">
+              </div>
+              <div class="form-row">
+                <label for="t4dob">Date of birth</label>
+                <input type="text" id="t4dob" name="traveler4_dob" placeholder="MM/DD/YYYY">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="optionInterest">Which stateroom are you leaning toward?</label>
+          <select id="optionInterest" name="option_interest">
+            <optgroup label="4 Travelers">
+              <option value="Interior Stateroom">Interior Stateroom</option>
+              <option value="Ocean View Guarantee (Category YQ)">Ocean View Guarantee (Category YQ)</option>
+              <option value="Balcony Guarantee (Category XQ)">Balcony Guarantee (Category XQ)</option>
+            </optgroup>
+            <optgroup label="2 Travelers">
+              <option value="Interior Stateroom Guarantee">Interior Stateroom Guarantee</option>
+              <option value="Interior Stateroom – Choose Your Room">Interior Stateroom – Choose Your Room</option>
+              <option value="Ocean View Stateroom">Ocean View Stateroom</option>
+              <option value="Ocean View Balcony Stateroom">Ocean View Balcony Stateroom</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="insurance">Travel insurance</label>
+          <select id="insurance" name="travel_insurance">
+            <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+            <option value="No — not interested">No — not interested</option>
+            <option value="Already have coverage">Already have coverage</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send to Andrea</button>
+      </form>
+
+      <div class="thankyou" id="thankyou">
+        <h3>Thanks, that's in Andrea's inbox.</h3>
+        <p>She'll follow up shortly to lock in your deposit and next steps.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="agent-name">Andrea Gunter</div>
+    <div>Point Me to Paradise Travel</div>
+    <div><a href="#" id="emailLink"></a> &nbsp;·&nbsp; 409-789-3579</div>
+    <div class="disclaimer">Prices and availability are subject to change until time of booking.</div>
+  </div>
+</footer>
+
+<script>
+  // Assemble advisor email at runtime (avoid Cloudflare scrambling of hardcoded emails)
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var el = document.getElementById('emailLink');
+    el.href = 'mailto:' + addr;
+    el.textContent = addr;
+  })();
+
+  // Stateroom selection -> running total + hidden fields
+  var cards = document.querySelectorAll('.option-card');
+  var estTotal = document.getElementById('estTotal');
+  var estSub = document.getElementById('estSub');
+  var hiddenStateroom = document.getElementById('hiddenStateroom');
+  var hiddenTotal = document.getElementById('hiddenTotal');
+  var hiddenPartySize = document.getElementById('hiddenPartySize');
+  var optionInterest = document.getElementById('optionInterest');
+  var partyButtons = document.querySelectorAll('.party-btn');
+  var panels = document.querySelectorAll('.options-panel');
+  var activeParty = '4';
+
+  function fmtMoney(v){
+    return '$' + v.toLocaleString('en-US', {minimumFractionDigits:0, maximumFractionDigits:0});
+  }
+  function fmtMoneyCents(v){
+    return '$' + v.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  }
+
+  function updateTotal(){
+    var checked = document.querySelector('input[name="stateroom' + activeParty + '"]:checked');
+    if(!checked) return;
+    var card = checked.closest('.option-card');
+    var price = parseFloat(card.getAttribute('data-price'));
+    var label = card.getAttribute('data-label');
+    var count = card.getAttribute('data-count');
+
+    cards.forEach(function(c){ c.classList.remove('selected'); });
+    card.classList.add('selected');
+
+    estTotal.textContent = 'Est. ' + fmtMoney(price);
+    estSub.textContent = label + ' — ' + count + ' travelers';
+
+    hiddenStateroom.value = label;
+    hiddenTotal.value = fmtMoneyCents(price);
+    hiddenPartySize.value = count;
+
+    if(optionInterest){ optionInterest.value = label; }
+  }
+
+  document.querySelectorAll('input[name="stateroom4"], input[name="stateroom2"]').forEach(function(r){
+    r.addEventListener('change', function(){ setTimeout(updateTotal, 0); });
+  });
+
+  partyButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      activeParty = btn.getAttribute('data-party');
+      partyButtons.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      panels.forEach(function(p){
+        p.style.display = (p.getAttribute('data-panel') === activeParty) ? '' : 'none';
+      });
+      updateTotal();
+    });
+  });
+
+  updateTotal();
+
+  // Web3Forms submission via fetch — never native POST
+  var form = document.getElementById('quoteForm');
+  var errorBox = document.getElementById('errorBox');
+  var thankyou = document.getElementById('thankyou');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorBox.style.display = 'none';
+
+    var formData = new FormData(form);
+    var payload = Object.fromEntries(formData.entries());
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if(data.success){
+        form.style.display = 'none';
+        thankyou.style.display = 'block';
+      } else {
+        errorBox.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      errorBox.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
