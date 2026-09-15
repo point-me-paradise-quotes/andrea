@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kayla Wisdom — Anniversary Getaway Quote | Point Me to Paradise Travel</title>
+<meta name="description" content="Four all-inclusive resort options for Kayla's anniversary trip, May 6-10, 2027 — Jamaica, Tulum, Playa Mujeres, and the Dominican Republic.">
+<meta property="og:title" content="Kayla Wisdom — Anniversary Getaway Quote">
+<meta property="og:description" content="Four resort options for May 6-10, 2027 — Jamaica, Tulum, Playa Mujeres, and the Dominican Republic.">
+<meta property="og:image" content="https://media.cntraveller.com/photos/6899b9feab86157d3c2e915d/4:3/w_4852,h_3639,c_limit/Anguilla_Caribbean_110825_GettyImages-1497182850.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1; --teal-dark:#4F8A8C; --pale-teal:#C4E4E1;
+    --gold:#DAC396; --gold-dark:#B89E6A; --cream:#E9DEC0; --cream-light:#F5EFDF;
+    --paper:#FBF9F4; --paper-pure:#FFFFFF;
+    --text:#3D3D3D; --text-muted:#606060;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--text);
+    font-family:'DM Sans', sans-serif; font-size:16px; line-height:1.6;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display', serif; color:var(--teal-dark); margin:0 0 .5em;}
+  .andrea-voice{font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.15rem; color:var(--text);}
+  .wrap{max-width:980px; margin:0 auto; padding:0 20px;}
+  img{max-width:100%; display:block;}
+
+  /* HERO */
+  .hero{
+    background:
+      linear-gradient(135deg, rgba(79,138,140,.82) 0%, rgba(117,175,177,.72) 55%, rgba(184,158,106,.75) 130%),
+      url('https://media.cntraveller.com/photos/6899b9feab86157d3c2e915d/4:3/w_4852,h_3639,c_limit/Anguilla_Caribbean_110825_GettyImages-1497182850.jpg') center/cover no-repeat;
+    color:#fff; padding:84px 20px 56px; text-align:center;
+  }
+  .hero h1{color:#fff; font-size:2.1rem; margin-bottom:.3em;}
+  .hero .sub{font-size:1.05rem; opacity:.95;}
+  .hero .dates{margin-top:14px; font-size:1rem; background:rgba(255,255,255,.15); display:inline-block; padding:8px 18px; border-radius:30px;}
+
+  /* CALLOUT */
+  .callout{
+    background:var(--cream-light); border-left:5px solid var(--gold-dark);
+    padding:18px 22px; margin:0; font-size:1rem;
+  }
+  .callout p{margin:0; max-width:980px; margin:0 auto;}
+
+  section{padding:40px 20px;}
+  .section-title{text-align:center; margin-bottom:8px;}
+  .section-intro{text-align:center; color:var(--text-muted); max-width:680px; margin:0 auto 28px;}
+
+  /* STICKY TOTAL BAR */
+  .sticky-total{
+    position:sticky; top:0; z-index:50; background:var(--paper-pure);
+    border-bottom:2px solid var(--pale-teal); padding:12px 20px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;
+  }
+  .sticky-total .label{font-size:.85rem; color:var(--text-muted);}
+  .sticky-total .amount{font-family:'Playfair Display', serif; font-size:1.5rem; color:var(--teal-dark); font-weight:700;}
+  .sticky-total .resort-name{font-size:.9rem; color:var(--text);}
+
+  /* RESORT CARDS */
+  .resort-grid{display:flex; flex-direction:column; gap:28px;}
+  .resort-card{
+    background:var(--paper-pure); border:1px solid var(--pale-teal); border-radius:14px;
+    overflow:hidden;
+  }
+  .resort-card.selected{border-color:var(--gold-dark); box-shadow:0 0 0 2px var(--gold);}
+  .resort-head{
+    display:flex; align-items:flex-start; gap:14px; padding:20px 22px 0;
+  }
+  .resort-head input[type=radio]{
+    width:26px; height:26px; min-width:26px; margin-top:4px; accent-color:var(--teal-dark); cursor:pointer;
+  }
+  .resort-head label{cursor:pointer; flex:1;}
+  .resort-badges{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 0;}
+  .badge{
+    font-size:.78rem; padding:4px 10px; border-radius:20px; background:var(--pale-teal); color:var(--teal-dark); font-weight:600;
+  }
+  .badge.gold{background:var(--cream); color:var(--gold-dark);}
+  .badge.note{background:var(--cream-light); color:var(--text-muted); font-weight:400;}
+  .resort-body{padding:16px 22px 24px;}
+  .gallery{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:16px 0; min-height:0;
+  }
+  .gallery img{width:100%; height:140px; object-fit:cover; border-radius:8px; min-width:0; min-height:0;}
+  .gallery-placeholder{
+    grid-column:1/-1; height:180px; border-radius:10px;
+    background:linear-gradient(135deg, var(--teal-dark), var(--gold-dark));
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+  }
+  .gallery-placeholder span{
+    font-family:'Playfair Display', serif; color:#fff; font-size:1.3rem; text-align:center; padding:0 20px;
+  }
+  .desc{margin:14px 0;}
+  .not-included{
+    display:inline-block; background:var(--gold); color:var(--text); font-size:.78rem;
+    font-weight:700; padding:2px 8px; border-radius:5px; margin-left:6px; vertical-align:middle;
+  }
+  .facts-table{width:100%; border-collapse:collapse; margin:16px 0; font-size:.95rem;}
+  .facts-table td{padding:7px 4px; border-bottom:1px solid var(--cream);}
+  .facts-table td:first-child{color:var(--text-muted); width:44%;}
+  .price-total{font-weight:700; color:var(--teal-dark);}
+  .advisor-note{
+    background:var(--cream-light); border-radius:8px; padding:12px 16px; margin-top:14px; font-size:.9rem; color:var(--text-muted);
+  }
+  .transfer-flight{
+    display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px;
+  }
+  .tf-box{background:var(--paper); border:1px solid var(--pale-teal); border-radius:8px; padding:12px 14px; font-size:.92rem;}
+  .tf-box h4{font-size:.95rem; margin-bottom:4px;}
+
+  /* COMPARISON TABLE */
+  .compare-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+  table.compare{
+    width:100%; min-width:640px; border-collapse:collapse; background:var(--paper-pure);
+    border-radius:10px; overflow:hidden; font-size:.92rem;
+  }
+  table.compare th, table.compare td{padding:12px 14px; text-align:left; border-bottom:1px solid var(--cream);}
+  table.compare th{background:var(--teal-dark); color:#fff; font-family:'Playfair Display', serif; font-weight:500;}
+  table.compare tr:nth-child(even){background:var(--cream-light);}
+  .compare-note{font-size:.85rem; color:var(--text-muted); margin-top:10px;}
+
+  /* DESTINATION SECTION */
+  .dest-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:24px;}
+  .dest-card{background:var(--paper-pure); border:1px solid var(--pale-teal); border-radius:10px; padding:18px 20px;}
+  .dest-card h4{margin-bottom:6px;}
+
+  .andrea-box{
+    background:var(--cream-light); border-radius:12px; padding:22px 24px; margin:28px auto 0; max-width:760px; text-align:center;
+  }
+
+  .pricing-note{background:var(--paper-pure); border:1px solid var(--pale-teal); border-radius:10px; padding:18px 20px; margin-top:24px; max-width:760px; margin-left:auto; margin-right:auto; font-size:.95rem;}
+  .pricing-disclaimer{font-size:.82rem; color:var(--text-muted); margin-top:8px;}
+
+  .bottom-callout{
+    background:var(--teal-dark); color:#fff; text-align:center; padding:34px 20px;
+  }
+  .bottom-callout p{max-width:720px; margin:0 auto; font-size:1.05rem;}
+
+  /* FORM */
+  .contact-section{background:var(--paper-pure);}
+  form{max-width:560px; margin:0 auto;}
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-weight:600; margin-bottom:6px; font-size:.92rem;}
+  .field input, .field select, .field textarea{
+    width:100%; padding:12px 14px; font-size:16px; border:1px solid var(--pale-teal);
+    border-radius:8px; font-family:'DM Sans', sans-serif; background:var(--paper); min-height:44px;
+  }
+  .field textarea{min-height:100px; resize:vertical;}
+  .submit-btn{
+    background:var(--teal-dark); color:#fff; border:none; padding:14px 26px; border-radius:30px;
+    font-size:1rem; font-weight:600; cursor:pointer; min-height:44px; width:100%;
+  }
+  .submit-btn:hover{background:var(--gold-dark);}
+  .form-error{
+    background:#fdecec; border:1px solid #e0a0a0; color:#7a2e2e; padding:10px 14px; border-radius:8px;
+    margin-bottom:14px; font-size:.9rem; display:none;
+  }
+  .thank-you{display:none; text-align:center; padding:30px 20px;}
+  .thank-you h3{margin-bottom:10px;}
+
+  footer{
+    background:var(--teal-dark); color:#fff; text-align:center; padding:32px 20px; font-size:.9rem;
+  }
+  footer a{color:#fff;}
+  footer .disclaimer{opacity:.85; font-size:.82rem; margin-top:14px; max-width:600px; margin-left:auto; margin-right:auto;}
+
+  @media (max-width:540px){
+    .gallery{grid-template-columns:1fr 1fr;}
+    .dest-grid{grid-template-columns:1fr;}
+    .transfer-flight{grid-template-columns:1fr;}
+    .hero h1{font-size:1.6rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Kayla — Your Anniversary Getaway</h1>
+    <div class="sub">Four all-inclusive options, side by side, so the choice is easy</div>
+    <div class="dates">May 6 – May 10, 2027 · 4 Nights · 2 Adults</div>
+  </div>
+</div>
+
+<div class="callout">
+  <p>We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.</p>
+</div>
+
+<div class="sticky-total" id="stickyTotal">
+  <div>
+    <div class="label">Currently selected</div>
+    <div class="resort-name" id="stickyResortName">Sandals Ochi — Ocho Rios, Jamaica</div>
+  </div>
+  <div class="amount" id="stickyAmount">Est. $2,493</div>
+</div>
+
+<section id="resorts">
+  <h2 class="section-title">Choose Your Resort</h2>
+  <p class="section-intro">Every option below is priced for 2 adults, 4 nights, May 6–10, 2027. Pick the one that feels right — the total updates as you go.</p>
+
+  <div class="resort-grid">
+
+    <!-- RESORT 1: SANDALS OCHI -->
+    <div class="resort-card selected" id="card-r1">
+      <div class="resort-head">
+        <input type="radio" name="resortChoice" id="r1" checked
+          data-name="Sandals Ochi — Ocho Rios, Jamaica" data-total="2493">
+        <label for="r1">
+          <h3>Sandals Ochi</h3>
+          <div style="color:var(--text-muted);">Ocho Rios, Jamaica</div>
+          <div class="resort-badges">
+            <span class="badge">Adults Only</span>
+            <span class="badge">All-Inclusive</span>
+            <span class="badge gold">Great House Luxury Room</span>
+          </div>
+        </label>
+      </div>
+      <div class="resort-body">
+        <div class="gallery">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/79/4f/42/pools.jpg?w=900&h=-1&s=1" alt="Sandals Ochi pool grounds">
+          <img src="https://assets.simpleviewinc.com/simpleview/image/upload/crm/jamaica/Ocho1218mk0-31cc980f5056a36_31cc9ac9-5056-a36a-0713d4ec65d36c36.jpg" alt="Ocho Rios coastline">
+          <img src="https://images.trvl-media.com/lodging/1000000/610000/604200/604152/9063a833.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Sandals Ochi Great House Luxury room">
+        </div>
+        <p class="desc">Ocho Rios sits on Jamaica's north coast, about an hour and a half to two hours by resort transfer from Montego Bay. The Great House Luxury room sits close to the property's restaurants and bars — mahogany furniture, a private balcony, a shower/tub combo bathroom. It's an adults-only, all-in stay: meals, top-shelf pours, pools, land and water activities, entertainment, Wi-Fi, gratuities, and round-trip transfers are already folded into the total below.</p>
+        <p class="desc"><strong>Beach:</strong> one long stretch of white sand split into three areas — a lively main beach, a calmer lagoon, and a dedicated watersports beach — with clear, generally calm water. <strong>Pools:</strong> seven pools and four whirlpools, including a lively main pool with a swim-up bar and the quieter Great House Pool tucked back near the butler village. <strong>Dining:</strong> 16 restaurants covering Caribbean, French, Italian, Japanese, and Southern American menus — Kimonos for hibachi-style teppanyaki, Soy Sushi Bar, Kelly's Dockside for over-the-water seafood, Le Gourmand for French, Valentino's for Italian, the Jerk Shack for jerk chicken, and Southern Table for breakfast. <strong>Bars:</strong> swim-up bars at most pools, beachfront spots like the Oceans Beach Bar, and The Rabbit Hole speakeasy for evening cocktails and live entertainment.</p>
+        <p class="andrea-voice">"For a four-night restart, this is the one I keep coming back to — the $98 hold is low, cancellation stays free through March 20, and almost nothing is left to pay once you land." — Andrea</p>
+        <table class="facts-table">
+          <tr><td>Nights / Dates</td><td>4 nights, May 6–10, 2027</td></tr>
+          <tr><td>Room</td><td>Great House Luxury (Room Code ML)</td></tr>
+          <tr><td>Vacation Total</td><td class="price-total">$2,493.00</td></tr>
+          <tr><td>Per person</td><td>Approx. $1,246.50 ($312 per person, per night)</td></tr>
+          <tr><td>Hold Room</td><td>$98.00</td></tr>
+          <tr><td>Cancellation</td><td>Free through March 20, 2027 — penalties begin March 21, 2027</td></tr>
+        </table>
+        <div class="advisor-note">A second room category is also available at Sandals Ochi — ask your advisor for options and pricing beyond the Great House Luxury room shown here.</div>
+        <div class="transfer-flight">
+          <div class="tf-box"><h4>Getting there</h4>Nonstop from Houston (IAH) to Montego Bay (MBJ) — about 3 hrs 25 min, United Airlines.</div>
+          <div class="tf-box"><h4>Airport transfer</h4>Round-trip Sandals transfer included in your package — about 1.5–2 hours from Montego Bay to Ocho Rios.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESORT 2: AZULIK TULUM -->
+    <div class="resort-card" id="card-r2">
+      <div class="resort-head">
+        <input type="radio" name="resortChoice" id="r2"
+          data-name="Azulik Tulum — Tulum, Mexico" data-total="2247.03">
+        <label for="r2">
+          <h3>Azulik Tulum</h3>
+          <div style="color:var(--text-muted);">Tulum, Mexico</div>
+          <div class="resort-badges">
+            <span class="badge">Adults Only</span>
+            <span class="badge gold">Jungle Villa</span>
+            <span class="badge note">Not all-inclusive</span>
+          </div>
+        </label>
+      </div>
+      <div class="resort-body">
+        <div class="gallery">
+          <img src="https://img.cdnpth.com/media/100019/de4cd791-7613-45d6-96c0-3d744d34421d.jpg" alt="Azulik Tulum jungle villa">
+          <img src="https://img.cdnpth.com/media/100019/c26e6c3c-d85b-46b6-8cea-b1ba6e6d913b.jpg" alt="Azulik Tulum architecture">
+          <img src="https://img.cdnpth.com/media/100019/0ec3268d-a436-4232-95d9-6f5c9b4ed882.jpg" alt="Azulik Tulum interior">
+        </div>
+        <p class="desc">Azulik isn't a beach resort in the usual sense — it's built up into the Tulum jungle on elevated wooden walkways, with rooms designed to look out rather than in. The Jungle Villa has a queen bed, jungle views, an indoor bathtub, an outdoor Mayan-style tub, air conditioning, a ceiling fan, and Wi-Fi. <span class="not-included">Not included</span> meals, alcoholic beverages, spa treatments, and other extras run separately from the room rate — Azulik's model is closer to a boutique hotel than a traditional all-inclusive.</p>
+        <p class="desc"><strong>Beach:</strong> a private stretch of shoreline with a beach club for daytime lounging and sunset dining — there's no communal swimming pool here; instead, private plunge pools and outdoor tubs are built into select villas. <strong>Dining:</strong> three restaurants — Kin Toh, a tasting-menu restaurant built into treetop "nests" 12 meters up with Mayan-avant-garde plates; Tseen Ja, Japanese with sea views; and Cenote, the most casual of the three, open from breakfast through dinner with a farm-to-table, vegetarian-friendly menu. <strong>Bars:</strong> several spread across the property, including a mezcalería, with a drinks program that leans botanical and herb-forward rather than classic tiki.</p>
+        <p class="andrea-voice">"This is the one I send to couples who've already done a standard resort and want something that doesn't feel like every other trip. It's a different kind of luxury — rustic on purpose — so go in knowing meals and drinks are separate." — Andrea</p>
+        <table class="facts-table">
+          <tr><td>Nights / Dates</td><td>4 nights, May 6–10, 2027</td></tr>
+          <tr><td>Room</td><td>Jungle Villa</td></tr>
+          <tr><td>Hotel Total</td><td class="price-total">$2,247.03</td></tr>
+          <tr><td>Per person</td><td>Approx. $1,123.52 (~$280.88 per person, per night)</td></tr>
+          <tr><td>Resort Fee</td><td>$8, paid directly to the resort <span class="not-included">Paid at property</span> — your advisor will confirm whether this is nightly or for the full stay</td></tr>
+          <tr><td>Payment</td><td>Book now, pay later — full payment due April 3, 2027</td></tr>
+        </table>
+        <div class="advisor-note">A second room category is also available at Azulik — ask your advisor for options and pricing beyond the Jungle Villa shown here.</div>
+        <div class="transfer-flight">
+          <div class="tf-box"><h4>Getting there — two airports</h4>
+            <strong>Tulum (TQO):</strong> nonstop from Houston, about 2 hrs 25 min (United), fewer weekly departures.<br><br>
+            <strong>Cancún (CUN):</strong> nonstop from Houston, about 2 hrs 15–25 min (United, Frontier, Southwest), more flights to choose from.
+          </div>
+          <div class="tf-box"><h4>Airport transfer</h4>Not included — your advisor will help arrange it once flights are booked.<br><br>
+            From <strong>Tulum Airport:</strong> typically 45–50 minutes to Azulik.<br>
+            From <strong>Cancún Airport:</strong> typically 1 hr 45 min–2 hrs.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESORT 3: SLS PLAYA MUJERES -->
+    <div class="resort-card" id="card-r3">
+      <div class="resort-head">
+        <input type="radio" name="resortChoice" id="r3"
+          data-name="SLS Playa Mujeres — Playa Mujeres, Mexico" data-total="2106.64">
+        <label for="r3">
+          <h3>SLS Playa Mujeres</h3>
+          <div style="color:var(--text-muted);">Playa Mujeres, Mexico — All-Inclusive Collection</div>
+          <div class="resort-badges">
+            <span class="badge">All-Inclusive</span>
+            <span class="badge gold">Delight King Room</span>
+            <span class="badge note">Not adults-only</span>
+          </div>
+        </label>
+      </div>
+      <div class="resort-body">
+        <div class="gallery">
+          <img src="https://images.trvl-media.com/lodging/108000000/107720000/107713000/107712995/24bc9a53.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="SLS Playa Mujeres Delight King room">
+          <img src="https://images.trvl-media.com/lodging/108000000/107720000/107713000/107712995/8da4ed44.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="SLS Playa Mujeres room view">
+          <img src="https://images.trvl-media.com/lodging/108000000/107720000/107713000/107712995/e35a4241.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="SLS Playa Mujeres bathroom">
+          <img src="https://images.trvl-media.com/lodging/108000000/107720000/107713000/107712995/b5fcfdd9.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="SLS Playa Mujeres resort grounds">
+        </div>
+        <p class="desc">SLS Playa Mujeres reads more like a design hotel than a classic all-inclusive — beachfront setting, multiple pools, upscale dining, and the brand's usual social energy, with meals, drinks, and activities included in the rate. It isn't an adults-only property, but it's built with distinct adult-facing spaces and a more grown-up feel than a typical family all-inclusive nearby. It's also the most convenient of the four for a short trip — about 35 to 45 minutes from Cancún International Airport.</p>
+        <p class="desc"><strong>Beach:</strong> a private beach with white sand and calm, clear water, free loungers and umbrellas, and three beach bars. <strong>Pools:</strong> four pools, including Privilege, an adults-only pool with a swim-up bar and DJ-driven music. <strong>Dining:</strong> 18 restaurants and bars — Fi'lia for handmade pasta and wood-fired pizza, Union for New York-style steakhouse fare, Caracol for wood-fired seafood from chef Hugo Ortega, and Smoke & Mirrors, a speakeasy-style cigar and cocktail bar.</p>
+        <p class="andrea-voice">"For a short four-night trip, this is the one with the easiest travel day — you're 35 to 45 minutes from baggage claim to check-in." — Andrea</p>
+        <table class="facts-table">
+          <tr><td>Nights / Dates</td><td>4 nights, May 6–10, 2027</td></tr>
+          <tr><td>Room</td><td>Delight King</td></tr>
+          <tr><td>Room</td><td>$1,727.28</td></tr>
+          <tr><td>Taxes & fees</td><td>$379.36</td></tr>
+          <tr><td>Total</td><td class="price-total">$2,106.64</td></tr>
+          <tr><td>Per person</td><td>Approx. $1,053.32 (~$263.33 per person, per night)</td></tr>
+          <tr><td>Deposit / final payment</td><td>Your advisor will confirm deposit and final payment timing for this property.</td></tr>
+        </table>
+        <div class="advisor-note">A second room category is also available at SLS Playa Mujeres — ask your advisor for options and pricing beyond the Delight King room shown here.</div>
+        <div class="transfer-flight">
+          <div class="tf-box"><h4>Getting there</h4>Nonstop from Houston to Cancún (CUN) — about 2 hrs 15–25 min, multiple flights daily (United, Frontier, Southwest).</div>
+          <div class="tf-box"><h4>Airport transfer</h4>Not included — can be booked once flights are confirmed. About 35–45 minutes from Cancún International Airport.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESORT 4: ZEMI MICHES -->
+    <div class="resort-card" id="card-r4">
+      <div class="resort-head">
+        <input type="radio" name="resortChoice" id="r4"
+          data-name="Zemi Miches — Miches, Dominican Republic" data-total="2042.90">
+        <label for="r4">
+          <h3>Zemi Miches</h3>
+          <div style="color:var(--text-muted);">Miches, Dominican Republic — Curio Collection by Hilton</div>
+          <div class="resort-badges">
+            <span class="badge">All-Inclusive</span>
+            <span class="badge gold">Tropical King Room</span>
+          </div>
+        </label>
+      </div>
+      <div class="resort-body">
+        <div class="gallery">
+          <img src="https://images.trvl-media.com/lodging/105000000/104250000/104244500/104244461/e07f7130.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Zemi Miches Tropical King room">
+          <img src="https://images.trvl-media.com/lodging/105000000/104250000/104244500/104244461/w5755h3835x5y5-2bcc60de.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Zemi Miches resort grounds">
+          <img src="https://images.trvl-media.com/lodging/105000000/104250000/104244500/104244461/c7d4dc71.jpg?impolicy=resizecrop&rw=1200&ra=fit" alt="Zemi Miches beach">
+        </div>
+        <p class="desc">Zemi Miches sits on the Dominican Republic's northeastern coast, in El Seibo province — a newer, quieter stretch of coastline than the main Punta Cana hotel zone, with mountains behind it and open beach in front. The resort combines Taíno- and Dominican-inspired design with multiple restaurants, bars, and pools as part of the all-inclusive rate. It's the newest of the four and the quietest setting — the trade-off is the longest airport transfer of the group.</p>
+        <p class="desc"><strong>Beach:</strong> Playa Esmeralda, a white-sand beach along the resort's private stretch of coastline. <strong>Pools:</strong> four pools, including a rooftop infinity pool for Club Azure guests and private plunge pools built into ground-floor suites. <strong>Dining:</strong> around 17 restaurants, bars, and lounges spanning Caribbean, Taíno, Thai, and Amalfi Coast menus — Anacaona serves local Taíno-inspired cuisine, with additional venues for Dominican coffee and casual all-day fare. <strong>Bars:</strong> a lobby bar, a beachside cocktail bar, and multiple swim-up pool bars.</p>
+        <p class="andrea-voice">"Newest of the four and the quietest setting — the trade-off is the longest airport transfer of the group." — Andrea</p>
+        <table class="facts-table">
+          <tr><td>Nights / Dates</td><td>4 nights, May 6–10, 2027</td></tr>
+          <tr><td>Room</td><td>Tropical King (1 King Bed)</td></tr>
+          <tr><td>Resort Total</td><td class="price-total">$2,042.90</td></tr>
+          <tr><td>Per person</td><td>Approx. $1,021.45 (~$255.36 per person, per night)</td></tr>
+          <tr><td>Payment</td><td>Book now, pay later — full payment due April 19, 2027</td></tr>
+        </table>
+        <div class="advisor-note">A second room category is also available — ask your advisor for options beyond the Tropical King room shown here.</div>
+        <div class="transfer-flight">
+          <div class="tf-box"><h4>Getting there</h4>Nonstop from Houston to Punta Cana (PUJ) — about 4 hrs 15–25 min, United Airlines.</div>
+          <div class="tf-box"><h4>Airport transfer</h4>Not included — can be added once flights are booked. About 90 minutes from Punta Cana International Airport.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="comparison" style="background:var(--cream-light);">
+  <h2 class="section-title">Resort Comparison</h2>
+  <div class="andrea-box">
+    <p class="andrea-voice">"These four are ones I keep coming back to at this price point — each does something the others don't, so the right pick comes down to what kind of four nights you want." — Andrea</p>
+  </div>
+  <div class="compare-scroll" style="margin-top:24px;">
+    <table class="compare">
+      <tr>
+        <th>Resort</th>
+        <th>Total (2 guests, 4 nights)</th>
+        <th>Per person / night</th>
+        <th>Style</th>
+        <th>Adults Only</th>
+        <th>Flight from Houston</th>
+        <th>Airport Transfer</th>
+      </tr>
+      <tr>
+        <td>Sandals Ochi</td>
+        <td>$2,493.00</td>
+        <td>$312</td>
+        <td>Classic all-inclusive</td>
+        <td>Yes</td>
+        <td>~3h 25m nonstop (MBJ)</td>
+        <td>Included, ~1.5–2 hrs</td>
+      </tr>
+      <tr>
+        <td>Azulik Tulum</td>
+        <td>$2,247.03</td>
+        <td>~$280.88</td>
+        <td>Boutique / not all-inclusive</td>
+        <td>Yes</td>
+        <td>~2h 25m nonstop (TQO or CUN)</td>
+        <td>Not included, 45 min–2 hrs</td>
+      </tr>
+      <tr>
+        <td>SLS Playa Mujeres</td>
+        <td>$2,106.64</td>
+        <td>~$263.33</td>
+        <td>Modern all-inclusive</td>
+        <td>No (adult-facing areas)</td>
+        <td>~2h 15–25m nonstop (CUN)</td>
+        <td>Not included, ~35–45 min</td>
+      </tr>
+      <tr>
+        <td>Zemi Miches</td>
+        <td>$2,042.90</td>
+        <td>~$255.36</td>
+        <td>Newer, secluded all-inclusive</td>
+        <td>Not specified</td>
+        <td>~4h 15–25m nonstop (PUJ)</td>
+        <td>Not included, ~90 min</td>
+      </tr>
+    </table>
+  </div>
+  <p class="compare-note">Zemi Miches has the lowest total of the four as priced here, for two guests over four nights. Sandals Ochi's per-night figure already includes meals, drinks, activities, gratuities, and round-trip transfers — the other three are room rate only, with meals, drinks, and/or transfers priced separately — so the per-night numbers aren't a fully apples-to-apples comparison.</p>
+</section>
+
+<section id="destinations">
+  <h2 class="section-title">Destination Comparison</h2>
+  <p class="section-intro">Same trip length, four very different four nights.</p>
+  <div class="dest-grid">
+    <div class="dest-card">
+      <h4>Ocho Rios, Jamaica</h4>
+      <p>A classic all-inclusive hillside resort town on Jamaica's north coast — lush, established, and set up for a couple who wants everything decided for them once they land.</p>
+    </div>
+    <div class="dest-card">
+      <h4>Tulum, Mexico</h4>
+      <p>Jungle meets coastline. Tulum's hotel zone is known for boutique, design-forward properties like Azulik — art, wellness, and atmosphere over a traditional resort format.</p>
+    </div>
+    <div class="dest-card">
+      <h4>Playa Mujeres, Mexico</h4>
+      <p>Just north of Cancún — a newer, more stylish all-inclusive corridor with the shortest flight and shortest transfer of the group, good for a shorter trip.</p>
+    </div>
+    <div class="dest-card">
+      <h4>Miches, Dominican Republic</h4>
+      <p>The Dominican Republic's northeastern coast, backed by mountains and well outside the busier Punta Cana strip — the newest and most secluded of the four, at the cost of the longest transfer.</p>
+    </div>
+  </div>
+</section>
+
+<div class="pricing-note">
+  <p>We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
+  <div style="text-align:center; margin:16px 0 4px;">
+    <div class="label" style="color:var(--text-muted); font-size:.85rem;">Estimated total for your selection</div>
+    <div class="amount" style="font-family:'Playfair Display', serif; font-size:2rem; color:var(--teal-dark); font-weight:700;" id="totalDisplay">Est. $2,493</div>
+  </div>
+  <p class="pricing-disclaimer">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
+</div>
+
+<div class="bottom-callout">
+  <p>What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+</div>
+
+<section class="contact-section" id="contact">
+  <h2 class="section-title">Let's Lock In Your Anniversary Trip</h2>
+  <p class="section-intro">Tell us which resort you're leaning toward and we'll take it from here.</p>
+
+  <div id="formError" class="form-error">Something went wrong sending your message — please try again, or reach out directly at the contact info below.</div>
+
+  <form id="quoteForm">
+    <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+    <input type="hidden" name="subject" id="hiddenSubject" value="Quote Response — Kayla Wisdom | Sandals Ochi, Jamaica">
+    <input type="hidden" name="from_name" value="Kayla Wisdom Quote — Point Me to Paradise">
+    <input type="hidden" name="redirect" value="false">
+    <input type="hidden" name="selected_resort" id="hiddenResort" value="Sandals Ochi — Ocho Rios, Jamaica">
+
+    <div class="field">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="field">
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="field">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone">
+    </div>
+    <div class="field">
+      <label for="option_interest">Which resort are you most interested in?</label>
+      <select id="option_interest" name="option_interest">
+        <option value="Sandals Ochi — Ocho Rios, Jamaica">Sandals Ochi — Ocho Rios, Jamaica</option>
+        <option value="Azulik Tulum — Tulum, Mexico">Azulik Tulum — Tulum, Mexico</option>
+        <option value="SLS Playa Mujeres — Playa Mujeres, Mexico">SLS Playa Mujeres — Playa Mujeres, Mexico</option>
+        <option value="Zemi Miches — Miches, Dominican Republic">Zemi Miches — Miches, Dominican Republic</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="insurance">Travel Insurance</label>
+      <select id="insurance" name="travel_insurance">
+        <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+        <option value="No — not interested">No — not interested</option>
+        <option value="Already have coverage">Already have coverage</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Questions, preferences, or anything else we should know"></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Send My Response</button>
+  </form>
+
+  <div class="thank-you" id="thankYou">
+    <h3>Thank you!</h3>
+    <p>Your response is on its way to your advisor. We'll follow up shortly.</p>
+  </div>
+</section>
+
+<footer>
+  <div id="agentInfo">
+    <div>Andrea Gunter — Point Me to Paradise Travel</div>
+    <div><a href="#" id="emailLink"></a> · 409-789-3579</div>
+  </div>
+  <div class="disclaimer">
+    Prices and availability are subject to change until time of booking. All destinations require a passport valid at time of travel — check current entry requirements before booking.
+  </div>
+</footer>
+
+<script>
+  // Assemble agent email at runtime so it never gets scrambled by Cloudflare
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var link = document.getElementById('emailLink');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+  })();
+
+  var radios = document.querySelectorAll('input[name="resortChoice"]');
+  var cards = document.querySelectorAll('.resort-card');
+
+  function fmtMoney(n){
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function updateSelection(){
+    var checked = document.querySelector('input[name="resortChoice"]:checked');
+    if(!checked) return;
+    var name = checked.getAttribute('data-name');
+    var total = parseFloat(checked.getAttribute('data-total'));
+
+    document.getElementById('stickyResortName').textContent = name;
+    document.getElementById('stickyAmount').textContent = 'Est. ' + fmtMoney(total);
+    document.getElementById('totalDisplay').textContent = 'Est. ' + fmtMoney(total);
+
+    document.getElementById('hiddenResort').value = name;
+    document.getElementById('hiddenSubject').value = 'Quote Response — Kayla Wisdom | ' + name;
+
+    var optSelect = document.getElementById('option_interest');
+    if(optSelect){ optSelect.value = name; }
+
+    cards.forEach(function(c){ c.classList.remove('selected'); });
+    var cardId = 'card-' + checked.id;
+    var card = document.getElementById(cardId);
+    if(card) card.classList.add('selected');
+  }
+
+  radios.forEach(function(r){
+    r.addEventListener('change', function(){
+      updateSelection();
+      setTimeout(updateSelection, 0);
+    });
+  });
+
+  // Web3Forms submission via fetch — never native POST
+  var form = document.getElementById('quoteForm');
+  var errorBox = document.getElementById('formError');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorBox.style.display = 'none';
+    var formData = new FormData(form);
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    }).then(function(res){ return res.json(); })
+    .then(function(data){
+      if(data.success){
+        form.style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        errorBox.style.display = 'block';
+      }
+    }).catch(function(){
+      errorBox.style.display = 'block';
+    });
+  });
+
+  updateSelection();
+</script>
+
+</body>
+</html>
