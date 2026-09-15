@@ -83,8 +83,9 @@
   }
   .resort-card.is-selected{border-color:var(--gold-dark);}
   .resort-photos{display:grid; grid-template-columns:2fr 1fr; gap:2px; background:var(--pale-teal);}
-  .resort-photos img{width:100%; height:100%; object-fit:cover; min-height:0; min-width:0;}
-  .resort-photos .stacked{display:grid; grid-template-rows:1fr 1fr; gap:2px;}
+  .resort-photos > img{width:100%; aspect-ratio:4/3; object-fit:cover; display:block;}
+  .resort-photos .stacked{display:grid; grid-template-rows:auto auto; gap:2px;}
+  .resort-photos .stacked img{width:100%; aspect-ratio:4/3; object-fit:cover; display:block;}
   .resort-body{padding:22px;}
   .resort-body h3{font-size:1.4rem; margin-bottom:4px;}
   .resort-location{color:var(--text-muted); font-size:0.92rem; margin-bottom:14px;}
@@ -157,7 +158,7 @@
 
   @media (max-width: 540px){
     .resort-photos{grid-template-columns:1fr;}
-    .resort-photos .stacked{grid-template-rows:1fr 1fr;}
+    .resort-photos .stacked{grid-template-rows:auto auto;}
     .room-options{grid-template-columns:1fr;}
     .hero h1{font-size:1.8rem;}
     .compare-table table{min-width:0;}
