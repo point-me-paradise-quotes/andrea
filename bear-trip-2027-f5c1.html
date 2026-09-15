@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cathie's 40th: Bahama Mama Takeover — Atlantis, Bahamas</title>
+<meta name="description" content="June 11–14, 2027 · Paradise Island, Bahamas — pick your resort, pick your room, meet everyone at Aquaventure.">
+<meta property="og:title" content="Cathie's 40th: Bahama Mama Takeover — Atlantis, Bahamas">
+<meta property="og:description" content="June 11–14, 2027 · Paradise Island, Bahamas — pick your resort, pick your room, meet everyone at Aquaventure.">
+<meta property="og:image" content="https://assets.atlantisbahamas.com/styled/2c8dc995fbf6b66dcc1fe8a45ede8aed">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#75AFB1; --teal-dark:#4F8A8C; --pale-teal:#C4E4E1;
+    --gold:#DAC396; --gold-dark:#B89E6A; --cream:#E9DEC0; --cream-light:#F5EFDF;
+    --paper:#FBF9F4; --paper-pure:#FFFFFF;
+    --text:#3D3D3D; --text-muted:#606060;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'DM Sans', sans-serif; color:var(--text); background:var(--paper);
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display', serif; color:var(--teal-dark); font-weight:600; line-height:1.25;}
+  .voice{font-family:'Cormorant Garamond', serif; font-style:italic;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:960px; margin:0 auto; padding:0 20px;}
+  a{color:var(--teal-dark);}
+
+  /* HERO */
+  .hero{
+    position:relative; min-height:420px; display:flex; align-items:flex-end;
+    background-image: linear-gradient(180deg, rgba(20,40,40,0.15) 0%, rgba(20,40,40,0.72) 100%), url('https://assets.atlantisbahamas.com/styled/2c8dc995fbf6b66dcc1fe8a45ede8aed');
+    background-size:cover; background-position:center; padding:60px 20px 36px;
+  }
+  .hero-inner{max-width:960px; margin:0 auto; width:100%;}
+  .hero-eyebrow{
+    color:var(--cream-light); font-size:14px; letter-spacing:0.14em; text-transform:uppercase;
+    font-weight:600; margin-bottom:10px;
+  }
+  .hero h1{color:#FFFFFF; font-size:2.4rem; margin-bottom:10px;}
+  .hero p{color:var(--cream-light); font-size:1.05rem; font-weight:400;}
+
+  /* SECTIONS */
+  section{padding:44px 0;}
+  .section-title{font-size:1.6rem; margin-bottom:14px;}
+  .section-sub{color:var(--text-muted); margin-bottom:24px; max-width:640px;}
+
+  /* COMMITMENT CALLOUTS */
+  .commitment{
+    background:var(--pale-teal); border-left:4px solid var(--teal-dark);
+    border-radius:8px; padding:18px 20px; font-size:1rem; color:var(--text);
+    max-width:800px; margin:0 auto;
+  }
+  .commitment.bottom{background:var(--cream-light); border-left-color:var(--gold-dark);}
+
+  /* GROUP EXPLAINER CARD */
+  .info-card{
+    background:var(--paper-pure); border:1px solid var(--pale-teal); border-radius:12px;
+    padding:24px; margin-bottom:20px;
+  }
+  .info-card h3{font-size:1.15rem; margin-bottom:10px;}
+  .info-card p{margin-bottom:10px;}
+  .info-card p:last-child{margin-bottom:0;}
+
+  /* COMPARE TABLE */
+  .compare-table{width:100%; border-collapse:collapse; margin-top:10px; overflow-x:auto; display:block;}
+  .compare-table table{width:100%; border-collapse:collapse; min-width:480px;}
+  .compare-table th, .compare-table td{
+    text-align:left; padding:12px 14px; border-bottom:1px solid var(--pale-teal); font-size:0.95rem;
+  }
+  .compare-table th{font-family:'Playfair Display', serif; color:var(--teal-dark); font-weight:600; background:var(--cream-light);}
+  .compare-table td{color:var(--text);}
+
+  /* RESORT CARDS */
+  .resort-card{
+    background:var(--paper-pure); border:2px solid var(--pale-teal); border-radius:14px;
+    overflow:hidden; margin-bottom:28px;
+  }
+  .resort-card.is-selected{border-color:var(--gold-dark);}
+  .resort-photos{display:grid; grid-template-columns:2fr 1fr; gap:2px; background:var(--pale-teal);}
+  .resort-photos img{width:100%; height:100%; object-fit:cover; min-height:0; min-width:0;}
+  .resort-photos .stacked{display:grid; grid-template-rows:1fr 1fr; gap:2px;}
+  .resort-body{padding:22px;}
+  .resort-body h3{font-size:1.4rem; margin-bottom:4px;}
+  .resort-location{color:var(--text-muted); font-size:0.92rem; margin-bottom:14px;}
+  .resort-desc{margin-bottom:18px;}
+  .not-included{
+    display:inline-block; font-size:0.78rem; font-weight:600; color:var(--teal-dark);
+    background:var(--pale-teal); border-radius:5px; padding:2px 8px; margin-left:6px; vertical-align:middle;
+  }
+
+  .room-options{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:6px;}
+  .room-option{
+    border:2px solid var(--pale-teal); border-radius:10px; padding:14px; cursor:pointer;
+    background:var(--cream-light); transition:border-color 0.15s;
+  }
+  .room-option:has(input:checked){border-color:var(--gold-dark); background:var(--cream);}
+  .room-option label{display:flex; align-items:flex-start; gap:10px; cursor:pointer; min-height:44px;}
+  .room-option input[type="radio"]{margin-top:4px; width:20px; height:20px; accent-color:var(--teal-dark); flex-shrink:0;}
+  .room-option .ro-title{font-weight:600; color:var(--teal-dark); font-size:1rem;}
+  .room-option .ro-price{font-size:1.25rem; font-weight:700; color:var(--text); margin-top:2px;}
+  .room-option .ro-pp{font-size:0.85rem; color:var(--text-muted); margin-top:2px;}
+
+  .terms-note{
+    margin-top:16px; padding:14px 16px; background:var(--pale-teal); border-radius:8px; font-size:0.92rem;
+  }
+
+  /* STICKY TOTAL BAR */
+  .total-bar{
+    position:sticky; bottom:0; z-index:50; background:var(--teal-dark); color:#FFFFFF;
+    padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:14px;
+    flex-wrap:wrap; box-shadow:0 -4px 14px rgba(0,0,0,0.12);
+  }
+  .total-bar .label{font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; opacity:0.85;}
+  .total-bar .amount{font-family:'Playfair Display', serif; font-size:1.5rem; font-weight:700;}
+  .total-bar .pp{font-size:0.85rem; opacity:0.9;}
+
+  .pricing-note{
+    max-width:800px; margin:20px auto 0; font-size:0.9rem; color:var(--text-muted); text-align:center;
+  }
+
+  /* CONTACT FORM */
+  .form-wrap{
+    background:var(--paper-pure); border:1px solid var(--pale-teal); border-radius:14px; padding:28px;
+    max-width:640px; margin:0 auto;
+  }
+  .form-row{margin-bottom:16px;}
+  .form-row label{display:block; font-weight:600; margin-bottom:6px; font-size:0.95rem;}
+  .form-row input, .form-row select, .form-row textarea{
+    width:100%; font-size:16px; font-family:'DM Sans', sans-serif; padding:12px 14px;
+    border:1px solid var(--pale-teal); border-radius:8px; min-height:44px; background:var(--paper);
+    color:var(--text);
+  }
+  .form-row textarea{min-height:88px; resize:vertical;}
+  .submit-btn{
+    width:100%; min-height:48px; background:var(--teal-dark); color:#FFFFFF; border:none;
+    border-radius:8px; font-size:16px; font-weight:600; cursor:pointer; font-family:'DM Sans', sans-serif;
+  }
+  .submit-btn:hover{background:var(--teal);}
+  .error-msg{
+    display:none; background:var(--cream); border:1px solid var(--gold-dark); border-radius:8px;
+    padding:12px 14px; margin-bottom:16px; font-size:0.92rem; color:var(--text);
+  }
+  .thankyou{display:none; text-align:center; padding:20px 0;}
+  .thankyou h3{margin-bottom:8px;}
+
+  /* FOOTER */
+  footer{background:var(--teal-dark); color:var(--cream-light); padding:32px 20px; text-align:center;}
+  footer .agent-name{font-family:'Playfair Display', serif; font-size:1.15rem; color:#FFFFFF; margin-bottom:6px;}
+  footer a{color:var(--cream-light); text-decoration:underline;}
+  footer .disclaimer{font-size:0.8rem; margin-top:14px; opacity:0.85; max-width:520px; margin-left:auto; margin-right:auto;}
+
+  @media (max-width: 540px){
+    .resort-photos{grid-template-columns:1fr;}
+    .resort-photos .stacked{grid-template-rows:1fr 1fr;}
+    .room-options{grid-template-columns:1fr;}
+    .hero h1{font-size:1.8rem;}
+    .compare-table table{min-width:0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">A Point Me to Paradise Group Trip</div>
+    <h1>Cathie's 40th: Bahama Mama Takeover</h1>
+    <p>June 11–14, 2027 · Paradise Island, Bahamas · 3 nights, two resorts, one very loud group chat</p>
+  </div>
+</div>
+
+<section class="wrap">
+  <p style="max-width:680px; font-size:1.05rem;">
+    Somebody said "we should do something for Cathie's 40th" and here we all are, booking rooms on an island. Below are the two resort options for the group — pick the one that fits your budget and your idea of a good morning, then pick whether you're sharing with one roommate or three. Either way, you'll be spending your days with the same group of women at the same pool.
+  </p>
+</section>
+
+<section class="wrap">
+  <div class="commitment">
+    We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.
+  </div>
+</section>
+
+<section class="wrap">
+  <h2 class="section-title">Why we're recommending the refundable rate for this group</h2>
+  <div class="info-card">
+    <p>Both resorts have a less expensive non-refundable rate available. For a solo trip, that might make sense. For a group of twenty-plus women booking a year out, it doesn't — and here's the honest math on why.</p>
+    <p>The non-refundable rate requires full payment up front, with no flexibility if someone's plans change between now and June 2027. If one person has to drop out in April, that room is paid for and nobody gets that money back — including whoever's left holding the room.</p>
+    <p>The fully refundable rate works differently: it's <strong>book now, pay later</strong>. You hold your room today with no payment due until <strong>May 25, 2027</strong>, and you can cancel for a full refund any time before <strong>June 4, 2027</strong>. If your plans change, you're not stuck, and nobody else in the group is stuck covering for you.</p>
+    <p class="voice" style="font-size:1.05rem;">For a group this size, that's the difference between "a few people might have to back out" and "a few people might have to back out and it's actually fine." We'd recommend everyone book the fully refundable rate.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2 class="section-title">Two resorts, one party</h2>
+  <p class="section-sub">Guests may choose either The Coral or The Royal and still enjoy the main Atlantis amenities together throughout the stay.</p>
+  <div class="info-card">
+    <h3>What's shared</h3>
+    <p>Both resorts sit on the same Atlantis property, so whoever books where doesn't split the group up. Everyone gets access to Aquaventure, the main pools, the beaches, The Dig and marine habitats, the casino, restaurants, shopping, and the rest of the common resort grounds. There's also a complimentary shuttle running between the hotels, so a Coral guest can wander over to the Royal side to meet everyone, and vice versa. You are not stuck near whichever building your room happens to be in.</p>
+    <h3 style="margin-top:16px;">The one exception</h3>
+    <p>The Cove and The Reef side of the property is walled off from this — the Cove Pool is reserved for adult Cove guests, and Cascades Pool is shared between Cove and Reef guests only. Neither resort option below is on that side, so it doesn't change anything for this group, but it's worth knowing that staying at the Royal doesn't unlock those specific pools either.</p>
+  </div>
+
+  <div class="compare-table">
+    <table>
+      <thead>
+        <tr><th>&nbsp;</th><th>The Coral</th><th>The Royal</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Vibe</td><td>Laid-back, a short walk from the center of the action</td><td>Right in the middle of it — closest to the casino and Aquaventure</td></tr>
+        <tr><td>Room price (2 guests)</td><td>$1,869.57 total</td><td>$2,305.17 total</td></tr>
+        <tr><td>Room price (4 guests)</td><td>$2,277.57 total</td><td>$2,713.17 total</td></tr>
+        <tr><td>Best for</td><td>Whoever wants the lower price and doesn't mind a slightly longer walk</td><td>Whoever wants to be steps from everything</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:10px; color:var(--text-muted); font-size:0.92rem;">Both totals above are for the fully refundable rate, priced as shown by the property — the group's actual mix of Coral and Royal bookings won't change what any one person pays.</p>
+</section>
+
+<section class="wrap">
+  <h2 class="section-title">Pick your resort</h2>
+  <p class="section-sub">Same trip, same island, same group — just two different price points and two different front doors.</p>
+
+  <!-- RESORT 1: THE CORAL -->
+  <div class="resort-card" id="card-coral">
+    <div class="resort-photos">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/cf/02/68/the-coral-pool.jpg?w=900&h=500&s=1" alt="The Coral at Atlantis pool">
+      <div class="stacked">
+        <img src="https://storage.googleapis.com/cloudaio/images/hotel/97ee648c-c027-4f43-b981-d99add85bf56/7109/AtlantisParadiseIsland.jpg" alt="Atlantis Paradise Island exterior">
+        <img src="https://d20kc7ig5255k8.cloudfront.net/Rooms/Pictures/studio-terrace-view-68597f8696396.jpg" alt="Terrace View room at The Coral">
+      </div>
+    </div>
+    <div class="resort-body">
+      <h3>The Coral at Atlantis</h3>
+      <div class="resort-location">Paradise Island, Bahamas · 3 nights, June 11–14, 2027</div>
+      <p class="resort-desc">The value pick on the property — a few extra minutes' walk gets you a noticeably lower room rate, and the shuttle plus your own two feet get you everywhere else. Same Terrace View room with two queen beds either way; the price below just depends on whether it's two of you or four splitting it.</p>
+      <div class="room-options">
+        <div class="room-option">
+          <label>
+            <input type="radio" name="stayChoice" value="coral-2" data-resort="The Coral at Atlantis" data-room="Terrace View Room, 2 Queen Beds" data-guests="2" data-total="1869.57" data-pp="934.79">
+            <span>
+              <span class="ro-title">Room for 2</span><br>
+              <span class="ro-price">$1,869.57</span> total<br>
+              <span class="ro-pp">≈ $934.79 per person</span>
+            </span>
+          </label>
+        </div>
+        <div class="room-option">
+          <label>
+            <input type="radio" name="stayChoice" value="coral-4" data-resort="The Coral at Atlantis" data-room="Terrace View Room, 2 Queen Beds" data-guests="4" data-total="2277.57" data-pp="569.39">
+            <span>
+              <span class="ro-title">Room for 4</span><br>
+              <span class="ro-price">$2,277.57</span> total<br>
+              <span class="ro-pp">≈ $569.39 per person</span>
+            </span>
+          </label>
+        </div>
+      </div>
+      <div class="terms-note">
+        <strong>Book now, pay later:</strong> nothing due until May 25, 2027. Fully refundable if you cancel before June 4, 2027.
+        <span class="not-included">Transfers not included</span>
+        <br><span style="color:var(--text-muted); font-size:0.85rem;">Airport transfers aren't booked yet — your advisor will help arrange these once flights are confirmed.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESORT 2: THE ROYAL -->
+  <div class="resort-card" id="card-royal">
+    <div class="resort-photos">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/01/1b/d1/72/terrace-view-from-my.jpg" alt="View from a Terrace View room at The Royal at Atlantis">
+      <div class="stacked">
+        <img src="https://cache.marriott.com/content/dam/marriott-renditions/NASAK/nasak-premium-3787-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1920px:*" alt="The Royal at Atlantis room interior">
+        <img src="https://cache.marriott.com/content/dam/marriott-digital/ak/cala/hws/n/nasak/en_us/photo/unlimited/assets/nasak-exterior-0118.jpg" alt="The Royal at Atlantis exterior">
+      </div>
+    </div>
+    <div class="resort-body">
+      <h3>The Royal at Atlantis</h3>
+      <div class="resort-location">Paradise Island, Bahamas · 3 nights, June 11–14, 2027</div>
+      <p class="resort-desc">The one in the thick of it — closest to the casino, the restaurants, and Aquaventure, for whoever doesn't want to walk far to get to the group. Same Double Queen Terrace View room either way; price below depends on two guests or four sharing it.</p>
+      <div class="room-options">
+        <div class="room-option">
+          <label>
+            <input type="radio" name="stayChoice" value="royal-2" data-resort="The Royal at Atlantis" data-room="Double Queen Terrace View" data-guests="2" data-total="2305.17" data-pp="1152.59">
+            <span>
+              <span class="ro-title">Room for 2</span><br>
+              <span class="ro-price">$2,305.17</span> total<br>
+              <span class="ro-pp">≈ $1,152.59 per person</span>
+            </span>
+          </label>
+        </div>
+        <div class="room-option">
+          <label>
+            <input type="radio" name="stayChoice" value="royal-4" data-resort="The Royal at Atlantis" data-room="Double Queen Terrace View" data-guests="4" data-total="2713.17" data-pp="678.29">
+            <span>
+              <span class="ro-title">Room for 4</span><br>
+              <span class="ro-price">$2,713.17</span> total<br>
+              <span class="ro-pp">≈ $678.29 per person</span>
+            </span>
+          </label>
+        </div>
+      </div>
+      <div class="terms-note">
+        <strong>Book now, pay later:</strong> nothing due until May 25, 2027. Fully refundable if you cancel before June 4, 2027.
+        <span class="not-included">Transfers not included</span>
+        <br><span style="color:var(--text-muted); font-size:0.85rem;">Airport transfers aren't booked yet — your advisor will help arrange these once flights are confirmed.</span>
+      </div>
+    </div>
+  </div>
+
+  <p style="color:var(--text-muted); font-size:0.9rem;">Prices shown are for the fully refundable rate. Less expensive non-refundable rates exist but aren't shown here — for a group booking, we're not recommending them (see above).</p>
+</section>
+
+<div class="total-bar" id="totalBar">
+  <div>
+    <div class="label">Your selection</div>
+    <div class="amount" id="totalAmount">Pick a room above</div>
+  </div>
+  <div class="pp" id="ppAmount"></div>
+</div>
+
+<section class="wrap">
+  <div class="commitment" style="background:var(--cream-light); border-left-color:var(--gold-dark);">
+    We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.
+  </div>
+  <p class="pricing-note">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
+</section>
+
+<section class="wrap">
+  <div class="commitment bottom">
+    What's coming after this quote: a destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.
+  </div>
+</section>
+
+<section class="wrap">
+  <h2 class="section-title">Ready to lock in your room?</h2>
+  <p class="section-sub">Fill this out once you've picked your resort and room size above. Andrea will follow up to confirm your booking.</p>
+  <div class="form-wrap">
+    <div class="error-msg" id="formError">Something didn't go through — please check the required fields and try again.</div>
+    <div class="thankyou" id="thankYou">
+      <h3>Got it — thank you!</h3>
+      <p>Andrea will be in touch shortly to confirm your room.</p>
+    </div>
+    <form id="quoteForm">
+      <input type="hidden" name="access_key" value="7030df0b-f624-4a54-b358-c404f349322b">
+      <input type="hidden" name="subject" value="Quote Response — Cathie Bear | Bahamas">
+      <input type="hidden" name="from_name" value="Cathie Bear Quote — Point Me to Paradise">
+      <input type="hidden" name="redirect" value="false">
+      <input type="hidden" name="selected_resort" id="hiddenResort" value="">
+      <input type="hidden" name="selected_room" id="hiddenRoom" value="">
+      <input type="hidden" name="selected_option_label" id="hiddenOptionLabel" value="">
+
+      <div class="form-row">
+        <label for="guestName">Your name *</label>
+        <input type="text" id="guestName" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="guestEmail">Email *</label>
+        <input type="email" id="guestEmail" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="guestPhone">Phone</label>
+        <input type="tel" id="guestPhone" name="phone">
+      </div>
+      <div class="form-row">
+        <label for="leadGuest">Lead guest on this reservation *</label>
+        <input type="text" id="leadGuest" name="lead_guest" required placeholder="Whose name should the room be booked under?">
+      </div>
+      <div class="form-row">
+        <label for="roommates">Who's sharing this room with you?</label>
+        <input type="text" id="roommates" name="roommates" placeholder="e.g. Jane Smith, Mary Doe">
+      </div>
+      <div class="form-row">
+        <label for="optionInterest">Which option are you interested in?</label>
+        <select id="optionInterest" name="option_interest">
+          <option value="">Select one</option>
+          <option value="The Coral at Atlantis – Room for 2">The Coral at Atlantis – Room for 2</option>
+          <option value="The Coral at Atlantis – Room for 4">The Coral at Atlantis – Room for 4</option>
+          <option value="The Royal at Atlantis – Room for 2">The Royal at Atlantis – Room for 2</option>
+          <option value="The Royal at Atlantis – Room for 4">The Royal at Atlantis – Room for 4</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="insuranceInterest">Travel insurance</label>
+        <select id="insuranceInterest" name="travel_insurance">
+          <option value="Yes — I'd like a quote">Yes — I'd like a quote</option>
+          <option value="No — not interested">No — not interested</option>
+          <option value="Already have coverage">Already have coverage</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="guestMessage">Anything else Andrea should know?</label>
+        <textarea id="guestMessage" name="message"></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send my choice to Andrea</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="agent-name">Andrea Gunter</div>
+  <div>Point Me to Paradise Travel</div>
+  <div style="margin-top:8px;">
+    <a href="#" id="emailLink"></a> · <a href="tel:4097893579">(409) 789-3579</a>
+  </div>
+  <div class="disclaimer">Prices and availability are subject to change until time of booking.</div>
+</footer>
+
+<script>
+  // Assemble agent email at runtime (avoid hardcoding a scrapeable literal)
+  (function(){
+    var addr = 'andrea' + '@' + 'pointmetoparadise.com';
+    var link = document.getElementById('emailLink');
+    link.href = 'mailto:' + addr;
+    link.textContent = addr;
+  })();
+
+  // Room selection -> running total + hidden fields
+  var radios = document.querySelectorAll('input[name="stayChoice"]');
+  var totalAmount = document.getElementById('totalAmount');
+  var ppAmount = document.getElementById('ppAmount');
+  var hiddenResort = document.getElementById('hiddenResort');
+  var hiddenRoom = document.getElementById('hiddenRoom');
+  var hiddenOptionLabel = document.getElementById('hiddenOptionLabel');
+  var optionSelect = document.getElementById('optionInterest');
+  var cardCoral = document.getElementById('card-coral');
+  var cardRoyal = document.getElementById('card-royal');
+
+  var labelMap = {
+    'coral-2': 'The Coral at Atlantis – Room for 2',
+    'coral-4': 'The Coral at Atlantis – Room for 4',
+    'royal-2': 'The Royal at Atlantis – Room for 2',
+    'royal-4': 'The Royal at Atlantis – Room for 4'
+  };
+
+  function updateSelection(radio){
+    var resort = radio.getAttribute('data-resort');
+    var room = radio.getAttribute('data-room');
+    var guests = radio.getAttribute('data-guests');
+    var total = radio.getAttribute('data-total');
+    var pp = radio.getAttribute('data-pp');
+    var val = radio.value;
+
+    totalAmount.textContent = 'Est. $' + total + ' (' + resort + ', ' + guests + ' guests)';
+    ppAmount.textContent = '≈ $' + pp + ' per person';
+
+    hiddenResort.value = resort;
+    hiddenRoom.value = room + ' — ' + guests + ' guests';
+    hiddenOptionLabel.value = labelMap[val] || '';
+    if(optionSelect){ optionSelect.value = labelMap[val] || ''; }
+
+    cardCoral.classList.toggle('is-selected', resort === 'The Coral at Atlantis');
+    cardRoyal.classList.toggle('is-selected', resort === 'The Royal at Atlantis');
+  }
+
+  radios.forEach(function(r){
+    r.addEventListener('change', function(){ updateSelection(r); });
+  });
+
+  // If advisor selects from the dropdown directly, keep hidden fields in sync too
+  if(optionSelect){
+    optionSelect.addEventListener('change', function(){
+      var match = null;
+      for(var key in labelMap){
+        if(labelMap[key] === optionSelect.value){ match = key; break; }
+      }
+      if(match){
+        var target = document.querySelector('input[name="stayChoice"][value="' + match + '"]');
+        if(target){ target.checked = true; updateSelection(target); }
+      }
+    });
+  }
+
+  // Contact form submission via fetch (never native POST)
+  var form = document.getElementById('quoteForm');
+  var errorMsg = document.getElementById('formError');
+  var thankYou = document.getElementById('thankYou');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorMsg.style.display = 'none';
+
+    if(!hiddenResort.value){
+      errorMsg.textContent = "Please pick a resort and room above before sending your choice.";
+      errorMsg.style.display = 'block';
+      window.scrollTo({top: 0, behavior:'smooth'});
+      return;
+    }
+
+    var formData = new FormData(form);
+    var payload = {};
+    formData.forEach(function(value, key){ payload[key] = value; });
+    payload.redirect = false;
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if(data.success){
+        form.style.display = 'none';
+        thankYou.style.display = 'block';
+      } else {
+        errorMsg.textContent = "Something didn't go through — please check the required fields and try again.";
+        errorMsg.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      errorMsg.textContent = "Something didn't go through — please check your connection and try again.";
+      errorMsg.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>
