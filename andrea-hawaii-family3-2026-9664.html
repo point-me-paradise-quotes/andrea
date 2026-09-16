@@ -172,6 +172,8 @@ svg.ic{width:20px;height:20px;stroke:currentColor;stroke-width:1.4;fill:none;str
 .price-block{background:var(--aqua-mist);border-radius:14px;padding:34px 36px;margin-top:8px}
 .price-block .big{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:500;margin:4px 0 2px}
 .price-block .note{color:var(--ink-soft);font-size:.95rem}
+.opt-list{margin:14px 0 0;padding:0 0 0 20px;font-size:.94rem;line-height:1.5}
+.opt-list li{margin:0 0 12px}
 .price-lines{margin:20px 0 0;padding:0;list-style:none;font-size:.96rem}
 .price-lines li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-top:1px solid rgba(79,138,140,.2)}
 .price-lines li span:last-child{white-space:nowrap;font-weight:500}
@@ -273,41 +275,40 @@ body{background:var(--paper)}
 
 <!-- FLIGHTS -->
 <section class="day" id="flights">
-  <div class="day-head"><h2>Your flights</h2><span class="dow">Southwest, Houston to Honolulu and back — for three</span></div>
+  <div class="day-head"><h2>Your flights</h2><span class="dow">United, Houston to Honolulu and back — for three</span></div>
+  <div class="commit" style="margin:0 0 22px;max-width:none">This is a starting point, not the only option — there are other airlines, routings, and cabin choices we can price out if this one doesn't fit your schedule or budget.</div>
   <div class="card">
     <h3>Out — Monday, December 21 <span class="tag">Included</span></h3>
-    <p class="meta">Southwest · Economy · one stop in Phoenix · for three</p>
+    <p class="meta">United · Economy · one stop in Los Angeles · for three</p>
 
     <div class="flight">
-      <div><div class="t">7:45 AM</div><div class="ap">William P. Hobby Airport (HOU)</div></div>
-      <div class="mid">WN 2149<span class="dur">2 hr 50 min · Boeing 737 MAX 8</span></div>
-      <div class="right"><div class="t">9:35 AM</div><div class="ap">Phoenix Sky Harbor (PHX)</div></div>
+      <div><div class="t">6:00 AM</div><div class="ap">George Bush Intercontinental (IAH)</div></div>
+      <div class="mid"><span class="dur">Total travel time 11 hr 6 min</span></div>
+      <div class="right"><div class="t">1:06 PM</div><div class="ap">Daniel K. Inouye International (HNL)</div></div>
     </div>
-    <div class="layover">45 minutes on the ground in Phoenix — you stay on Southwest, so the connection is straightforward.</div>
-    <div class="flight">
-      <div><div class="t">10:20 AM</div><div class="ap">Phoenix Sky Harbor (PHX)</div></div>
-      <div class="mid">WN 4524<span class="dur">6 hr 40 min · Boeing 737 MAX 8</span></div>
-      <div class="right"><div class="t">2:00 PM</div><div class="ap">Daniel K. Inouye International (HNL)</div></div>
-    </div>
+    <div class="layover">1 hr 11 min layover in Los Angeles (LAX).</div>
 
-    <div class="policy"><strong>Cancellation policy — flights.</strong> Full refund if cancelled within 24 hours of initial booking. Non-refundable thereafter. May be refunded as a travel credit to be used within one year of the date booked.</div>
+    <div class="policy"><strong>Cancellation policy — flights.</strong> The Economy fare below is non-refundable; a fully refundable Economy fare is also available for a higher total. See both fares below.</div>
   </div>
 
 <div class="card">
     <h3>Home — Monday, December 28 <span class="tag">Included</span></h3>
-    <p class="meta">Southwest · one stop in San Diego · arrives Houston early on December 29</p>
+    <p class="meta">United · Economy · nonstop · arrives Houston early on December 29</p>
     <div class="flight">
-      <div><div class="t">8:10 AM</div><div class="ap">Daniel K. Inouye International (HNL)</div></div>
-      <div class="mid">WN 2040<span class="dur">5 hr 35 min · Boeing 737 MAX 8</span></div>
-      <div class="right"><div class="t">3:45 PM</div><div class="ap">San Diego (SAN)</div></div>
+      <div><div class="t">8:30 PM</div><div class="ap">Daniel K. Inouye International (HNL)</div></div>
+      <div class="mid"><span class="dur">Total travel time 7 hr 35 min · Nonstop</span></div>
+      <div class="right"><div class="t">8:05 AM</div><div class="ap">George Bush Intercontinental (IAH) · December 29</div></div>
     </div>
-    <div class="layover">Four hours in San Diego — time for a proper meal before the last leg.</div>
-    <div class="flight">
-      <div><div class="t">7:45 PM</div><div class="ap">San Diego (SAN)</div></div>
-      <div class="mid">WN 3708<span class="dur">3 hr · Boeing 737</span></div>
-      <div class="right"><div class="t">12:45 AM</div><div class="ap">Houston Hobby (HOU) · December 29</div></div>
-    </div>
-    <div class="policy"><strong>Cancellation policy — flights.</strong> Full refund if cancelled within 24 hours of initial booking. Non-refundable thereafter. May be refunded as a travel credit to be used within one year of the date booked.</div>
+    <div class="policy"><strong>One nice thing about this itinerary:</strong> the return from Honolulu to Houston is nonstop, so there's no connection to manage on the way home.</div>
+  </div>
+
+  <div class="card">
+    <h3>Fare options — for three travelers</h3>
+    <ul class="opt-list">
+      <li><strong>Economy (non-refundable): $3,612.00 total</strong> — about $1,204 per person. Includes standard seat selection at no charge, one carry-on bag per passenger, and changes permitted without a change fee (fare difference may apply). Checked baggage is not included; the quoted first checked bag fee is $100 per passenger for the trip.</li>
+      <li><strong>Fully refundable Economy: $4,032.00 total</strong> — about $1,344 per person. Same Economy benefits as above, fully refundable.</li>
+    </ul>
+    <div class="policy">Airfare and availability are subject to change until tickets are purchased.</div>
   </div>
 </section>
 
@@ -835,16 +836,18 @@ body{background:var(--paper)}
   <div class="day-head"><h2>Your price</h2><span class="dow">One package figure, following your room choice</span></div>
   <div class="price-block">
     <div class="note">Estimated total for three travelers</div>
-    <div class="big" id="total-main">Est. $3,873.00</div>
-    <div class="note" id="hint-main">Choose your room above to see your full price — flights are in this figure; your room is not yet.</div>
+    <div class="big" id="total-main">Est. $3,612.00</div>
+    <div class="note" id="hint-main">Choose your room above to see your full price — the non-refundable Economy flights are in this figure; your room is not yet.</div>
     <ul class="price-lines">
-      <li><span>Round-trip flights, Houston–Honolulu, for three</span><span>Included</span></li>
+      <li><span>Round-trip flights, Houston–Honolulu, for three (non-refundable Economy)</span><span>Included</span></li>
       <li><span id="line-room">Your room for 7 nights, December 21–28</span><span id="line-room-status">Choose above</span></li>
       <li><span>Custom Oahu planning, trip guide and trip app</span><span>Included</span></li>
       <li><span>Resort or destination fees, parking, taxes paid at the hotel, incidental holds</span><span>Paid at the property</span></li>
       <li><span id="line-car">Rental car, if chosen</span><span id="line-car-status">Paid at pickup</span></li>
       <li><span>Airport transfers, meals not listed, travel insurance</span><span>Not included</span></li>
+      <li><span>Upgrade to fully refundable Economy flights</span><span>+$420.00</span></li>
     </ul>
+    <p class="disc" style="margin-top:22px">This flight is a starting point — other airlines, routings, and cabin options are available if you'd like to see alternatives.</p>
     <p class="disc" style="margin-top:22px"><strong>Deposit and payment schedule confirmed by your advisor.</strong></p>
     <p class="disc">We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
     <p class="disc">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
@@ -932,7 +935,7 @@ body{background:var(--paper)}
 <!-- STICKY PRICE BAR -->
 <div class="pricebar" id="pricebar">
   <div class="in">
-    <div><div class="lbl">Estimated total for three</div><div class="amt" id="total-bar">Est. $3,873.00</div><div class="hint" id="hint-bar">Choose your room to see your full price</div></div>
+    <div><div class="lbl">Estimated total for three</div><div class="amt" id="total-bar">Est. $3,612.00</div><div class="hint" id="hint-bar">Choose your room to see your full price</div></div>
     <a class="jump" href="#rooms" id="jump">Choose a room</a>
   </div>
 </div>
@@ -981,7 +984,7 @@ body{background:var(--paper)}
   });
 
   /* live pricing */
-  var BASE = 3873;
+  var BASE = 3612;
   var radios = document.querySelectorAll('input[name="room_choice"]');
   var selectedLabel = '';
   function fmt(v){ return 'Est. $' + v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); }
